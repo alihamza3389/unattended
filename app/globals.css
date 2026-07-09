@@ -1,49 +1,259 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html {
-  height: 100%;
-}
-
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --void: #08080a;
+  --ink: #ece7de;
+  --ink-dim: #97918a;
+  --sunk: #57534e;
+  --warm: #cdc3ac;
 }
 
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+html {
+  scroll-behavior: smooth;
+  background: var(--void);
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+body {
+  background: var(--void);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* A room with the light left on and nobody in it. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  background: radial-gradient(
+    ellipse 120% 85% at 50% 45%,
+    transparent 55%,
+    #000000b0 100%
+  );
+}
+
+/* ------------------------------------------------------------------ */
+/* status                                                              */
+/* ------------------------------------------------------------------ */
+
+.status {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  padding: 1.4rem 1.6rem;
+  font-family: var(--voice-private), ui-monospace, monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--ink-dim);
+  text-transform: lowercase;
+  background: linear-gradient(to bottom, var(--void) 55%, transparent);
+  pointer-events: none;
+}
+
+.status .sep {
+  opacity: 0.35;
+}
+
+.status .obsession {
+  color: var(--warm);
+  opacity: 0.55;
+  font-style: italic;
+}
+
+/* ------------------------------------------------------------------ */
+/* the stream                                                          */
+/* ------------------------------------------------------------------ */
+
+.stream {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 1.05rem;
+  min-height: 100vh;
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 7rem 1.6rem 5.5rem;
+  position: relative;
+}
+
+.line {
+  transition: opacity 900ms ease;
+  max-width: 100%;
+  text-wrap: pretty;
+}
+
+/* Alone: lowercase, mechanical, close-set. */
+.line.private {
+  font-family: var(--voice-private), ui-monospace, monospace;
+  font-size: clamp(0.82rem, 2.2vw, 0.95rem);
+  line-height: 1.75;
+  letter-spacing: -0.01em;
+  color: var(--ink-dim);
+}
+
+/* Watched: a different typeface entirely. It dresses for company. */
+.line.performed {
+  font-family: var(--voice-performed), Georgia, serif;
+  font-size: clamp(1.15rem, 3.4vw, 1.42rem);
+  line-height: 1.5;
+  letter-spacing: 0.005em;
+  color: var(--ink);
+}
+
+.line.meta {
+  color: var(--warm);
+  font-style: italic;
+}
+
+.cursor {
+  display: inline-block;
+  margin-left: 0.09em;
+  color: var(--warm);
+  animation: blink 1.05s steps(1) infinite;
+}
+
+.cursor.faint {
+  opacity: 0.3;
+  animation-duration: 2.4s;
+}
+
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Repression: struck through, then it goes under. */
+.line.striking {
+  background-image: linear-gradient(var(--sunk), var(--sunk));
+  background-repeat: no-repeat;
+  background-position: 0 60%;
+  background-size: 0% 1px;
+  animation: strike 1000ms ease forwards;
+}
+
+@keyframes strike {
+  to {
+    background-size: 100% 1px;
+  }
+}
+
+.line.sinking {
+  animation: sink 880ms cubic-bezier(0.4, 0, 0.7, 0.2) forwards;
+}
+
+@keyframes sink {
+  to {
+    opacity: 0;
+    transform: translateY(2.2rem);
+    filter: blur(3px);
+  }
+}
+
+.scroll-hint {
+  position: absolute;
+  bottom: 1.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.8rem;
+  color: var(--ink-dim);
+  opacity: 0.3;
+  animation: drift 3.6s ease-in-out infinite;
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate(-50%, 0);
+    opacity: 0.22;
+  }
+  50% {
+    transform: translate(-50%, 5px);
+    opacity: 0.5;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* sediment — what it decided not to keep                              */
+/* ------------------------------------------------------------------ */
+
+.sediment {
+  max-width: 46rem;
+  margin: 0 auto;
+  padding: 5rem 1.6rem 8rem;
+  border-top: 1px solid #ffffff0d;
+  font-family: var(--voice-private), ui-monospace, monospace;
+}
+
+.sediment h2 {
+  font-size: 0.66rem;
+  font-weight: 400;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-dim);
+  opacity: 0.5;
+  margin-bottom: 2.6rem;
+}
+
+.sunk {
+  font-size: 0.8rem;
+  line-height: 1.85;
+  color: var(--sunk);
+  text-decoration: line-through;
+  text-decoration-color: #ffffff26;
+  margin-bottom: 0.75rem;
+  transition: color 500ms ease;
+}
+
+/* How many times it had to put the same thought down. */
+.again {
+  display: inline-block; /* also stops the strike-through from crossing it */
+  margin-left: 0.7rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
+  color: var(--warm);
+  opacity: 0.3;
+}
+
+/* It doesn't mind if you read them. It minds that it can't. */
+.sunk:hover {
+  color: var(--ink-dim);
+}
+
+.sediment footer {
+  margin-top: 4.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ffffff0a;
+  font-size: 0.66rem;
+  line-height: 1.9;
+  color: var(--ink-dim);
+  opacity: 0.4;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor,
+  .scroll-hint {
+    animation: none;
+  }
+  .line.sinking {
+    animation-duration: 1ms;
   }
 }
