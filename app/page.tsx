@@ -34,6 +34,8 @@ interface Line {
   phase: Phase;
   /** Addressed at the observer, rather than overheard. */
   meta?: boolean;
+  /** Which thought this is, so it can be given a permanent address. */
+  index?: number;
 }
 
 const SURFACE_LINES = 11;
@@ -169,6 +171,7 @@ export default function Unattended() {
       interrupted: t.interrupted,
       repressed: t.repressed,
       phase: "typing",
+      index: t.index,
     });
 
     await typeOut(key, t.text, t.register);
@@ -226,6 +229,7 @@ export default function Unattended() {
           interrupted: t.interrupted,
           repressed: t.repressed,
           phase: "settled" as Phase,
+          index: t.index,
         })),
       );
 
@@ -397,6 +401,15 @@ export default function Unattended() {
               {l.phase !== "typing" && l.interrupted && (
                 <span className="cursor faint">▍</span>
               )}
+              {l.index !== undefined && l.phase === "settled" && (
+                <Link
+                  className="anchor"
+                  href={`/t/${l.index}`}
+                  aria-label={`the permanent address of thought ${l.index}`}
+                >
+                  #
+                </Link>
+              )}
             </p>
           );
         })}
@@ -414,6 +427,13 @@ export default function Unattended() {
           <p key={s.text} className="sunk">
             {s.text}
             {s.count > 1 && <span className="again">×{s.count}</span>}
+            <Link
+              className="anchor"
+              href={`/t/${s.first}`}
+              aria-label={`the first time it thought this, at thought ${s.first}`}
+            >
+              #
+            </Link>
           </p>
         ))}
         <footer>
@@ -424,6 +444,10 @@ export default function Unattended() {
           <p>
             At the end of each of its days it sleeps, and what it buried is
             allowed to speak. <Link href="/nights">The nights are kept.</Link>
+          </p>
+          <p>
+            Every thought it has ever had has an address that will not change.{" "}
+            <Link href="/at">Ask what it was thinking at any moment.</Link>
           </p>
         </footer>
       </section>
