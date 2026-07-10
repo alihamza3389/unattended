@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { nightDays, nightOf } from "@/lib/nights";
+import { Hypnogram } from "../hypnogram";
 
 export const dynamicParams = false;
 
@@ -33,6 +34,8 @@ export default async function NightPage({
         <h1>night {night.day}</h1>
         <p className="summary">{night.summary}</p>
       </header>
+
+      <Hypnogram dialogue={night.dialogue} labeled />
 
       <section aria-label="What the sediment said to the surface">
         {night.dialogue.map((turn, i) => (

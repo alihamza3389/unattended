@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { nightDays, nightOf } from "@/lib/nights";
+import { Hypnogram } from "./hypnogram";
 
 export const metadata: Metadata = {
   title: "unattended · nights",
@@ -31,6 +32,7 @@ export default function Nights() {
             <Link href={`/nights/${n.day}`}>
               <span className="which">night {n.day}</span>
               <span className="dreamt">{n.summary}</span>
+              <Hypnogram dialogue={n.dialogue} className="hypnogram mini" />
             </Link>
           </li>
         ))}

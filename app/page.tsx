@@ -364,7 +364,10 @@ export default function Unattended() {
 
   return (
     <>
+      {/* One breath per thought. Keyed to the index: the rhythm is the
+          clock, not an animation loop. */}
       <header className="status">
+        <span key={index} className="pulse" aria-hidden="true" />
         <span>day {dayOf(index)}</span>
         <span className="sep">·</span>
         <span>thought {index.toLocaleString()}</span>

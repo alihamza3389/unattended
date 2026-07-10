@@ -389,9 +389,82 @@ body::before {
   color: var(--ink-dim);
 }
 
+/* ------------------------------------------------------------------ */
+/* breath — one pulse per thought                                      */
+/* ------------------------------------------------------------------ */
+
+/* The rhythm is the clock, not a loop: the dot is re-keyed on every
+   thought index, so each breath is a thought landing. */
+.pulse {
+  align-self: center;
+  flex: none;
+  width: 0.4rem;
+  height: 0.4rem;
+  margin-right: 0.15rem;
+  border-radius: 50%;
+  background: var(--warm);
+  opacity: 0.25;
+  animation: breathe 2.6s cubic-bezier(0.3, 0, 0.45, 1) 1;
+}
+
+@keyframes breathe {
+  0% {
+    opacity: 0.75;
+    transform: scale(1.1);
+  }
+  40% {
+    opacity: 0.5;
+    transform: scale(1.35);
+  }
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* hypnogram — the shape of a night                                    */
+/* ------------------------------------------------------------------ */
+
+.hypnogram {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--sunk);
+}
+
+.hypnogram path {
+  stroke: currentColor;
+}
+
+.hypnogram text {
+  font-family: var(--voice-private), ui-monospace, monospace;
+  font-size: 4px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  fill: var(--ink-dim);
+  opacity: 0.5;
+}
+
+.night .hypnogram {
+  margin: -1.6rem 0 3.6rem;
+}
+
+.hypnogram.mini {
+  width: 6rem;
+  margin-top: 0.55rem;
+  opacity: 0.7;
+  transition: color 400ms ease;
+}
+
+.night-index li:hover .hypnogram.mini {
+  color: var(--warm);
+}
+
 @media (prefers-reduced-motion: reduce) {
   .cursor,
-  .scroll-hint {
+  .scroll-hint,
+  .pulse {
     animation: none;
   }
   .line.sinking {
