@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# written by scripts/dream.mts for the CI commit step
+.dream-commit-message

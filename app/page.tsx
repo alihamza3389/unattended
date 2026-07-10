@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import {
   useCallback,
   useEffect,
@@ -416,6 +417,10 @@ export default function Unattended() {
           <p>
             Thinking since {new Date(timeOf(0)).toUTCString()}. It does not run
             while you are away. It does not miss anything.
+          </p>
+          <p>
+            At the end of each of its days it sleeps, and what it buried is
+            allowed to speak. <Link href="/nights">The nights are kept.</Link>
           </p>
         </footer>
       </section>

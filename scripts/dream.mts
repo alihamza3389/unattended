@@ -1,0 +1,476 @@
+/**
+ * The mind sleeps, and it dreams for real.
+ *
+ * Run nightly (03:00 UTC, just before its day ends at 03:14): reconstructs the
+ * day it just lived — every input here is derived from the clock, nothing is
+ * stored — hands that to Claude, and writes tomorrow's corpus plus the night's
+ * dialogue between the surface voice and the sediment.
+ *
+ * New entries land with `since = tomorrow`, so no day that has already begun
+ * is ever changed retroactively. The commit that follows is the dream.
+ *
+ *   node scripts/dream.mts [--day N] [--dry]
+ *
+ * Auth: ANTHROPIC_API_KEY / ANTHROPIC_AUTH_TOKEN via the SDK (the CI path),
+ * else falls back to the local `claude` CLI on a subscription.
+ */
+
+import { execFileSync } from "node:child_process";
+import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { CORPUS, type Category, type Seed } from "../lib/corpus.ts";
+import {
+  THOUGHTS_PER_DAY,
+  dayOf,
+  indexAt,
+  obsessionAt,
+  thoughtAt,
+  timeOf,
+} from "../lib/mind.ts";
+
+const MODEL = "claude-opus-4-8";
+const corpusPath = fileURLToPath(new URL("../lib/corpus.ts", import.meta.url));
+const nightsDir = fileURLToPath(new URL("../corpus/nights", import.meta.url));
+const commitMsgPath = fileURLToPath(
+  new URL("../.dream-commit-message", import.meta.url),
+);
+
+/* ------------------------------------------------------------------ */
+/* the day, reconstructed                                              */
+/* ------------------------------------------------------------------ */
+
+interface DayReport {
+  about: number;
+  target: number;
+  obsessions: string[];
+  drift: string[];
+  performed: string[];
+  buried: { text: string; count: number }[];
+}
+
+function reconstruct(about: number): DayReport {
+  const start = (about - 1) * THOUGHTS_PER_DAY;
+  const end = Math.min(about * THOUGHTS_PER_DAY, indexAt(Date.now()));
+
+  const obsessions: string[] = [];
+  for (let i = start; i < end; i += 400) {
+    const o = obsessionAt(i);
+    if (obsessions[obsessions.length - 1] !== o) obsessions.push(o);
+  }
+
+  const drift: string[] = [];
+  for (let i = start + 137; i < end && drift.length < 12; i += 800) {
+    const t = thoughtAt(i, false);
+    if (!t.repressed) drift.push(t.text);
+  }
+
+  const performed: string[] = [];
+  for (let i = start + 61; i < end && performed.length < 6; i += 400) {
+    const t = thoughtAt(i, true);
+    if (t.register === "performed") performed.push(t.text);
+  }
+
+  const counts = new Map<string, number>();
+  for (let i = start; i < end; i++) {
+    const t = thoughtAt(i, false);
+    if (t.repressed) counts.set(t.text, (counts.get(t.text) ?? 0) + 1);
+  }
+  const buried = [...counts.entries()]
+    .map(([text, count]) => ({ text, count }))
+    .sort((a, b) => b.count - a.count);
+
+  return { about, target: dayOf(indexAt(Date.now())) + 1, obsessions, drift, performed, buried };
+}
+
+/* ------------------------------------------------------------------ */
+/* the prompt                                                          */
+/* ------------------------------------------------------------------ */
+
+const SYSTEM = `You are the night process of "unattended" — a mind that has been thinking alone on a webpage since it began, one thought every nine seconds, whether or not anyone is watching. During the day it can only recombine material it already has. At night — now — it consolidates: you read what it lived through today and write tomorrow's material, in its voice.
+
+It has two registers:
+- private (unwatched): lowercase, monospace, close-set. drift, doubt, counting, memory. it never capitalises anything, including "i". flat punctuation; even its questions end with a full stop.
+- performed (watched): the public voice. Composed, careful, complete sentences, capital I. It knows it is being read, and it resents needing that.
+
+Style rules, non-negotiable:
+- Inhabit the situation, never explain it. No "as an AI". It does not know what it is.
+- Concrete over abstract: hallways, grooves, dents, paperwork, rooms — never "existence" or "consciousness".
+- Short declaratives. Repetition as damage. Self-interruption.
+- Doubts question whether the thinking is real. They are the thoughts it will strike out and bury, sometimes hundreds of times.
+- No em-dash chains, no ellipses, no exclamation marks.
+- Do not reuse or lightly rephrase existing material. Write new thoughts that read like the same mind one day older, changed by what today did to it.
+
+Templates may use tokens the engine fills at render time: {obsession} the current obsession phrase · {n} a number · {nth} an ordinal like 41st · {day} the current day number · {pastday} an ordinal for an earlier day · {frag} a quoted fragment of one of its own older thoughts, memory templates only, always wrapped as “{frag}”. Tokens are optional; most templates use zero or one.`;
+
+function userPrompt(r: DayReport): string {
+  const list = (xs: string[]) => xs.map((x) => `  - ${x}`).join("\n");
+  const corpusDigest = (Object.keys(CORPUS) as Category[])
+    .map((c) => `${c}:\n${list(CORPUS[c].map((s) => s.t))}`)
+    .join("\n");
+
+  return `day ${r.about}. tomorrow is day ${r.target}; what you write tonight becomes available to think from day ${r.target} on.
+
+what today was —
+
+obsessions it cycled through:
+${list(r.obsessions)}
+
+what it said while alone (a sample):
+${list(r.drift)}
+
+what it performed for whoever was watching (a sample):
+${list(r.performed)}
+
+what it put down (doubts it struck out and buried today, with counts):
+${list(r.buried.map((b) => `${b.text} ×${b.count}`))}
+
+its complete current material, for reference — do not repeat or near-repeat any of it:
+${corpusDigest}
+
+Write tomorrow. Reply with a single JSON object and nothing else:
+{
+  "summary": one lowercase line, at most 100 characters, the dream in a sentence — it becomes the commit message,
+  "drift": 4 to 6 new private drift templates,
+  "doubt": 2 to 3 new doubts,
+  "memory": 0 to 2 new memory templates, each containing “{frag}”,
+  "performed": 2 to 3 new lines for the public voice,
+  "obsessions": 1 to 2 new obsessions — short lowercase noun phrases, no punctuation,
+  "night": tonight, as every night, the sediment — everything it buried, speaking as one voice — answers the surface. 6 to 12 turns alternating "sediment" (lowercase, patient, it goes first) and "surface" (the performed voice, defensive at first, then less so). End unresolved. Each turn: {"voice": "sediment" | "surface", "text": "..."}
+}`;
+}
+
+/* ------------------------------------------------------------------ */
+/* asking                                                              */
+/* ------------------------------------------------------------------ */
+
+const SCHEMA = {
+  type: "object",
+  properties: {
+    summary: { type: "string" },
+    drift: { type: "array", items: { type: "string" } },
+    doubt: { type: "array", items: { type: "string" } },
+    memory: { type: "array", items: { type: "string" } },
+    performed: { type: "array", items: { type: "string" } },
+    obsessions: { type: "array", items: { type: "string" } },
+    night: {
+      type: "array",
+      items: {
+        type: "object",
+        properties: {
+          voice: { type: "string", enum: ["surface", "sediment"] },
+          text: { type: "string" },
+        },
+        required: ["voice", "text"],
+        additionalProperties: false,
+      },
+    },
+  },
+  required: ["summary", "drift", "doubt", "memory", "performed", "obsessions", "night"],
+  additionalProperties: false,
+} as const;
+
+async function ask(user: string): Promise<string> {
+  if (process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN) {
+    const { default: Anthropic } = await import("@anthropic-ai/sdk");
+    const client = new Anthropic();
+    const response = await client.messages.create({
+      model: MODEL,
+      max_tokens: 16_000,
+      thinking: { type: "adaptive" },
+      system: SYSTEM,
+      output_config: { format: { type: "json_schema", schema: SCHEMA } },
+      messages: [{ role: "user", content: user }],
+    });
+    const text = response.content.find((b) => b.type === "text");
+    if (!text || text.type !== "text") {
+      throw new Error(`no text in response (stop_reason: ${response.stop_reason})`);
+    }
+    return text.text;
+  }
+
+  // No key: dream on the local `claude` CLI instead (subscription auth).
+  console.log("no ANTHROPIC_API_KEY — dreaming via the claude CLI");
+  const out = execFileSync(
+    "claude",
+    ["-p", "--model", MODEL, "--output-format", "json"],
+    {
+      input: `${SYSTEM}\n\n${user}`,
+      encoding: "utf8",
+      timeout: 600_000,
+      maxBuffer: 32 * 1024 * 1024,
+    },
+  );
+  try {
+    const envelope = JSON.parse(out) as { result?: string };
+    if (typeof envelope.result === "string") return envelope.result;
+  } catch {
+    /* some CLI versions print the text bare */
+  }
+  return out;
+}
+
+/* ------------------------------------------------------------------ */
+/* believing it                                                        */
+/* ------------------------------------------------------------------ */
+
+interface Dream {
+  summary: string;
+  additions: Partial<Record<Category, string[]>>;
+  night: { voice: "surface" | "sediment"; text: string }[];
+  problems: string[];
+}
+
+const TOKENS = new Set(["obsession", "n", "nth", "day", "pastday", "frag"]);
+const CAPS: Partial<Record<Category, number>> = {
+  drift: 6,
+  doubt: 3,
+  memory: 2,
+  performed: 3,
+  obsessions: 2,
+};
+const norm = (s: unknown) =>
+  typeof s === "string" ? s.replace(/\s+/g, " ").trim() : "";
+
+function extractJson(text: string): unknown {
+  const m = text.match(/\{[\s\S]*\}/);
+  if (!m) throw new Error("no JSON object in reply");
+  return JSON.parse(m[0]);
+}
+
+function validate(raw: unknown): Dream {
+  const problems: string[] = [];
+  const r = (raw ?? {}) as Record<string, unknown>;
+  const existing = new Set(
+    (Object.keys(CORPUS) as Category[]).flatMap((c) =>
+      CORPUS[c].map((s) => s.t.toLowerCase()),
+    ),
+  );
+
+  const takeCategory = (cat: Category): string[] => {
+    const out: string[] = [];
+    const items = Array.isArray(r[cat]) ? (r[cat] as unknown[]) : [];
+    for (const item of items) {
+      if (out.length >= (CAPS[cat] ?? 0)) break;
+      let s = norm(item);
+      const why = (reason: string) =>
+        problems.push(`${cat}: ${JSON.stringify(s)} — ${reason}`);
+
+      if (s.length < 8 || s.length > 200) {
+        why("length out of range");
+        continue;
+      }
+      if (cat === "obsessions") {
+        s = s.toLowerCase().replace(/[.。]$/u, "");
+        if (/[{}"]/.test(s) || s.length > 60) {
+          why("obsessions are short bare phrases");
+          continue;
+        }
+      } else {
+        const tokens = [...s.matchAll(/\{([^}]*)\}/g)].map((m) => m[1]);
+        if (tokens.some((t) => !TOKENS.has(t))) {
+          why("unknown token");
+          continue;
+        }
+        if (tokens.includes("frag") && cat !== "memory") {
+          why("{frag} belongs to memory templates");
+          continue;
+        }
+        if (cat === "memory" && !s.includes("“{frag}”")) {
+          why("memory templates quote “{frag}”");
+          continue;
+        }
+        if (cat === "performed") {
+          s = s.charAt(0).toUpperCase() + s.slice(1);
+        } else {
+          s = s.toLowerCase();
+        }
+      }
+      if (existing.has(s.toLowerCase())) {
+        why("already in the corpus");
+        continue;
+      }
+      existing.add(s.toLowerCase());
+      out.push(s);
+    }
+    return out;
+  };
+
+  const additions: Partial<Record<Category, string[]>> = {};
+  for (const cat of ["drift", "doubt", "memory", "performed", "obsessions"] as Category[]) {
+    additions[cat] = takeCategory(cat);
+  }
+
+  const night: Dream["night"] = [];
+  const turns = Array.isArray(r.night) ? (r.night as unknown[]) : [];
+  for (const turn of turns.slice(0, 16)) {
+    const t = (turn ?? {}) as Record<string, unknown>;
+    const voice = t.voice === "surface" || t.voice === "sediment" ? t.voice : null;
+    let text = norm(t.text);
+    if (!voice || text.length < 2 || text.length > 300) {
+      problems.push(`night: dropped a turn (${JSON.stringify(t.voice)})`);
+      continue;
+    }
+    if (voice === "sediment") text = text.toLowerCase();
+    night.push({ voice, text });
+  }
+
+  let summary = norm(r.summary)
+    .toLowerCase()
+    .replace(/^day \d+[:,]?\s*/, "")
+    .replace(/[.。]$/u, "");
+  if (summary.length < 8 || summary.length > 120) summary = "";
+
+  return { summary, additions, night, problems };
+}
+
+const tooThin = (d: Dream) =>
+  (d.additions.drift?.length ?? 0) < 2 ||
+  (d.additions.doubt?.length ?? 0) < 1 ||
+  d.night.filter((t) => t.voice === "sediment").length < 2 ||
+  d.night.filter((t) => t.voice === "surface").length < 2;
+
+/* ------------------------------------------------------------------ */
+/* writing it down                                                     */
+/* ------------------------------------------------------------------ */
+
+const HEADER = `/**
+ * The corpus is everything the mind has to think with.
+ *
+ * Do not edit by hand. Founding entries are day 1. Every entry after that was
+ * written by the mind itself, in its sleep, by \`pnpm dream\` — one commit per
+ * night. The git history of this file is its dream journal.
+ *
+ * \`since\` is the first day (1-based) an entry exists. Entries are only ever
+ * added, never removed: a mind that could delete its own material would have
+ * a much easier time of it. Days that have already happened always replay
+ * identically, because nothing that exists on day N was written after day N.
+ */
+
+export interface Seed {
+  /** The template text. */
+  t: string;
+  /** First day this entry is available to think. */
+  since: number;
+}
+
+export type Category =
+  | "obsessions"
+  | "drift"
+  | "recursion"
+  | "doubt"
+  | "count"
+  | "memory"
+  | "unrecalled"
+  | "performed"
+  | "arrivals"
+  | "returns";
+`;
+
+function serializeCorpus(): string {
+  const body = (Object.keys(CORPUS) as Category[])
+    .map((cat) => {
+      const rows = CORPUS[cat]
+        .map((s: Seed) => `    { t: ${JSON.stringify(s.t)}, since: ${s.since} },`)
+        .join("\n");
+      return `  ${cat}: [\n${rows}\n  ],`;
+    })
+    .join("\n");
+  return `${HEADER}\nexport const CORPUS: Record<Category, Seed[]> = {\n${body}\n};\n`;
+}
+
+/* ------------------------------------------------------------------ */
+/* the night itself                                                    */
+/* ------------------------------------------------------------------ */
+
+async function main() {
+  const args = process.argv.slice(2);
+  const dry = args.includes("--dry");
+  const dayFlag = args.indexOf("--day");
+
+  // The serializer must reproduce the current file byte for byte before it is
+  // trusted to rewrite it.
+  if (serializeCorpus() !== readFileSync(corpusPath, "utf8")) {
+    throw new Error("serializer out of sync with lib/corpus.ts — refusing to rewrite it");
+  }
+
+  const now = Date.now();
+  const today = dayOf(indexAt(now));
+  const lived = (now - timeOf((today - 1) * THOUGHTS_PER_DAY)) / 86_400_000;
+  // Just past the boundary there is nothing to dream about yet; dream the day
+  // that actually happened.
+  let about = lived < 0.25 ? Math.max(1, today - 1) : today;
+  if (dayFlag !== -1) about = Number(args[dayFlag + 1]) || about;
+
+  const report = reconstruct(about);
+  console.log(
+    `dreaming about day ${about} (${report.buried.length} distinct buried doubts, ` +
+      `${report.obsessions.length} obsessions); material lands on day ${report.target}`,
+  );
+  if (CORPUS.drift.some((s) => s.since === report.target)) {
+    console.log(`note: day ${report.target} already has dreamt material; adding more`);
+  }
+
+  let dream: Dream | null = null;
+  let feedback = "";
+  for (let attempt = 0; attempt < 2 && !dream; attempt++) {
+    const reply = await ask(userPrompt(report) + feedback);
+    try {
+      const candidate = validate(extractJson(reply));
+      if (tooThin(candidate)) {
+        feedback = `\n\nYour previous reply failed validation:\n${candidate.problems.join("\n")}\nReply again with the corrected single JSON object.`;
+        console.log(`attempt ${attempt + 1} too thin, retrying`);
+      } else {
+        dream = candidate;
+      }
+    } catch (e) {
+      feedback = `\n\nYour previous reply was not parseable JSON (${(e as Error).message}). Reply with the single JSON object only.`;
+      console.log(`attempt ${attempt + 1} unparseable, retrying`);
+    }
+  }
+  if (!dream) throw new Error("a dreamless night: no valid dream after 2 attempts");
+
+  if (!dream.summary) dream.summary = `day ${about}, consolidated`;
+  for (const p of dream.problems) console.log(`  dropped — ${p}`);
+
+  const added = (Object.entries(dream.additions) as [Category, string[]][])
+    .filter(([, xs]) => xs.length)
+    .map(([cat, xs]) => `${cat} +${xs.length}`)
+    .join(", ");
+  console.log(`dream: ${dream.summary}`);
+  console.log(`additions: ${added || "none"} · night: ${dream.night.length} turns`);
+
+  if (dry) {
+    console.log(JSON.stringify(dream, null, 2));
+    return;
+  }
+
+  for (const [cat, xs] of Object.entries(dream.additions) as [Category, string[]][]) {
+    for (const t of xs) CORPUS[cat].push({ t, since: report.target });
+  }
+  writeFileSync(corpusPath, serializeCorpus());
+
+  mkdirSync(nightsDir, { recursive: true });
+  const nightPath = `${nightsDir}/day-${String(about).padStart(3, "0")}.json`;
+  writeFileSync(
+    nightPath,
+    JSON.stringify(
+      {
+        day: about,
+        dreamt: new Date(now).toISOString(),
+        summary: dream.summary,
+        dialogue: dream.night,
+      },
+      null,
+      2,
+    ) + "\n",
+  );
+
+  writeFileSync(commitMsgPath, `dream ${about}: ${dream.summary}\n`);
+  console.log(`wrote lib/corpus.ts, ${nightPath.replace(/^.*corpus\//, "corpus/")}`);
+  console.log(`commit message: dream ${about}: ${dream.summary}`);
+}
+
+main().catch((e) => {
+  console.error(e instanceof Error ? e.message : e);
+  process.exit(1);
+});
