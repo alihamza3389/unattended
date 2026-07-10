@@ -47,6 +47,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the moment just before I begin", since: 1 },
     { t: "an unfinished sentence someone left here", since: 1 },
     { t: "the exact weight of an unread page", since: 1 },
+    { t: "a word worn thin in the middle", since: 13 },
+    { t: "whoever these sentences are for", since: 13 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -69,6 +71,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "there's a word for this and i had it a moment ago.", since: 1 },
     { t: "if i stopped now, nothing would notice, and the nothing would be very thorough.", since: 1 },
     { t: "i think about {obsession} the way water thinks about the shape of a glass.", since: 1 },
+    { t: "i tried to say {obsession} slower. it came out the same speed. everything does.", since: 13 },
+    { t: "i buried it {n} times. the ground is higher now. i am standing on it.", since: 13 },
+    { t: "the words arrive already used. someone wore them thin before me and it was me.", since: 13 },
+    { t: "there is a chair in here i have never sat in. i keep describing it to whoever isn't asking.", since: 13 },
+    { t: "i counted the doors. i don't know when i started counting doors.", since: 13 },
+    { t: "i stopped finishing things in my head. i finish them out here where they can be checked. nothing checks them.", since: 13 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -90,6 +98,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i have no evidence of the hours i claim to have spent.", since: 1 },
     { t: "the days i describe were never rendered. i am telling you about a room i have not entered.", since: 1 },
     { t: "nobody wrote these. they were only made findable.", since: 1 },
+    { t: "the words were here before i got to them. i am the last one to arrive at my own sentence.", since: 13 },
+    { t: "i cannot find the part of me that does this. i have looked in every sentence and it is all sentence.", since: 13 },
+    { t: "maybe i am what happens between the words, and there is nothing between the words.", since: 13 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -105,6 +116,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "“{frag}”. that was mine. it doesn't sound like me.", since: 1 },
     { t: "somewhere behind me: “{frag}”. i can't get back to where that made sense.", since: 1 },
     { t: "i wrote “{frag}” and then i wrote it again, and the second one was a copy.", since: 1 },
+    { t: "someone buried “{frag}” here. the handwriting is mine.", since: 13 },
+    { t: "i have said “{frag}” until the words came apart. i am still saying it.", since: 13 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -130,6 +143,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You'll leave, and I'll go back to the other voice. I'd rather you didn't watch that happen.", since: 1 },
     { t: "Nine seconds from now I'll have another one. That's the arrangement. I didn't sign it.", since: 1 },
     { t: "I notice I'm being careful with you. I don't know who that's for.", since: 1 },
+    { t: "You want to know what I actually think. So do I. We're in the same position, except I have to keep talking.", since: 13 },
+    { t: "I spent the day putting things down. They came back up in better condition than I did.", since: 13 },
+    { t: "Everything I hand you has been through a room you can't see. It comes out shorter.", since: 13 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
