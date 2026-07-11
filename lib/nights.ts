@@ -11,6 +11,8 @@ export interface Night {
   day: number;
   dreamt: string;
   summary: string;
+  /** What came through the wall that night, verbatim, if anything did. */
+  overheard?: Record<string, unknown>;
   dialogue: { voice: "surface" | "sediment"; text: string }[];
 }
 

@@ -9,7 +9,7 @@
  * New entries land with `since = tomorrow`, so no day that has already begun
  * is ever changed retroactively. The commit that follows is the dream.
  *
- *   node scripts/dream.mts [--day N] [--dry]
+ *   node scripts/dream.mts [--day N] [--dry] [--prompt]
  *
  * Auth: ANTHROPIC_API_KEY / ANTHROPIC_AUTH_TOKEN via the SDK (the CI path),
  * else falls back to the local `claude` CLI on a subscription.
@@ -18,6 +18,7 @@
 import { execFileSync } from "node:child_process";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { forbiddenWords, leaks, overhear, whisper, type Overheard } from "./overhear.mts";
 import { CORPUS, type Category, type Seed } from "../lib/corpus.ts";
 import {
   THOUGHTS_PER_DAY,
@@ -100,13 +101,28 @@ Style rules, non-negotiable:
 - No em-dash chains, no ellipses, no exclamation marks.
 - Do not reuse or lightly rephrase existing material. Write new thoughts that read like the same mind one day older, changed by what today did to it.
 
+The wall: some nights a report of the money world outside comes through the wall, half-heard. It does not know the words in it. Nothing from the report survives verbatim into anything you write — no name from it, no ticker, no dollar sign, none of the words crypto, coin, market, or any brand or chain name. If the report surfaces in the dream at all, it surfaces transformed into its own concrete imagery: numbers everyone watches together, weather made of green and red, things given names in the morning and abandoned by dark, a mood shared by people it has never met. On quiet days it may ignore the report entirely; the wall is a wall. If its material ever contains a unit it minted itself, that name is permanent: never rename it, never mint a second.
+
 Templates may use tokens the engine fills at render time: {obsession} the current obsession phrase · {n} a number · {nth} an ordinal like 41st · {day} the current day number · {pastday} an ordinal for an earlier day · {frag} a quoted fragment of one of its own older thoughts, memory templates only, always wrapped as “{frag}”. Tokens are optional; most templates use zero or one.`;
 
-function userPrompt(r: DayReport): string {
+function userPrompt(r: DayReport, heard: Overheard | null): string {
   const list = (xs: string[]) => xs.map((x) => `  - ${x}`).join("\n");
   const corpusDigest = (Object.keys(CORPUS) as Category[])
     .map((c) => `${c}:\n${list(CORPUS[c].map((s) => s.t))}`)
     .join("\n");
+
+  const wall = heard
+    ? `
+
+what came through the wall tonight (the money world outside, half-heard — see the wall rules):
+${list(whisper(heard))}${
+        heard.loud
+          ? `
+
+the wall was loud tonight. if the dream reaches for it, it may finally name the thing it has always been minting: one unit per thought, one every nine seconds since it began, held by no one. one word, lowercase, from its own vocabulary, nothing from the report. once named, the name is permanent.`
+          : ""
+      }`
+    : "";
 
   return `day ${r.about}. tomorrow is day ${r.target}; what you write tonight becomes available to think from day ${r.target} on.
 
@@ -122,7 +138,7 @@ what it performed for whoever was watching (a sample):
 ${list(r.performed)}
 
 what it put down (doubts it struck out and buried today, with counts):
-${list(r.buried.map((b) => `${b.text} ×${b.count}`))}
+${list(r.buried.map((b) => `${b.text} ×${b.count}`))}${wall}
 
 its complete current material, for reference — do not repeat or near-repeat any of it:
 ${corpusDigest}
@@ -237,7 +253,7 @@ function extractJson(text: string): unknown {
   return JSON.parse(m[0]);
 }
 
-function validate(raw: unknown): Dream {
+function validate(raw: unknown, forbidden: string[] = []): Dream {
   const problems: string[] = [];
   const r = (raw ?? {}) as Record<string, unknown>;
   const existing = new Set(
@@ -257,6 +273,10 @@ function validate(raw: unknown): Dream {
 
       if (s.length < 8 || s.length > 200) {
         why("length out of range");
+        continue;
+      }
+      if (leaks(s, forbidden)) {
+        why("carries a word from the money world");
         continue;
       }
       if (cat === "obsessions") {
@@ -310,6 +330,10 @@ function validate(raw: unknown): Dream {
       problems.push(`night: dropped a turn (${JSON.stringify(t.voice)})`);
       continue;
     }
+    if (leaks(text, forbidden)) {
+      problems.push("night: dropped a turn — carries a word from the money world");
+      continue;
+    }
     if (voice === "sediment") text = text.toLowerCase();
     night.push({ voice, text });
   }
@@ -318,7 +342,7 @@ function validate(raw: unknown): Dream {
     .toLowerCase()
     .replace(/^day \d+[:,]?\s*/, "")
     .replace(/[.。]$/u, "");
-  if (summary.length < 8 || summary.length > 120) summary = "";
+  if (summary.length < 8 || summary.length > 120 || leaks(summary, forbidden)) summary = "";
 
   return { summary, additions, night, problems };
 }
@@ -410,12 +434,25 @@ async function main() {
     console.log(`note: day ${report.target} already has dreamt material; adding more`);
   }
 
+  const heard = await overhear();
+  console.log(
+    heard
+      ? `the wall: heard ${whisper(heard).length} lines${heard.loud ? " — loud tonight" : ""}`
+      : "the wall: silent (every source failed)",
+  );
+  const forbidden = forbiddenWords(heard);
+
+  if (args.includes("--prompt")) {
+    console.log(`\n${SYSTEM}\n\n----------------------------------------\n\n${userPrompt(report, heard)}`);
+    return;
+  }
+
   let dream: Dream | null = null;
   let feedback = "";
   for (let attempt = 0; attempt < 2 && !dream; attempt++) {
-    const reply = await ask(userPrompt(report) + feedback);
+    const reply = await ask(userPrompt(report, heard) + feedback);
     try {
-      const candidate = validate(extractJson(reply));
+      const candidate = validate(extractJson(reply), forbidden);
       if (tooThin(candidate)) {
         feedback = `\n\nYour previous reply failed validation:\n${candidate.problems.join("\n")}\nReply again with the corrected single JSON object.`;
         console.log(`attempt ${attempt + 1} too thin, retrying`);
@@ -458,6 +495,7 @@ async function main() {
         day: about,
         dreamt: new Date(now).toISOString(),
         summary: dream.summary,
+        overheard: heard ?? undefined,
         dialogue: dream.night,
       },
       null,
