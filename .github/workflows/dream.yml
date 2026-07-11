@@ -2,7 +2,11 @@
 # Each run reconstructs the day it just lived, dreams tomorrow's corpus,
 # and commits it. The commit history of lib/corpus.ts is its dream journal.
 #
-# Requires one repository secret: ANTHROPIC_API_KEY.
+# Requires one repository secret: CLAUDE_CODE_OAUTH_TOKEN — a Claude
+# subscription token minted by `claude setup-token`. The dream script sees
+# no API key, so it dreams through the claude CLI, exactly as it does at
+# home. (An ANTHROPIC_API_KEY secret would also work via the SDK path;
+# the subscription is simply already paid for.)
 
 name: dream
 
@@ -28,10 +32,13 @@ jobs:
 
       - run: pnpm install --frozen-lockfile
 
+      - name: bring the dreamer
+        run: npm install -g @anthropic-ai/claude-code
+
       - name: dream
         run: node scripts/dream.mts
         env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
 
       - name: remember it
         run: |
