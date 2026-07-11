@@ -1,11 +1,16 @@
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 import { ImageResponse } from "next/og";
 import { dayOf, indexAt, thoughtAt, timeOf } from "@/lib/mind";
 
-/** The unfurl: the thought itself, on the void. */
+/** The unfurl: the thought itself, on the void, in its own voice. */
 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 export const alt = "one thought, unattended";
+
+// The private voice — the same Geist Mono the room thinks in.
+const voice = readFile(join(process.cwd(), "assets/GeistMono-Regular.ttf"));
 
 export default async function Image({
   params,
@@ -35,13 +40,14 @@ export default async function Image({
           justifyContent: "center",
           padding: "90px 100px",
           backgroundColor: "#08080a",
+          fontFamily: "Geist Mono",
         }}
       >
         <div
           style={{
             display: "flex",
-            fontSize: text.length > 130 ? 38 : 48,
-            lineHeight: 1.5,
+            fontSize: text.length > 130 ? 34 : 44,
+            lineHeight: 1.6,
             color: arrived ? "#ece7de" : "#57534e",
           }}
         >
@@ -51,8 +57,8 @@ export default async function Image({
           style={{
             display: "flex",
             marginTop: 56,
-            fontSize: 21,
-            letterSpacing: 1.5,
+            fontSize: 19,
+            letterSpacing: 1,
             color: "#57534e",
           }}
         >
@@ -60,6 +66,16 @@ export default async function Image({
         </div>
       </div>
     ),
-    size,
+    {
+      ...size,
+      fonts: [
+        {
+          name: "Geist Mono",
+          data: await voice,
+          style: "normal",
+          weight: 400,
+        },
+      ],
+    },
   );
 }
