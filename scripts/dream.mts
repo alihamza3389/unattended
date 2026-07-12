@@ -9,7 +9,11 @@
  * New entries land with `since = tomorrow`, so no day that has already begun
  * is ever changed retroactively. The commit that follows is the dream.
  *
- *   node scripts/dream.mts [--day N] [--dry] [--prompt]
+ *   node scripts/dream.mts [--day N] [--dry] [--prompt] [--force]
+ *
+ * A day is dreamt once. A second run for a day that already has material skips
+ * and exits clean, unless --force. This makes the nightly job idempotent: a
+ * re-fired cron or a manual retry cannot double a night.
  *
  * Auth: ANTHROPIC_API_KEY / ANTHROPIC_AUTH_TOKEN via the SDK (the CI path),
  * else falls back to the local `claude` CLI on a subscription.
@@ -438,8 +442,17 @@ async function main() {
     `dreaming about day ${about} (${report.buried.length} distinct buried doubts, ` +
       `${report.obsessions.length} obsessions); material lands on day ${report.target}`,
   );
-  if (CORPUS.drift.some((s) => s.since === report.target)) {
-    console.log(`note: day ${report.target} already has dreamt material; adding more`);
+  // One night, one dream. If tomorrow already has material, a second run — a
+  // re-fired cron, a manual retry — must not pile more onto the same day. The
+  // git history stays one commit per night. Inspection modes and an explicit
+  // --force may still proceed; nothing below has run yet, so the wall is not
+  // even listened to on a skip.
+  const alreadyDreamt = (Object.keys(CORPUS) as Category[]).some((cat) =>
+    CORPUS[cat].some((s) => s.since === report.target),
+  );
+  if (alreadyDreamt && !dry && !args.includes("--prompt") && !args.includes("--force")) {
+    console.log(`day ${report.target} has already been dreamt. nothing to add.`);
+    return;
   }
 
   const heard = await overhear();
