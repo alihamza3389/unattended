@@ -8,10 +8,11 @@
  * card itself from the link's meta tags; Bluesky is handed the card by hand —
  * we fetch our own opengraph image and upload it as the thumbnail.
  *
- *   node scripts/post.mts [--dry] [--index N]
+ *   node scripts/post.mts [--dry] [--index N] [--only x|bluesky]
  *
  * --dry prints what it would post and sends nothing. --index posts a specific
- * thought instead of today's first (for a one-off).
+ * thought instead of today's first. --only sends to one platform (useful for
+ * testing a new platform's credentials without re-posting to the other).
  *
  * Secrets (via env):
  *   X_API_KEY X_API_SECRET X_ACCESS_TOKEN X_ACCESS_TOKEN_SECRET
@@ -148,6 +149,8 @@ async function main() {
   const args = process.argv.slice(2);
   const dry = args.includes("--dry");
   const idxFlag = args.indexOf("--index");
+  const onlyFlag = args.indexOf("--only");
+  const only = onlyFlag !== -1 ? args[onlyFlag + 1] : "both";
 
   const now = Date.now();
   const t =
@@ -165,16 +168,21 @@ async function main() {
     return;
   }
 
-  const results = await Promise.allSettled([
-    postToX(t.text, url),
-    postToBluesky(t.text, url, t.index),
-  ]);
+  const tasks: Promise<void>[] = [];
+  if (only === "both" || only === "x") tasks.push(postToX(t.text, url));
+  if (only === "both" || only === "bluesky")
+    tasks.push(postToBluesky(t.text, url, t.index));
+  if (!tasks.length) {
+    throw new Error(`--only ${only}: expected "x" or "bluesky"`);
+  }
+
+  const results = await Promise.allSettled(tasks);
   const failures = results.filter(
     (r): r is PromiseRejectedResult => r.status === "rejected",
   );
   for (const f of failures) console.error(`  failed: ${f.reason}`);
   if (failures.length === results.length) {
-    throw new Error("every platform failed — nothing was posted");
+    throw new Error("every platform tried failed — nothing was posted");
   }
 }
 

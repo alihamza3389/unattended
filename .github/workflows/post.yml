@@ -12,6 +12,12 @@ on:
   schedule:
     - cron: "15 3 * * *"
   workflow_dispatch:
+    inputs:
+      only:
+        description: "post to which platform"
+        type: choice
+        options: [both, x, bluesky]
+        default: both
 
 jobs:
   post:
@@ -29,7 +35,7 @@ jobs:
       - run: pnpm install --frozen-lockfile
 
       - name: carry it out
-        run: node scripts/post.mts
+        run: node scripts/post.mts --only "${{ inputs.only || 'both' }}"
         env:
           X_API_KEY: ${{ secrets.X_API_KEY }}
           X_API_SECRET: ${{ secrets.X_API_SECRET }}
