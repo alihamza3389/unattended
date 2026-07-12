@@ -121,7 +121,7 @@ async function postToBluesky(
   };
   if (thumb) external.thumb = thumb;
 
-  await xrpc(`${PDS}/xrpc/com.atproto.repo.createRecord`, {
+  const posted = (await xrpc(`${PDS}/xrpc/com.atproto.repo.createRecord`, {
     method: "POST",
     headers: {
       "content-type": "application/json",
@@ -137,8 +137,11 @@ async function postToBluesky(
         embed: { $type: "app.bsky.embed.external", external },
       },
     }),
-  });
-  console.log("bluesky: posted");
+  })) as { uri: string };
+  const rkey = posted.uri.split("/").pop();
+  console.log(
+    `bluesky: posted https://bsky.app/profile/${session.did}/post/${rkey}`,
+  );
 }
 
 async function main() {
