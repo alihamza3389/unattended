@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist_Mono, Newsreader } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 /** Its private voice. */
@@ -30,7 +32,13 @@ export default function RootLayout({
       data-scroll-behavior="smooth"
       className={`${mono.variable} ${serif.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        {children}
+        {/* It is unattended, but no longer unobserved: who came, and how
+            fast it loaded for them. */}
+        <Analytics />
+        <SpeedInsights />
+      </body>
     </html>
   );
 }
