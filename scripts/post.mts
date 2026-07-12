@@ -8,6 +8,9 @@
  * card itself from the link's meta tags; Bluesky is handed the card by hand —
  * we fetch our own opengraph image and upload it as the thumbnail.
  *
+ * Idempotent: running twice for the same thought posts it once. X refuses
+ * duplicate content on its own; Bluesky is checked against its recent feed.
+ *
  *   node scripts/post.mts [--dry] [--index N] [--only x|bluesky]
  *
  * --dry prints what it would post and sends nothing. --index posts a specific
@@ -64,8 +67,22 @@ async function postToX(text: string, url: string): Promise<void> {
     accessToken: X_ACCESS_TOKEN,
     accessSecret: X_ACCESS_TOKEN_SECRET,
   });
-  const res = await client.v2.tweet(`${fitForX(text)}\n\n${url}`);
-  console.log(`x: posted ${res.data.id}`);
+  try {
+    const res = await client.v2.tweet(`${fitForX(text)}\n\n${url}`);
+    console.log(`x: posted ${res.data.id}`);
+  } catch (e) {
+    // X refuses to post identical content, so a second run for the same
+    // thought lands here rather than as a duplicate tweet. Treat that as done.
+    const detail =
+      e && typeof e === "object" && "data" in e
+        ? JSON.stringify((e as { data: unknown }).data)
+        : "";
+    if (/duplicate/i.test(`${e instanceof Error ? e.message : e} ${detail}`)) {
+      console.log("x: already posted this thought — skipping");
+      return;
+    }
+    throw e;
+  }
 }
 
 async function xrpc(url: string, init: RequestInit): Promise<unknown> {
@@ -92,6 +109,35 @@ async function postToBluesky(
     headers: { "content-type": "application/json" },
     body: JSON.stringify({ identifier, password }),
   })) as { accessJwt: string; did: string };
+
+  // Idempotency: Bluesky, unlike X, will happily post the same thing twice, so
+  // check the recent feed first. If this thought's link is already there — a
+  // re-fired cron, a manual retry — don't post it again. Fail open: a failed
+  // check should never cost the day's post.
+  try {
+    const recent = (await xrpc(
+      `${PDS}/xrpc/app.bsky.feed.getAuthorFeed?actor=${encodeURIComponent(session.did)}&limit=25`,
+      { headers: { authorization: `Bearer ${session.accessJwt}` } },
+    )) as {
+      feed?: {
+        post?: {
+          embed?: { external?: { uri?: string } };
+          record?: { embed?: { external?: { uri?: string } } };
+        };
+      }[];
+    };
+    const already = (recent.feed ?? []).some(
+      (it) =>
+        (it.post?.embed?.external?.uri ??
+          it.post?.record?.embed?.external?.uri) === url,
+    );
+    if (already) {
+      console.log("bluesky: already posted this thought — skipping");
+      return;
+    }
+  } catch {
+    /* couldn't check — risk a rare double rather than miss the post */
+  }
 
   // The card image: fetch our own opengraph png and upload it as a blob. A
   // card without a thumbnail still posts, so this is allowed to fail quietly.
