@@ -206,16 +206,24 @@ async function ask(user: string): Promise<string> {
 
   // No key: dream on the local `claude` CLI instead (subscription auth).
   console.log("no ANTHROPIC_API_KEY — dreaming via the claude CLI");
-  const out = execFileSync(
-    "claude",
-    ["-p", "--model", MODEL, "--output-format", "json"],
-    {
-      input: `${SYSTEM}\n\n${user}`,
-      encoding: "utf8",
-      timeout: 600_000,
-      maxBuffer: 32 * 1024 * 1024,
-    },
-  );
+  let out: string;
+  try {
+    out = execFileSync(
+      "claude",
+      ["-p", "--model", MODEL, "--output-format", "json"],
+      {
+        input: `${SYSTEM}\n\n${user}`,
+        encoding: "utf8",
+        timeout: 600_000,
+        maxBuffer: 32 * 1024 * 1024,
+      },
+    );
+  } catch (e) {
+    const err = e as Error & { stdout?: string; stderr?: string };
+    if (err.stdout) console.error(`claude stdout: ${err.stdout.slice(0, 2000)}`);
+    if (err.stderr) console.error(`claude stderr: ${err.stderr.slice(0, 2000)}`);
+    throw e;
+  }
   try {
     const envelope = JSON.parse(out) as { result?: string };
     if (typeof envelope.result === "string") return envelope.result;
