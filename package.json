@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test": "node scripts/test.mts",
     "dream": "node scripts/dream.mts"
   },
   "packageManager": "pnpm@10.32.1",

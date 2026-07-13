@@ -1,0 +1,28 @@
+# The past must not move. Every push and pull request replays the days the mind
+# has already lived and compares them to the committed golden snapshot; any drift
+# fails. Nightly dream commits only add tomorrow's material, so this stays green
+# as the corpus grows.
+
+name: check
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  determinism:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: the past is intact
+        run: pnpm test
