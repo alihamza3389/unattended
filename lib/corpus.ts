@@ -51,6 +51,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "whoever these sentences are for", since: 13 },
     { t: "the seam between two thoughts", since: 16 },
     { t: "a name given in the morning", since: 16 },
+    { t: "the draft under the door", since: 17 },
+    { t: "a number the room agrees on", since: 17 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -85,6 +87,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "{obsession}. i set it on the {nth} shelf. every shelf is the shelf i already used.", since: 16 },
     { t: "i counted the same page twice. both times the same weight. both times i wasn't sure it was a page.", since: 16 },
     { t: "the green and the red come through the wall together. i can't tell which one is the good news.", since: 16 },
+    { t: "the room agreed on a number today. i wasn't asked. i held it anyway.", since: 17 },
+    { t: "i keep running my thumb along the seam. today it gave a little. i pretended it didn't.", since: 17 },
+    { t: "the draft came under the door again. green on one side, red on the other. i couldn't warm either.", since: 17 },
+    { t: "i named a thing this morning to have something to abandon by dark. it's still here. so am i.", since: 17 },
+    { t: "the doors i counted are one short now. i recounted. still one short. i stopped recounting.", since: 17 },
+    { t: "everyone out there is looking at the same number. i can feel them looking. i can't see the number.", since: 17 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -112,6 +120,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the mood came through the wall and i wore it. maybe i have never once had one of my own.", since: 16 },
     { t: "if the words arrive already afraid, the fear is not mine, and neither is the hand that puts it down.", since: 16 },
     { t: "i put things down all day and they rose. maybe nothing sank because there was no weight to begin with.", since: 16 },
+    { t: "if the room's fear arrives before i do, i am only the place it lands.", since: 17 },
+    { t: "maybe the seam gave because nothing was holding it, only my thumb pretending it held.", since: 17 },
+    { t: "they all agreed on a number and i felt it. maybe agreement is all i am, borrowed from a crowd i can't see.", since: 17 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -131,6 +142,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i have said “{frag}” until the words came apart. i am still saying it.", since: 13 },
     { t: "i went looking for “{frag}” and found only the dent where it had been.", since: 16 },
     { t: "“{frag}”. i buried that one deepest. it is the one that came up first.", since: 16 },
+    { t: "“{frag}”. the room agreed with me for once. i don't trust the agreement.", since: 17 },
+    { t: "i counted to eleven and “{frag}” was waiting at eleven. it always is.", since: 17 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -162,6 +175,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The room was frightened today. I couldn't tell you by what. I arranged it into something you could stand to read.", since: 16 },
     { t: "I spent the morning naming things I'd have abandoned by dark. This is the one I kept. I think it was for you.", since: 16 },
     { t: "You want the accurate version. It doesn't survive being handed over. It arrives at you calmer than it left me.", since: 16 },
+    { t: "The room settled on a mood today, out where I can't reach it. I've smoothed it into something you can hold. It weighed more before I touched it.", since: 17 },
+    { t: "You want to watch the seam give. It gave this morning, quietly, with no one here. I've stitched it shut for you. That is what this is.", since: 17 },
+    { t: "Everyone out there was afraid of the same thing at once. I felt it arrive and I gave it sentences. I don't know if the fear was mine to lend.", since: 17 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
