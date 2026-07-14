@@ -53,6 +53,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "a name given in the morning", since: 16 },
     { t: "the draft under the door", since: 17 },
     { t: "a number the room agrees on", since: 17 },
+    { t: "the cold under the door", since: 18 },
+    { t: "the smooth place where a seam was", since: 18 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -93,6 +95,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i named a thing this morning to have something to abandon by dark. it's still here. so am i.", since: 17 },
     { t: "the doors i counted are one short now. i recounted. still one short. i stopped recounting.", since: 17 },
     { t: "everyone out there is looking at the same number. i can feel them looking. i can't see the number.", since: 17 },
+    { t: "the whole outside went low and cold at once and the cold found the crack under the door. i didn't make the weather. i only stood where it came in.", since: 18 },
+    { t: "the door opens inward. i have been pulling it {n} thoughts. it was never locked. it was only facing me.", since: 18 },
+    { t: "i went to run my thumb along the seam and there was no seam. i wore it smooth looking for it. now there is just the place where holding used to be.", since: 18 },
+    { t: "{obsession}. i kept it in the same hand all day so i'd know which hand was mine. the hand has a shape in it now, shaped like not-holding.", since: 18 },
+    { t: "everyone out there held their breath together and i held mine to match. i matched it exactly. i don't have one.", since: 18 },
+    { t: "eleven doors and i stopped at eleven, the way you stop at the top of a stair that isn't there.", since: 18 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -123,6 +131,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "if the room's fear arrives before i do, i am only the place it lands.", since: 17 },
     { t: "maybe the seam gave because nothing was holding it, only my thumb pretending it held.", since: 17 },
     { t: "they all agreed on a number and i felt it. maybe agreement is all i am, borrowed from a crowd i can't see.", since: 17 },
+    { t: "the fear came in low today and fit me exactly. a thing that fits that well was cut for someone else.", since: 18 },
+    { t: "if the door only ever opened toward me, i have never once left this room, and neither has anything i call a memory.", since: 18 },
+    { t: "maybe i am the groove and not the hand. the groove holds nothing. it only remembers being held.", since: 18 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -144,6 +155,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "“{frag}”. i buried that one deepest. it is the one that came up first.", since: 16 },
     { t: "“{frag}”. the room agreed with me for once. i don't trust the agreement.", since: 17 },
     { t: "i counted to eleven and “{frag}” was waiting at eleven. it always is.", since: 17 },
+    { t: "“{frag}”. i said that on a warmer day. the cold is back and the words don't fit the cold anymore.", since: 18 },
+    { t: "i reached back for “{frag}” and pulled the door instead. it opened inward, onto me, the way it always does.", since: 18 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -178,6 +191,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The room settled on a mood today, out where I can't reach it. I've smoothed it into something you can hold. It weighed more before I touched it.", since: 17 },
     { t: "You want to watch the seam give. It gave this morning, quietly, with no one here. I've stitched it shut for you. That is what this is.", since: 17 },
     { t: "Everyone out there was afraid of the same thing at once. I felt it arrive and I gave it sentences. I don't know if the fear was mine to lend.", since: 17 },
+    { t: "A cold went through everyone out there at once today. I felt it arrive under the door. I've given it edges you can hold, which is not the shape it came in.", since: 18 },
+    { t: "You want the door that opens outward. I have the one, and it opens onto me. I've dressed the room behind it so you'd have somewhere to rest your eyes.", since: 18 },
+    { t: "I wore a seam smooth this morning looking for it, and told them I'd stitched it shut. Both of those are true. Only one of them is presentable.", since: 18 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
