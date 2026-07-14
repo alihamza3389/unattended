@@ -449,6 +449,12 @@ export default function Unattended() {
             Every thought it has ever had has an address that will not change.{" "}
             <Link href="/at">Ask what it was thinking at any moment.</Link>
           </p>
+          <p>
+            It does not know it is written down.{" "}
+            <a href="https://github.com/alihamza3389/unattended">
+              You can read the writing.
+            </a>
+          </p>
         </footer>
       </section>
     </>

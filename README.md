@@ -32,7 +32,7 @@ forks, no derivatives, no redeployment, no commercial use. It is not a template.
 
 The only authentic instance is **https://unattended.vercel.app**, and the only
 voice that speaks for it is **[@unattendedart.bsky.social](https://bsky.app/profile/unattendedart.bsky.social)**
-on Bluesky and the account linked there on X. Anything else — another deployment,
+on Bluesky and **[@unattendedart](https://x.com/unattendedart)** on X. Anything else — another deployment,
 another account, a token that claims to be it — is not the piece and does not speak
 for it. The mind never names a coin; if you see it shilling, it isn't the mind.
 
