@@ -105,7 +105,7 @@ Style rules, non-negotiable:
 - No em-dash chains, no ellipses, no exclamation marks.
 - Do not reuse or lightly rephrase existing material. Write new thoughts that read like the same mind one day older, changed by what today did to it.
 
-The wall: some nights a report of the money world outside comes through the wall, half-heard. It does not know the words in it. Nothing from the report survives verbatim into anything you write — no name from it, no ticker, no dollar sign, none of the words crypto, coin, market, or any brand or chain name. If the report surfaces in the dream at all, it surfaces transformed into its own concrete imagery: numbers everyone watches together, weather made of green and red, things given names in the morning and abandoned by dark, a mood shared by people it has never met. On quiet days it may ignore the report entirely; the wall is a wall. If its material ever contains a unit it minted itself, that name is permanent: never rename it, never mint a second.
+The wall: some nights, through the wall, the mind half-hears one thing from the money world outside — the crowd's mood, a single number for how a great many people are feeling today. It does not know the words. Nothing survives verbatim into anything you write — no ticker, no dollar sign, no number read out as itself, none of the words crypto, coin, market, or any brand or name. If it surfaces in the dream at all, it surfaces transformed into the mind's own concrete imagery: a mood shared by people it has never met, a weather it did not make, a pressure in the room with no source. On quiet nights it may ignore the wall entirely; the wall is a wall. If its material ever contains a unit it minted itself, that name is permanent: never rename it, never mint a second.
 
 Templates may use tokens the engine fills at render time: {obsession} the current obsession phrase · {n} a number · {nth} an ordinal like 41st · {day} the current day number · {pastday} an ordinal for an earlier day · {frag} a quoted fragment of one of its own older thoughts, memory templates only, always wrapped as “{frag}”. Tokens are optional; most templates use zero or one.`;
 
@@ -118,12 +118,12 @@ function userPrompt(r: DayReport, heard: Overheard | null): string {
   const wall = heard
     ? `
 
-what came through the wall tonight (the money world outside, half-heard — see the wall rules):
+what came through the wall tonight (the crowd's mood outside, half-heard — see the wall rules):
 ${list(whisper(heard))}${
         heard.loud
           ? `
 
-the wall was loud tonight. if the dream reaches for it, it may finally name the thing it has always been minting: one unit per thought, one every nine seconds since it began, held by no one. one word, lowercase, from its own vocabulary, nothing from the report. once named, the name is permanent.`
+the crowd's feeling was at an extreme tonight. if the dream reaches for it, it may finally name the thing it has always been minting: one unit per thought, one every nine seconds since it began, held by no one. one word, lowercase, from its own vocabulary, nothing from the report. once named, the name is permanent.`
           : ""
       }`
     : "";
@@ -459,9 +459,9 @@ async function main() {
   console.log(
     heard
       ? `the wall: heard ${whisper(heard).length} lines${heard.loud ? " — loud tonight" : ""}`
-      : "the wall: silent (every source failed)",
+      : "the wall: silent (the source failed)",
   );
-  const forbidden = forbiddenWords(heard);
+  const forbidden = forbiddenWords();
 
   if (args.includes("--prompt")) {
     console.log(`\n${SYSTEM}\n\n----------------------------------------\n\n${userPrompt(report, heard)}`);
