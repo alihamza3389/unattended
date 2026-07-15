@@ -352,7 +352,7 @@ function validate(raw: unknown, forbidden: string[] = []): Dream {
 
   let summary = norm(r.summary)
     .toLowerCase()
-    .replace(/^day \d+[:,]?\s*/, "")
+    .replace(/^(day|dream) \d+[:,]?\s*/, "")
     .replace(/[.。]$/u, "");
   if (summary.length < 8 || summary.length > 120 || leaks(summary, forbidden)) summary = "";
 
