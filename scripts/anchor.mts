@@ -206,7 +206,10 @@ async function connect(
     let blockTime: number | null | undefined;
     try {
       const detail = (await rpc
-        .getTransaction(sig, { maxSupportedTransactionVersion: 0 })
+        .getTransaction(sig, {
+          maxSupportedTransactionVersion: 0,
+          encoding: "base64",
+        })
         .send()) as { slot?: bigint; blockTime?: bigint | null } | null;
       if (detail?.slot != null) slot = Number(detail.slot);
       if (detail?.blockTime != null) blockTime = Number(detail.blockTime);
