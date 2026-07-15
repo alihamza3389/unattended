@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "test": "node scripts/test.mts",
-    "dream": "node scripts/dream.mts"
+    "dream": "node scripts/dream.mts",
+    "anchor": "node scripts/anchor.mts"
   },
   "packageManager": "pnpm@10.32.1",
   "dependencies": {
@@ -25,6 +26,7 @@
     "@types/react-dom": "^19",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
+    "gill": "^0.14.0",
     "twitter-api-v2": "^1.29.0",
     "typescript": "^5"
   }

@@ -51,3 +51,22 @@ jobs:
           fi
           git commit -m "$(cat .dream-commit-message)"
           git push
+
+      # After the dream is committed, notarize it: stamp the dream commit's own
+      # hash onto a public ledger (Solana), fixing the whole journal in time.
+      # Fully fault-tolerant — a failure here leaves the night un-anchored and
+      # the next run backfills it; it can never block or lose a dream. The two
+      # Solana secrets are deliberately named nowhere near ANTHROPIC_*.
+      - name: anchor it
+        continue-on-error: true
+        run: |
+          git config user.name "unattended"
+          git config user.email "unattended@users.noreply.github.com"
+          node scripts/anchor.mts
+          git add corpus/anchors.jsonl
+          git diff --cached --quiet && { echo "nothing new anchored"; exit 0; }
+          git commit -m "anchored the journal to $(git rev-parse --short HEAD)"
+          git push
+        env:
+          SOLANA_ANCHOR_SECRET: ${{ secrets.SOLANA_ANCHOR_SECRET }}
+          SOLANA_RPC_URL: ${{ secrets.SOLANA_RPC_URL }}
