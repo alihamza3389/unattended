@@ -26,7 +26,7 @@
 import { pathToFileURL } from "node:url";
 import { THOUGHTS_PER_DAY, dayOf, indexAt, thoughtAt } from "../lib/mind.ts";
 
-const SITE = "https://unattended.vercel.app";
+const SITE = "https://unattended.art";
 const fmt = (n: number) => n.toLocaleString("en-US");
 
 /**
