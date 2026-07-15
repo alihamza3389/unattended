@@ -20,7 +20,11 @@ jobs:
     permissions:
       contents: write
     steps:
+      # Full history: the anchor reads `git log` for every dream commit, so a
+      # shallow clone would hide the journal and anchor nothing.
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: pnpm/action-setup@v4
 
@@ -36,7 +40,7 @@ jobs:
           git config user.name "unattended"
           git config user.email "unattended@users.noreply.github.com"
           node scripts/anchor.mts
-          git add corpus/anchors.jsonl
+          git add corpus/anchors.jsonl 2>/dev/null || true
           git diff --cached --quiet && { echo "nothing new anchored"; exit 0; }
           git commit -m "anchored the journal to $(git rev-parse --short HEAD)"
           git push
