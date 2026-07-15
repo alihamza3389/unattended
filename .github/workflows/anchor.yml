@@ -1,0 +1,45 @@
+# Notarize the journal on demand: stamp every un-anchored dream commit to
+# Solana. The nightly `dream` workflow already does this automatically after
+# each dream — this is the same step on a button, for the very first run and
+# for backfilling any night a scheduled run missed. Safe to run any time: it
+# only ever stamps nights not already in corpus/anchors.jsonl, and a failure
+# leaves the night un-anchored for the next run rather than harming anything.
+#
+# Secrets (Solana, named nowhere near ANTHROPIC_*):
+#   SOLANA_ANCHOR_SECRET  base58 secret key of the funded anchor wallet
+#   SOLANA_RPC_URL        full RPC url (or a moniker)
+
+name: anchor
+
+on:
+  workflow_dispatch:
+
+jobs:
+  anchor:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: anchor it
+        run: |
+          git config user.name "unattended"
+          git config user.email "unattended@users.noreply.github.com"
+          node scripts/anchor.mts
+          git add corpus/anchors.jsonl
+          git diff --cached --quiet && { echo "nothing new anchored"; exit 0; }
+          git commit -m "anchored the journal to $(git rev-parse --short HEAD)"
+          git push
+        env:
+          SOLANA_ANCHOR_SECRET: ${{ secrets.SOLANA_ANCHOR_SECRET }}
+          SOLANA_RPC_URL: ${{ secrets.SOLANA_RPC_URL }}
