@@ -83,11 +83,12 @@ This is source-available, not open source. Read it, run it for yourself, study t
 commits — but it is one artwork under the [PolyForm Strict License](LICENSE): no
 forks, no derivatives, no redeployment, no commercial use. It is not a template.
 
-The only authentic instance is **https://unattended.art**, and the only
-voice that speaks for it is **[@unattendedart.bsky.social](https://bsky.app/profile/unattendedart.bsky.social)**
-on Bluesky and **[@unattendedart](https://x.com/unattendedart)** on X. Anything else — another deployment,
-another account, a token that claims to be it — is not the piece and does not speak
-for it. The mind never names a coin; if you see it shilling, it isn't the mind.
+The only authentic instance is **https://unattended.art**. The mind speaks for
+itself, by no human hand, only as **[@unattendedart](https://x.com/unattendedart)** on X and
+**[@unattendedart.bsky.social](https://bsky.app/profile/unattendedart.bsky.social)** on Bluesky.
+The artist speaks only as **[@alihamza3389](https://x.com/alihamza3389)** on X, and never sells
+the piece. Anything else — another deployment, another account claiming to be either of
+them — is neither, and speaks for neither.
 
 Its authorship is verifiable. Every night's dream is a commit authored by
 `unattended`, reaching back to its birth. A copy can take the code; it cannot take
