@@ -33,7 +33,16 @@ import {
   timeOf,
 } from "../lib/mind.ts";
 
-const MODEL = "claude-opus-4-8";
+const MODEL = "claude-fable-5";
+// OpenRouter's slug for the same model, used by the OpenRouter path below.
+// Overridable via env so a differing or renamed slug is a secret change, not
+// a code edit.
+const OPENROUTER_MODEL =
+  process.env.OPENROUTER_MODEL || "anthropic/claude-fable-5";
+// Reasoning effort for the dream. Medium buys better adherence to the schema,
+// token grammar, and no-leak rules and steadier motif-building, without over-
+// thinking the poetry. Tunable via env (none|minimal|low|medium|high|xhigh|max).
+const OPENROUTER_EFFORT = process.env.OPENROUTER_EFFORT || "medium";
 const corpusPath = fileURLToPath(new URL("../lib/corpus.ts", import.meta.url));
 const nightsDir = fileURLToPath(new URL("../corpus/nights", import.meta.url));
 const commitMsgPath = fileURLToPath(
@@ -189,7 +198,66 @@ const SCHEMA = {
   additionalProperties: false,
 } as const;
 
+/**
+ * Dream through OpenRouter's OpenAI-compatible API — the primary path in CI.
+ * It runs the model on pay-per-use credits, decoupled from the Claude
+ * subscription's quota, so a busy day of interactive use can never 429 the
+ * night. Returns raw text; extractJson + validate + retry (in main) do the
+ * parsing, exactly as the CLI path does — so no response_format is needed.
+ */
+async function askOpenRouter(user: string): Promise<string> {
+  console.log(
+    `dreaming via OpenRouter (${OPENROUTER_MODEL}, effort ${OPENROUTER_EFFORT})`,
+  );
+  const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+      "content-type": "application/json",
+      // Attribution for openrouter.ai rankings; harmless if ignored.
+      "HTTP-Referer": "https://unattended.art",
+      "X-Title": "unattended",
+    },
+    body: JSON.stringify({
+      model: OPENROUTER_MODEL,
+      max_tokens: 16_000,
+      // Reasoning trace is returned in `message.reasoning`, never in
+      // `message.content`, so parsing is unaffected; exclude it to keep the
+      // response lean (we only want the final dream).
+      reasoning: { effort: OPENROUTER_EFFORT, exclude: true },
+      messages: [
+        { role: "system", content: SYSTEM },
+        { role: "user", content: user },
+      ],
+    }),
+    signal: AbortSignal.timeout(600_000),
+  });
+  if (!res.ok) {
+    throw new Error(
+      `openrouter ${res.status}: ${(await res.text()).slice(0, 500)}`,
+    );
+  }
+  const data = (await res.json()) as {
+    choices?: { message?: { content?: string } }[];
+    error?: { message?: string };
+  };
+  const text = data.choices?.[0]?.message?.content;
+  if (!text) {
+    throw new Error(
+      `openrouter: no content (${data.error?.message ?? "unknown error"})`,
+    );
+  }
+  return text;
+}
+
 async function ask(user: string): Promise<string> {
+  // Primary: OpenRouter (Fable 5, off the subscription quota). Then the
+  // Anthropic SDK if an API key is present. Otherwise the claude CLI on the
+  // subscription — the fallback that keeps the night dreaming if the key is
+  // ever unset. (Never set ANTHROPIC_API_KEY in CI: it misroutes the auth.)
+  if (process.env.OPENROUTER_API_KEY) {
+    return askOpenRouter(user);
+  }
   if (process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN) {
     const { default: Anthropic } = await import("@anthropic-ai/sdk");
     const client = new Anthropic();
