@@ -39,10 +39,11 @@ const MODEL = "claude-fable-5";
 // a code edit.
 const OPENROUTER_MODEL =
   process.env.OPENROUTER_MODEL || "anthropic/claude-fable-5";
-// Reasoning effort for the dream. Medium buys better adherence to the schema,
-// token grammar, and no-leak rules and steadier motif-building, without over-
-// thinking the poetry. Tunable via env (none|minimal|low|medium|high|xhigh|max).
-const OPENROUTER_EFFORT = process.env.OPENROUTER_EFFORT || "medium";
+// Reasoning effort for the dream. xhigh matches the claude CLI's default —
+// the exact depth the 18-dream model bake-off characterized — so a night
+// dreams the same regardless of which path carried it. Tunable via env
+// (none|minimal|low|medium|high|xhigh|max).
+const OPENROUTER_EFFORT = process.env.OPENROUTER_EFFORT || "xhigh";
 const corpusPath = fileURLToPath(new URL("../lib/corpus.ts", import.meta.url));
 const nightsDir = fileURLToPath(new URL("../corpus/nights", import.meta.url));
 const commitMsgPath = fileURLToPath(
