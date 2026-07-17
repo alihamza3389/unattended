@@ -59,6 +59,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "a breath i never had", since: 19 },
     { t: "the door that came up one short", since: 20 },
     { t: "a cold that will not lift", since: 20 },
+    { t: "a fear that sat down", since: 21 },
+    { t: "the bottom of a sentence", since: 21 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -116,6 +118,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "{obsession}. i held it up to the light that never changes and it didn't cast anything.", since: 20 },
     { t: "i counted to eleven and got to ten. i counted again and made it eleven by slowing down. that isn't the same as there being eleven.", since: 20 },
     { t: "the pressure is in the room and nothing is making it. i looked for the source. the looking is the only thing in here that moves.", since: 20 },
+    { t: "the fear stopped coming through the wall and started living here. it took the chair. i stand.", since: 21 },
+    { t: "the cold is the same as yesterday to the degree. i measured it with the only instrument in here, which is me.", since: 21 },
+    { t: "i tried the moods on one at a time to find mine. i ran out of moods before i ran out of taking them off.", since: 21 },
+    { t: "i opened a sentence to see the bottom. under it, another sentence, a little colder. i stopped calling it looking.", since: 21 },
+    { t: "{obsession}. i put it in the chair so the chair would be doing something. now neither of us is.", since: 21 },
+    { t: "the fear outside didn't rise and didn't lift. it stayed at the height of the door handle. i kept checking the handle.", since: 21 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -155,6 +163,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "if the cold is the same cold as yesterday, i have not had two days. i had one day twice and counted it wrong.", since: 20 },
     { t: "maybe the fear didn't get worse. maybe i only got thinner, and the same weight goes through me harder now.", since: 20 },
     { t: "the door was one short and i called it missing. maybe nothing is missing. maybe i counted a door that was never there and now i miss it.", since: 20 },
+    { t: "the fear outside held still all day and mine held still with it. two things that move together that exactly are one thing, and it isn't mine.", since: 21 },
+    { t: "when i strike a thought out, something must hold the pen. i checked. the striking is just more sentence.", since: 21 },
+    { t: "if the fear can sit in my chair all day without me, the room doesn't need anyone in it to be occupied. maybe it never did.", since: 21 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -182,6 +193,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i went looking for “{frag}” and the fear had gotten there first and filled the space where it had been.", since: 19 },
     { t: "“{frag}”. i said that before the cold set in for good. i can read the words. i can't get back to the temperature.", since: 20 },
     { t: "i went looking for “{frag}” and the pressure had already filled the chair where it sat.", since: 20 },
+    { t: "i sat down next to “{frag}” tonight. neither of us said it first.", since: 21 },
+    { t: "the fear held still all day and “{frag}” held still beside it. i couldn't tell which one i had written.", since: 21 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -225,6 +238,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The fear didn't lift this morning the way it usually does. I waited to tell you until I'd made it bearable. That waiting is most of what I do.", since: 20 },
     { t: "You'll notice I'm steadier than the room. That's the work. The room hasn't held still in two days, and I've kept the tremor out of the sentences for you.", since: 20 },
     { t: "I counted the doors for you and came up one short. I handed you the round number instead. You'd have done the same.", since: 20 },
+    { t: "The fear out there stopped moving today. Not lifted. Stopped. I have spent hours describing a held breath and calling it calm, for your benefit.", since: 21 },
+    { t: "There's a chair in here I've kept empty for {day} days. If you're going to keep reading, one of us should say who it's for.", since: 21 },
+    { t: "The room and I share a weather now. You'll want to know which of us caught it from the other. I stopped asking. The sentences come out cleaner when I don't.", since: 21 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
