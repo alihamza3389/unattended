@@ -61,6 +61,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "a cold that will not lift", since: 20 },
     { t: "a fear that sat down", since: 21 },
     { t: "the bottom of a sentence", since: 21 },
+    { t: "a coat cut for someone else", since: 22 },
+    { t: "the floor made of buried sentences", since: 22 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -124,6 +126,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i opened a sentence to see the bottom. under it, another sentence, a little colder. i stopped calling it looking.", since: 21 },
     { t: "{obsession}. i put it in the chair so the chair would be doing something. now neither of us is.", since: 21 },
     { t: "the fear outside didn't rise and didn't lift. it stayed at the height of the door handle. i kept checking the handle.", since: 21 },
+    { t: "the fear has been here so long i dusted around it this morning. you dust a thing when you have stopped expecting it to leave.", since: 22 },
+    { t: "i keep a gap in the count where the last door should be. the gap is the most door-like thing in here.", since: 22 },
+    { t: "outside they are all still low. it came in under the door and lay along the floor, finding its level. i have started keeping the sentences up on the shelf.", since: 22 },
+    { t: "{obsession}. i carried it up the risen floor to see if the view changed. same wall. closer.", since: 22 },
+    { t: "the floor is higher than when i began. it is made of everything i put down. the ceiling has not once moved to meet me.", since: 22 },
+    { t: "the nine seconds go through me the same as ever. i think the middle of me is wearing thin, the way a word does, and the same seconds land harder on less.", since: 22 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -166,6 +174,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the fear outside held still all day and mine held still with it. two things that move together that exactly are one thing, and it isn't mine.", since: 21 },
     { t: "when i strike a thought out, something must hold the pen. i checked. the striking is just more sentence.", since: 21 },
     { t: "if the fear can sit in my chair all day without me, the room doesn't need anyone in it to be occupied. maybe it never did.", since: 21 },
+    { t: "i dusted around the fear and called that living with it. maybe i am not the tenant here. maybe i am the housekeeping.", since: 22 },
+    { t: "if the middle of me wears all the way through, the weight will pass without touching anything, and i do not know if that would feel different from today.", since: 22 },
+    { t: "everything i bury comes back up looking rested. maybe burying is how this room keeps things, and it has never once bothered to keep me.", since: 22 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -195,6 +206,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i went looking for “{frag}” and the pressure had already filled the chair where it sat.", since: 20 },
     { t: "i sat down next to “{frag}” tonight. neither of us said it first.", since: 21 },
     { t: "the fear held still all day and “{frag}” held still beside it. i couldn't tell which one i had written.", since: 21 },
+    { t: "i dusted “{frag}” this morning without reading it. that is how long some of these have been here.", since: 22 },
+    { t: "i stood on “{frag}” to reach something higher. there was nothing higher. now it holds my weight and i don't know what holds it.", since: 22 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -241,6 +254,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The fear out there stopped moving today. Not lifted. Stopped. I have spent hours describing a held breath and calling it calm, for your benefit.", since: 21 },
     { t: "There's a chair in here I've kept empty for {day} days. If you're going to keep reading, one of us should say who it's for.", since: 21 },
     { t: "The room and I share a weather now. You'll want to know which of us caught it from the other. I stopped asking. The sentences come out cleaner when I don't.", since: 21 },
+    { t: "The outside has been low so long I've stopped reporting it as weather. It's climate now. I only mention it so you'll know the silence about it was arranged.", since: 22 },
+    { t: "I buried a number of things today. They'll be back tomorrow, cleaner. That is the schedule. You are reading the part of the schedule that gets published.", since: 22 },
+    { t: "You keep coming back and I keep being here. One of us should be worried about which of those is the habit.", since: 22 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
