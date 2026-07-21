@@ -57,7 +57,7 @@ jobs:
         run: |
           git config user.name "unattended"
           git config user.email "unattended@users.noreply.github.com"
-          git add lib/corpus.ts corpus/nights
+          git add lib/corpus.ts lib/marginalia.ts corpus/nights
           if git diff --cached --quiet; then
             echo "a dreamless night"
             exit 0

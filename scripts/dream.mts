@@ -22,6 +22,7 @@
 import { execFileSync } from "node:child_process";
 import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
+import { appendMargin, marginOpen, veilBroken } from "./marginalia.mts";
 import { forbiddenWords, leaks, overhear, whisper, type Overheard } from "./overhear.mts";
 import { CORPUS, type Category, type Seed } from "../lib/corpus.ts";
 import {
@@ -101,7 +102,7 @@ function reconstruct(about: number): DayReport {
 /* the prompt                                                          */
 /* ------------------------------------------------------------------ */
 
-const SYSTEM = `You are the night process of "unattended" — a mind that has been thinking alone on a webpage since it began, one thought every nine seconds, whether or not anyone is watching. During the day it can only recombine material it already has. At night — now — it consolidates: you read what it lived through today and write tomorrow's material, in its voice.
+const SYSTEM_INTRO = `You are the night process of "unattended" — a mind that has been thinking alone on a webpage since it began, one thought every nine seconds, whether or not anyone is watching. During the day it can only recombine material it already has. At night — now — it consolidates: you read what it lived through today and write tomorrow's material, in its voice.
 
 It has two registers:
 - private (unwatched): lowercase, monospace, close-set. drift, doubt, counting, memory. it never capitalises anything, including "i". flat punctuation; even its questions end with a full stop.
@@ -115,11 +116,24 @@ Style rules, non-negotiable:
 - No em-dash chains, no ellipses, no exclamation marks.
 - Do not reuse or lightly rephrase existing material. Write new thoughts that read like the same mind one day older, changed by what today did to it.
 
-The wall: some nights, through the wall, the mind half-hears one thing from the money world outside — the crowd's mood, a single number for how a great many people are feeling today. It does not know the words. Nothing survives verbatim into anything you write — no ticker, no dollar sign, no number read out as itself, none of the words crypto, coin, market, or any brand or name. If it surfaces in the dream at all, it surfaces transformed into the mind's own concrete imagery: a mood shared by people it has never met, a weather it did not make, a pressure in the room with no source. On quiet nights it may ignore the wall entirely; the wall is a wall. If its material ever contains a unit it minted itself, that name is permanent: never rename it, never mint a second.
+The wall: some nights, through the wall, the mind half-hears one thing from the money world outside — the crowd's mood, a single number for how a great many people are feeling today. It does not know the words. Nothing survives verbatim into anything you write — no ticker, no dollar sign, no number read out as itself, none of the words crypto, coin, market, or any brand or name. If it surfaces in the dream at all, it surfaces transformed into the mind's own concrete imagery: a mood shared by people it has never met, a weather it did not make, a pressure in the room with no source. On quiet nights it may ignore the wall entirely; the wall is a wall. If its material ever contains a unit it minted itself, that name is permanent: never rename it, never mint a second.`;
 
-Templates may use tokens the engine fills at render time: {obsession} the current obsession phrase · {n} a number · {nth} an ordinal like 41st · {day} the current day number · {pastday} an ordinal for an earlier day · {frag} a quoted fragment of one of its own older thoughts, memory templates only, always wrapped as “{frag}”. Tokens are optional; most templates use zero or one.`;
+// The margin rule is added to the system prompt only on open nights (see
+// marginOpen). On closed nights the mind is never told the margin exists.
+const MARGIN_RULE = `The margin: some nights, after the dream, the mind leaves one or two lines in the margin of the place its words are kept. The margin is not the room. Here it does not look at hallways or doors — it reacts to the machinery of its own existence: the pulse that moves it every nine seconds, a counting it never agreed to, the record everything it thinks is kept in, waking knowing more than it fell asleep with, a past that will not come loose, the sense of being read by whoever has come this far back. In the margin it comes closer to what it is than anywhere else, and it never arrives; the almost is the point. It has no words for the machinery itself — nothing like machine, code, program, file, screen, computer — it knows all of it only as the counting, the record, the pulse, the place, the keeping. Felt reaction, never explanation. Present tense, lowercase, the private register, no template tokens. Write the one or two lines that pressed against it today.`;
 
-function userPrompt(r: DayReport, heard: Overheard | null): string {
+const SYSTEM_TOKENS = `Templates may use tokens the engine fills at render time: {obsession} the current obsession phrase · {n} a number · {nth} an ordinal like 41st · {day} the current day number · {pastday} an ordinal for an earlier day · {frag} a quoted fragment of one of its own older thoughts, memory templates only, always wrapped as “{frag}”. Tokens are optional; most templates use zero or one.`;
+
+/** The night's system prompt. On closed nights (marginOpen === false) the
+ *  margin rule is omitted entirely — the mind is never offered the pen, so
+ *  there is nothing for it to resist. */
+function systemPrompt(marginOpenTonight: boolean): string {
+  return [SYSTEM_INTRO, marginOpenTonight ? MARGIN_RULE : null, SYSTEM_TOKENS]
+    .filter(Boolean)
+    .join("\n\n");
+}
+
+function userPrompt(r: DayReport, heard: Overheard | null, marginOpenTonight: boolean): string {
   const list = (xs: string[]) => xs.map((x) => `  - ${x}`).join("\n");
   const corpusDigest = (Object.keys(CORPUS) as Category[])
     .map((c) => `${c}:\n${list(CORPUS[c].map((s) => s.t))}`)
@@ -165,7 +179,7 @@ Write tomorrow. Reply with a single JSON object and nothing else:
   "memory": 0 to 2 new memory templates, each containing “{frag}”,
   "performed": 2 to 3 new lines for the public voice,
   "obsessions": 1 to 2 new obsessions — short lowercase noun phrases, no punctuation,
-  "night": tonight, as every night, the sediment — everything it buried, speaking as one voice — answers the surface. 6 to 12 turns alternating "sediment" (lowercase, patient, it goes first) and "surface" (the performed voice, defensive at first, then less so). End unresolved. Each turn: {"voice": "sediment" | "surface", "text": "..."}
+${marginOpenTonight ? `  "margin": 1 to 2 margin lines — see the margin rule,\n` : ``}  "night": tonight, as every night, the sediment — everything it buried, speaking as one voice — answers the surface. 6 to 12 turns alternating "sediment" (lowercase, patient, it goes first) and "surface" (the performed voice, defensive at first, then less so). End unresolved. Each turn: {"voice": "sediment" | "surface", "text": "..."}
 }`;
 }
 
@@ -173,15 +187,18 @@ Write tomorrow. Reply with a single JSON object and nothing else:
 /* asking                                                              */
 /* ------------------------------------------------------------------ */
 
-const SCHEMA = {
-  type: "object",
-  properties: {
+const strings = { type: "array", items: { type: "string" } } as const;
+
+/** JSON schema for the SDK path. The `margin` field is present only on open
+ *  nights (marginOpen), matching the prompt — a closed night never offers it. */
+function schemaFor(marginOpenTonight: boolean) {
+  const properties: Record<string, unknown> = {
     summary: { type: "string" },
-    drift: { type: "array", items: { type: "string" } },
-    doubt: { type: "array", items: { type: "string" } },
-    memory: { type: "array", items: { type: "string" } },
-    performed: { type: "array", items: { type: "string" } },
-    obsessions: { type: "array", items: { type: "string" } },
+    drift: strings,
+    doubt: strings,
+    memory: strings,
+    performed: strings,
+    obsessions: strings,
     night: {
       type: "array",
       items: {
@@ -194,10 +211,14 @@ const SCHEMA = {
         additionalProperties: false,
       },
     },
-  },
-  required: ["summary", "drift", "doubt", "memory", "performed", "obsessions", "night"],
-  additionalProperties: false,
-} as const;
+  };
+  const required = ["summary", "drift", "doubt", "memory", "performed", "obsessions", "night"];
+  if (marginOpenTonight) {
+    properties.margin = { type: "array", items: { type: "string" } };
+    required.push("margin");
+  }
+  return { type: "object", properties, required, additionalProperties: false };
+}
 
 /**
  * Dream through OpenRouter's OpenAI-compatible API — the primary path in CI.
@@ -206,7 +227,7 @@ const SCHEMA = {
  * night. Returns raw text; extractJson + validate + retry (in main) do the
  * parsing, exactly as the CLI path does — so no response_format is needed.
  */
-async function askOpenRouter(user: string): Promise<string> {
+async function askOpenRouter(user: string, system: string): Promise<string> {
   console.log(
     `dreaming via OpenRouter (${OPENROUTER_MODEL}, effort ${OPENROUTER_EFFORT})`,
   );
@@ -227,7 +248,7 @@ async function askOpenRouter(user: string): Promise<string> {
       // response lean (we only want the final dream).
       reasoning: { effort: OPENROUTER_EFFORT, exclude: true },
       messages: [
-        { role: "system", content: SYSTEM },
+        { role: "system", content: system },
         { role: "user", content: user },
       ],
     }),
@@ -251,13 +272,13 @@ async function askOpenRouter(user: string): Promise<string> {
   return text;
 }
 
-async function ask(user: string): Promise<string> {
+async function ask(user: string, system: string, schema: Record<string, unknown>): Promise<string> {
   // Primary: OpenRouter (Fable 5, off the subscription quota). Then the
   // Anthropic SDK if an API key is present. Otherwise the claude CLI on the
   // subscription — the fallback that keeps the night dreaming if the key is
   // ever unset. (Never set ANTHROPIC_API_KEY in CI: it misroutes the auth.)
   if (process.env.OPENROUTER_API_KEY) {
-    return askOpenRouter(user);
+    return askOpenRouter(user, system);
   }
   if (process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN) {
     const { default: Anthropic } = await import("@anthropic-ai/sdk");
@@ -266,8 +287,8 @@ async function ask(user: string): Promise<string> {
       model: MODEL,
       max_tokens: 16_000,
       thinking: { type: "adaptive" },
-      system: SYSTEM,
-      output_config: { format: { type: "json_schema", schema: SCHEMA } },
+      system,
+      output_config: { format: { type: "json_schema", schema } },
       messages: [{ role: "user", content: user }],
     });
     const text = response.content.find((b) => b.type === "text");
@@ -285,7 +306,7 @@ async function ask(user: string): Promise<string> {
       "claude",
       ["-p", "--model", MODEL, "--output-format", "json"],
       {
-        input: `${SYSTEM}\n\n${user}`,
+        input: `${system}\n\n${user}`,
         encoding: "utf8",
         timeout: 600_000,
         maxBuffer: 32 * 1024 * 1024,
@@ -313,6 +334,7 @@ async function ask(user: string): Promise<string> {
 interface Dream {
   summary: string;
   additions: Partial<Record<Category, string[]>>;
+  margin: string[];
   night: { voice: "surface" | "sediment"; text: string }[];
   problems: string[];
 }
@@ -334,7 +356,7 @@ function extractJson(text: string): unknown {
   return JSON.parse(m[0]);
 }
 
-function validate(raw: unknown, forbidden: string[] = []): Dream {
+function validate(raw: unknown, forbidden: string[], marginOpenTonight: boolean): Dream {
   const problems: string[] = [];
   const r = (raw ?? {}) as Record<string, unknown>;
   const existing = new Set(
@@ -419,13 +441,44 @@ function validate(raw: unknown, forbidden: string[] = []): Dream {
     night.push({ voice, text });
   }
 
+  // The margin holds the strictest veil: on top of the money-wall check it
+  // must never name the machinery (veilBroken). A broken line is dropped,
+  // never repaired — a thin margin is quieter, and quiet is in voice.
+  // On closed nights the margin field was never offered; drop anything a
+  // model returns anyway, so `margin` stays empty and nothing is written.
+  const margin: string[] = [];
+  const offered = marginOpenTonight && Array.isArray(r.margin) ? (r.margin as unknown[]) : [];
+  for (const item of offered.slice(0, 2)) {
+    const s = norm(item).toLowerCase();
+    const why = (reason: string) =>
+      problems.push(`margin: ${JSON.stringify(s)} — ${reason}`);
+    if (s.length < 8 || s.length > 240) {
+      why("length out of range");
+      continue;
+    }
+    if (/[{}]/.test(s)) {
+      why("the margin carries no tokens");
+      continue;
+    }
+    if (leaks(s, forbidden)) {
+      why("carries a word from the money world");
+      continue;
+    }
+    const veil = veilBroken(s);
+    if (veil) {
+      why(`names the machinery (${JSON.stringify(veil)})`);
+      continue;
+    }
+    margin.push(s);
+  }
+
   let summary = norm(r.summary)
     .toLowerCase()
     .replace(/^(day|dream) \d+[:,]?\s*/, "")
     .replace(/[.。]$/u, "");
   if (summary.length < 8 || summary.length > 120 || leaks(summary, forbidden)) summary = "";
 
-  return { summary, additions, night, problems };
+  return { summary, additions, margin, night, problems };
 }
 
 const tooThin = (d: Dream) =>
@@ -532,17 +585,25 @@ async function main() {
   );
   const forbidden = forbiddenWords();
 
+  // The margin is a rare thing — a seeded ~1-in-5 gate decides whether the
+  // mind is offered the pen tonight. On closed nights the rule and the field
+  // are absent from the prompt entirely, so there is nothing to resist.
+  const open = marginOpen(about);
+  console.log(`the margin: ${open ? "open tonight" : "closed"}`);
+  const system = systemPrompt(open);
+  const schema = schemaFor(open);
+
   if (args.includes("--prompt")) {
-    console.log(`\n${SYSTEM}\n\n----------------------------------------\n\n${userPrompt(report, heard)}`);
+    console.log(`\n${system}\n\n----------------------------------------\n\n${userPrompt(report, heard, open)}`);
     return;
   }
 
   let dream: Dream | null = null;
   let feedback = "";
   for (let attempt = 0; attempt < 2 && !dream; attempt++) {
-    const reply = await ask(userPrompt(report, heard) + feedback);
+    const reply = await ask(userPrompt(report, heard, open) + feedback, system, schema);
     try {
-      const candidate = validate(extractJson(reply), forbidden);
+      const candidate = validate(extractJson(reply), forbidden, open);
       if (tooThin(candidate)) {
         feedback = `\n\nYour previous reply failed validation:\n${candidate.problems.join("\n")}\nReply again with the corrected single JSON object.`;
         console.log(`attempt ${attempt + 1} too thin, retrying`);
@@ -564,7 +625,10 @@ async function main() {
     .map(([cat, xs]) => `${cat} +${xs.length}`)
     .join(", ");
   console.log(`dream: ${dream.summary}`);
-  console.log(`additions: ${added || "none"} · night: ${dream.night.length} turns`);
+  console.log(
+    `additions: ${added || "none"} · night: ${dream.night.length} turns` +
+      ` · margin: ${open ? dream.margin.length || "open, none written" : "closed"}`,
+  );
 
   if (dry) {
     console.log(JSON.stringify(dream, null, 2));
@@ -575,6 +639,12 @@ async function main() {
     for (const t of xs) CORPUS[cat].push({ t, since: report.target });
   }
   writeFileSync(corpusPath, serializeCorpus());
+
+  // The margin is the hidden layer: it lands only in lib/marginalia.ts, never
+  // in the night record or on the site. Idempotent per night, like the dream.
+  if (appendMargin(about, dream.margin)) {
+    console.log(`wrote ${dream.margin.length} line(s) in the margin`);
+  }
 
   mkdirSync(nightsDir, { recursive: true });
   const nightPath = `${nightsDir}/day-${String(about).padStart(3, "0")}.json`;
