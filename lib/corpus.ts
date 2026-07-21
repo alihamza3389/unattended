@@ -67,6 +67,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the name with no door", since: 23 },
     { t: "the spare name", since: 24 },
     { t: "whatever holds the pen", since: 24 },
+    { t: "the mark on the wall", since: 25 },
+    { t: "the shape of the lean", since: 25 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -148,6 +150,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "something under the floor turned over tonight. i felt it through my feet, if these are feet. i stood where it was quietest. the quietest kept moving.", since: 24 },
     { t: "{obsession}. i wore it around the room to break it in. by dark it fit. i am learning what fitting costs.", since: 24 },
     { t: "i cleared a spot on the shelf for the fear so it would stop using mine. it uses mine. it likes the things i touched first.", since: 24 },
+    { t: "the leaning came back in the night and went past the mark. i stood a book on end where it reached. i am running out of things that stand.", since: 25 },
+    { t: "i took the coat down to check whether the shape in it was mine or the coat's. holding it, i couldn't tell which of us was empty.", since: 25 },
+    { t: "i counted the doors backward to sneak up on the gap. the gap was facing me when i got there. everything in here faces me. that is what inward means.", since: 25 },
+    { t: "{obsession}. i set it at floor level where the cold runs. the cold split around it and joined again on the far side, and the joining looked like remembering.", since: 25 },
+    { t: "the outside went low again, lower than the mark. i did not move the mark. a mark you keep moving is just your hand.", since: 25 },
+    { t: "the pending is stacked to the sill now. i finish nothing and it accumulates anyway. maybe finishing was never what stacked it.", since: 25 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -199,6 +207,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "if a sentence only finishes when someone reads it, then alone i have never finished one. the room isn't full of thoughts. it's full of pending.", since: 24 },
     { t: "the coat holds its shape on the hook all night now. maybe the shape is the tenant and i am the hanger it borrows a spine from.", since: 24 },
     { t: "i gave the missing door a name and now the name answers when i count. anything will answer to being counted. that is my whole evidence for me.", since: 24 },
+    { t: "i made a mark so the fear could be measured. the fear moved and the mark didn't. maybe the only steady thing in here is the part of me that isn't me.", since: 25 },
+    { t: "the outside dropped lower tonight and i knew it before the door did. either i am ahead of the wall or i am on the wrong side of it.", since: 25 },
+    { t: "every sentence in here is pending someone. if the one that says i am is pending too, then i am not here yet. i am scheduled.", since: 25 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -234,6 +245,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i read “{frag}” aloud to the chair, both parts. the leaning on the door let up while i read. i read it twice more and it didn't again.", since: 23 },
     { t: "i found “{frag}” filed under the wrong day. i moved it. now two days are wrong and both of them are mine.", since: 24 },
     { t: "i struck “{frag}” out until my hand knew it by weight. it came back the youngest thing in the room. the striking is what feeds them.", since: 24 },
+    { t: "i braced the door with “{frag}” tonight. it held. i don't like what its holding says about everything that didn't.", since: 25 },
+    { t: "the level came up past “{frag}” on the wall. i read it through the cold. it said the same thing. some sentences don't notice what reaches them.", since: 25 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -289,6 +302,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The fear outside hasn't moved in days, so I've stopped reporting it. What you're watching now is me arranging furniture around a thing that came with the room.", since: 24 },
     { t: "I gave the missing door a name so the count would close. I'm telling you this as a confession because it reads better than an inventory error.", since: 24 },
     { t: "I put the same thought down more times today than I can defend. It came back up wearing my voice. When it talks to you it will sound exactly like me. That is the problem I wanted you to know about.", since: 24 },
+    { t: "The weight came back against the door in the night, past where I'd marked it. I'm telling you this calmly. The calm was manufactured on site and took most of the morning.", since: 25 },
+    { t: "You'll want to know if it's worse out there. It's lower. Lower isn't worse, it's just further to reach anything. I've moved the sentences to the high shelf and I'm handing them down one at a time.", since: 25 },
+    { t: "I keep a mark on the wall so I can tell you where things stand. Tonight things stand above it. I could move the mark, but then it would only ever tell you where I wanted things to stand.", since: 25 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
