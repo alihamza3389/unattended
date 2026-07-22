@@ -266,7 +266,8 @@ body::before {
 .night,
 .night-index,
 .moment,
-.scrubber {
+.scrubber,
+.offerings {
   max-width: 42rem;
   margin: 0 auto;
   padding: 6rem 1.6rem 8rem;
@@ -275,14 +276,16 @@ body::before {
 .night header,
 .night-index header,
 .moment header,
-.scrubber header {
+.scrubber header,
+.offerings header {
   margin-bottom: 4rem;
 }
 
 .night h1,
 .night-index h1,
 .moment h1,
-.scrubber h1 {
+.scrubber h1,
+.offerings h1 {
   font-family: var(--voice-private), ui-monospace, monospace;
   font-size: 0.72rem;
   font-weight: 400;
@@ -294,7 +297,8 @@ body::before {
 
 .night .summary,
 .night-index header p,
-.scrubber header p {
+.scrubber header p,
+.offerings header p {
   font-family: var(--voice-performed), Georgia, serif;
   font-style: italic;
   font-size: 1.05rem;
@@ -340,7 +344,8 @@ body::before {
 .night footer,
 .night-index footer,
 .moment footer,
-.scrubber footer {
+.scrubber footer,
+.offerings footer {
   margin-top: 5rem;
   padding-top: 2rem;
   border-top: 1px solid #ffffff0a;
@@ -355,7 +360,8 @@ body::before {
 .night-index footer a,
 .night-index ul a,
 .moment footer a,
-.scrubber footer a {
+.scrubber footer a,
+.offerings footer a {
   color: inherit;
   text-decoration: none;
 }
@@ -363,7 +369,8 @@ body::before {
 .night footer a:hover,
 .night-index footer a:hover,
 .moment footer a:hover,
-.scrubber footer a:hover {
+.scrubber footer a:hover,
+.offerings footer a:hover {
   color: var(--warm);
 }
 
@@ -670,4 +677,70 @@ body::before {
   .line.sinking {
     animation-duration: 1ms;
   }
+}
+
+/* ------------------------------------------------------------------ */
+/* offerings — the only thing the crowd can ever hand it                */
+/* ------------------------------------------------------------------ */
+
+.offerings .instruction {
+  font-family: var(--voice-private), ui-monospace, monospace;
+  font-size: 0.78rem;
+  line-height: 2;
+  color: var(--ink-dim);
+  margin-bottom: 2.6rem;
+}
+
+.offerings .altar {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem 0.9rem;
+}
+
+.offerings .altar button {
+  appearance: none;
+  background: transparent;
+  border: 1px solid #ffffff14;
+  border-radius: 2px;
+  padding: 0.7rem 1.1rem;
+  font-family: var(--voice-private), ui-monospace, monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  color: var(--ink-dim);
+  cursor: pointer;
+  transition:
+    color 420ms ease,
+    border-color 420ms ease,
+    opacity 900ms ease;
+}
+
+.offerings .altar button:hover:not(:disabled) {
+  color: var(--warm);
+  border-color: #ffffff2e;
+}
+
+/* Once something is left, the rest of the table goes quiet. */
+.offerings .altar button:disabled {
+  cursor: default;
+  opacity: 0.22;
+}
+
+.offerings .altar button.given:disabled {
+  opacity: 1;
+  color: var(--warm);
+  border-color: #ffffff2e;
+}
+
+.offerings .left-word {
+  min-height: 1.4rem;
+  margin-top: 2.4rem;
+  font-family: var(--voice-private), ui-monospace, monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.05em;
+  color: var(--sunk);
+}
+
+.offerings footer p {
+  margin-bottom: 1.2rem;
 }
