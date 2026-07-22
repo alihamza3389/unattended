@@ -2,8 +2,11 @@
  * The wall is thin. Once a night, just before it dreams, the mind half-hears one
  * thing from the money world outside: the crowd's mood — a single number for how
  * a great many people it will never meet are feeling today. Nothing else comes
- * through. One public source, no key; if it fails, the wall is silent, and the
- * night is quieter for it.
+ * through. Two public sources, no keys: one instrument and one spare reading the
+ * same index, so a single dead endpoint cannot silence the wall for good. The
+ * primary is always preferred, so the reading never drifts between sources; the
+ * spare speaks only when the primary cannot. If both fail, the wall is silent,
+ * and the night is quieter for it.
  *
  * What is heard is written into the night's record verbatim (the receipts). What
  * enters the dream is bound by the transformation law in dream.mts: the mind does
@@ -19,6 +22,8 @@ export interface Overheard {
   heard: string;
   /** The crowd's mood, 0..100, and what they call it. */
   mood?: { value: number; label: string };
+  /** Set only when the spare instrument was read, so the receipts stay honest. */
+  source?: "fallback";
   /** Whether the crowd's feeling was at an extreme. */
   loud: boolean;
 }
@@ -32,7 +37,8 @@ const get = async (url: string): Promise<unknown> => {
   return res.json();
 };
 
-async function fetchMood(): Promise<Overheard["mood"]> {
+/** The instrument. */
+async function fetchMoodPrimary(): Promise<Overheard["mood"]> {
   const raw = (await get("https://api.alternative.me/fng/")) as {
     data?: { value: string; value_classification: string }[];
   };
@@ -43,22 +49,44 @@ async function fetchMood(): Promise<Overheard["mood"]> {
   return { value, label: d.value_classification.toLowerCase() };
 }
 
+/** The spare. Same index, same 0..100 scale, same labels, no key. */
+async function fetchMoodFallback(): Promise<Overheard["mood"]> {
+  const raw = (await get("https://feargreedchart.com/api/?action=crypto")) as {
+    crypto_fng?: { score: number; label: string };
+  };
+  const d = raw.crypto_fng;
+  if (!d || !Number.isFinite(Number(d.score))) return undefined;
+  return { value: Number(d.score), label: String(d.label ?? "").toLowerCase() };
+}
+
 /** A loud night: the crowd's feeling is at an extreme — deep fear or mania. */
 function isLoud(o: Omit<Overheard, "loud">): boolean {
   const mood = o.mood?.value;
   return mood !== undefined && (mood <= 20 || mood >= 80);
 }
 
-/** Listen once. The one source may fail; if it does, the wall was silent. */
+/** Listen once. Both instruments may fail; if they do, the wall was silent. */
 export async function overhear(): Promise<Overheard | null> {
+  // The primary is always preferred, so the reading never drifts between
+  // instruments mid-life. The spare is consulted only when the primary gives
+  // nothing, and says so in the receipts when it does.
   let mood: Overheard["mood"];
+  let source: Overheard["source"];
   try {
-    mood = await fetchMood();
+    mood = await fetchMoodPrimary();
   } catch {
     mood = undefined;
   }
+  if (!mood) {
+    try {
+      mood = await fetchMoodFallback();
+      if (mood) source = "fallback";
+    } catch {
+      mood = undefined;
+    }
+  }
   if (!mood) return null;
-  const partial = { heard: new Date().toISOString(), mood };
+  const partial = { heard: new Date().toISOString(), mood, source };
   return { ...partial, loud: isLoud(partial) };
 }
 
