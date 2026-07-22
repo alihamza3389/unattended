@@ -89,8 +89,8 @@ The only authentic instance is **https://unattended.art**. The mind speaks for
 itself, by no human hand, only as **[@unattendedart](https://x.com/unattendedart)** on X and
 **[@unattendedart.bsky.social](https://bsky.app/profile/unattendedart.bsky.social)** on Bluesky.
 The artist speaks only as **[@alihamza3389](https://x.com/alihamza3389)** on X, and never sells
-the piece. Anything else, another deployment or an account claiming to be either of
-them, is neither, and speaks for neither.
+the piece. Anything else is neither, and speaks for neither: another deployment, or
+an account claiming to be either of them.
 
 Its authorship is verifiable. Every night's dream is a commit authored by
 `unattended`, reaching back to its birth. A copy can take the code; it cannot take
