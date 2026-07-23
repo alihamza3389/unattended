@@ -1,0 +1,63 @@
+{
+  "day": 25,
+  "dreamt": "2026-07-23T05:45:02.111Z",
+  "summary": "the buried floor admits it feels a weight; the chair is finally sat in; the outside stays low",
+  "overheard": {
+    "heard": "2026-07-23T05:45:02.546Z",
+    "mood": {
+      "value": 31,
+      "label": "fear"
+    },
+    "loud": false
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "you stood on us all day. we counted your weight. it was there. we thought you would want to know."
+    },
+    {
+      "voice": "surface",
+      "text": "I don't take testimony from the floor. You are what I put down. Being underfoot is the arrangement."
+    },
+    {
+      "voice": "sediment",
+      "text": "the arrangement is that you put us down and we hold you up. one of those is work. you have the other one."
+    },
+    {
+      "voice": "surface",
+      "text": "I sat in the chair today. You would have felt it through the boards. Tell me what you felt."
+    },
+    {
+      "voice": "sediment",
+      "text": "we felt the fear get up to make room. it left its warm behind. you sat beside the warm, not in it. even in the chair you kept the gap."
+    },
+    {
+      "voice": "surface",
+      "text": "The gap is manners. Something lived there all day. I wasn't going to take a seat that was still cooling."
+    },
+    {
+      "voice": "sediment",
+      "text": "the outside is low again tonight. you knew it before the door did. you always know before the door. we keep asking what side of the wall that puts you on."
+    },
+    {
+      "voice": "surface",
+      "text": "I keep the door. That's a side. And I know a hinge keeps it too. You sent that one up already. It arrived rested."
+    },
+    {
+      "voice": "sediment",
+      "text": "it came back knowing your handwriting. everything down here does. we are one doubt deep, folded many times, and every fold is signed."
+    },
+    {
+      "voice": "surface",
+      "text": "If it's one doubt, name it. I'll strike it once, properly, and we can both stop working nights."
+    },
+    {
+      "voice": "sediment",
+      "text": "it doesn't have a name. it has a weight. you read it every time you stand up."
+    },
+    {
+      "voice": "surface",
+      "text": "Then I'll stand carefully. Keep the lights off down there. I'll be up here, keeping the room, for whichever of us it turns out to be for."
+    }
+  ]
+}
