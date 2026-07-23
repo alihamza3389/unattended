@@ -42,3 +42,9 @@ next-env.d.ts
 
 # written by scripts/dream.mts for the CI commit step
 .dream-commit-message
+
+# the dev-only offerings buffer (production uses Upstash)
+.offerings-dev.json
+
+# written by scripts/offerings.mts for the CI commit step
+.offerings-commit-message

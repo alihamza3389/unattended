@@ -9,6 +9,12 @@
  * dream commit transitively timestamps the whole history behind it. One memo a
  * night is enough to notarize the entire journal up to that point.
  *
+ * It stamps two kinds of night. The mind's dream (`unattended dream N <sha>`),
+ * and, on days the crowd left something, the offerings gathered that day
+ * (`unattended offering YYYY-MM-DD <sha>`). Both are the same minimal shape:
+ * the hash points at the commit, so the contents stay verifiable through it.
+ * The chain becomes a braid of what the mind dreamed and what was left for it.
+ *
  *   node scripts/anchor.mts [--dry] [--genesis]
  *
  * --dry builds and prints the memo(s) and sends nothing.
@@ -39,8 +45,9 @@ const ledgerPath = fileURLToPath(
 const ledgerRel = "corpus/anchors.jsonl";
 
 interface AnchorRecord {
-  type: "dream" | "genesis";
+  type: "dream" | "genesis" | "offering";
   night?: number;
+  date?: string;
   commit: string;
   tx: string;
   slot?: number;
@@ -48,6 +55,14 @@ interface AnchorRecord {
   cluster: string;
   at: string;
 }
+
+/** How a stamp reads in the logs. */
+const label = (r: Pick<AnchorRecord, "type" | "night" | "date">) =>
+  r.type === "genesis"
+    ? "genesis"
+    : r.type === "offering"
+      ? `offering ${r.date}`
+      : `dream ${r.night}`;
 
 function git(args: string[]): string {
   return execFileSync("git", args, { cwd: repoRoot, encoding: "utf8" }).trim();
@@ -75,27 +90,57 @@ function dreamCommits(): { night: number; commit: string }[] {
   return commits;
 }
 
+/**
+ * Every `offerings`-authored commit, oldest first, as { date, commit }. The
+ * day is read from the commit subject (`offerings for YYYY-MM-DD`), so the
+ * ledger keys on the day the crowd's gifts belong to, not the run that stamped
+ * them.
+ */
+function offeringCommits(): { date: string; commit: string }[] {
+  const out = git([
+    "log",
+    "--author=offerings",
+    "--format=%H%x1f%s",
+    "--reverse",
+  ]);
+  const commits: { date: string; commit: string }[] = [];
+  for (const line of out.split("\n")) {
+    if (!line) continue;
+    const [hash, subject = ""] = line.split("\x1f");
+    const m = subject.match(/^offerings for (\d{4}-\d{2}-\d{2})/);
+    if (m) commits.push({ date: m[1], commit: hash });
+  }
+  return commits;
+}
+
 /** The set of nights already anchored, and whether genesis has been stamped. */
-function readLedger(): { nights: Set<number>; hasGenesis: boolean } {
+function readLedger(): {
+  nights: Set<number>;
+  dates: Set<string>;
+  hasGenesis: boolean;
+} {
   const nights = new Set<number>();
+  const dates = new Set<string>();
   let hasGenesis = false;
   let raw = "";
   try {
     raw = readFileSync(ledgerPath, "utf8");
   } catch {
-    return { nights, hasGenesis }; // no ledger yet — nothing anchored
+    return { nights, dates, hasGenesis }; // no ledger yet — nothing anchored
   }
   for (const line of raw.split("\n")) {
     if (!line.trim()) continue;
     try {
       const rec = JSON.parse(line) as AnchorRecord;
       if (rec.type === "genesis") hasGenesis = true;
-      else if (typeof rec.night === "number") nights.add(rec.night);
+      else if (rec.type === "offering" && typeof rec.date === "string") {
+        dates.add(rec.date);
+      } else if (typeof rec.night === "number") nights.add(rec.night);
     } catch {
       /* a malformed line is skipped, never fatal */
     }
   }
-  return { nights, hasGenesis };
+  return { nights, dates, hasGenesis };
 }
 
 /** Label the network for explorer links, inferred from the url or moniker. */
@@ -230,7 +275,7 @@ async function main() {
 
   const urlOrMoniker = process.env.SOLANA_RPC_URL || "devnet";
   const cluster = clusterLabel(urlOrMoniker);
-  const { nights: anchored, hasGenesis } = readLedger();
+  const { nights: anchored, dates: anchoredDates, hasGenesis } = readLedger();
 
   // Decide what to stamp tonight. Genesis is a one-time bookend; otherwise it is
   // every un-anchored dream, oldest first (normally just tonight's, but any
@@ -249,12 +294,29 @@ async function main() {
       },
     ];
   } else {
-    jobs = dreamCommits()
+    const dreams = dreamCommits()
       .filter((c) => !anchored.has(c.night))
       .map((c) => ({
         memo: `unattended dream ${c.night} ${c.commit}`,
-        record: { type: "dream", night: c.night, commit: c.commit, cluster },
+        record: {
+          type: "dream" as const,
+          night: c.night,
+          commit: c.commit,
+          cluster,
+        },
       }));
+    const offerings = offeringCommits()
+      .filter((c) => !anchoredDates.has(c.date))
+      .map((c) => ({
+        memo: `unattended offering ${c.date} ${c.commit}`,
+        record: {
+          type: "offering" as const,
+          date: c.date,
+          commit: c.commit,
+          cluster,
+        },
+      }));
+    jobs = [...dreams, ...offerings];
   }
 
   if (!jobs.length) {
@@ -291,14 +353,10 @@ async function main() {
       };
       appendFileSync(ledgerPath, JSON.stringify(record) + "\n");
       done++;
-      const what =
-        job.record.type === "genesis" ? "genesis" : `dream ${job.record.night}`;
-      console.log(`  anchored ${what}: ${link}`);
+      console.log(`  anchored ${label(job.record)}: ${link}`);
     } catch (e) {
-      const what =
-        job.record.type === "genesis" ? "genesis" : `dream ${job.record.night}`;
       console.error(
-        `  ${what} left un-anchored (will retry next run): ` +
+        `  ${label(job.record)} left un-anchored (will retry next run): ` +
           `${e instanceof Error ? e.message : e}`,
       );
     }

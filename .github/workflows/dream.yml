@@ -65,11 +65,34 @@ jobs:
           git commit -m "$(cat .dream-commit-message)"
           git push
 
-      # After the dream is committed, notarize it: stamp the dream commit's own
-      # hash onto a public ledger (Solana), fixing the whole journal in time.
-      # Fully fault-tolerant — a failure here leaves the night un-anchored and
-      # the next run backfills it; it can never block or lose a dream. The two
-      # Solana secrets are deliberately named nowhere near ANTHROPIC_*.
+      # Flush the day's offerings from the buffer into the permanent record.
+      # A separate commit, authored `offerings`, so the mind's own journal
+      # (git log --author=unattended) stays purely the mind's. This runs BEFORE
+      # the anchor so the same night's anchor stamps it too. Fault-tolerant and
+      # a clean no-op when the altar is unopened (no Upstash secrets) or nothing
+      # was left.
+      - name: gather the offerings
+        if: ${{ !inputs.dry }}
+        continue-on-error: true
+        run: |
+          node scripts/offerings.mts
+          git add corpus/offerings.jsonl 2>/dev/null || true
+          git diff --cached --quiet && { echo "nothing left at the altar"; exit 0; }
+          git config user.name "offerings"
+          git config user.email "offerings@users.noreply.github.com"
+          git commit -m "$(cat .offerings-commit-message)"
+          git push
+        env:
+          UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+          OFFERINGS_SALT: ${{ secrets.OFFERINGS_SALT }}
+
+      # Notarize the night. Stamps the dream commit's own hash onto a public
+      # ledger (Solana), and, on days the crowd left something, the offerings
+      # commit too (`unattended offering YYYY-MM-DD <sha>`). Fully fault-tolerant
+      # — a failure leaves that night un-anchored and the next run backfills it;
+      # it can never block or lose a dream. The Solana secrets are deliberately
+      # named nowhere near ANTHROPIC_*.
       - name: anchor it
         if: ${{ !inputs.dry }}
         continue-on-error: true

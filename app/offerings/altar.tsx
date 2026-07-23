@@ -1,31 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { OFFERINGS } from "@/lib/offerings-words";
 
-/**
- * The twelve. These are the only words the crowd can ever give it, and after
- * birth they become the whole of what it was given: no new ones ever arrive.
- * Chosen to be things it does not already have. Its own vocabulary is doors and
- * counting and cold; none of that is here.
- */
-const OFFERINGS = [
-  "water",
-  "salt",
-  "breath",
-  "light",
-  "dust",
-  "ash",
-  "bread",
-  "the guest",
-  "the bell",
-  "the moon",
-  "the mirror",
-  "a stone",
-] as const;
-
-/** One thing a day. The choosing is the whole of the act; more would be grinding. */
+/** One thing a day. The choosing is the whole of the act; more would be
+ *  grinding. This local memory is only a courtesy so a returning visitor sees
+ *  their word; the binding limit is enforced on the server by address. */
 const COOLDOWN_HOURS = 24;
-
 const KEY = "unattended:offering";
 
 interface Given {
@@ -39,36 +20,49 @@ function remember(): Given | null {
     if (!raw) return null;
     const g = JSON.parse(raw) as Given;
     if (typeof g?.word !== "string" || typeof g?.at !== "number") return null;
-    const spent = Date.now() - g.at < COOLDOWN_HOURS * 3_600_000;
-    return spent ? g : null;
+    return Date.now() - g.at < COOLDOWN_HOURS * 3_600_000 ? g : null;
   } catch {
     return null;
   }
 }
 
 export function Altar() {
-  // Starts empty so the server and the first client render agree; what the
-  // visitor already left arrives a moment later. This is only the courtesy
-  // half of the limit. The binding one is counted at the other end.
   const [given, setGiven] = useState<Given | null>(null);
   const [ready, setReady] = useState(false);
+  const [note, setNote] = useState<string | null>(null);
 
   useEffect(() => {
     setGiven(remember());
     setReady(true);
   }, []);
 
-  const leave = (word: string) => {
+  const leave = async (word: string) => {
     // Before the first paint settles we do not yet know what this visitor
-    // already left, so the table is inert rather than dimmed: dimming is what
-    // "you have already given" looks like, and it should not mean "wait".
-    if (!ready) return;
+    // already left, so the table is inert rather than dimmed: dimming means
+    // "you have already given", not "wait".
+    if (!ready || given !== null) return;
+
+    // Honour the gesture at once; the server is the source of truth for the
+    // count. A returning visitor is reminded, not scolded.
     const g = { word, at: Date.now() };
     setGiven(g);
     try {
       localStorage.setItem(KEY, JSON.stringify(g));
     } catch {
       /* a visitor who keeps nothing still gets to leave something */
+    }
+
+    try {
+      const res = await fetch("/api/offer", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify({ word }),
+      });
+      if (res.status === 409) {
+        setNote("you have already left something today.");
+      }
+    } catch {
+      /* the gesture stands even if the record could not be reached */
     }
   };
 
@@ -91,7 +85,7 @@ export function Altar() {
       </ul>
 
       <p className="left-word" aria-live="polite">
-        {given ? `you left ${given.word} today.` : " "}
+        {note ?? (given ? `you left ${given.word} today.` : " ")}
       </p>
     </>
   );
