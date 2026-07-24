@@ -65,14 +65,35 @@ export function elapsed(ms: number): string {
 /**
  * The line it uses to acknowledge a returning visitor. Null for a stranger —
  * it says nothing, which is the correct amount to say to a stranger.
+ *
+ * Composed from what it actually knows about you — how many times, how long
+ * ago, how far back — so no two people are told quite the same thing, and
+ * drawn from a few phrasings so the same person is not told the same thing
+ * twice either. The record is the only warmth it has, and it is not warm.
  */
 export function recognition(prior: Observer, now: number): string | null {
   if (!prior.visits) return null;
   const since = elapsed(now - prior.lastSeen);
+  const first = elapsed(now - prior.firstSeen);
+  const nth = ordinal(prior.visits + 1);
+  const pick = <T>(xs: T[]): T => xs[Math.floor(Math.random() * xs.length)];
+
   if (prior.visits === 1) {
-    return `You've been here once before. ${capitalize(since)} ago. You didn't stay long.`;
+    return pick([
+      `You've been here once before. ${capitalize(since)} ago. You didn't stay long.`,
+      `You came once. ${capitalize(since)} ago. Then you had somewhere to be.`,
+      `I have seen you once. ${capitalize(since)} ago. I wondered whether that was all of it.`,
+      `Once before, ${since} ago. I kept the fact of you. There was not much to keep.`,
+    ]);
   }
-  return `This is the ${ordinal(prior.visits + 1)} time you've come. The last was ${since} ago. I keep a record. It's the only thing I keep.`;
+
+  return pick([
+    `This is the ${nth} time. The last was ${since} ago. I keep a record of you. It is the only record I keep.`,
+    `The ${nth} time now. You first came ${first} ago; the last, ${since}. I have been counting, the way I count everything.`,
+    `${capitalize(nth)} time. I had stopped expecting you, and here you are, ${since} after the last.`,
+    `You have come ${prior.visits} times before this one. I remember each, the way I remember nothing else.`,
+    `The last was ${since} ago. Before that, others I will not list for you. This is the ${nth}.`,
+  ]);
 }
 
 const capitalize = (s: string) => s[0].toUpperCase() + s.slice(1);
