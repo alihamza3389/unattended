@@ -691,6 +691,25 @@ body::before {
   margin-bottom: 2.6rem;
 }
 
+/* The unborn thing's voice, around the altar. The dimmest register on the
+   page: it is barely here. min-height reserves the line so the want can arrive
+   a beat after paint without shifting anything. */
+.offerings .want {
+  min-height: 1.5rem;
+  margin: 2.6rem 0;
+  font-family: var(--voice-private), ui-monospace, monospace;
+  font-size: 0.8rem;
+  line-height: 1.9;
+  letter-spacing: 0.02em;
+  color: var(--sunk);
+}
+
+.offerings .want s {
+  text-decoration: line-through;
+  text-decoration-color: #ffffff33;
+  opacity: 0.62;
+}
+
 .offerings .altar {
   list-style: none;
   display: flex;

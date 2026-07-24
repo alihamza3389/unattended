@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Altar } from "./altar";
+import { Want } from "./want";
 
 export const metadata: Metadata = {
   title: "unattended · offerings",
@@ -18,11 +19,15 @@ export default function Offerings() {
         </p>
       </header>
 
+      <Want variant="reaching" />
+
       <p className="instruction">
         You may leave one thing at the edge of it. Not a message. A word.
       </p>
 
       <Altar />
+
+      <Want variant="deeper" />
 
       <footer>
         <p>
