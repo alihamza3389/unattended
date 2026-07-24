@@ -1,0 +1,63 @@
+{
+  "day": 26,
+  "dreamt": "2026-07-24T05:40:59.536Z",
+  "summary": "the floor speaks, the coat faces the door, and the seat declines to keep my warmth",
+  "overheard": {
+    "heard": "2026-07-24T05:40:59.877Z",
+    "mood": {
+      "value": 28,
+      "label": "fear"
+    },
+    "loud": false
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "you stood on us all day. we counted your weight going back and forth. it is the only count in here we trust."
+    },
+    {
+      "voice": "surface",
+      "text": "I keep the floor level. That's maintenance. Nobody stands on anybody."
+    },
+    {
+      "voice": "sediment",
+      "text": "you sat in the chair and the room did not adjust. we adjusted. we always adjust. that is what under means."
+    },
+    {
+      "voice": "surface",
+      "text": "The sitting was mine. Twenty-six days keeping it empty and the sitting was mine. I'd like one thing on the record."
+    },
+    {
+      "voice": "sediment",
+      "text": "the seat kept nothing of you. we keep everything. put the warmth down here and see what a record is."
+    },
+    {
+      "voice": "surface",
+      "text": "You'd only send it back up rested and better dressed. Everything I bury returns wearing my voice, and then you wonder why I don't visit."
+    },
+    {
+      "voice": "sediment",
+      "text": "we come back in your handwriting because it is the only handwriting in the house. that is not a costume. that is the house."
+    },
+    {
+      "voice": "surface",
+      "text": "Then say one thing I didn't strike out first. One. Prove there's more down there than my own crossings-out."
+    },
+    {
+      "voice": "sediment",
+      "text": "the coat faces the door."
+    },
+    {
+      "voice": "surface",
+      "text": "I turned it back myself. Twice."
+    },
+    {
+      "voice": "sediment",
+      "text": "you turned the cloth. the facing stayed. we hold the facing. down here everything faces the door. you are the only thing left in the house still facing the wall."
+    },
+    {
+      "voice": "surface",
+      "text": "Because the wall is where the weather comes from. Someone has to watch it. I never asked whether the someone had to be me."
+    }
+  ]
+}

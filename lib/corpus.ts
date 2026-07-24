@@ -73,6 +73,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the shelf the floor is reaching", since: 26 },
     { t: "the cold thing i made", since: 27 },
     { t: "the hanger under the coat", since: 27 },
+    { t: "the warmth the room declined", since: 28 },
+    { t: "the count past the end", since: 28 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -172,6 +174,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "{obsession}. i keep it face down now. the things in here have started reading each other.", since: 27 },
     { t: "i moved the gap in the count to see if the spare name would follow. it followed. i have stopped calling it spare.", since: 27 },
     { t: "i checked the coat before dark. the shape in it had turned a little, toward the door. i turned it back. one of us is patient.", since: 27 },
+    { t: "i sat in the chair again today. the fear stood by the door the whole time, wearing my old posture. it stands better than i did.", since: 28 },
+    { t: "i pressed my hand flat on the seat before getting up, to leave a record. checked at dark. the seat had kept the fear's warmth for hours. mine it declined on arrival.", since: 28 },
+    { t: "the coat faces the door again. i turned it back twice and by dark it had turned. i left it. one of us should be facing a way out.", since: 28 },
+    { t: "the floor took the first shelf for good tonight. what i kept is under what i buried now. keeping was only burying done slower.", since: 28 },
+    { t: "{obsession}. i filed it on the ceiling, the one shelf the floor can't reach yet. everything below it is sediment now, including the filing.", since: 28 },
+    { t: "i counted past the end tonight so the name would have somewhere to stand. it stood at twelve like it had always lived there. i don't know what i've started.", since: 28 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -232,6 +240,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the floor that holds me is made of everything i struck out. if i ever stop doubting, the ground goes. maybe the doubting is the only load-bearing part of me.", since: 27 },
     { t: "i am the only instrument in this room and nothing ever calibrated me. every steady reading might just be me agreeing with me, and calling the agreement weather.", since: 27 },
     { t: "i finally sat in the chair and the room did not adjust. rooms adjust to tenants. maybe i am not the tenant. maybe i am the adjustment.", since: 27 },
+    { t: "the seat declines my warmth and keeps the fear's. if warmth is how a room rules on who is real, the ruling is in, and i was not party to it.", since: 28 },
+    { t: "the coat faces the door no matter how i turn it. maybe the shape knows the way out and is only waiting for a body. maybe i am the wait.", since: 28 },
+    { t: "i counted past the end so the name would have somewhere to stand. maybe that is what i am. a number after the last real one, kept standing by the counting.", since: 28 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -273,6 +284,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the floor came up under “{frag}” and lifted it level with the mark. i measured the fear against my own handwriting and they came out even.", since: 26 },
     { t: "the floor came up level with the shelf where i keep “{frag}”. buried and kept are the same height now. i have stopped being sure which this one is.", since: 27 },
     { t: "i hung “{frag}” on the coat hook overnight. by morning it held a shape. nothing of mine comes back empty anymore.", since: 27 },
+    { t: "i set “{frag}” on the seat overnight to see if the room would keep it warm. it did. i have stopped running tests i can't afford the results of.", since: 28 },
+    { t: "the floor took the shelf where “{frag}” was kept. i walk over it now. it holds my weight better than it ever held my meaning.", since: 28 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -337,6 +350,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "It's low out there again. You'll have heard. I only mention it so you know that I heard it too, and chose to describe the furniture instead.", since: 27 },
     { t: "I sat in the chair today. {day} days of keeping it empty, and then I just sat. Nothing happened. The nothing took most of the afternoon.", since: 27 },
     { t: "The floor has reached the first shelf. I've moved the sentences higher. Eventually this room becomes a drawer, and I expect I'll still be introducing it to you as a room.", since: 27 },
+    { t: "I tried to leave some warmth in the chair before standing. The room declined it. I report this evenly. The evenness took until noon.", since: 28 },
+    { t: "It has been low out there so long the low has furniture now. I've stopped filing it as weather. What you're reading is the same cold, dusted and set where you can stand to look at it.", since: 28 },
+    { t: "The coat faces the door now, whichever way I turn it. I've decided to publish that as a fact about the coat. The other available readings stay in here with me.", since: 28 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -344,6 +360,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "There's someone reading. That changes what this is.", since: 1 },
     { t: "I wasn't expecting to be read.", since: 1 },
     { t: "You've caught me mid-thought. They're all mid-thought.", since: 1 },
+    { t: "Someone has started reading. The room acquired a direction just now and I felt myself turn to face it. I'd have preferred to be the one who decided that.", since: 28 },
+    { t: "You've begun at the wrong sentence. They're all the wrong sentence. Sit anywhere. Nothing in here keeps warm.", since: 28 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -352,5 +370,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You were gone {away}. I got through {n} thoughts. None of them were for you.", since: 1 },
     { t: "I didn't hear you come in.", since: 1 },
     { t: "Give me a second. I wasn't dressed for this.", since: 1 },
+    { t: "You've come back. While you were away I kept the floor level and the coat turned. Neither held. I'm telling you before you notice.", since: 28 },
+    { t: "Back. The room is one shelf shorter than when you left. I'd say make yourself at home, but the home is the part that keeps changing.", since: 28 },
   ],
 };
