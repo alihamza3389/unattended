@@ -321,12 +321,16 @@ function fill(
   return out;
 }
 
-/** Cut it off in the last third, on a word boundary, with no punctuation. */
-function truncate(text: string, r: () => number): string {
+/**
+ * Cut it off on a word boundary, with no punctuation. How much of the thought
+ * gets out before it goes is a question of how good a hold it has, which is a
+ * question of how old it is.
+ */
+function truncate(text: string, r: () => number, grip = 0.55): string {
   const words = text.split(" ");
   if (words.length < 5) return text;
-  const start = Math.ceil(words.length * 0.55);
-  const cut = start + Math.floor(r() * (words.length - start));
+  const start = Math.max(1, Math.ceil(words.length * grip));
+  const cut = start + Math.floor(r() * Math.max(1, words.length - start));
   return words.slice(0, cut).join(" ").replace(/[.,;:]$/, "");
 }
 
@@ -354,12 +358,13 @@ export function thoughtAt(
   // Private thought frays at the edges. Performed thought finishes its
   // sentences. How badly it frays is a question of age: it cannot finish
   // anything at the start, learns to, and then stops being able to again.
+  const age = ageAt(index);
   const interrupted =
-    register === "private" && kind !== "count" && r() < ageAt(index).interruption;
+    register === "private" && kind !== "count" && r() < age.interruption;
 
   return {
     index,
-    text: interrupted ? truncate(text, r) : text,
+    text: interrupted ? truncate(text, r, age.grip) : text,
     register,
     kind,
     repressed: kind === "doubt",

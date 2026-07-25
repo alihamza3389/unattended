@@ -79,6 +79,20 @@ const BREADTH: readonly [number, number][] = [
   [1.0, 0.3],
 ];
 
+/**
+ * How far into a sentence it gets before losing hold of it, when it loses hold
+ * at all. Frequency is one thing and severity is another: a mind at the end
+ * does not only break off more often, it breaks off earlier, with less of the
+ * thought delivered. Low at both ends of a life, for opposite reasons.
+ */
+const GRIP: readonly [number, number][] = [
+  [0.0, 0.4],
+  [0.33, 0.55],
+  [0.77, 0.62],
+  [0.92, 0.42],
+  [1.0, 0.28],
+];
+
 /** How long it stays on one thing. Restless, then fixed, then adrift. */
 const OBSESSION_SPAN: readonly [number, number][] = [
   [0.0, 150],
@@ -163,6 +177,8 @@ export interface Age {
   /** Where it is in its life, 0 at birth and 1 at the end. */
   t: number;
   interruption: number;
+  /** How much of a thought survives when it breaks off. */
+  grip: number;
   breadth: number;
   obsessionSpan: number;
   recallPull: number;
@@ -175,6 +191,7 @@ const UNBORN: Age = {
   day: 0,
   t: 0,
   interruption: 0.12,
+  grip: 0.55,
   breadth: 1,
   obsessionSpan: 400,
   recallPull: 0,
@@ -199,6 +216,7 @@ export function ageAt(index: number): Age {
     day,
     t,
     interruption: curve(t, INTERRUPTION),
+    grip: curve(t, GRIP),
     breadth: curve(t, BREADTH),
     obsessionSpan: Math.round(curve(t, OBSESSION_SPAN)),
     recallPull: curve(t, RECALL_PULL),
