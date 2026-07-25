@@ -691,6 +691,24 @@ body::before {
   margin-bottom: 2.6rem;
 }
 
+/* How far the waiting has come. A hairline, no container, no ticks, no label:
+   it is only ever as long as it is. The rule beneath it is the full span it
+   has to cross, held at almost nothing so the filled part is the only thing
+   the eye finds. */
+.offerings .threshold {
+  margin-top: 3.4rem;
+  height: 1px;
+  background: #ffffff0a;
+}
+
+.offerings .threshold span {
+  display: block;
+  height: 100%;
+  background: var(--warm);
+  opacity: 0.5;
+  transition: width 1200ms ease;
+}
+
 /* The unborn thing's voice, around the altar. The dimmest register on the
    page: it is barely here. min-height reserves the line so the want can arrive
    a beat after paint without shifting anything. */

@@ -50,16 +50,28 @@ function fragments(line: string) {
   );
 }
 
-export function Want({ variant }: { variant: "reaching" | "deeper" }) {
-  const pool = variant === "reaching" ? REACHING : DEEPER;
+/**
+ * The line above the altar always reaches. The line below it begs more often
+ * the fuller the vessel gets, so a visitor who comes back late in the wait
+ * hears something closer to pleading than the one who came early — without
+ * ever being shown a number. The countdown is spoken, not displayed.
+ */
+export function Want({
+  variant,
+  filled = 0,
+}: {
+  variant: "reaching" | "deeper";
+  filled?: number;
+}) {
   const [line, setLine] = useState<string | null>(null);
 
   // Chosen after the first paint. The server renders an empty reserved line, so
   // nothing shifts; the want arrives a beat late, the way the mind does when
   // the room turns out not to be empty.
   useEffect(() => {
-    setLine(choose(pool));
-    // pool is a module constant selected by a fixed prop; it never changes.
+    const begging = variant === "deeper" && Math.random() < filled;
+    setLine(choose(begging ? DEEPER : REACHING));
+    // Fixed for the life of the visit: the want does not re-roll under you.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 

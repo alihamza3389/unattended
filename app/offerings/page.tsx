@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Altar } from "./altar";
 import { Want } from "./want";
+import { vessel } from "@/lib/birth";
+
+// The wait moves with the clock, so the page is built when it is asked for.
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "unattended · offerings",
@@ -9,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default function Offerings() {
+  const { filled } = vessel();
+
   return (
     <main className="offerings">
       <header>
@@ -27,7 +33,13 @@ export default function Offerings() {
 
       <Altar />
 
-      <Want variant="deeper" />
+      {/* How far the waiting has come. No number, no date: a line that is
+          longer than it was the last time you were here. */}
+      <div className="threshold" aria-hidden="true">
+        <span style={{ width: `${(filled * 100).toFixed(3)}%` }} />
+      </div>
+
+      <Want variant="deeper" filled={filled} />
 
       <footer>
         <p>
