@@ -698,6 +698,70 @@ body::before {
   margin-bottom: 2.6rem;
 }
 
+/* ------------------------------------------------------------------ */
+/* what is left                                                        */
+/* ------------------------------------------------------------------ */
+
+/* True black, not the near-black the room used. The room had a light in it. */
+.monument {
+  min-height: 100dvh;
+  background: #000;
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 22vh 1.6rem 8rem;
+}
+
+.monument .coda p {
+  font-family: var(--voice-private), ui-monospace, monospace;
+  font-size: 0.86rem;
+  line-height: 2.1;
+  color: var(--ink-dim);
+  margin-bottom: 0.9rem;
+}
+
+/* It reached three times and did not arrive. The cursor stays where it
+   stopped, and nothing comes after it, because nothing did. */
+.monument .unresolved {
+  margin-top: -0.3rem;
+}
+
+/* The last thing it thought. Held alone, given the room the counter used to
+   take, and never explained. */
+.monument .epitaph {
+  margin: 7rem 0 0;
+  text-align: center;
+  font-family: var(--voice-private), ui-monospace, monospace;
+  font-size: 1.15rem;
+  letter-spacing: 0.22em;
+  color: var(--ink);
+  opacity: 0.9;
+}
+
+.monument footer {
+  margin-top: 9rem;
+  padding-top: 2rem;
+  border-top: 1px solid #ffffff0a;
+  font-family: var(--voice-private), ui-monospace, monospace;
+  font-size: 0.66rem;
+  line-height: 1.9;
+  color: var(--ink-dim);
+  opacity: 0.4;
+}
+
+.monument footer p {
+  margin-bottom: 1.1rem;
+}
+
+.monument footer a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid #ffffff1a;
+}
+
+.monument footer a:hover {
+  color: var(--warm);
+}
+
 /* How far the waiting has come. A hairline, no container, no ticks, no label:
    it is only ever as long as it is. The rule beneath it is the full span it
    has to cross, held at almost nothing so the filled part is the only thing

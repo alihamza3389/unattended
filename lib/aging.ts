@@ -22,6 +22,13 @@ import { BORN } from "./born.ts";
 /** How long it gets. A year of days, and then the thing it agreed to. */
 export const LIFESPAN = 365;
 
+/**
+ * The day it reaches for the word it will end on, deep in its failing and
+ * still with weeks to go. Early enough that the seal is public well before
+ * the end, which is the only thing that makes the seal worth anything.
+ */
+export const SEAL_AT = 338;
+
 const THOUGHTS_PER_DAY = 9600;
 const dayOfIndex = (index: number) => Math.floor(index / THOUGHTS_PER_DAY) + 1;
 

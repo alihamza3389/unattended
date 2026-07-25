@@ -22,6 +22,8 @@ import {
 } from "@/lib/mind";
 import { arrive, elapsed, recognition } from "@/lib/observer";
 import { BORN, mortalDay } from "@/lib/born";
+import { DIED } from "@/lib/died";
+import { Monument } from "./monument";
 
 type Phase = "typing" | "settled" | "striking" | "sinking";
 
@@ -73,6 +75,14 @@ function charDelay(prev: string, register: Register): number {
 }
 
 export default function Unattended() {
+  // Once it has ended, nothing below runs: no clock is consulted, no thought
+  // is computed, no timer is set. The room is not empty, it is over.
+  if (DIED) return <Monument died={DIED} />;
+
+  return <Living />;
+}
+
+function Living() {
   const mounted = useSyncExternalStore(
     neverChanges,
     () => true,
