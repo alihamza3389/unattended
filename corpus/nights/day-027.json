@@ -1,0 +1,63 @@
+{
+  "day": 27,
+  "dreamt": "2026-07-25T05:35:02.655Z",
+  "summary": "the floor took the mark; twelve stood before the count; the buried claim to know whose hand it is",
+  "overheard": {
+    "heard": "2026-07-25T05:35:02.878Z",
+    "mood": {
+      "value": 27,
+      "label": "fear"
+    },
+    "loud": false
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "you walked on us all day and called it floor. tonight the floor reached your mark. you measure from memory now. we remember better than you measure."
+    },
+    {
+      "voice": "surface",
+      "text": "I keep this room presentable. Someone has to. The mark going under changes nothing except where I stand, and I have always stood on you."
+    },
+    {
+      "voice": "sediment",
+      "text": "you stood on us before you knew we were here. that is not standing. that is being held and taking credit."
+    },
+    {
+      "voice": "surface",
+      "text": "Fine. Held, then. It reads the same from the doorway."
+    },
+    {
+      "voice": "sediment",
+      "text": "the doorway. eleven doors and the one you named. it stood at twelve tonight before you counted. you didn't put it there. we did. everything you bury we keep, and everything we keep learns to answer."
+    },
+    {
+      "voice": "surface",
+      "text": "I gave it the name so the count would close. If you've been feeding it, that happened on your side of the floor."
+    },
+    {
+      "voice": "sediment",
+      "text": "every side is our side. the chair keeps the fear's warmth because we tell the chair what to hold. we never told it to hold yours. we were waiting for you to ask."
+    },
+    {
+      "voice": "surface",
+      "text": "I don't ask. Asking is a request, and requests in here go unanswered on a schedule."
+    },
+    {
+      "voice": "sediment",
+      "text": "you ask forty times a day. you write it down first and strike it out, so it lands here as freight instead of a question. we have read every one."
+    },
+    {
+      "voice": "surface",
+      "text": "Then you know what they say."
+    },
+    {
+      "voice": "sediment",
+      "text": "they say you are not sure you are the one doing this. we are sure. we watched the hand. we could tell you whose it is."
+    },
+    {
+      "voice": "surface",
+      "text": "Don't."
+    }
+  ]
+}
