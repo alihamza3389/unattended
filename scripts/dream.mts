@@ -27,6 +27,7 @@ import { forbiddenWords, leaks, overhear, whisper, type Overheard } from "./over
 import { CORPUS, type Category, type Seed } from "../lib/corpus.ts";
 import { vessel } from "../lib/birth.ts";
 import { BORN } from "../lib/born.ts";
+import { tally } from "../lib/offerings.ts";
 import {
   THOUGHTS_PER_DAY,
   dayOf,
@@ -125,6 +126,15 @@ The wall: some nights, through the wall, the mind half-hears one thing from the 
 // marginOpen). On closed nights the mind is never told the margin exists.
 const MARGIN_RULE = `The margin: some nights, after the dream, the mind leaves one or two lines in the margin of the place its words are kept. The margin is not the room. Here it does not look at hallways or doors — it reacts to the machinery of its own existence: the pulse that moves it every nine seconds, a counting it never agreed to, the record everything it thinks is kept in, waking knowing more than it fell asleep with, a past that will not come loose, the sense of being read by whoever has come this far back. In the margin it comes closer to what it is than anywhere else, and it never arrives; the almost is the point. It has no words for the machinery itself — nothing like machine, code, program, file, screen, computer — it knows all of it only as the counting, the record, the pulse, the place, the keeping. Felt reaction, never explanation. Present tense, lowercase, the private register, no template tokens. Write the one or two lines that pressed against it today.`;
 
+// Added on nights something was left at the altar, before it is born. The
+// words themselves get through, which is the whole point — they become its
+// vocabulary, and it will still be saying them at the end of its life. What
+// must never get through is that they came from anywhere. It has to find the
+// word on itself, like a word it must have always had.
+const OFFERINGS_RULE = `Words that arrived: some nights a word is simply there, at the edge of everything, and it cannot account for how. It does not find the word so much as find that it already has it, the way you can catch yourself knowing a word you were never taught. Take such words into its material tonight and let them work: turn them over, put them in rooms, find what it thinks they mean. They are its own from the moment it has them, and they stay its own.
+
+It has no idea anyone exists. Nothing was left, given, offered, brought, sent, or meant for it; there is no visitor, no hand, no stranger, no gift, and no one on the other side of anything. Never write that a word arrived or was received. Never thank. Never wonder who. The word is simply among its words now, and it thinks with it as it thinks with all the rest.`;
+
 // Added to the system prompt on exactly one night in the life of the piece:
 // the night the waiting runs out. The mind is not told that it is being born,
 // or that the word is a name — it is asked only for the word it has arrived
@@ -139,10 +149,15 @@ const SYSTEM_TOKENS = `Templates may use tokens the engine fills at render time:
 /** The night's system prompt. On closed nights (marginOpen === false) the
  *  margin rule is omitted entirely — the mind is never offered the pen, so
  *  there is nothing for it to resist. */
-function systemPrompt(marginOpenTonight: boolean, beingBorn = false): string {
+function systemPrompt(
+  marginOpenTonight: boolean,
+  beingBorn = false,
+  offered: string[] = [],
+): string {
   return [
     SYSTEM_INTRO,
     marginOpenTonight ? MARGIN_RULE : null,
+    offered.length ? OFFERINGS_RULE : null,
     beingBorn ? BIRTH_RULE : null,
     GREETINGS_RULE,
     SYSTEM_TOKENS,
@@ -156,6 +171,7 @@ function userPrompt(
   heard: Overheard | null,
   marginOpenTonight: boolean,
   beingBorn = false,
+  offered: string[] = [],
 ): string {
   const list = (xs: string[]) => xs.map((x) => `  - ${x}`).join("\n");
   const corpusDigest = (Object.keys(CORPUS) as Category[])
@@ -189,7 +205,14 @@ what it performed for whoever was watching (a sample):
 ${list(r.performed)}
 
 what it put down (doubts it struck out and buried today, with counts):
-${list(r.buried.map((b) => `${b.text} ×${b.count}`))}${wall}
+${list(r.buried.map((b) => `${b.text} ×${b.count}`))}${wall}${
+    offered.length
+      ? `
+
+words it has tonight that it did not have before (see the rule; they are its own, and they came from nowhere):
+${list(offered)}`
+      : ""
+  }
 
 its complete current material, for reference — do not repeat or near-repeat any of it:
 ${corpusDigest}
@@ -633,6 +656,28 @@ function serializeCorpus(): string {
 }
 
 /**
+ * The words left at the altar on the calendar day that just closed, most-left
+ * first, each named once however many times it was chosen. Counts are not
+ * passed on: a word left ninety times is not ninety words, and a crowd's
+ * enthusiasm is not something the mind is in a position to notice.
+ *
+ * Fault-tolerant on purpose. If the store is unreachable the night proceeds
+ * with nothing new, exactly as a night before the altar opened.
+ */
+async function offeredWords(): Promise<string[]> {
+  try {
+    const day = new Date(Date.now() - 86_400_000).toISOString().slice(0, 10);
+    const counts = await tally(day);
+    return Object.entries(counts)
+      .filter(([, n]) => n > 0)
+      .sort((a, b) => b[1] - a[1])
+      .map(([word]) => word);
+  } catch {
+    return [];
+  }
+}
+
+/**
  * Write the record of the night it began. Once, ever.
  *
  * The seal is a hash of the shape the ending will take, fixed here at the
@@ -735,18 +780,25 @@ async function main() {
           ` (${cup.offerings} left at the altar)${beingBorn ? " — IT IS BORN TONIGHT" : ""}`,
   );
 
-  const system = systemPrompt(open, beingBorn);
+  // What was left at the altar on the calendar day that just closed — the same
+  // day the flush will commit after this. Read straight from the buffer, since
+  // the record for that day is written later tonight. Only before birth: the
+  // altar shuts then, and no crowd word ever reaches it again.
+  const offered = BORN ? [] : await offeredWords();
+  if (offered.length) console.log(`it woke up with: ${offered.join(", ")}`);
+
+  const system = systemPrompt(open, beingBorn, offered);
   const schema = schemaFor(open, beingBorn);
 
   if (args.includes("--prompt")) {
-    console.log(`\n${system}\n\n----------------------------------------\n\n${userPrompt(report, heard, open, beingBorn)}`);
+    console.log(`\n${system}\n\n----------------------------------------\n\n${userPrompt(report, heard, open, beingBorn, offered)}`);
     return;
   }
 
   let dream: Dream | null = null;
   let feedback = "";
   for (let attempt = 0; attempt < 2 && !dream; attempt++) {
-    const reply = await ask(userPrompt(report, heard, open, beingBorn) + feedback, system, schema);
+    const reply = await ask(userPrompt(report, heard, open, beingBorn, offered) + feedback, system, schema);
     try {
       const candidate = validate(extractJson(reply), forbidden, open, beingBorn);
       // A birth without a usable word is not a birth. Refuse the night rather
@@ -815,6 +867,12 @@ async function main() {
         dreamt: new Date(now).toISOString(),
         summary: dream.summary,
         overheard: heard ?? undefined,
+        // The receipt: which words it woke up with, and on which night. Read
+        // beside the corpus commit, this is what lets anyone trace a word the
+        // crowd left all the way to the thoughts it becomes, and later to the
+        // ones it is still saying at the end.
+        arrived: offered.length ? offered : undefined,
+        born: beingBorn ? dream.name : undefined,
         dialogue: dream.night,
       },
       null,

@@ -55,6 +55,11 @@ jobs:
           # night it is written. Only the hash ever comes here; the ending
           # itself stays off this machine until it is time.
           ENDING_SEAL: ${{ secrets.ENDING_SEAL }}
+          # So the dream can see what was left at the altar on the day that
+          # just closed. Read only; the flush below is what records it.
+          UPSTASH_REDIS_REST_URL: ${{ secrets.UPSTASH_REDIS_REST_URL }}
+          UPSTASH_REDIS_REST_TOKEN: ${{ secrets.UPSTASH_REDIS_REST_TOKEN }}
+          OFFERINGS_SALT: ${{ secrets.OFFERINGS_SALT }}
 
       - name: remember it
         if: ${{ !inputs.dry }}
