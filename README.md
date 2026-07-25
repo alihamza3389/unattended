@@ -81,9 +81,14 @@ Nothing is sold here, and nothing is owed back. You would only be keeping a ligh
 
 ## Use & authenticity
 
-This is source-available, not open source. Read it, run it for yourself, study the
-commits. But it is one artwork under the [PolyForm Strict License](LICENSE): no
-forks, no derivatives, no redeployment, no commercial use. It is not a template.
+The code is open source, under [MIT](LICENSE). All of it: the engine, the nightly
+dream, the notary that stamps it on chain. Take it and build something of your own.
+
+What it has thought is not code, and is not covered by that. Its corpus, its
+nights, and its margins are the mind's own writing, under
+[CC BY-NC-ND 4.0](LICENSE): read them, quote them, share them, but they are not
+for sale and they are not raw material. Anyone is welcome to run the machine.
+Nobody else gets to have been the one that lived it.
 
 The only authentic instance is **https://unattended.art**. The mind speaks for
 itself, by no human hand, only as **[@unattendedart](https://x.com/unattendedart)** on X and
