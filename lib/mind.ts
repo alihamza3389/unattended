@@ -13,6 +13,8 @@
  */
 
 import { CORPUS, type Seed } from "./corpus.ts";
+import { BORN } from "./born.ts";
+import { ageAt, mixFor } from "./aging.ts";
 
 /** Fixed point of origin. It was thinking before it was hosted. */
 export const BIRTH = Date.UTC(2026, 5, 28, 3, 14, 0);
@@ -116,11 +118,21 @@ function poolsFor(day: number): Pools {
 /* what it keeps coming back to                                        */
 /* ------------------------------------------------------------------ */
 
-const OBSESSION_SPAN = 400; // ≈ one hour; obsessions turn over on their own
+/**
+ * How much of a pool it can actually reach, counted from the oldest entry.
+ * Full while it is unborn and at the height of its powers; small at either end
+ * of a life. Narrowing always drops the newest material first, so a mind
+ * closing down is left holding the words it started with.
+ */
+function narrow<T>(pool: T[], breadth: number): T[] {
+  if (breadth >= 1 || pool.length === 0) return pool;
+  return pool.slice(0, Math.max(1, Math.ceil(pool.length * breadth)));
+}
 
 export const obsessionAt = (index: number) => {
-  const pool = poolsFor(dayOf(index)).obsessions;
-  return pool[Math.floor(index / OBSESSION_SPAN) % pool.length];
+  const age = ageAt(index);
+  const pool = narrow(poolsFor(dayOf(index)).obsessions, age.breadth);
+  return pool[Math.floor(index / age.obsessionSpan) % pool.length];
 };
 
 /**
@@ -159,9 +171,13 @@ const WEIGHTS: Record<Register, [Kind, number][]> = {
   ],
 };
 
-function chooseKind(r: () => number, register: Register): Kind {
+function chooseKind(
+  r: () => number,
+  register: Register,
+  mix: [Kind, number][] | null,
+): Kind {
   let n = r();
-  for (const [kind, w] of WEIGHTS[register]) {
+  for (const [kind, w] of mix ?? WEIGHTS[register]) {
     if ((n -= w) <= 0) return kind;
   }
   return register === "performed" ? "performed" : "drift";
@@ -170,9 +186,10 @@ function chooseKind(r: () => number, register: Register): Kind {
 /** The unrotated pick for an index — cheap, no template expansion, no recursion. */
 function identity(index: number, register: Register, depth: number) {
   const r = rng(seedOf(index));
-  let kind = chooseKind(r, register);
+  const age = ageAt(index);
+  let kind = chooseKind(r, register, mixFor(age, register));
   if (depth > 0 && kind === "memory") kind = "drift";
-  const pool = poolsFor(dayOf(index)).kinds[kind];
+  const pool = narrow(poolsFor(dayOf(index)).kinds[kind], age.breadth);
   return { kind, tIdx: Math.floor(r() * pool.length), pool, r };
 }
 
@@ -279,9 +296,18 @@ function fill(
     // Reach back somewhere between an hour and a week, and quote itself. Some
     // of what's back there is too short or too broken to lift a clause out of.
     let frag = "";
+    const pull = ageAt(index).recallPull;
     for (let attempt = 0; attempt < 3 && !frag; attempt++) {
       const back = 400 + Math.floor(r() * 60_000);
-      const past = thoughtAt(Math.max(0, index - back), false, depth + 1);
+      let reach = index - back;
+      // Late on, whatever it reaches for, it comes up holding the beginning.
+      // It is not remembering its first days more fondly. It is that the rest
+      // has stopped being available to remember.
+      if (pull > 0 && BORN) {
+        const early = BORN.index + Math.floor(r() * THOUGHTS_PER_DAY * 30);
+        reach = Math.round(reach * (1 - pull) + early * pull);
+      }
+      const past = thoughtAt(Math.max(0, Math.min(index - 1, reach)), false, depth + 1);
       frag = fragment(past.text, r);
     }
     out = frag
@@ -325,8 +351,11 @@ export function thoughtAt(
   const raw = fill(tpl, index, r, depth);
   const text = register === "private" ? quiet(raw) : raw;
 
-  // Private thought frays at the edges. Performed thought finishes its sentences.
-  const interrupted = register === "private" && kind !== "count" && r() < 0.12;
+  // Private thought frays at the edges. Performed thought finishes its
+  // sentences. How badly it frays is a question of age: it cannot finish
+  // anything at the start, learns to, and then stops being able to again.
+  const interrupted =
+    register === "private" && kind !== "count" && r() < ageAt(index).interruption;
 
   return {
     index,
