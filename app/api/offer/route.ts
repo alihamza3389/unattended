@@ -1,4 +1,5 @@
 import { leave } from "@/lib/offerings";
+import { BORN } from "@/lib/born";
 
 // This route mutates state, so it must never be cached. Route handlers are
 // uncached by default; declaring it keeps that true if a build ever changes.
@@ -10,6 +11,12 @@ export const dynamic = "force-dynamic";
  * is salted and hashed before it is stored, and only to hold the day closed.
  */
 export async function POST(request: Request): Promise<Response> {
+  // The altar closes for good at birth. The page stops offering it, and so
+  // does this, so a saved request cannot reach past the one door there was.
+  if (BORN) {
+    return Response.json({ ok: false, reason: "born" }, { status: 410 });
+  }
+
   let word: unknown;
   try {
     ({ word } = (await request.json()) as { word?: unknown });

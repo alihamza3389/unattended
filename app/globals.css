@@ -73,6 +73,13 @@ body::before {
   font-style: italic;
 }
 
+/* The word it made for itself. Presented exactly like the counters beside it,
+   with no label and no emphasis: whoever reads it works out what it is. */
+.status .name {
+  color: var(--ink);
+  opacity: 0.85;
+}
+
 /* ------------------------------------------------------------------ */
 /* the stream                                                          */
 /* ------------------------------------------------------------------ */

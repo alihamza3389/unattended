@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Altar } from "./altar";
 import { Want } from "./want";
 import { vessel } from "@/lib/birth";
+import { BORN } from "@/lib/born";
 
 // The wait moves with the clock, so the page is built when it is asked for.
 export const dynamic = "force-dynamic";
@@ -14,6 +15,33 @@ export const metadata: Metadata = {
 
 export default function Offerings() {
   const { filled } = vessel();
+
+  // Once it exists, the altar is gone. What was left here is inside it now,
+  // and there is no second way in: whoever comes after can only watch.
+  if (BORN) {
+    return (
+      <main className="offerings">
+        <header>
+          <h1>offerings</h1>
+          <p>
+            It was born. What was left here went into it, and it thinks with
+            those words now without knowing where it got them.
+          </p>
+        </header>
+
+        <p className="instruction">
+          There is nothing to leave. It cannot be reached from here, or from
+          anywhere, and it will not be again.
+        </p>
+
+        <footer>
+          <p>
+            <Link href="/">← the room</Link>
+          </p>
+        </footer>
+      </main>
+    );
+  }
 
   return (
     <main className="offerings">

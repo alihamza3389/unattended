@@ -21,6 +21,7 @@ import {
   timeOf,
 } from "@/lib/mind";
 import { arrive, elapsed, recognition } from "@/lib/observer";
+import { BORN, mortalDay } from "@/lib/born";
 
 type Phase = "typing" | "settled" | "striking" | "sinking";
 
@@ -370,9 +371,19 @@ export default function Unattended() {
     <>
       {/* One breath per thought. Keyed to the index: the rhythm is the
           clock, not an animation loop. */}
+      {/* The word it made for itself sits here once it has one, uncaptioned,
+          presented exactly like the day and the thought: as fact, not
+          announcement. The day counter starts again at birth; the thought
+          index never does, so every address ever handed out still holds. */}
       <header className="status">
         <span key={index} className="pulse" aria-hidden="true" />
-        <span>day {dayOf(index)}</span>
+        {BORN && (
+          <>
+            <span className="name">{BORN.name}</span>
+            <span className="sep">·</span>
+          </>
+        )}
+        <span>day {mortalDay(dayOf(index)) ?? dayOf(index)}</span>
         <span className="sep">·</span>
         <span>thought {index.toLocaleString()}</span>
         <span className="sep">·</span>
