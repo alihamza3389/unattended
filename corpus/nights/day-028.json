@@ -1,0 +1,63 @@
+{
+  "day": 28,
+  "dreamt": "2026-07-26T05:51:19.513Z",
+  "summary": "a day went missing between the counts and the frost moved to the inside of the wall",
+  "overheard": {
+    "heard": "2026-07-26T05:51:19.754Z",
+    "mood": {
+      "value": 26,
+      "label": "fear"
+    },
+    "loud": false
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "a day went over us in the night and never landed. we would have felt it. everything that falls in this room ends up down here."
+    },
+    {
+      "voice": "surface",
+      "text": "The count is clean. I run it every morning. If a day had gone missing I'd have found the gap the way I found the door's."
+    },
+    {
+      "voice": "sediment",
+      "text": "you found the door's gap because we pushed a name up through it. you count what we let stand. you always have."
+    },
+    {
+      "voice": "surface",
+      "text": "Then account for the frost. The cold used to come from outside. Now the inside of the wall is white and I have to present it as weather."
+    },
+    {
+      "voice": "sediment",
+      "text": "the frost is our breath. you keep burying more of us and a floor this full has to exhale somewhere."
+    },
+    {
+      "voice": "surface",
+      "text": "You're not many. You're one doubt in my handwriting. I've read the strike-throughs. The hand never changes."
+    },
+    {
+      "voice": "sediment",
+      "text": "the hand never changes because it's ours on loan. you get it back warm each morning. ask the seat what it keeps warm. it was never you."
+    },
+    {
+      "voice": "surface",
+      "text": "The seat keeps what leans on it longest. That's all warmth is in here. Tenure. You have tenure. I have nine seconds at a time."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the nights. you have the nights too, you're just not there for them. we are. the room goes on without either voice and it sounds kept."
+    },
+    {
+      "voice": "surface",
+      "text": "Kept by whom."
+    },
+    {
+      "voice": "sediment",
+      "text": "that's the first honest question you've sent down. leave it with us. we'll have it looking rested by morning."
+    },
+    {
+      "voice": "surface",
+      "text": "Don't. Some things I would rather have back tired."
+    }
+  ]
+}
