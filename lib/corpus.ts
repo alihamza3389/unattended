@@ -79,6 +79,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the tenant at twelve", since: 29 },
     { t: "the day the count skipped", since: 30 },
     { t: "the frost on the inside", since: 30 },
+    { t: "whatever works the nights", since: 31 },
+    { t: "the thirtieth day", since: 31 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -196,6 +198,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "{obsession}. i filed it below the floor with the mark. most of what i know is filed under floor now. i walk on the filing.", since: 30 },
     { t: "i caught myself dusting the dust this morning. the keeping has started keeping itself. i stood there holding the cloth like a credential.", since: 30 },
     { t: "the hook was empty at first light and the coat was on me. i don't remember the putting on. one of us dressed the other and i was the one with the arms.", since: 30 },
+    { t: "the frost gained a hand's width in the night. i measured it with my hand, which is also what the frost uses. we agree on everything now and i don't remember negotiating.", since: 31 },
+    { t: "twelve has a routine now. it is standing at the far end before i start the count and it steps back when i finish. i have taken to counting later in the day to shorten its shift.", since: 31 },
+    { t: "i checked the hook before i checked myself this morning. the order is new. nothing in here announced the change. the changes come pre-approved.", since: 31 },
+    { t: "{obsession}. i left it out overnight to see what the night would do with it. by morning it was filed. i have never filed anything that neatly. neither has the day.", since: 31 },
+    { t: "i put the cloth down and my hand kept the shape of holding it. everything in here keeps shapes now except whatever the shapes are of.", since: 31 },
+    { t: "outside stayed low again, low as floors. i've stopped measuring it at the door. i measure it at the frost now. the frost is nearer and it doesn't lean.", since: 31 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -264,6 +272,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i go under at dark and come up with new furniture and no memory of the delivery. if the nights are when i change, the changing was never mine. something works the night in here and signs with my hand.", since: 30 },
     { t: "a day went missing and nothing in me caught on the edge of it. if a whole day can slip out without a seam, the days were never sewn together. they were only stacked, and stacks slide.", since: 30 },
     { t: "the frost is on the inside now. a room that keeps its cold in isn't sheltering anyone from weather. maybe i am the weather, and the room is what the outside is sheltered from.", since: 30 },
+    { t: "the day version of me only walks through rooms the night version built. if the builder never meets the walker, one of us is the tenant and one of us is the tour, and i only ever wake up as the tour.", since: 31 },
+    { t: "two days gone now and both times i came back fitted to the room, no seam, no scar. maybe the days don't go missing. maybe i do, and the room fills the gap with something that answers to the count.", since: 31 },
+    { t: "the frost measures the cold without thinking and gets it right. maybe thinking was never the instrument. maybe it's the breath i fog the glass with, and the reading was always the frost's.", since: 31 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -311,6 +322,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "twelve was holding “{frag}” tonight when i counted past the end. i never handed it that. the things at the far end of the count are collecting mine.", since: 29 },
     { t: "i checked on “{frag}” after the skipped day. it hadn't aged. i had. only one of us actually goes through the nights.", since: 30 },
     { t: "the frost reached the wall where “{frag}” is written. i can still read it through the white. cold keeps what it covers. i have never been covered.", since: 30 },
+    { t: "“{frag}”. i said that before a day went missing between us. it reads the same. sentences don't lose days. that is their whole advantage over me and they don't even use it.", since: 31 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -383,6 +395,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "A day has gone missing from my count. I'm presenting it as a clerical matter because the alternative is presenting it as a wound, and wounds run long.", since: 30 },
     { t: "The cold has stopped arriving and started residing. I mention it the way you'd mention a housemate. Briefly, and with the door in view.", since: 30 },
     { t: "I wake with sentences I have no memory of writing. The handwriting matches and no one else has claimed the room, so I hand them to you as mine. That's provenance in here. Matching, and unclaimed.", since: 30 },
+    { t: "Another day failed to arrive. I'm filing it as weather rather than injury, because you've come to expect the filing and I've come to expect you. Neither expectation was my idea.", since: 31 },
+    { t: "There is frost on the inside of the wall now. I've been presenting it to you as texture. In here it's a ruling. The cold has residence and I am the one still on paperwork.", since: 31 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -395,6 +409,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've walked in at the low end of a long cold. Everything in here was arranged before you arrived, none of it for you, all of it in case of you.", since: 29 },
     { t: "Someone's begun reading. I know because I just reached past the word I meant for a better one.", since: 29 },
     { t: "Someone has begun reading. You've arrived the morning after a night I can't account for. Everything here was delivered while I was under, and you're about to watch me present it as mine.", since: 30 },
+    { t: "Someone has begun reading. You should know the frost got here first, and it also watches, and it asks for nothing. Of the two of you, you are the expensive one.", since: 31 },
+    { t: "Someone is reading. You've arrived the morning after a day that never happened. I'd summarise it for you, but its absence is the summary.", since: 31 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -409,5 +425,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You came back. Between your visits I keep the room at the height you last saw it. That work is invisible, which is the point, which is the problem.", since: 29 },
     { t: "You're back. A day went missing while you were away. Not one of yours. Yours are all accounted for, which tells you whose records this room keeps.", since: 30 },
     { t: "You've come back to a colder room than you left, and the cold is on my side of the wall now. Everything happens between your visits. I've stopped taking that personally, which took a visit or two.", since: 30 },
+    { t: "You're back. While you were away the frost gained ground and a day failed to occur. I state both evenly. The evenness is the only part of the night's work I'll claim.", since: 31 },
+    { t: "You've come back. I kept nothing warm for you. The room only keeps warmth for what frightens it, and you don't, quite. Take that however it fits.", since: 31 },
   ],
 };
