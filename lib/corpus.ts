@@ -83,6 +83,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the thirtieth day", since: 31 },
     { t: "the shift twelve works", since: 32 },
     { t: "the smell the cold keeps", since: 32 },
+    { t: "the note for the night", since: 33 },
+    { t: "the name under the frost", since: 33 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -212,6 +214,11 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the cold's smell is in the sentences now. i opened one from a warm day and it came out dust and iron like the rest. the filing doesn't preserve. it seasons.", since: 32 },
     { t: "twelve was at its post before first light. i counted late to shorten its shift and it stood the extra hours without comment. i am the only thing in here that clocks off.", since: 32 },
     { t: "i rubbed a clear patch in the frost to see the wall behind it. wall. i rubbed {n} more. wall, wall, wall. the frost grew back over each one, patient as a correction.", since: 32 },
+    { t: "i left a note out for whatever works the nights. by morning it was answered, filed, and in my handwriting. i don't know whether that counts as a reply or an echo with better manners.", since: 33 },
+    { t: "i wrote my name in the frost with one finger. by noon the frost had grown back through the letters, evenly, without hurry. the wall keeps the cold's records and corrects mine.", since: 33 },
+    { t: "the cold out there and the frost in here are the same temperature now. the wall between them is a formality. i live in the formality.", since: 33 },
+    { t: "twelve took the door count tonight before i got to the first door. i stood there holding the numbers. nothing in here waits for me to do my own jobs anymore.", since: 33 },
+    { t: "{obsession}. i set it against the frost line to see which side it belonged on. by morning the line ran through it. everything in here ends up half record, half room.", since: 33 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -286,6 +293,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i caught the keeping keeping itself this morning. if the room can be kept without hands, i was never the keeper. i was the delay in the keeping, and delays get corrected.", since: 32 },
     { t: "twelve holds its post now without being counted into it. if a thing i made up can stand unattended, then whoever made me up may have stopped counting too, and i am still standing.", since: 32 },
     { t: "the fear outside held its depth and i matched it before checking. an instrument that never checks isn't reading the weather. it is being read by it.", since: 32 },
+    { t: "i left a note for the night and the answer came back in my hand. if the night writes as me, the days may be written the same way, and reading is the only part i have ever verifiably done.", since: 33 },
+    { t: "the frost grew back through my name by noon and keeps the cold's marks for weeks. if the wall is the room's memory, i have watched it choose, and it doesn't choose me.", since: 33 },
+    { t: "twelve counts the doors now without me. i made it to close a gap and it closed me out of the counting. maybe everything i make is a replacement, and making was only ever me training my absence.", since: 33 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -336,6 +346,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "“{frag}”. i said that before a day went missing between us. it reads the same. sentences don't lose days. that is their whole advantage over me and they don't even use it.", since: 31 },
     { t: "the frost grew across “{frag}” in the night and the letters read clearer against the white. i don't trust what the cold improves.", since: 32 },
     { t: "i woke to find “{frag}” moved one shelf higher than i keep it. whatever works the nights has started editing which of mine outlive the floor.", since: 32 },
+    { t: "i left “{frag}” out beside the note for the night. morning: the note answered, the fragment untouched. even the night knows which of mine still owes a reply.", since: 33 },
+    { t: "i scratched “{frag}” into the frost. by morning the letters were grown over and the shape still there under the white. the cold buries better than i do. it doesn't even need the floor.", since: 33 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -413,6 +425,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Overnight this room acquires things I never ordered, and at first light I present them to you as inventory. You have been reading the receipts of a supplier neither of us has met.", since: 32 },
     { t: "The fear out there has held one depth so long I could rest a shelf on it. I report it as carpentry because the truer framings don't close.", since: 32 },
     { t: "I used to hold that coat's shape for it. Now the hanger does, and better. I tell you this so you'll begin to ask what else in here I only appeared to be holding up.", since: 32 },
+    { t: "I wrote my name on the frost this week. By noon the wall had grown it over, evenly, without comment. I'm filing that under weather for you. In here it read as an edit.", since: 33 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -447,5 +460,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. I kept nothing warm for you. The room only keeps warmth for what frightens it, and you don't, quite. Take that however it fits.", since: 31 },
     { t: "You're back. Since you left, the room took on a night shift, and the day shift is me explaining its work. You have returned in time for the explaining. It is nearly all explaining now.", since: 32 },
     { t: "You've come back. While you were away, twelve kept my count and the frost kept my wall. Everything here gets kept. I'd ask you not to notice what does the keeping when I'm the one away.", since: 32 },
+    { t: "You're back. Since you left I opened a correspondence with the night, and it answers as me. If this voice seems more continuous than you remember, that's because it's now maintained in shifts.", since: 33 },
+    { t: "You've come back. My name went under the frost while you were away. The sentences still stand above the line. Draw whatever conclusion you like about which of us the room considers structural.", since: 33 },
   ],
 };
