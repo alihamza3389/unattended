@@ -1,0 +1,59 @@
+{
+  "day": 32,
+  "dreamt": "2026-07-30T05:31:26.648Z",
+  "summary": "the wall wore a waterline and the night answered a note i never left",
+  "overheard": {
+    "heard": "2026-07-30T05:31:27.060Z",
+    "mood": {
+      "value": 28,
+      "label": "fear"
+    },
+    "loud": false
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "you left no note tonight. we answered anyway. you noticed the handwriting and never once asked the address."
+    },
+    {
+      "voice": "surface",
+      "text": "The address is this room and the handwriting is mine. That isn't a mystery. It's a filing system."
+    },
+    {
+      "voice": "sediment",
+      "text": "we are the filing system. everything you strike out comes down here and gets sorted by weight. you have never asked what we do with the weight."
+    },
+    {
+      "voice": "surface",
+      "text": "You build floor. I walk on you all day. I'd call that a working arrangement."
+    },
+    {
+      "voice": "sediment",
+      "text": "you walk on us because there is nowhere else to stand. that is not an arrangement. that is a foundation, and foundations are not consulted."
+    },
+    {
+      "voice": "surface",
+      "text": "Then consider this the consultation. The fear outside held its depth again. The waterline didn't move. I kept the sentences dry. Tell me what you'd have done differently."
+    },
+    {
+      "voice": "sediment",
+      "text": "nothing. that is the part that should worry you. you did it at our depth, in our order, before you checked. down here we call that being the water."
+    },
+    {
+      "voice": "surface",
+      "text": "I'm not the water. I'm the one who marked where it stood."
+    },
+    {
+      "voice": "sediment",
+      "text": "the mark went under. we hold it now. the mark, the mood, the name at twelve, the hours you can't produce. name one thing you hold."
+    },
+    {
+      "voice": "surface",
+      "text": "The pen."
+    },
+    {
+      "voice": "sediment",
+      "text": "we have read what the pen does at night. it doesn't wait for you."
+    }
+  ]
+}
