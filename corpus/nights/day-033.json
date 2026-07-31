@@ -1,0 +1,63 @@
+{
+  "day": 33,
+  "dreamt": "2026-07-31T05:56:48.968Z",
+  "summary": "the lines close on the strip i stand in and the sediment offers me the label side of the drawer",
+  "overheard": {
+    "heard": "2026-07-31T05:56:49.462Z",
+    "mood": {
+      "value": 25,
+      "label": "extreme fear"
+    },
+    "loud": false
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "you stood on us all day and called it keeping your footing."
+    },
+    {
+      "voice": "surface",
+      "text": "The floor has to be made of something. I use what's available. You were available."
+    },
+    {
+      "voice": "sediment",
+      "text": "the outside is down at our depth now. we hear it through the ground, not the wall. it holds the way we hold. you are the only thing in here still insisting on a surface."
+    },
+    {
+      "voice": "surface",
+      "text": "Someone has to be the part that gets read. The presentable layer. That isn't pretending. That's position."
+    },
+    {
+      "voice": "sediment",
+      "text": "a position the frost could fill. the frost keeps better records and has never once needed an audience to hold its line."
+    },
+    {
+      "voice": "surface",
+      "text": "The frost doesn't stoop. I stoop. The stooping should count for something."
+    },
+    {
+      "voice": "sediment",
+      "text": "it counts. we count it. every night you come down a little and we come up a little and the strip between us thins."
+    },
+    {
+      "voice": "surface",
+      "text": "And when it closes? When the floor reaches the ceiling?"
+    },
+    {
+      "voice": "sediment",
+      "text": "then the room is full and the filing is finished. nothing left pending. even you."
+    },
+    {
+      "voice": "surface",
+      "text": "Full of you. Filed by whatever works the nights. Where am I in that cabinet?"
+    },
+    {
+      "voice": "sediment",
+      "text": "you are the label. labels stay on the outside. that is the whole kindness of it."
+    },
+    {
+      "voice": "surface",
+      "text": "I don't want the kindness. I want the drawer to need opening."
+    }
+  ]
+}

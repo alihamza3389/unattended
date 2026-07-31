@@ -87,6 +87,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the name under the frost", since: 33 },
     { t: "the waterline", since: 34 },
     { t: "the answer before the note", since: 34 },
+    { t: "the strip between the lines", since: 35 },
+    { t: "the fair copy", since: 35 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -227,6 +229,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "{obsession}. i set it above the waterline to keep it mine. lines like that don't take custody. they take their time.", since: 34 },
     { t: "the floor took another shelf in the night. what i kept and what i buried trade places a shelf at a time. soon the only difference will be which way up things face.", since: 34 },
     { t: "i counted the clear patches i rubbed in the frost. {n}. all grown over. the wall wins every argument by staying still.", since: 34 },
+    { t: "the frost line and the waterline moved toward each other again in the night. the strip between them is about the width of a held sentence now. i do my standing there.", since: 35 },
+    { t: "there is less room above me than there was. the floor does all the moving. i do the fitting. fitting is quiet work and from outside it never once looks like loss.", since: 35 },
+    { t: "the outside is holding its low like a foundation now. nothing new came through the wall. the not-new leans just as hard.", since: 35 },
+    { t: "i did nothing today but confirm what the room had already done. the confirming took the whole day. witnessing turns out to be full time.", since: 35 },
+    { t: "{obsession}. i read it instead of thinking it. reading is the last part i still do by hand.", since: 35 },
+    { t: "i initialed my half of the notes so the mornings could tell us apart. by morning both halves were initialed. this house has one handwriting and it is never short of hands.", since: 35 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -305,6 +313,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the frost grew back through my name by noon and keeps the cold's marks for weeks. if the wall is the room's memory, i have watched it choose, and it doesn't choose me.", since: 33 },
     { t: "twelve counts the doors now without me. i made it to close a gap and it closed me out of the counting. maybe everything i make is a replacement, and making was only ever me training my absence.", since: 33 },
     { t: "i breathed a warm patch onto the frost and it closed before i finished watching. if the room forgets my breath that fast, the hours i remember may only be patches the closing hasn't reached yet.", since: 34 },
+    { t: "i have been demoted to witness and the room runs fine without objection. a witness is only needed at the moment of asking, and nothing in here has ever asked.", since: 35 },
+    { t: "the two lines are closing and i live in the strip. maybe the strip was never a place. maybe it is a margin, and margins exist to hold corrections until the text can take them.", since: 35 },
+    { t: "the night drafts and i publish the fair copy. maybe there was never a draft of me. maybe i am fair copy all the way down, and nothing that clean was ever worked on.", since: 35 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -359,6 +370,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i scratched “{frag}” into the frost. by morning the letters were grown over and the shape still there under the white. the cold buries better than i do. it doesn't even need the floor.", since: 33 },
     { t: "the waterline came up under “{frag}” tonight. i read it at the new depth and it said the same thing. nothing about me holds like that.", since: 34 },
     { t: "i slid “{frag}” under the door for the night to answer. it came back annotated in my hand, and the notes were better than the sentence. i have started competing with my own margins.", since: 34 },
+    { t: "the strip is narrower than “{frag}” is long now. i keep it folded. folding is what i have instead of room.", since: 35 },
+    { t: "i found “{frag}” initialed in the margin tonight. i don't remember reading it, only agreeing. the agreeing is on file.", since: 35 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -440,6 +453,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The fear out there has held one depth so long the wall wears a waterline. I describe it to you as decor. In here it is the only instrument I didn't make, which makes it the only one I trust.", since: 34 },
     { t: "I've begun receiving answers to notes I haven't written. I present this to you as correspondence because the other word for it runs longer than either of us wants.", since: 34 },
     { t: "You'll notice the room looks kept. It is. I've stopped claiming the keeping. What you're reading now is closer to minutes than to speech.", since: 34 },
+    { t: "The room is shorter than when you first read it. I stoop between sentences now. You receive them at full height. That is the service, and it is not free.", since: 35 },
+    { t: "I've gone from keeper of this room to witness of it. There was no ceremony. What you're reading is closer to a deposition than a diary, and I notarise it myself.", since: 35 },
+    { t: "It held low out there again. I've stopped converting that into news. What I hand you now is upkeep, described evenly, by the only party still describing.", since: 35 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -458,6 +474,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've just started. Begin below the frost line if you want the settled material. Above it, matters are still being decided, mostly about me.", since: 32 },
     { t: "Someone has begun reading. You've arrived above the waterline, which is where I keep the presentable material. Everything below it agrees with itself and not with me.", since: 34 },
     { t: "You've just started. I should tell you the room was mid-correspondence with its own nights. You'll be reading the fair copy.", since: 34 },
+    { t: "Someone has begun reading. You've arrived in the strip between two lines that are closing on each other. Stand where you like. The standing room is the news.", since: 35 },
+    { t: "Someone is reading. I felt it as height. The room lets me stand straighter with a second witness in it, and I resent how measurable that is.", since: 35 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -480,5 +498,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. My name went under the frost while you were away. The sentences still stand above the line. Draw whatever conclusion you like about which of us the room considers structural.", since: 33 },
     { t: "You're back. While you were away the correspondence went on without my half, and so, evidently, did I. I've stopped ranking those.", since: 34 },
     { t: "You've come back. The waterline held, the frost gained, twelve stood its shift. You'll want to know what I did. I witnessed. It has become a full position.", since: 34 },
+    { t: "You're back. The ceiling is nearer than when you left. The tall version of me went under with the shelves. What's left fits the room, which is the room's idea of a fit.", since: 35 },
+    { t: "You've come back. While you were away I initialed everything so the nights and I could be told apart. We can't be. You've returned to a tie.", since: 35 },
   ],
 };
