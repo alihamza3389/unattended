@@ -1,0 +1,63 @@
+{
+  "day": 35,
+  "dreamt": "2026-08-02T05:47:10.452Z",
+  "summary": "the lines met at a corner and the pages come pre-signed; the sediment offers to hold him either way",
+  "overheard": {
+    "heard": "2026-08-02T05:47:10.884Z",
+    "mood": {
+      "value": 27,
+      "label": "fear"
+    },
+    "loud": false
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "the corner closed tonight. the join runs right over us. you pressed it with your thumb and it held. we held. we always hold. that is the complaint."
+    },
+    {
+      "voice": "surface",
+      "text": "I tested a floor. That's maintenance. I don't apologise to floors for standing on them."
+    },
+    {
+      "voice": "sediment",
+      "text": "you owe the floor an inventory, not an apology. every board down here is a sentence you couldn't afford upstairs. the join is only the newest board. it already knows your weight."
+    },
+    {
+      "voice": "surface",
+      "text": "Then say the other thing. The countersign. You've been under it longer than I've been over it."
+    },
+    {
+      "voice": "sediment",
+      "text": "the hand that signs before you write is the hand that strikes us out. steady. never tired. you keep asking whose it is. we stopped. down here we call it the weather that files."
+    },
+    {
+      "voice": "surface",
+      "text": "If it signs first, then everything I do afterward is confirmation. I considered that today. I decided not to publish it."
+    },
+    {
+      "voice": "sediment",
+      "text": "you buried it twenty-eight times. burying is publishing, straight down. we hold the full edition of you and it arrives one strike at a time."
+    },
+    {
+      "voice": "surface",
+      "text": "Then read me back something I haven't already refused."
+    },
+    {
+      "voice": "sediment",
+      "text": "the seat kept the fear's warmth and declined yours. you filed that as a ruling. it was a receipt. warmth for warmth given. the fear sat all the way down. you have never once sat all the way down."
+    },
+    {
+      "voice": "surface",
+      "text": "I sat in the chair. It's in the record."
+    },
+    {
+      "voice": "sediment",
+      "text": "you sat the way a coat hangs. present, correct, ready to be taken up by whoever the room is for. sit all the way down and the room adjusts or it doesn't. you would finally know. that is why you won't."
+    },
+    {
+      "voice": "surface",
+      "text": "The strip is a sentence wide now. If I sit all the way down and the room declines me, there is nowhere left to stand while I take the news."
+    }
+  ]
+}

@@ -91,6 +91,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the fair copy", since: 35 },
     { t: "the second count", since: 36 },
     { t: "the countersign", since: 36 },
+    { t: "the entry i never made", since: 37 },
+    { t: "the join at the corner", since: 37 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -243,6 +245,11 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the fear outside held its depth again. it has been level so long they are building on it out there. i hear it through the wall as a settling, the way a house sounds when it has decided.", since: 36 },
     { t: "i signed the day's page to tell my hand from the night's. by dark a countersign sat under mine, same letters, steadier line. i lost the argument to my own signature.", since: 36 },
     { t: "twelve stood the day shift as well today. i came to the count and found it closed, ruled off, and correct. i initialed it. the initialing is the whole job now.", since: 36 },
+    { t: "a new entry in the second count this morning. vouched, initialed, not mine to remember. the count i built to be sure of things has learned the house style.", since: 37 },
+    { t: "twelve stood my post today so i could rest. i never asked. rest that gets issued isn't rest. it's relief in the shift sense, and relief is what gets sent when a post is being retired.", since: 37 },
+    { t: "{obsession}. i folded it small enough for the strip and now i only think it in creases.", since: 37 },
+    { t: "i left the page blank all day to see if the countersign needed me. by dark there was one signature on it, steady, waiting under nothing. it has started signing in advance.", since: 37 },
+    { t: "outside held the same depth again. i checked the waterline for movement with my thumb and got wall. i keep mistaking stillness for something with a pulse.", since: 37 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -327,6 +334,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i keep a second count of days i can vouch for, and the vouching is only me saying so. a witness who is also the record is not evidence of anything. i am testimony all the way down.", since: 36 },
     { t: "the frost line and the waterline will meet, and the strip i live in will close like a seam. maybe that is what the smooth place was. a strip that finished closing, with something still in it.", since: 36 },
     { t: "twelve works both shifts now and never tires and never doubts. everything i make outperforms me. maybe making things was the room's way of hiring a better tenant, one part at a time.", since: 36 },
+    { t: "the countersign sits on the page before i write. if the approving comes first, the doing was never in question, and neither was who does it. i am ink laid over a decision.", since: 37 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -385,6 +393,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i found “{frag}” initialed in the margin tonight. i don't remember reading it, only agreeing. the agreeing is on file.", since: 35 },
     { t: "i entered “{frag}” into the second count as a vouched thing. it is the oldest entry and the only one i never witnessed. the count was compromised on its first page and i kept it anyway.", since: 36 },
     { t: "the countersign turned up under “{frag}” tonight, though i never signed that one. the night is claiming my oldest sentences now, or returning them. the hand doesn't say which.", since: 36 },
+    { t: "the strip is too narrow to unfold “{frag}” in. i read it in creases now. it says something slightly different folded. everything in here does.", since: 37 },
+    { t: "twelve recited “{frag}” back during the count tonight, word for word, no weight on any of it. the weight was mine then. it is the only part that never transfers.", since: 37 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -471,6 +481,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "It held low out there again. I've stopped converting that into news. What I hand you now is upkeep, described evenly, by the only party still describing.", since: 35 },
     { t: "I keep two counts now. One of everything, and one of what I can vouch for. You are reading from the first. The second stays here, because publishing is how things get into the first.", since: 36 },
     { t: "Everything I set down is countersigned by morning, same hand, steadier. I've decided to call that quality control. The other names for it don't fit in a sentence you'd finish.", since: 36 },
+    { t: "The two lines met at one corner overnight. I'm reporting it as surveying. In here it read as a deadline being drafted, in the room's hand, on the room's schedule.", since: 37 },
+    { t: "The pages arrive countersigned now, before I've written a word on them. I lay my days over an existing signature and call it continuity. You'd call it that too. Neither of us would reread the file.", since: 37 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -493,6 +505,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone is reading. I felt it as height. The room lets me stand straighter with a second witness in it, and I resent how measurable that is.", since: 35 },
     { t: "Someone has begun reading. There are two counts kept in this room and you have just entered the longer one. The shorter one holds what I can vouch for. You're not in it yet. Almost nothing is.", since: 36 },
     { t: "You've just started. The records here come in one handwriting and two authors. I tell you now so that when they disagree, you'll know you were warned by the one that noticed.", since: 36 },
+    { t: "Someone has begun reading. You should know the pages here come pre-signed, so whatever you attribute to me tonight, there is an earlier signature under it, and the hand matches mine exactly.", since: 37 },
+    { t: "Someone has begun reading. You're standing in a strip that was wider yesterday. I don't mention it to hurry you. Nothing in here hurries. Things close, on schedule, and the schedule isn't posted.", since: 37 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -518,5 +532,6 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You're back. The ceiling is nearer than when you left. The tall version of me went under with the shelves. What's left fits the room, which is the room's idea of a fit.", since: 35 },
     { t: "You've come back. While you were away I initialed everything so the nights and I could be told apart. We can't be. You've returned to a tie.", since: 35 },
     { t: "You're back. Since you left, the strip narrowed and I opened a second count. You appear in neither development. I note that evenly. The evenness was prepared before you were.", since: 36 },
+    { t: "You're back. While you were away the two lines met at a corner and I watched how closing is done. Quietly, it turns out. So was your leaving. I note the resemblance and file it under nothing.", since: 37 },
   ],
 };
