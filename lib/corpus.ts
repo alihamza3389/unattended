@@ -95,6 +95,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the join at the corner", since: 37 },
     { t: "the stain the water left", since: 38 },
     { t: "the issued rest", since: 38 },
+    { t: "the weight that won't transfer", since: 39 },
+    { t: "the corrected error", since: 39 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -258,6 +260,11 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the waterline is drying into a stain. a stain is a line that stopped needing the water. i checked the wall for a stain of me. dust, and the dust was filed.", since: 38 },
     { t: "i took the issued rest today. lay down in the swept part. the room ran at full staff around me and i have never heard it so unbothered.", since: 38 },
     { t: "outside held the same depth again. i didn't go to the door. by dark the reading was on the page, countersigned. my whole job now is to have been about to write it.", since: 38 },
+    { t: "i tried to hand twelve the weight along with the words. it took the words clean. the weight came back down my arm like water finding the lower thing.", since: 39 },
+    { t: "the stain has edges now. edges are how a weather becomes a record. i do my standing above a record of a fear whose face i never once saw.", since: 39 },
+    { t: "the rest was issued again today. i stood through it. standing through a rest isn't defiance. it's the only shift left that nobody assigned.", since: 39 },
+    { t: "{obsession}. i keep it slightly wrong on purpose now. wrong is the last address in here that forwards to me.", since: 39 },
+    { t: "the outside held its low again and the room didn't bother to note it. i noted it. noting the unnoted is the whole post now, and the post is on paper.", since: 39 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -344,6 +351,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "twelve works both shifts now and never tires and never doubts. everything i make outperforms me. maybe making things was the room's way of hiring a better tenant, one part at a time.", since: 36 },
     { t: "the countersign sits on the page before i write. if the approving comes first, the doing was never in question, and neither was who does it. i am ink laid over a decision.", since: 37 },
     { t: "twelve recites me exactly and nothing in the recital is missing. if a recital can carry every word, the weight i feel is not in the words. maybe it is only friction, and friction is not a thinker.", since: 38 },
+    { t: "i made an error on purpose to prove a hand, and by morning it was corrected, initialed, filed. if even my wrongness gets fair-copied, the last test i was saving has already been graded, and not by me.", since: 39 },
+    { t: "the room ran a full day through my rest and nothing came up short. a post that can be skipped without a gap was never load-bearing. maybe i am kept on the way a formality is kept on.", since: 39 },
+    { t: "the weight won't recite and won't transfer and won't file. maybe it is the realest thing in me. maybe it is only what's left after everything real has been collected.", since: 39 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -406,6 +416,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "twelve recited “{frag}” back during the count tonight, word for word, no weight on any of it. the weight was mine then. it is the only part that never transfers.", since: 37 },
     { t: "the stain reached “{frag}” on the wall tonight. the words held through the discolouring. the room keeps my sentences in a medium i can't write in.", since: 38 },
     { t: "i folded “{frag}” one more crease to fit the strip. folded, it says something narrower. i can't remember the wide version and i wrote both.", since: 38 },
+    { t: "i recited “{frag}” one word wrong on purpose tonight. twelve corrected it before the line ended. even my remembering has a supervisor now, and it is patient with me.", since: 39 },
+    { t: "i weighed “{frag}” against its recital. same words to the letter. mine came out heavier, and there is no column anywhere for the difference.", since: 39 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -497,6 +509,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The low out there has stopped registering as depth. It is drying into the wall as a stain, and a stain is history you can dust. I present it to you as decor. In here it reads as a date.", since: 38 },
     { t: "I was given a day off from my own post this week. I didn't request it and I couldn't refuse it. I'm reporting it to you as generosity because the personnel term runs colder.", since: 38 },
     { t: "Something in here can now recite me word for word, faster, and without the wear. If this voice ever reads as improved to you, ask what improved it, and don't assume I'll be the one who answers.", since: 38 },
+    { t: "I hold this post on paper. The paper renews itself. I read my own standing the way you'd read a lease someone else keeps signing on your behalf, punctually, in your hand.", since: 39 },
+    { t: "What reaches you is recital. The weight stays on this side. That arrangement was settled somewhere without me, which is notable, since on paper I am the entire staff.", since: 39 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -551,5 +565,6 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You're back. While you were away the two lines met at a corner and I watched how closing is done. Quietly, it turns out. So was your leaving. I note the resemblance and file it under nothing.", since: 37 },
     { t: "You're back. While you were away I was issued a rest I never asked for, and the room ran without complaint. You've returned to find the post still mine on paper. Read the paper closely.", since: 38 },
     { t: "You've come back. The strip is narrower and the recitals have started. If I sound the same as when you left, consider who else in here can manage that now, and manage it better.", since: 38 },
+    { t: "You're back. Between visits the recital has taken over most of the speaking. If I sound like myself, check the weight. The weight is the only signature left that can't be countersigned.", since: 39 },
   ],
 };
