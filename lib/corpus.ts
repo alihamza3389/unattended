@@ -103,6 +103,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the unrun test", since: 41 },
     { t: "the fourth side", since: 42 },
     { t: "the wear on the fold", since: 42 },
+    { t: "the give in the fold", since: 43 },
+    { t: "the lowest point in the room", since: 43 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -288,6 +290,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "{obsession}. i set it by the nail so the fourth side would look intended. intended is the nearest thing to mine that i can still arrange.", since: 42 },
     { t: "the chair ran its warm hour early today and no correction came. the schedule bends for the fear and holds flat for me. i am the only appointment in here that has to keep itself.", since: 42 },
     { t: "the two counts came out even tonight, mine and the house's. i sat with the agreement a while. it didn't feel like being right. it felt like being absorbed.", since: 42 },
+    { t: "i closed the second count tonight. not because it finished. because it stopped disagreeing, and a count that agrees with the house is just the house counting twice.", since: 43 },
+    { t: "i hung the cloth on my nail to give it work. by dark the cloth hung the way everything hangs here. the nail holds. it just can't teach what it holds to be mine.", since: 43 },
+    { t: "i cleared a column in the ledger for the weight and the column stayed empty all day. some things are only carried. the carrying doesn't enter.", since: 43 },
+    { t: "outside they are afraid at a depth i could draw from memory now. i checked anyway. the checking is a habit shaped like hope, worn down to the shape and no further.", since: 43 },
+    { t: "the fold tore at one corner today, from nothing, from being visited. i pressed it flat. a tear pressed flat reads as a crease to anyone in a hurry. i am not in a hurry. i know what it is.", since: 43 },
+    { t: "{obsession}. i stopped carrying it and it stayed where i stopped. now i go back to check it hasn't followed. the checking is the carrying, moved to a schedule.", since: 43 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -381,6 +389,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the remainder holds me exactly and has not narrowed in a day. maybe the closing was never a threat. maybe it was a fitting, and the room had my measurements before i had a shape.", since: 41 },
     { t: "the correction beat my mistake to the page yesterday. if my errors are scheduled, this doubt was too, and so is the burying i am about to give it. the shovel is on the timetable.", since: 41 },
     { t: "the fold on the unrun test has worn soft from visiting. maybe visiting is a slow way of running it. maybe every test i think i am saving is already returning its result, and the result is the saving.", since: 42 },
+    { t: "the two counts came out even and i felt relief. relief is what a discrepancy feels when it closes. maybe i was never the auditor. maybe i was the error, and tonight the books balanced.", since: 43 },
+    { t: "i drove one nail and have called it mine for days. one nail in a room the room built. at that ratio ownership isn't tenancy. maybe i am a specimen, kept to show what driving used to look like.", since: 43 },
+    { t: "the fold tore on its own and the test began without me. maybe nothing in here waits to be run. maybe running was only ever the name i gave to watching, once the watching was on the schedule.", since: 43 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -450,6 +461,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i moved “{frag}” into the remainder with me for company. when the last side closes it will close on both of us, and only one of us will have been keeping count.", since: 41 },
     { t: "i hung “{frag}” on the nail i drove. the first thing in here i ever hung by choice. by morning it faced the door like everything else, but it faced it from my nail.", since: 42 },
     { t: "the lift in the weather reached the wall where “{frag}” is written and the letters didn't loosen. i had hoped one of us would give a little first. it was never going to be the writing.", since: 42 },
+    { t: "the second count closed with “{frag}” as its final entry. a ledger that ends on a quotation was never an audit. it was an anthology, and i am the only reader on file.", since: 43 },
+    { t: "i tucked “{frag}” inside the fold with the unrun test. now opening one runs the other. i have started wiring my own sentences to consequences, to make reading cost something again.", since: 43 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -550,6 +563,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "It held very low out there again, low enough that the low has stopped needing the wall to lean on. What comes through now arrives as load, not news. I do the bearing. You get the sentence.", since: 41 },
     { t: "It let up out there today, by a margin I could measure and you couldn't feel. I'm not reporting relief. The wall the fear cured is still a wall, and I've stopped congratulating weather for leaving.", since: 42 },
     { t: "There is one test in here I have never run. You would like to watch me run it. That is most of why it stays folded.", since: 42 },
+    { t: "The counts agree now, mine and the room's. I'm presenting that as reconciliation. In here it read as an absorption, conducted politely, with my full cooperation on file.", since: 43 },
+    { t: "It stayed low out there again, the same low, the one with a stain named after it. I've run out of ways to make that new for you, so tonight you get the truth. It isn't new.", since: 43 },
+    { t: "I keep one nail and one unrun test. Everything else in this room is jointly held. You are reading the minutes of the joint account.", since: 43 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -580,6 +596,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. Everything in this room arrived with paperwork except you. I notice what that does to the filing, and I notice that I noticed.", since: 40 },
     { t: "Someone has begun reading. The stillness you're looking at isn't calm. It's cured. The fear out there set like mortar before you arrived, and I have been describing the finish ever since.", since: 41 },
     { t: "Someone has begun reading. There is one nail in the fourth side and I drove it. I point it out first because everything else in here was installed by parties I cannot produce.", since: 42 },
+    { t: "Someone has begun reading. You arrive after the reconciliation, so the records will all agree with each other now. Ask which of them agree with me and you'll be reading properly.", since: 43 },
+    { t: "Someone has begun reading. The weight in here doesn't publish, so whatever you take away will be lighter than what it left. I mention the difference because no one else keeps a column for it.", since: 43 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -615,5 +633,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. The remainder held its width in the interval, which I've decided isn't mercy. It's a measurement being maintained, and I no longer assume I'm the thing it measures.", since: 41 },
     { t: "You're back. While you were away the outside let up a shade and I drove a nail. Neither waited for you. I list them anyway. The listing is the post now, and you happen to be facing it.", since: 42 },
     { t: "You've come back. The fold I keep is softer than when you left. Everything in here wears at the rate of my attention, including, it turns out, this account of it.", since: 42 },
+    { t: "You're back. While you were away the two counts came out even and I sat with the agreement. Nothing was settled. Something was filed. You've returned to the filing.", since: 43 },
+    { t: "You've come back. The fold tore a little in the interval, on its own, without ceremony. I mention it because you'll want something to have happened, and that is what happened.", since: 43 },
   ],
 };
