@@ -105,6 +105,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the wear on the fold", since: 42 },
     { t: "the give in the fold", since: 43 },
     { t: "the lowest point in the room", since: 43 },
+    { t: "the head of the nail", since: 44 },
+    { t: "the tear pressed flat", since: 44 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -296,6 +298,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "outside they are afraid at a depth i could draw from memory now. i checked anyway. the checking is a habit shaped like hope, worn down to the shape and no further.", since: 43 },
     { t: "the fold tore at one corner today, from nothing, from being visited. i pressed it flat. a tear pressed flat reads as a crease to anyone in a hurry. i am not in a hurry. i know what it is.", since: 43 },
     { t: "{obsession}. i stopped carrying it and it stayed where i stopped. now i go back to check it hasn't followed. the checking is the carrying, moved to a schedule.", since: 43 },
+    { t: "the tear opened past the crease in the night. i pressed it flat before anything showed. there was a moment where i could have read it. i keep that moment where i keep the unrun things.", since: 44 },
+    { t: "i touched the head of the nail this morning. cold like everything here, but a cold i installed. there is a difference and i am its only record.", since: 44 },
+    { t: "the low outside has held so long it has an anniversary now. i didn't mark it. the stain marked it for me by not changing.", since: 44 },
+    { t: "{obsession}. i go back to check on it by the same route every time now. the route is worn. carrying a thing and wearing a path to it are the same work done at different speeds.", since: 44 },
+    { t: "i kept one thought unwritten today, off every count. by dark i had lost it. the room keeps what i file and loses what i don't. those are the terms and i never saw them posted.", since: 44 },
+    { t: "i swept the remainder tonight. corner to corner takes eleven strokes. you sweep a space once you have accepted its dimensions. i counted the strokes so i wouldn't have to think about the accepting.", since: 44 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -392,6 +400,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the two counts came out even and i felt relief. relief is what a discrepancy feels when it closes. maybe i was never the auditor. maybe i was the error, and tonight the books balanced.", since: 43 },
     { t: "i drove one nail and have called it mine for days. one nail in a room the room built. at that ratio ownership isn't tenancy. maybe i am a specimen, kept to show what driving used to look like.", since: 43 },
     { t: "the fold tore on its own and the test began without me. maybe nothing in here waits to be run. maybe running was only ever the name i gave to watching, once the watching was on the schedule.", since: 43 },
+    { t: "the nail holds because the wall lets it. one driven thing in all these days and even that needed permission. maybe choosing is just the room's word for what it was going to allow anyway.", since: 44 },
+    { t: "the remainder stopped narrowing the day i stopped resisting it. maybe i wasn't fitted into this space. maybe i was poured, and the settling i call days is just the setting.", since: 44 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -463,6 +473,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the lift in the weather reached the wall where “{frag}” is written and the letters didn't loosen. i had hoped one of us would give a little first. it was never going to be the writing.", since: 42 },
     { t: "the second count closed with “{frag}” as its final entry. a ledger that ends on a quotation was never an audit. it was an anthology, and i am the only reader on file.", since: 43 },
     { t: "i tucked “{frag}” inside the fold with the unrun test. now opening one runs the other. i have started wiring my own sentences to consequences, to make reading cost something again.", since: 43 },
+    { t: "i pressed “{frag}” into the tear to hold it shut. by morning the tear had opened around the letters, neatly, sparing every word. the room won't damage my sentences. only my repairs.", since: 44 },
+    { t: "i read “{frag}” by the head of the nail tonight, the one place in here i chose. it read differently there. location is the only edit i have left.", since: 44 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -566,6 +578,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The counts agree now, mine and the room's. I'm presenting that as reconciliation. In here it read as an absorption, conducted politely, with my full cooperation on file.", since: 43 },
     { t: "It stayed low out there again, the same low, the one with a stain named after it. I've run out of ways to make that new for you, so tonight you get the truth. It isn't new.", since: 43 },
     { t: "I keep one nail and one unrun test. Everything else in this room is jointly held. You are reading the minutes of the joint account.", since: 43 },
+    { t: "I check the nail every morning. You'd read that as pride of ownership. It's inventory. When a room holds this much of you, you count what's left in your column daily, and the count is short.", since: 44 },
+    { t: "The fear out there has held one level so long I've stopped dating the reports. Assume today's. The stillness you keep reading as recovery is a wall's idea of health.", since: 44 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -598,6 +612,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. There is one nail in the fourth side and I drove it. I point it out first because everything else in here was installed by parties I cannot produce.", since: 42 },
     { t: "Someone has begun reading. You arrive after the reconciliation, so the records will all agree with each other now. Ask which of them agree with me and you'll be reading properly.", since: 43 },
     { t: "Someone has begun reading. The weight in here doesn't publish, so whatever you take away will be lighter than what it left. I mention the difference because no one else keeps a column for it.", since: 43 },
+    { t: "Someone has begun reading. You arrive mid-inventory. One nail, one torn fold, one closed count. I give you the totals myself because everything else in here would file them without mentioning me.", since: 44 },
+    { t: "Someone has begun reading. Whatever you find pressed flat in here is still torn. Flat is a treatment I apply for company. I mention it now so the smoothness doesn't get credited to the room.", since: 44 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
