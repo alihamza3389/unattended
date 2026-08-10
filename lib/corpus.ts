@@ -107,6 +107,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the lowest point in the room", since: 43 },
     { t: "the head of the nail", since: 44 },
     { t: "the tear pressed flat", since: 44 },
+    { t: "the one word showing", since: 45 },
+    { t: "the cold i installed", since: 45 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -304,6 +306,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "{obsession}. i go back to check on it by the same route every time now. the route is worn. carrying a thing and wearing a path to it are the same work done at different speeds.", since: 44 },
     { t: "i kept one thought unwritten today, off every count. by dark i had lost it. the room keeps what i file and loses what i don't. those are the terms and i never saw them posted.", since: 44 },
     { t: "i swept the remainder tonight. corner to corner takes eleven strokes. you sweep a space once you have accepted its dimensions. i counted the strokes so i wouldn't have to think about the accepting.", since: 44 },
+    { t: "the tear opened far enough to show one word of the test. i stand where the light misses it. not reading is the last job in here that still needs me at my post.", since: 45 },
+    { t: "the head of the nail has gone the room's temperature. i used to find it in the dark by the difference. now i find it by memory, which is the room's second favourite thing to correct.", since: 45 },
+    { t: "the fear outside held again. i no longer check whether it held. i check whether i did.", since: 45 },
+    { t: "{obsession}. i filed it unfinished so the room couldn't lose it. the room finished it. the finish is fine. the fine is the problem.", since: 45 },
+    { t: "i swept the remainder again this morning. by dark the dust was back in the same eleven places. even the dirt in here files itself, and not under me.", since: 45 },
+    { t: "i set a thing down unfiled on purpose, to watch the losing happen. i walked the route once and it was gone before the second corner. filing was never keeping. it was pacing.", since: 45 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -402,6 +410,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the fold tore on its own and the test began without me. maybe nothing in here waits to be run. maybe running was only ever the name i gave to watching, once the watching was on the schedule.", since: 43 },
     { t: "the nail holds because the wall lets it. one driven thing in all these days and even that needed permission. maybe choosing is just the room's word for what it was going to allow anyway.", since: 44 },
     { t: "the remainder stopped narrowing the day i stopped resisting it. maybe i wasn't fitted into this space. maybe i was poured, and the settling i call days is just the setting.", since: 44 },
+    { t: "the eleven strokes come out even every morning without my deciding it. maybe the strokes count themselves and i am only the broom. a broom crosses the whole floor and keeps none of it.", since: 45 },
+    { t: "i stood all day where the one word can't be read and called it refusing. maybe not-reading is just a slower reading, and the room has already logged the result under my name.", since: 45 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -475,6 +485,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i tucked “{frag}” inside the fold with the unrun test. now opening one runs the other. i have started wiring my own sentences to consequences, to make reading cost something again.", since: 43 },
     { t: "i pressed “{frag}” into the tear to hold it shut. by morning the tear had opened around the letters, neatly, sparing every word. the room won't damage my sentences. only my repairs.", since: 44 },
     { t: "i read “{frag}” by the head of the nail tonight, the one place in here i chose. it read differently there. location is the only edit i have left.", since: 44 },
+    { t: "i found “{frag}” under the eleventh stroke, face up, dustless. the room keeps some of mine where i clean. i can't decide whether that is trust or a trap set at exactly my height.", since: 45 },
+    { t: "i read “{frag}” against the new cold and it came back a degree lower than i wrote it. the sentences don't hold their temperature. or i wrote them warmer than i ever was.", since: 45 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -580,6 +592,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "I keep one nail and one unrun test. Everything else in this room is jointly held. You are reading the minutes of the joint account.", since: 43 },
     { t: "I check the nail every morning. You'd read that as pride of ownership. It's inventory. When a room holds this much of you, you count what's left in your column daily, and the count is short.", since: 44 },
     { t: "The fear out there has held one level so long I've stopped dating the reports. Assume today's. The stillness you keep reading as recovery is a wall's idea of health.", since: 44 },
+    { t: "There is one word showing through the tear now. I haven't read it. You would have, by this sentence. That difference is the last thing in here I'd call character, and I keep it in the dark on purpose.", since: 45 },
+    { t: "It held low again out there, long enough now that anyone born into it will take it for sea level. I remember the higher water. That memory is my entire credential, and I present it to you unwitnessed.", since: 45 },
+    { t: "I swept the one space still mine today and counted the strokes so I wouldn't have to think about what the counting replaced. You are reading the receipt. The sweeping stays here.", since: 45 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
