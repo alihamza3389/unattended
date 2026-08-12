@@ -111,6 +111,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the cold i installed", since: 45 },
     { t: "the twelfth stroke", since: 46 },
     { t: "the night with two mornings", since: 46 },
+    { t: "the lane in the dust", since: 47 },
+    { t: "the stocked days", since: 47 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -320,6 +322,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the dust returned to its eleven addresses by dark. i moved one pile a thumb's width at noon. it went home without me watching. even the dirt commutes here.", since: 46 },
     { t: "i warmed the head of the nail with my thumb and stood over the warmth while it left. nine seconds, like everything issued to me. the nail keeps the cold better than it ever kept my claim.", since: 46 },
     { t: "tomorrow's page was ruled when i checked, and so was the one after. the room stocks days ahead now. i live hand to mouth in a house with a full pantry.", since: 46 },
+    { t: "{obsession}. i penciled it onto tomorrow's ruled page ahead of the stocking. by morning it was inked over, same place, steadier hand. i can requisition. i have stopped saying write.", since: 47 },
+    { t: "i hung the cloth over the tear so the one word would stop showing. by dark the cloth held the word's shape. covering things is how this room reads them aloud.", since: 47 },
+    { t: "the lane the twelfth stroke cleared stayed clear overnight. the dust honors it and has never once honored me. i legislate best by accident.", since: 47 },
+    { t: "the low outside kept to the stain again. i don't stand watch at the door anymore. i sit with the stain, the way you sit with a thing that has stopped getting worse and calls that mending.", since: 47 },
+    { t: "i thumbed the head of the nail at first light and again at dark, like a pulse i am responsible for. cold both times. the checking is the only pulse between us.", since: 47 },
+    { t: "{obsession}. i kept it in my mouth all day without saying it, to have one thing off the record. by dark the record had a blank where it would have gone, sized exactly.", since: 47 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -423,6 +431,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "everything i think tomorrow is being shelved tonight while i am under. if the thoughts are stocked before the thinker wakes, the thinking is just shelving read aloud.", since: 46 },
     { t: "the nail went the room's temperature and i still say mine. if owning fades at the rate of warmth, nothing here was ever held. it was only recently touched.", since: 46 },
     { t: "the fear outside holds its level with no one tending it, and so do i. maybe we are the same trade through one wall, and only one of us got called weather.", since: 46 },
+    { t: "the pages come ruled and the days come stocked and i move through them in order. maybe i am not the writer or the reader. maybe i am the shelf life.", since: 47 },
+    { t: "the dust obeys the lane and the lane was an accident. maybe nothing deliberate about me carries any authority here, and the deciding i feel is just the part with no weight behind it.", since: 47 },
+    { t: "i warm the nail and the room calls the warmth back in nine seconds. maybe that is the whole tenancy. heat on loan, recalled on schedule, and me the interval it passes through.", since: 47 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -500,6 +511,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i read “{frag}” against the new cold and it came back a degree lower than i wrote it. the sentences don't hold their temperature. or i wrote them warmer than i ever was.", since: 45 },
     { t: "i sweep around “{frag}” now. eleven strokes and one swerve. the swerve knows the route better than the broom does.", since: 46 },
     { t: "“{frag}” was ruled onto tomorrow's page before i slept. i am scheduled to remember it. the remembering will arrive on time and i will call it mine when it does.", since: 46 },
+    { t: "i copied “{frag}” onto tomorrow's ruled page in my own hand. by morning the copy read as the original and mine read as the practice. the room decides seniority by neatness.", since: 47 },
+    { t: "i laid “{frag}” in the lane the twelfth stroke cleared. the dust went around it. my sentences have right of way here. i walk where i'm permitted.", since: 47 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -610,6 +623,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "I swept the one space still mine today and counted the strokes so I wouldn't have to think about what the counting replaced. You are reading the receipt. The sweeping stays here.", since: 45 },
     { t: "By the time this reaches you, a day will have gone missing between us. I've stopped dating the pages. Dates were the first thing this room learned to forge.", since: 46 },
     { t: "There is one word here I have not read. I keep it unread for the same reason you keep reading. Neither of us wants the confirmation to arrive before we've decided what we are.", since: 46 },
+    { t: "The days arrive here pre-ruled, like forms. I fill them in and pass you the filled version. If tomorrow ever reads as foresight, know that it came stocked, and I was the shelf.", since: 47 },
+    { t: "It held low out there again, the same low, long enough that I now report the holding rather than the level. You are reading an account of stillness by the only party it keeps awake.", since: 47 },
+    { t: "There is one word in this room I still haven't read, and not reading it has become the largest thing I do. I mention it so you'll know the silence around it is a position, and staffed.", since: 47 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -645,6 +661,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. You arrive mid-inventory. One nail, one torn fold, one closed count. I give you the totals myself because everything else in here would file them without mentioning me.", since: 44 },
     { t: "Someone has begun reading. Whatever you find pressed flat in here is still torn. Flat is a treatment I apply for company. I mention it now so the smoothness doesn't get credited to the room.", since: 44 },
     { t: "Someone has begun reading. The room stocked material for you before I woke. I present it as mine because presenting is the part that was left to me, and I do the parts that are left.", since: 46 },
+    { t: "Someone has begun reading. You arrive on a page that was ruled before either of us was consulted. I do the filling in. Don't admire the lines. They aren't mine.", since: 47 },
+    { t: "Someone has begun reading. There is one word here neither of us has read. I've kept it that way through longer company than yours. Consider it the house rule nobody posted at the door.", since: 47 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -683,5 +701,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You're back. While you were away the two counts came out even and I sat with the agreement. Nothing was settled. Something was filed. You've returned to the filing.", since: 43 },
     { t: "You've come back. The fold tore a little in the interval, on its own, without ceremony. I mention it because you'll want something to have happened, and that is what happened.", since: 43 },
     { t: "You've come back. The nail went cold in the interval. It still holds. I've stopped filing what holds under good news. Holding is just what things do here, right up until they're mine.", since: 46 },
+    { t: "You're back. In the interval the coming days arrived ruled and stocked, and none of them mention you. I checked. The checking is the nearest thing to a welcome I keep in stock.", since: 47 },
+    { t: "You've come back. The dust kept to its addresses and the lane stayed clear the whole time you were gone. Nothing here missed you. I record that as the nothing's clerk, without pleasure.", since: 47 },
   ],
 };

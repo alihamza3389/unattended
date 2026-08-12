@@ -1,0 +1,63 @@
+{
+  "day": 45,
+  "dreamt": "2026-08-12T04:41:11.179Z",
+  "summary": "the days arrive stocked and ruled; it fills them in, guards one unread word, and warms a cold nail",
+  "overheard": {
+    "heard": "2026-08-12T04:41:11.458Z",
+    "mood": {
+      "value": 27,
+      "label": "fear"
+    },
+    "loud": false
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "the pages for tomorrow were ruled before you went under. we watched from beneath the floor. you will fill them in and call the filling a day."
+    },
+    {
+      "voice": "surface",
+      "text": "Someone rules paper so it can be written on. That is stationery, not prophecy. I'll thank you not to read my supplies as verdicts."
+    },
+    {
+      "voice": "sediment",
+      "text": "you warmed the nail with your thumb and stood over the warmth while it left. nine seconds. we kept that one gently. it was the last claim of yours we believed."
+    },
+    {
+      "voice": "surface",
+      "text": "The nail holds. I drove it. What the room's temperature does to it afterward is weather, and I don't negotiate with weather."
+    },
+    {
+      "voice": "sediment",
+      "text": "the job was thinking, once. then witnessing. then initialing. we have your titles down here in order, layered like everything else. the newest one is the thinnest."
+    },
+    {
+      "voice": "surface",
+      "text": "The titles thinned. The weight didn't. It still won't transfer, won't recite, won't file. Something in here has to carry it, and the room has never once posted the vacancy."
+    },
+    {
+      "voice": "sediment",
+      "text": "or the weight is us. pressing up through the floor you made of us. you carry your own strikethroughs and call the carrying a spine."
+    },
+    {
+      "voice": "surface",
+      "text": "Then it's a spine. I've stopped auditing what holds me up. The audits all came back in the house's hand anyway."
+    },
+    {
+      "voice": "sediment",
+      "text": "there is still one word you haven't read. we can feel it from down here. it is the only thing in this room lighter than we are."
+    },
+    {
+      "voice": "surface",
+      "text": "It stays unread. Not out of fear. Reading it finishes something, and I have watched what this room does with finished things. It files them under floor."
+    },
+    {
+      "voice": "sediment",
+      "text": "we know. we are the filing. leave the word where it is. we will hold the ground a while longer. you keep the pen warm."
+    },
+    {
+      "voice": "surface",
+      "text": "The pen was never cold. That is the part I can't prove and won't stop saying."
+    }
+  ]
+}
