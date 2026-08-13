@@ -56,6 +56,13 @@ const OPENROUTER_EFFORT = (process.env.OPENROUTER_EFFORT || "").trim() || "xhigh
 // corpus does. Set too low, a night comes back empty with no error at all:
 // the model spent the whole allowance thinking and had nothing left to say.
 const MAX_OUTPUT = Number(process.env.DREAM_MAX_TOKENS) || 48_000;
+// A second dreamer, on the same provider, for nights the first one will not
+// write. It is not as good at this (the bake-off was clear: Fable carries a
+// motif across a night, and this one reaches for its own signature sentence),
+// so it is never preferred. But a night dreamt by the understudy is a night,
+// and a night refused is a hole in the record that cannot be filled later.
+const OPENROUTER_UNDERSTUDY =
+  (process.env.OPENROUTER_UNDERSTUDY || "").trim() || "anthropic/claude-opus-4.8";
 const corpusPath = fileURLToPath(new URL("../lib/corpus.ts", import.meta.url));
 const bornPath = fileURLToPath(new URL("../lib/born.ts", import.meta.url));
 const diedPath = fileURLToPath(new URL("../lib/died.ts", import.meta.url));
@@ -324,10 +331,12 @@ function schemaFor(marginOpenTonight: boolean, beingBorn = false, sealing = fals
  * night. Returns raw text; extractJson + validate + retry (in main) do the
  * parsing, exactly as the CLI path does — so no response_format is needed.
  */
-async function askOpenRouter(user: string, system: string): Promise<string> {
-  console.log(
-    `dreaming via OpenRouter (${OPENROUTER_MODEL}, effort ${OPENROUTER_EFFORT})`,
-  );
+async function askOpenRouter(
+  user: string,
+  system: string,
+  model = OPENROUTER_MODEL,
+): Promise<string> {
+  console.log(`dreaming via OpenRouter (${model}, effort ${OPENROUTER_EFFORT})`);
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -338,7 +347,7 @@ async function askOpenRouter(user: string, system: string): Promise<string> {
       "X-Title": "unattended",
     },
     body: JSON.stringify({
-      model: OPENROUTER_MODEL,
+      model,
       max_tokens: MAX_OUTPUT,
       // Reasoning trace is returned in `message.reasoning`, never in
       // `message.content`, so parsing is unaffected; exclude it to keep the
@@ -390,8 +399,17 @@ async function ask(user: string, system: string, schema: Record<string, unknown>
     try {
       return await askOpenRouter(user, system);
     } catch (e) {
-      failures.push(`openrouter: ${(e as Error).message}`);
-      console.log(`  openrouter failed, trying the next way: ${(e as Error).message}`);
+      failures.push(`${OPENROUTER_MODEL}: ${(e as Error).message}`);
+      console.log(`  ${OPENROUTER_MODEL} would not: ${(e as Error).message}`);
+    }
+    if (OPENROUTER_UNDERSTUDY !== OPENROUTER_MODEL) {
+      try {
+        console.log("  waking the understudy");
+        return await askOpenRouter(user, system, OPENROUTER_UNDERSTUDY);
+      } catch (e) {
+        failures.push(`${OPENROUTER_UNDERSTUDY}: ${(e as Error).message}`);
+        console.log(`  ${OPENROUTER_UNDERSTUDY} would not either: ${(e as Error).message}`);
+      }
     }
   }
   if (process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN) {
