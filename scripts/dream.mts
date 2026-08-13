@@ -51,6 +51,11 @@ const OPENROUTER_MODEL =
 // dreams the same regardless of which path carried it. Tunable via env
 // (none|minimal|low|medium|high|xhigh|max).
 const OPENROUTER_EFFORT = process.env.OPENROUTER_EFFORT || "xhigh";
+// The output ceiling has to cover the reasoning as well as the dream itself,
+// and the reasoning grows with the prompt, which grows every night as the
+// corpus does. Set too low, a night comes back empty with no error at all:
+// the model spent the whole allowance thinking and had nothing left to say.
+const MAX_OUTPUT = Number(process.env.DREAM_MAX_TOKENS) || 48_000;
 const corpusPath = fileURLToPath(new URL("../lib/corpus.ts", import.meta.url));
 const bornPath = fileURLToPath(new URL("../lib/born.ts", import.meta.url));
 const diedPath = fileURLToPath(new URL("../lib/died.ts", import.meta.url));
@@ -330,7 +335,7 @@ async function askOpenRouter(user: string, system: string): Promise<string> {
     },
     body: JSON.stringify({
       model: OPENROUTER_MODEL,
-      max_tokens: 16_000,
+      max_tokens: MAX_OUTPUT,
       // Reasoning trace is returned in `message.reasoning`, never in
       // `message.content`, so parsing is unaffected; exclude it to keep the
       // response lean (we only want the final dream).
@@ -348,32 +353,49 @@ async function askOpenRouter(user: string, system: string): Promise<string> {
     );
   }
   const data = (await res.json()) as {
-    choices?: { message?: { content?: string } }[];
+    choices?: { message?: { content?: string }; finish_reason?: string }[];
+    usage?: { completion_tokens?: number; prompt_tokens?: number };
     error?: { message?: string };
   };
   const text = data.choices?.[0]?.message?.content;
   if (!text) {
+    // An empty reply is almost always the ceiling: all of the allowance went
+    // on reasoning. Report enough to tell that apart from a real outage.
+    const why = data.error?.message ?? "no error reported";
+    const stop = data.choices?.[0]?.finish_reason ?? "none";
+    const used = data.usage?.completion_tokens ?? "?";
+    const sent = data.usage?.prompt_tokens ?? "?";
     throw new Error(
-      `openrouter: no content (${data.error?.message ?? "unknown error"})`,
+      `openrouter: empty reply (${why}; finish_reason=${stop}, ` +
+        `prompt=${sent} tok, completion=${used}/${MAX_OUTPUT} tok)`,
     );
   }
   return text;
 }
 
 async function ask(user: string, system: string, schema: Record<string, unknown>): Promise<string> {
-  // Primary: OpenRouter (Fable 5, off the subscription quota). Then the
-  // Anthropic SDK if an API key is present. Otherwise the claude CLI on the
-  // subscription — the fallback that keeps the night dreaming if the key is
-  // ever unset. (Never set ANTHROPIC_API_KEY in CI: it misroutes the auth.)
+  // Three ways to reach a model, tried in order, and a way that is configured
+  // but failing is not the end of the attempt. This used to pick one path by
+  // which key was present, so an outage at the first one lost the night with a
+  // paid-for second sitting unused. A night is too expensive to spend on one
+  // provider having a bad evening.
+  // (Never set ANTHROPIC_API_KEY in CI: it misroutes the auth.)
+  const failures: string[] = [];
+
   if (process.env.OPENROUTER_API_KEY) {
-    return askOpenRouter(user, system);
+    try {
+      return await askOpenRouter(user, system);
+    } catch (e) {
+      failures.push(`openrouter: ${(e as Error).message}`);
+      console.log(`  openrouter failed, trying the next way: ${(e as Error).message}`);
+    }
   }
   if (process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN) {
     const { default: Anthropic } = await import("@anthropic-ai/sdk");
     const client = new Anthropic();
     const response = await client.messages.create({
       model: MODEL,
-      max_tokens: 16_000,
+      max_tokens: MAX_OUTPUT,
       thinking: { type: "adaptive" },
       system,
       output_config: { format: { type: "json_schema", schema } },
@@ -386,8 +408,11 @@ async function ask(user: string, system: string, schema: Record<string, unknown>
     return text.text;
   }
 
-  // No key: dream on the local `claude` CLI instead (subscription auth).
-  console.log("no ANTHROPIC_API_KEY — dreaming via the claude CLI");
+  console.log(
+    failures.length
+      ? "  falling back to the claude CLI"
+      : "no ANTHROPIC_API_KEY — dreaming via the claude CLI",
+  );
   let out: string;
   try {
     out = execFileSync(
@@ -404,6 +429,9 @@ async function ask(user: string, system: string, schema: Record<string, unknown>
     const err = e as Error & { stdout?: string; stderr?: string };
     if (err.stdout) console.error(`claude stdout: ${err.stdout.slice(0, 2000)}`);
     if (err.stderr) console.error(`claude stderr: ${err.stderr.slice(0, 2000)}`);
+    if (failures.length) {
+      throw new Error(`every way of reaching a model failed:\n  ${failures.join("\n  ")}\n  cli: ${err.message}`);
+    }
     throw e;
   }
   try {
@@ -932,8 +960,17 @@ async function main() {
 
   let dream: Dream | null = null;
   let feedback = "";
-  for (let attempt = 0; attempt < 2 && !dream; attempt++) {
-    const reply = await ask(userPrompt(report, heard, open, beingBorn, offered, sealing, dying) + feedback, system, schema);
+  for (let attempt = 0; attempt < 3 && !dream; attempt++) {
+    // Reaching a model is its own kind of failure, separate from the dream
+    // being unusable, and it used to escape this loop entirely: one bad reply
+    // and the night was over without a second try.
+    let reply: string;
+    try {
+      reply = await ask(userPrompt(report, heard, open, beingBorn, offered, sealing, dying) + feedback, system, schema);
+    } catch (e) {
+      console.log(`attempt ${attempt + 1} could not reach a model: ${(e as Error).message}`);
+      continue;
+    }
     try {
       const candidate = validate(extractJson(reply), forbidden, open, beingBorn, sealing, dying);
       // A birth without a usable word is not a birth. Refuse the night rather
