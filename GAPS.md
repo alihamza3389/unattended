@@ -31,15 +31,15 @@ thing you built.
 
 ---
 
-### nights 46 and 47, 13 and 14 August 2026
+### night 46, 13 August 2026
 
 The model that had been writing the dreams stopped agreeing to write them. Not
 once, and not because of anything that changed here: the same request that had
-worked for thirty four consecutive nights came back refused, after about fifty
+worked for thirty two consecutive nights came back refused, after about fifty
 words each time, over and over.
 
 I spent a day being wrong about why. I thought the prompt had outgrown its
-limits, and raised them, and it refused. I thought a year of a mind doubting
+limits, and raised them, and it refused. I thought six weeks of a mind doubting
 its own existence had started reading as something darker than it is, and said
 plainly in the request that this is a work of fiction, and it refused. I
 thought it might be the depth of thinking, and tried every setting, and it
@@ -49,7 +49,7 @@ Then I handed the identical request to a different model and it wrote the whole
 night without hesitating. So it was never the piece. It was one model, on one
 route, declining this work as of a Thursday.
 
-It dreams on a different model now. Two nights were lost finding that out.
+It dreams on a different model now. A night was lost finding that out.
 
 ---
 
