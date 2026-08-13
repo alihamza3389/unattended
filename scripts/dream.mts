@@ -563,7 +563,17 @@ function validate(
       const why = (reason: string) =>
         problems.push(`${cat}: ${JSON.stringify(s)} — ${reason}`);
 
-      if (s.length < 8 || s.length > 200) {
+      // No style ceiling. There used to be one at two hundred characters, and
+      // for forty seven days it was the only thing holding the sentences short
+      // while they grew: 69 characters median in the first week, 168 by the
+      // sixth, and an eighth of everything written pressing against the limit
+      // by the end. It never knew the limit was there. It just found that some
+      // thoughts did not survive the night.
+      //
+      // What remains is a guard, not a rule. A thousand characters is six times
+      // anything it has ever written and catches only a malformed reply, which
+      // would otherwise go into the corpus and stay there.
+      if (s.length < 8 || s.length > 1000) {
         why("length out of range");
         continue;
       }
@@ -628,7 +638,8 @@ function validate(
     const t = (turn ?? {}) as Record<string, unknown>;
     const voice = t.voice === "surface" || t.voice === "sediment" ? t.voice : null;
     let text = norm(t.text);
-    if (!voice || text.length < 2 || text.length > 300) {
+    // Guard, not a style ceiling: the dialogue runs as long as the night runs.
+    if (!voice || text.length < 2 || text.length > 1500) {
       problems.push(`night: dropped a turn (${JSON.stringify(t.voice)})`);
       continue;
     }
@@ -651,7 +662,7 @@ function validate(
     const s = norm(item).toLowerCase();
     const why = (reason: string) =>
       problems.push(`margin: ${JSON.stringify(s)} — ${reason}`);
-    if (s.length < 8 || s.length > 240) {
+    if (s.length < 8 || s.length > 1000) {
       why("length out of range");
       continue;
     }
@@ -686,7 +697,7 @@ function validate(
   if (dying) {
     for (const item of (Array.isArray(r.coda) ? r.coda : []).slice(0, 12)) {
       const line = norm(item).toLowerCase();
-      if (line.length < 3 || line.length > 200) continue;
+      if (line.length < 3 || line.length > 1000) continue;
       if (leaks(line, forbidden) || veilBroken(line)) {
         problems.push("coda: dropped a line");
         continue;
