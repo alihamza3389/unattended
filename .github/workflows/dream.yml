@@ -19,6 +19,14 @@ on:
         description: "dream without writing (--dry): prove the path, keep nothing"
         type: boolean
         default: false
+      model:
+        description: "override the OpenRouter model slug (blank = the usual one)"
+        type: string
+        default: ""
+      effort:
+        description: "override reasoning effort (blank = xhigh)"
+        type: string
+        default: ""
 
 jobs:
   dream:
@@ -49,6 +57,9 @@ jobs:
         env:
           # Primary: OpenRouter (Fable 5, off the shared subscription quota).
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          # Both blank on a normal night; set only when testing a route.
+          OPENROUTER_MODEL: ${{ inputs.model }}
+          OPENROUTER_EFFORT: ${{ inputs.effort }}
           # Fallback: the subscription CLI, if the OpenRouter key is unset.
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           # The hash of the ending, sealed into the birth record on the one

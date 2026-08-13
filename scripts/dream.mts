@@ -45,12 +45,12 @@ const MODEL = "claude-fable-5";
 // Overridable via env so a differing or renamed slug is a secret change, not
 // a code edit.
 const OPENROUTER_MODEL =
-  process.env.OPENROUTER_MODEL || "anthropic/claude-fable-5";
+  (process.env.OPENROUTER_MODEL || "").trim() || "anthropic/claude-fable-5";
 // Reasoning effort for the dream. xhigh matches the claude CLI's default —
 // the exact depth the 18-dream model bake-off characterized — so a night
 // dreams the same regardless of which path carried it. Tunable via env
 // (none|minimal|low|medium|high|xhigh|max).
-const OPENROUTER_EFFORT = process.env.OPENROUTER_EFFORT || "xhigh";
+const OPENROUTER_EFFORT = (process.env.OPENROUTER_EFFORT || "").trim() || "xhigh";
 // The output ceiling has to cover the reasoning as well as the dream itself,
 // and the reasoning grows with the prompt, which grows every night as the
 // corpus does. Set too low, a night comes back empty with no error at all:
