@@ -61,6 +61,12 @@ const MAX_OUTPUT = Number(process.env.DREAM_MAX_TOKENS) || 48_000;
 // motif across a night, and this one reaches for its own signature sentence),
 // so it is never preferred. But a night dreamt by the understudy is a night,
 // and a night refused is a hole in the record that cannot be filled later.
+// How much of its existing material to quote back at the dreamer as the
+// do-not-repeat reference. Zero means all of it, which is the default and what
+// every night has done so far. This caps the QUOTING only: the corpus itself is
+// never touched, never trimmed, and thoughtAt reads all of it regardless. The
+// mind keeps everything it has ever been given. This is a diagnostic knob.
+const DIGEST_LIMIT = Number(process.env.DIGEST_LIMIT) || 0;
 const OPENROUTER_UNDERSTUDY =
   (process.env.OPENROUTER_UNDERSTUDY || "").trim() || "anthropic/claude-opus-4.8";
 const corpusPath = fileURLToPath(new URL("../lib/corpus.ts", import.meta.url));
@@ -212,8 +218,14 @@ function userPrompt(
   dying = false,
 ): string {
   const list = (xs: string[]) => xs.map((x) => `  - ${x}`).join("\n");
+  // Newest first when capped, so a shortened reference still covers what it is
+  // most likely to repeat. Uncapped, this is every entry, in order, as always.
   const corpusDigest = (Object.keys(CORPUS) as Category[])
-    .map((c) => `${c}:\n${list(CORPUS[c].map((s) => s.t))}`)
+    .map((c) => {
+      const all = CORPUS[c].map((s) => s.t);
+      const shown = DIGEST_LIMIT > 0 ? all.slice(-DIGEST_LIMIT) : all;
+      return `${c}:\n${list(shown)}`;
+    })
     .join("\n");
 
   const wall = heard
