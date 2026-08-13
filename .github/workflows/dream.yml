@@ -59,7 +59,7 @@ jobs:
       - name: dream
         run: node scripts/dream.mts ${{ inputs.dry && '--dry' || '' }}
         env:
-          # Primary: OpenRouter (Fable 5, off the shared subscription quota).
+          # OpenRouter, off the shared subscription quota.
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
           # Both blank on a normal night; set only when testing a route.
           OPENROUTER_MODEL: ${{ inputs.model }}

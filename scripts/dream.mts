@@ -40,12 +40,12 @@ import {
   timeOf,
 } from "../lib/mind.ts";
 
-const MODEL = "claude-fable-5";
+const MODEL = "claude-opus-5";
 // OpenRouter's slug for the same model, used by the OpenRouter path below.
 // Overridable via env so a differing or renamed slug is a secret change, not
 // a code edit.
 const OPENROUTER_MODEL =
-  (process.env.OPENROUTER_MODEL || "").trim() || "anthropic/claude-fable-5";
+  (process.env.OPENROUTER_MODEL || "").trim() || "anthropic/claude-opus-5";
 // Reasoning effort for the dream. xhigh matches the claude CLI's default —
 // the exact depth the 18-dream model bake-off characterized — so a night
 // dreams the same regardless of which path carried it. Tunable via env
@@ -56,19 +56,12 @@ const OPENROUTER_EFFORT = (process.env.OPENROUTER_EFFORT || "").trim() || "xhigh
 // corpus does. Set too low, a night comes back empty with no error at all:
 // the model spent the whole allowance thinking and had nothing left to say.
 const MAX_OUTPUT = Number(process.env.DREAM_MAX_TOKENS) || 48_000;
-// A second dreamer, on the same provider, for nights the first one will not
-// write. It is not as good at this (the bake-off was clear: Fable carries a
-// motif across a night, and this one reaches for its own signature sentence),
-// so it is never preferred. But a night dreamt by the understudy is a night,
-// and a night refused is a hole in the record that cannot be filled later.
 // How much of its existing material to quote back at the dreamer as the
 // do-not-repeat reference. Zero means all of it, which is the default and what
-// every night has done so far. This caps the QUOTING only: the corpus itself is
-// never touched, never trimmed, and thoughtAt reads all of it regardless. The
-// mind keeps everything it has ever been given. This is a diagnostic knob.
+// every night has done. This caps the QUOTING only: the corpus itself is never
+// touched, never trimmed, and thoughtAt reads all of it regardless. The mind
+// keeps everything it has ever been given. Diagnostic knob, off by default.
 const DIGEST_LIMIT = Number(process.env.DIGEST_LIMIT) || 0;
-const OPENROUTER_UNDERSTUDY =
-  (process.env.OPENROUTER_UNDERSTUDY || "").trim() || "anthropic/claude-opus-4.8";
 const corpusPath = fileURLToPath(new URL("../lib/corpus.ts", import.meta.url));
 const bornPath = fileURLToPath(new URL("../lib/born.ts", import.meta.url));
 const diedPath = fileURLToPath(new URL("../lib/died.ts", import.meta.url));
@@ -409,15 +402,6 @@ async function ask(user: string, system: string, schema: Record<string, unknown>
     } catch (e) {
       failures.push(`${OPENROUTER_MODEL}: ${(e as Error).message}`);
       console.log(`  ${OPENROUTER_MODEL} would not: ${(e as Error).message}`);
-    }
-    if (OPENROUTER_UNDERSTUDY !== OPENROUTER_MODEL) {
-      try {
-        console.log("  waking the understudy");
-        return await askOpenRouter(user, system, OPENROUTER_UNDERSTUDY);
-      } catch (e) {
-        failures.push(`${OPENROUTER_UNDERSTUDY}: ${(e as Error).message}`);
-        console.log(`  ${OPENROUTER_UNDERSTUDY} would not either: ${(e as Error).message}`);
-      }
     }
   }
   if (process.env.ANTHROPIC_API_KEY || process.env.ANTHROPIC_AUTH_TOKEN) {
