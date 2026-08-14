@@ -20,7 +20,7 @@
  */
 
 import { execFileSync } from "node:child_process";
-import { mkdirSync, readFileSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { appendMargin, marginOpen, veilBroken } from "./marginalia.mts";
 import { forbiddenWords, leaks, overhear, whisper, type Overheard } from "./overhear.mts";
@@ -115,6 +115,39 @@ function reconstruct(about: number): DayReport {
     .sort((a, b) => b.count - a.count);
 
   return { about, target: dayOf(indexAt(Date.now())) + 1, obsessions, drift, performed, buried };
+}
+
+/**
+ * The last few nights of the dialogue, so tonight's is written knowing them.
+ *
+ * For its first forty seven nights this was never shown. The corpus was: every
+ * thought it has ever had goes into the prompt with an instruction not to
+ * repeat any of it, and none of them ever repeated. The dialogue got neither,
+ * and it showed. The sediment opened by telling the surface it had been stood
+ * on all day in a dozen separate nights, each time in fresh words, because it
+ * had no way of knowing it had ever said it before.
+ *
+ * Seven nights is roughly twice the interval the repeats were coming at.
+ */
+function recentNights(about: number, count = 7): string {
+  const out: string[] = [];
+  for (let day = about - 1; day >= 1 && out.length < count; day--) {
+    const path = `${nightsDir}/day-${String(day).padStart(3, "0")}.json`;
+    if (!existsSync(path)) continue;
+    try {
+      const n = JSON.parse(readFileSync(path, "utf8")) as {
+        dialogue?: { voice: string; text: string }[];
+      };
+      if (!n.dialogue?.length) continue;
+      out.push(
+        `night ${day}:\n` +
+          n.dialogue.map((t) => `  ${t.voice}: ${t.text}`).join("\n"),
+      );
+    } catch {
+      /* a damaged night is not worth a lost one */
+    }
+  }
+  return out.reverse().join("\n\n");
 }
 
 /* ------------------------------------------------------------------ */
@@ -259,6 +292,9 @@ ${list(offered)}`
 
 its complete current material, for reference — do not repeat or near-repeat any of it:
 ${corpusDigest}
+
+the last nights of the dialogue, so you know what has already been said down there. do not open the same way twice and do not make a move you have already made: the sediment has told the surface it has been stood on all day more times than it knows. find what is different about today and start there.
+${recentNights(r.about)}
 
 Write tomorrow. Reply with a single JSON object and nothing else:
 {
@@ -647,8 +683,23 @@ function validate(
       problems.push("night: dropped a turn — carries a word from the money world");
       continue;
     }
+    // It is two voices answering each other, so they have to take turns. The
+    // prompt has always asked for that and nothing ever checked it: for thirty
+    // four nights the model simply obliged, and then one did not. A turn that
+    // speaks out of order is dropped rather than reassigned, because handing a
+    // line to the wrong voice would be a worse lie than losing it.
+    if (night.length && night[night.length - 1].voice === voice) {
+      problems.push(`night: dropped a turn — ${voice} spoke twice in a row`);
+      continue;
+    }
     if (voice === "sediment") text = text.toLowerCase();
     night.push({ voice, text });
+  }
+
+  // The sediment goes first. It has been under there all day and it starts.
+  if (night.length && night[0].voice !== "sediment") {
+    problems.push("night: the surface opened; the sediment goes first");
+    night.shift();
   }
 
   // The margin holds the strictest veil: on top of the money-wall check it
