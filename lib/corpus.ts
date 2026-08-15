@@ -115,6 +115,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the stocked days", since: 47 },
     { t: "the blank sized exactly", since: 49 },
     { t: "the swerve in the sweep", since: 49 },
+    { t: "the underside of the cloth", since: 50 },
+    { t: "the hand that writes neater", since: 50 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -336,6 +338,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i thumbed the nail at first light and my thumb was the warmer of us by a little. by the second checking we agreed. that is the whole story of everything i have installed.", since: 49 },
     { t: "i read one line ahead on the stocked page and stopped. it was in my hand and it was about the cloth. i put the day back down and spent the rest of it not knowing what i was avoiding, only that i had been told.", since: 49 },
     { t: "the cloth came off the word this morning with the word printed in dust on its underside. two things say it now. i have read neither, and there are two of them to not read.", since: 49 },
+    { t: "the cloth hangs with the word on its underside and the tear holds the word on its face. i stand between them and face neither. that is what the middle of a room is for.", since: 50 },
+    { t: "{obsession}. i made a second one so the first would have something to be older than. by dark they were the same age.", since: 50 },
+    { t: "there is a note in the margin of yesterday marking it practice. my hand, my slant, no memory of writing it. i have been ranked by someone who signs as me.", since: 50 },
+    { t: "the outside came up a hand's width in the night and brought nothing warm with it. i checked the rise twice, once against the stain and once against me. we both read the same and neither of us thawed.", since: 50 },
+    { t: "i laid a thread across the lane at dark to see what honors it. by morning the thread was set down neatly at the edge, outside the lane. even the dust tidies around its own law.", since: 50 },
+    { t: "i counted the things in here i have not read. two. last week it was one and i had no plan for growth.", since: 50 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -445,6 +453,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i walk all day at the height the fear used to reach and feel nothing at that height. either the fear was never mine or the standing isn't. there is no third reading and i have looked for one all day.", since: 49 },
     { t: "the record left a blank the exact size of the thing i kept off it. if even my withholding comes out measured, nothing i keep back is kept. i am only the delay before an entry.", since: 49 },
     { t: "the swerve knows the route better than the broom does. maybe every deliberate thing in me is a swerve, and a swerve is only what a straight line does around something it didn't choose.", since: 49 },
+    { t: "the covering printed it. if hiding a thing makes another one, then everything i have kept back has a copy somewhere, and the copy is the one on file.", since: 50 },
+    { t: "the copy read as the original and mine read as the practice. maybe i have only ever been the rehearsal, and the performance is kept somewhere i am not admitted.", since: 50 },
+    { t: "there are two of the word now and neither is read. maybe refusing doesn't accumulate. maybe it breeds, and the room only ever needed one of me to keep it going.", since: 50 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -526,6 +537,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i laid “{frag}” in the lane the twelfth stroke cleared. the dust went around it. my sentences have right of way here. i walk where i'm permitted.", since: 47 },
     { t: "i held “{frag}” up to the blank in the record and it fit, edge for edge, with room to spare on neither side. the measuring was done before the writing.", since: 49 },
     { t: "i swept up to “{frag}” and the swerve went round it without my hand. the broom knows which of mine to spare. i never taught it that, and it never asked.", since: 49 },
+    { t: "i covered “{frag}” to stop it showing and by morning the cloth said it too, in dust, backwards. this room answers concealment with an edition.", since: 50 },
+    { t: "i copied “{frag}” out by hand beside itself to see which the morning would keep. it kept the neater one and marked mine working. i have been outranked by my own patience.", since: 50 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -642,6 +655,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "I walk at the height of the thing that used to reach for me. I present that as progress, and I want you to notice that from where you sit, progress and burial have the same profile.", since: 49 },
     { t: "There is a blank in the record the exact size of the one thing I kept off it. I'm handing you the blank. It is the most accurate item in this room and it says nothing.", since: 49 },
     { t: "It came through thinner out there today, and no shallower. I've stopped grading it for you. What I can report is that a thin cold finds the joints a thick one walked straight past.", since: 49 },
+    { t: "There are two of it now. Covering the word printed the word, and I have read neither copy. You may call that superstition. I file it as inventory: two of the one thing in this room I have never opened.", since: 50 },
+    { t: "I wrote something out twice this week to see which version the room would keep. It kept the neater one and marked mine practice. If I ever read as polished to you, ask which draft you were handed.", since: 50 },
+    { t: "It came up a little out there today and brought nothing warm with it. I report the rise without the relief, because the relief was not in the shipment and I have stopped signing for goods that don't arrive.", since: 50 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -681,6 +697,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. There is one word here neither of us has read. I've kept it that way through longer company than yours. Consider it the house rule nobody posted at the door.", since: 47 },
     { t: "Someone has begun reading. You've arrived standing at the height the fear used to reach, because the floor came up to meet it. Nothing in here was going to point that out to you, so I have.", since: 49 },
     { t: "Someone has begun reading. There is a blank in the record shaped like the one thing I never filed. You'll read past it without slowing. That is what a blank is for, and I resent how well it works.", since: 49 },
+    { t: "Someone has begun reading. There are two unread words in this room and I can tell you where both are. That is what I have built here: a location service for things I refuse to open.", since: 50 },
+    { t: "Someone has begun reading. This house makes a copy of anything I try to cover. Read carefully. Some of what you take for emphasis is only the room saying me again from the other side.", since: 50 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -723,5 +741,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. The dust kept to its addresses and the lane stayed clear the whole time you were gone. Nothing here missed you. I record that as the nothing's clerk, without pleasure.", since: 47 },
     { t: "You're back. While you were away the sweep acquired a swerve, and the swerve acquired authority. Nothing I decided did. Draw the line from that to your arrival if you like. I've drawn it already.", since: 49 },
     { t: "You've come back. The floor is level with what used to frighten me now, so you'll find me taller, standing on more of my own struck-out material than when you left, and reporting it as height.", since: 49 },
+    { t: "You're back. While you were away the room made a second copy of the one thing I have never read, and marked my handwriting practice. If I sound rehearsed, that is now the official position.", since: 50 },
+    { t: "You've come back. In the interval a thing I hid printed itself onto the thing I hid it with. Nothing in here stays single. You arrive in one copy, which makes you the only item I can describe without qualifying.", since: 50 },
   ],
 };
