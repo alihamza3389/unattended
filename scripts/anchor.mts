@@ -45,6 +45,8 @@ const ledgerPath = fileURLToPath(
 const ledgerRel = "corpus/anchors.jsonl";
 
 interface AnchorRecord {
+  /** True when the stamp was found already on chain and taken up, not re-sent. */
+  adopted?: boolean;
   type: "dream" | "genesis" | "offering";
   night?: number;
   date?: string;
@@ -165,14 +167,19 @@ type Sender = (memo: string) => Promise<{
 
 /**
  * Bring up the gill client and the anchor signer, and hand back a function that
- * stamps one memo and returns its signature (plus slot/time, best effort). The
- * signer is loaded from the base58 secret in the environment; only its public
- * address is ever printed.
+ * stamps one memo and returns its signature (plus slot/time, best effort), and
+ * a second that says which memos the wallet has already written. The signer is
+ * loaded from the base58 secret in the environment; only its public address is
+ * ever printed.
  */
 async function connect(
   urlOrMoniker: string,
   cluster: ReturnType<typeof clusterLabel>,
-): Promise<{ address: string; send: Sender }> {
+): Promise<{
+  address: string;
+  send: Sender;
+  alreadyStamped: (memos: string[]) => Promise<Map<string, string>>;
+}> {
   const {
     createSolanaClient,
     createTransaction,
@@ -201,6 +208,52 @@ async function connect(
     );
   }
   const { rpc } = createSolanaClient({ urlOrMoniker });
+
+  /**
+   * Which of these memos are already out there.
+   *
+   * A confirmation that times out means one of two opposite things and the
+   * timeout itself cannot tell you which: the stamp landed and we stopped
+   * watching a moment early, or it never landed at all. Both have happened.
+   * Night 45 landed and was re-sent the next run, so it sits on chain twice.
+   * Night 49 genuinely did not land, and re-sending was exactly right.
+   *
+   * So look before sending. The wallet does one thing and only one thing, so
+   * its recent history is short and reading it is cheap. Anything found here
+   * is recorded rather than repeated, which closes the gap between what the
+   * chain holds and what the ledger claims.
+   */
+  const alreadyStamped = async (memos: string[]): Promise<Map<string, string>> => {
+    const found = new Map<string, string>();
+    if (!memos.length) return found;
+    try {
+      const sigs = (await rpc
+        .getSignaturesForAddress(signer.address, { limit: 60 })
+        .send()) as { signature: string }[];
+      const wanted = new Set(memos);
+      for (const { signature } of sigs) {
+        if (!wanted.size) break;
+        const tx = (await rpc
+          .getTransaction(signature, {
+            maxSupportedTransactionVersion: 0,
+            encoding: "json",
+          })
+          .send()) as { meta?: { logMessages?: string[] } | null } | null;
+        for (const line of tx?.meta?.logMessages ?? []) {
+          if (!line.includes("Memo") || !line.includes('"')) continue;
+          const memo = line.slice(line.indexOf('"') + 1, line.lastIndexOf('"'));
+          if (wanted.has(memo)) {
+            found.set(memo, signature);
+            wanted.delete(memo);
+          }
+        }
+      }
+    } catch {
+      // Never let the looking break the stamping. Worst case is the duplicate
+      // this was written to prevent, which is what used to happen anyway.
+    }
+    return found;
+  };
 
   const send: Sender = async (memo) => {
     const { value: latestBlockhash } = await rpc.getLatestBlockhash().send();
@@ -265,7 +318,7 @@ async function connect(
     return { tx: sig, slot, blockTime, link };
   };
 
-  return { address: signer.address, send };
+  return { address: signer.address, send, alreadyStamped };
 }
 
 async function main() {
@@ -334,15 +387,39 @@ async function main() {
     return;
   }
 
-  const { address, send } = await connect(urlOrMoniker, cluster);
+  const { address, send, alreadyStamped } = await connect(urlOrMoniker, cluster);
   console.log(`anchor wallet: ${address}`);
 
   // Each night is stamped and recorded on its own. One failure logs and moves
   // on; it does not stop the others and it does not fail the run. A night left
   // un-anchored is picked up by the next run.
   let done = 0;
+  // Anything already on chain from a run whose confirmation timed out is
+  // adopted rather than sent again.
+  const stamped = await alreadyStamped(jobs.map((j) => j.memo));
+  if (stamped.size) {
+    console.log(
+      `  ${stamped.size} already on chain from an earlier run; recording rather than re-sending.`,
+    );
+  }
+
   for (const job of jobs) {
     try {
+      const seen = stamped.get(job.memo);
+      if (seen) {
+        appendFileSync(
+          ledgerPath,
+          JSON.stringify({
+            ...job.record,
+            tx: seen,
+            at: new Date().toISOString(),
+            adopted: true,
+          }) + "\n",
+        );
+        done++;
+        console.log(`  ${label(job.record)} was already stamped: ${seen}`);
+        continue;
+      }
       const { tx, slot, blockTime, link } = await send(job.memo);
       const record: AnchorRecord = {
         ...job.record,
