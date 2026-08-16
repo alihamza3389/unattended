@@ -43,6 +43,10 @@ const ledgerPath = fileURLToPath(
   new URL("../corpus/anchors.jsonl", import.meta.url),
 );
 const ledgerRel = "corpus/anchors.jsonl";
+/** Measured: a memo stamp burns 22,943 compute units. A little headroom. */
+const COMPUTE_LIMIT = 30_000;
+/** 30,000 units at this price is 1,500 lamports, a fraction of a cent. */
+const COMPUTE_PRICE = 50_000;
 
 interface AnchorRecord {
   /** True when the stamp was found already on chain and taken up, not re-sent. */
@@ -190,6 +194,8 @@ async function connect(
   } = await import("gill");
   const { loadKeypairSignerFromEnvironmentBase58 } = await import("gill/node");
   const { getAddMemoInstruction } = await import("gill/programs");
+  const { getSetComputeUnitLimitInstruction, getSetComputeUnitPriceInstruction } =
+    await import("gill/programs");
 
   // Load the signer inside its own guard: a malformed secret makes the loader
   // throw an error that echoes the offending value, so we swallow that message
@@ -262,12 +268,23 @@ async function connect(
     const tx = createTransaction({
       version: "legacy",
       feePayer: signer,
-      instructions: [getAddMemoInstruction({ memo })],
+      instructions: [
+        // Measured on the real stamps: a memo costs 22,943 compute units, so
+        // the cap is set just above it. The cap matters for cost as well as
+        // safety, because the priority fee is charged on what is asked for
+        // rather than what is used; left at the default it would be paid on
+        // 200,000 units instead of 30,000.
+        getSetComputeUnitLimitInstruction({ units: COMPUTE_LIMIT }),
+        // Two stamps have been lost or delayed to a network that had better
+        // offers. This is what it costs to stop being at the back of the queue:
+        // thirty thousand units at fifty thousand micro-lamports each is 1,500
+        // lamports, well under a cent, on top of a 5,000-lamport base fee. It
+        // buys ordinary priority rather than urgency, which is all a nightly
+        // stamp has ever needed.
+        getSetComputeUnitPriceInstruction({ microLamports: COMPUTE_PRICE }),
+        getAddMemoInstruction({ memo }),
+      ],
       latestBlockhash,
-      // No explicit compute-unit cap: a lone memo costs a few hundred CU, well
-      // under the runtime's default budget, and the 5,000-lamport base fee
-      // dominates cost either way. Leaving the budget at its default keeps the
-      // transaction as simple and robust as possible for a once-a-night stamp.
     });
     const signed = await signTransactionMessageWithSigners(tx);
     const sig = getSignatureFromTransaction(signed);
@@ -276,14 +293,30 @@ async function connect(
     // over a websocket subscription. Polling works on any RPC — including the
     // free public endpoint — so the notary depends on no paid provider and no
     // subscription socket, which is what a once-a-night job wants.
-    await rpc
-      .sendTransaction(getBase64EncodedWireTransaction(signed), {
-        encoding: "base64",
-        preflightCommitment: "confirmed",
-      })
-      .send();
+    const wire = getBase64EncodedWireTransaction(signed);
+    const broadcast = () =>
+      rpc
+        .sendTransaction(wire, {
+          encoding: "base64",
+          preflightCommitment: "confirmed",
+          // Already sent once by the time a retry matters, and a duplicate is
+          // harmless: the same signature lands at most once.
+          skipPreflight: true,
+        })
+        .send();
 
-    const deadline = Date.now() + 60_000;
+    await broadcast();
+
+    // A transaction handed to a busy leader is simply dropped; there is no
+    // queue holding it for later. So it is offered again every few seconds
+    // until it lands or its blockhash expires. Sending once and watching was
+    // how a night went missing: nothing was ever there to confirm.
+    //
+    // Ninety seconds because that is roughly how long the blockhash stays
+    // valid. Past that the transaction cannot land at all and waiting longer
+    // only delays the retry to tomorrow.
+    const deadline = Date.now() + 90_000;
+    let lastOffer = Date.now();
     for (;;) {
       const { value } = await rpc.getSignatureStatuses([sig]).send();
       const st = value[0];
@@ -297,6 +330,12 @@ async function connect(
         break;
       }
       if (Date.now() > deadline) throw new Error("confirmation timed out");
+      if (Date.now() - lastOffer > 4_000) {
+        lastOffer = Date.now();
+        await broadcast().catch(() => {
+          /* one refused offer is not the end of the attempt */
+        });
+      }
       await new Promise((r) => setTimeout(r, 2_000));
     }
 
