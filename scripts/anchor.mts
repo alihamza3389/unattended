@@ -227,18 +227,20 @@ async function connect(
     const found = new Map<string, string>();
     if (!memos.length) return found;
     try {
-      const sigs = (await rpc
+      // No casts here: gill brands its signature and address types, and a
+      // hand-written shape both loses the brand and hides real errors.
+      const sigs = await rpc
         .getSignaturesForAddress(signer.address, { limit: 60 })
-        .send()) as { signature: string }[];
+        .send();
       const wanted = new Set(memos);
       for (const { signature } of sigs) {
         if (!wanted.size) break;
-        const tx = (await rpc
+        const tx = await rpc
           .getTransaction(signature, {
             maxSupportedTransactionVersion: 0,
             encoding: "json",
           })
-          .send()) as { meta?: { logMessages?: string[] } | null } | null;
+          .send();
         for (const line of tx?.meta?.logMessages ?? []) {
           if (!line.includes("Memo") || !line.includes('"')) continue;
           const memo = line.slice(line.indexOf('"') + 1, line.lastIndexOf('"'));
