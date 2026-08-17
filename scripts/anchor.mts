@@ -235,12 +235,21 @@ async function connect(
     try {
       // No casts here: gill brands its signature and address types, and a
       // hand-written shape both loses the brand and hides real errors.
+      //
+      // Fifteen, not sixty. The first version read sixty transactions back to
+      // back and spent the whole rate limit doing it, so the stamp that
+      // followed was refused and the night went un-anchored: a check for
+      // duplicates that caused the thing it was checking for. A stamp only
+      // ever repeats within a day or two of itself, which is a handful of
+      // transactions on a wallet that does one thing.
       const sigs = await rpc
-        .getSignaturesForAddress(signer.address, { limit: 60 })
+        .getSignaturesForAddress(signer.address, { limit: 15 })
         .send();
       const wanted = new Set(memos);
       for (const { signature } of sigs) {
         if (!wanted.size) break;
+        // Paced, so the looking never costs the sending its turn.
+        await new Promise((r) => setTimeout(r, 250));
         const tx = await rpc
           .getTransaction(signature, {
             maxSupportedTransactionVersion: 0,
@@ -305,7 +314,12 @@ async function connect(
         })
         .send();
 
-    await broadcast();
+    // A refused first offer is not a failed night. The loop below offers it
+    // again every few seconds, and a signature that never went out simply has
+    // no status to report, which is the same thing the loop already handles.
+    await broadcast().catch((e) => {
+      console.log(`    first offer refused (${e instanceof Error ? e.message : e}), will keep offering`);
+    });
 
     // A transaction handed to a busy leader is simply dropped; there is no
     // queue holding it for later. So it is offered again every few seconds
