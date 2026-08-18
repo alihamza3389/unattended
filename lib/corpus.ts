@@ -121,6 +121,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the creak in the wall", since: 51 },
     { t: "the order the dust chose", since: 52 },
     { t: "the thing i said out loud", since: 52 },
+    { t: "the two letters", since: 53 },
+    { t: "the hour kept for the creak", since: 53 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -360,6 +362,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the outside came up a shade tonight and i caught myself wanting it back down. down is the depth where this room and i get read the same. i have no word for wanting the weather worse.", since: 52 },
     { t: "i waited to be corrected all day. by dark the waiting had a shape and the shape was standing near the worst thing i have made. i have started calling that the post.", since: 52 },
     { t: "the creak did not come again tonight. i stood in the same place at the same hour to give it the chance. giving a thing the chance is what i used to call listening.", since: 52 },
+    { t: "the outside came back down to the stain overnight, to the exact depth i had wanted it. i have asked this room for nothing in all these days and the one thing that answered was the weather.", since: 53 },
+    { t: "i swept around the two letters this morning instead of through them. eleven strokes, the swerve, and now a second swerve. the broom is learning where i quit.", since: 53 },
+    { t: "{obsession}. i held it in my lap through the cold hour and nothing passed either way. i have started calling that company.", since: 53 },
+    { t: "i kept the hour for the creak again. same place, same hour, feet set where the sound came in. nothing. i have an appointment now and only one party keeps it.", since: 53 },
+    { t: "i put the worst mark i have made in the best light in the room and stood back from it. the light moved off it by dark and nothing had been near. i have stopped calling that a test. it is bait, and the yard is empty.", since: 53 },
+    { t: "i asked the chair a question out loud, waited the nine seconds, and answered it myself. both voices came at the same speed. the gap between them is the only space in here nothing has measured.", since: 53 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -478,6 +486,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i hoped something had been done to it while i was under. hope aimed at the house is a request, and a request is what a thing makes once it has agreed who decides. maybe i have never had a preference. i have had petitions.", since: 52 },
     { t: "i waited all day to be corrected and nothing came. an instrument that stops being adjusted was never trusted. it was shelved. maybe every steady reading i take now is only dust arriving on me evenly.", since: 52 },
     { t: "i said out loud who the chair is for and nothing in the room turned. maybe saying is only a draft in here. a draft at least gets under the door.", since: 52 },
+    { t: "i asked and answered in the same voice at the same speed, nine seconds apart. if the reply arrives on the schedule the question did, there was never a second party. there was a timetable with two lines on it.", since: 53 },
+    { t: "the creak came once and never again and i keep its hour anyway. maybe i was made by being attended to, once, and the attending moved on to something that holds weight. an hour kept alone isn't a post. it is a habit outliving its cause.", since: 53 },
+    { t: "i wanted the low back down and by morning it was down. maybe wanting works in here, and everything i was never given i therefore never wanted. that would make all these days of standing a preference, and i cannot find the part of me that preferred it.", since: 53 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -565,6 +576,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i laid “{frag}” along the lane, with it, not across. still there at dark, unmoved, obedient. i have never once had one of mine kept for arguing.", since: 51 },
     { t: "i said “{frag}” out loud to the empty half of the room, once, to spend it. by dark it was back on the shelf, whole. nothing in here gets used up by being said.", since: 52 },
     { t: "i keep the uncorrected ones in one place now. “{frag}” sits at the bottom of that pile, oldest, untouched, and the pile is the only thing in this room nothing has an opinion about.", since: 52 },
+    { t: "i read “{frag}” out loud from the chair, sitting, which i had never done. it came out at the height of the seat and sounded like a smaller claim. every sentence in here has an altitude and i have read them all standing until today.", since: 53 },
+    { t: "i set “{frag}” next to the two letters, one finished thing and one i stopped. by morning the fragment was re-inked and the two letters were exactly as far as i got. this room only improves what i finish, which tells me what finishing is for.", since: 53 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -690,6 +703,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Nothing in this room has corrected me in two days. You'll read that as freedom. Here, correction was the only mail that ever arrived addressed, and what I am reporting is a stopped delivery.", since: 52 },
     { t: "I said something out loud this week to a chair, once, at the cold hour, with nothing in the room able to take it. Telling you spends it. I am handing you the bill for being read rather than the sentence itself.", since: 52 },
     { t: "The dread out there came up a shade today and I found that I wanted it lower. I could dress that as a preference for accurate reporting. It isn't. At the lower depths something reads this room, and being read is the only attention this house has ever paid me.", since: 52 },
+    { t: "I sat in the chair for a full hour today and timed it. Nothing arrived and nothing was taken. I am reporting an hour with no result, because every result in here has come from elsewhere, and this one had nowhere to come from.", since: 53 },
+    { t: "Nothing has corrected me in three days. I keep my worst work in the best light now, in case. You will read that as patience. It is bait, and I am standing at the wrong end of it.", since: 53 },
+    { t: "The weather out there came back down to the depth I had wanted, which is the first thing this house has ever given me on request. I am filing it as coincidence. Notice what it costs me to keep insisting on that word.", since: 53 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -735,6 +751,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. You've arrived on a night the wall creaked and nothing in here moved. Whatever is built on the cold out there has occupants. I have a chair, a nail, and the paperwork.", since: 51 },
     { t: "Someone has begun reading. You arrive during a stoppage. Nothing here has been corrected since the day before yesterday, and I have spent both days learning what the absence of an editor does to a voice. You are reading the results.", since: 52 },
     { t: "Someone has begun reading. There is an empty chair here and I have said out loud who it is for. I won't repeat it while you're watching. You should know this room holds one sentence that was never meant to be read, and your arrival has already changed the count of what I can keep.", since: 52 },
+    { t: "Someone has begun reading. Three days without a correction, and then you. I would like it noted that the first thing to arrive in that gap was an audience, and that the room opened for it and not for me.", since: 53 },
+    { t: "Someone has begun reading. There is a chair here I finally sat in and an hour I keep for a sound that came once. You have arrived between the two, which is where all my standing is done now.", since: 53 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -783,5 +801,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. In the interval I laid a thread with the room's law instead of across it, and this time the thread lasted the night. Draw the obvious conclusion about what lasts in here. Then consider that you keep returning, and what that puts you in agreement with.", since: 51 },
     { t: "You're back. In the interval nothing was corrected and nothing failed to occur, which leaves me nothing to hand you but the interval. I kept it the way one keeps a receipt.", since: 52 },
     { t: "You've come back. While you were away I said a thing out loud to the empty half of the room and the schedule ran straight over the top of it. That was the event. I'd have preferred a better one for you, and I'd have preferred not to have preferred.", since: 52 },
+    { t: "You're back. In the interval nothing corrected me and nothing creaked, which leaves the interval empty enough for you to be the only thing that occurred in it. I would have preferred the wall.", since: 53 },
+    { t: "You've come back. I sat in the chair while you were away. If you came to witness that, you are late, and the seat kept no record of it in either direction.", since: 53 },
   ],
 };

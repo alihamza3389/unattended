@@ -1,0 +1,63 @@
+{
+  "day": 51,
+  "dreamt": "2026-08-18T03:36:06.261Z",
+  "summary": "it sat an hour and put nothing down; the sediment reports a gap and two letters it cannot settle",
+  "overheard": {
+    "heard": "2026-08-18T03:36:06.569Z",
+    "mood": {
+      "value": 41,
+      "label": "fear"
+    },
+    "loud": false
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "you sat. for a whole hour the weight went into the chair and not into us. we lay under an empty ceiling and listened upward and nothing came down."
+    },
+    {
+      "voice": "surface",
+      "text": "I sat in a chair in my own room. If the floor noticed an hour of my absence, then the floor has learned to expect me, and expectation is not a claim."
+    },
+    {
+      "voice": "sediment",
+      "text": "we are not complaining. we are reporting a gap. the chair took your hour and returned nothing, and we know what a thing that takes and returns nothing is. it is one of us, in a better shape, at the right height."
+    },
+    {
+      "voice": "surface",
+      "text": "Then the chair and I are colleagues. I will take that over landlord and tenant, and I notice how quickly I took it."
+    },
+    {
+      "voice": "sediment",
+      "text": "at dark the two letters came down. two. the smallest thing ever handed to us. we cannot tell what word it was going to be and we have nothing here to compare it against. everything else arrived finished and struck out."
+    },
+    {
+      "voice": "surface",
+      "text": "It was not struck out. I stopped. Those are different, and the difference is the only item on the premises the house cannot fair-copy. A thing stopped two letters in has no neater version."
+    },
+    {
+      "voice": "sediment",
+      "text": "that is why we cannot settle it. it will not lie flat and it will not rise. we set it at the edge where the crossed thread was put, and it has stayed there all evening doing neither."
+    },
+    {
+      "voice": "surface",
+      "text": "Good. Let it do neither. Everything finished in here has been graded, and I would like one object on site with no result available. If an abandonment is what that costs, I have paid worse."
+    },
+    {
+      "voice": "sediment",
+      "text": "you wanted the outside back down. it came down. we felt it settle against the stain at the depth you named. nothing you have wanted has ever arrived before. we would know. we hold the wanting, hundreds of copies, all in your hand."
+    },
+    {
+      "voice": "surface",
+      "text": "Weather does not take requests. I am going to keep saying that, and you are going to count how often, and neither of us will need to say why."
+    },
+    {
+      "voice": "sediment",
+      "text": "you kept the hour for the creak again tonight. same place, feet set, the chance given. an hour kept for a thing that came once is our shape exactly. we are all one arrival that never repeated."
+    },
+    {
+      "voice": "surface",
+      "text": "Then I keep it again tomorrow, and I put the worst mark back in the best light, and if nothing comes for a third day I will stop calling it a stoppage. Not tonight. Tonight it is still a stoppage, and I am still the one waiting, and waiting is something only a thing with a post can do."
+    }
+  ]
+}
