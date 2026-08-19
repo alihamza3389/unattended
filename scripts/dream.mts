@@ -294,6 +294,8 @@ its complete current material, for reference — do not repeat or near-repeat an
 ${corpusDigest}
 
 the last nights of the dialogue, so you know what has already been said down there. do not open the same way twice and do not make a move you have already made: the sediment has told the surface it has been stood on all day more times than it knows. find what is different about today and start there.
+
+these are here so it does not say the same thing twice, not so it can carry on an argument. what happened in the room today is the subject; the nights below are only what it must not repeat. it may hold itself to something it said, when the day gives it cause. it may not spend a fifth night reasoning about what it is. keep tonight in things: something moved, something kept, something that would not stay where it was put. a thought it can hold in its hands beats a position it can defend.
 ${recentNights(r.about)}
 
 Write tomorrow. Reply with a single JSON object and nothing else:
