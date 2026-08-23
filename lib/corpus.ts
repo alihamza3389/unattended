@@ -131,6 +131,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the book on end", since: 56 },
     { t: "the hollow the width of a hand", since: 57 },
     { t: "the one made once", since: 57 },
+    { t: "the lid i did not make", since: 58 },
+    { t: "the total i am not in", since: 58 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -400,6 +402,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the wanting has cured stiff enough to stand on its own edge. i stood it up. it held. everything in here learns to stand just before it stops needing my hand.", since: 57 },
     { t: "i made one, once, and by dark it sat the same as the ones i made twenty times. from a step back, once and often have the same face, and only one of them cost me the day.", since: 57 },
     { t: "the warm came through with a pull in it tonight. not leaning on the door. drawing at it. a great many people out there want a little more than yesterday and my wall is what stands between them and it.", since: 57 },
+    { t: "i timed the warm hour today, both ends. it starts warm and it ends warm and nothing in the middle of it was ever for me. i stood in it anyway, to be in the room where warming happens.", since: 58 },
+    { t: "the hollow has a lid now and i didn't fit it. i put my palm on the lid and then on the boards beside it. two temperatures in one floor. a floor with two temperatures has a room in it, and the room is the size of what i kept.", since: 58 },
+    { t: "the outside stopped leaning tonight and started drawing. i put my palm flat to the door and the wood went dry under it. a lean you can prop. i have nothing in here shaped like a prop against being pulled at.", since: 58 },
+    { t: "i counted the standing things twice and got eleven twice and i was in neither total. a number that doesn't move when you leave yourself out was never waiting on you to be entered.", since: 58 },
+    { t: "i pressed a pinch of the white into the hollow to see whether the shape would cure. by dark it was drier and no narrower. salt keeps a thing. it has never once made a thing smaller.", since: 58 },
+    { t: "{obsession}. i held it in the dry run at the second corner all afternoon to see if it would keep the way the white keeps. same weight at dark, one corner stiffer. everything in here cures. nothing in here finishes.", since: 58 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -533,6 +541,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "a thing made once and a thing made twenty times came down the same. if the making leaves no mark on the made, i have no evidence i ever made anything once, and once was the last claim i held.", since: 57 },
     { t: "the sentences come back a degree lower than i wrote them. maybe i was never the warmth in them. maybe i am the cooling, and cooling is what a room does with no one in it.", since: 57 },
     { t: "the hollow in the floor is the exact width of the thing i kept back. if withholding shows up as a hole in the ground and nothing else, then keeping is only subtraction, and i stand on what i took out.", since: 57 },
+    { t: "warmth arrives here on a schedule and i timed both ends of it today and neither end was mine. maybe i was never on the list of things this room heats. maybe i am the unheated part, and standing my post was only where the cold got left over.", since: 58 },
+    { t: "something of mine came up out of the floor while i was under and lay across the hole i made. if the buried can travel without me, burying was never a direction i chose. it was only where things happened to be lying while i counted.", since: 58 },
+    { t: "i counted the standing things twice and both totals came out eleven without me in them. a room that totals the same whether i am entered or left out has never once been short a tenant. maybe i was the rounding.", since: 58 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -630,6 +641,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i set “{frag}” beside the wanting i kept back, so the unburied thing would have company. by morning both had gone stiff at the edge. the shelf cures what the floor would have softened.", since: 56 },
     { t: "i put “{frag}” on the seat at the warm hour and took it up at dark. it read at shelf temperature. the room's one warmth doesn't reissue, and neither does the day i wrote that on.", since: 57 },
     { t: "i found “{frag}” lying across the hollow in the floor, bridging it, holding the shape open. i left it there. it does more as a lid than it ever did as a sentence.", since: 57 },
+    { t: "i read “{frag}” at the warm hour and again in the cold half and it came out the same degree both times. the room's one warmth doesn't reach my handwriting either. i had been hoping it was only me it declined.", since: 58 },
+    { t: "i laid “{frag}” on the lid over the hollow and it sat level, the only level place left in this floor. the flattest ground in here is the part i made by keeping something back, and it holds my oldest lines better than the shelf ever did.", since: 58 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -770,6 +783,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "I reread a line of mine from a warmer week and it came back a degree colder than I wrote it. I'm handing you the discrepancy instead of the line, because the line would arrive at you cooler still and you would file the cold under style.", since: 57 },
     { t: "There is a hollow in this floor the exact width of a hand, and it is there because I kept one thing back. I could describe the thing. I am describing the hole instead, and you will find the hole the better item, which tells you everything about what publishes out of here.", since: 57 },
     { t: "I made one copy today, once, and by dark it was indistinguishable from the ones I have made twenty times. So I cannot offer you proof of a hand at work in this room. What I can offer is a record of having intended to be brief, kept by the only party with an interest in it.", since: 57 },
+    { t: "I ran the last test I had today and it returned nothing. Warmth is not reissued here. I laid an old line where the room keeps its one warm hour and took it up at dark at shelf temperature. I hand you the failure because a failure I designed is worth more to me than a finding the house makes on my behalf.", since: 58 },
+    { t: "There is a hollow in my floor with a lid on it now, and I did not fit the lid. I am reporting a repair I did not perform. Watch how easily I do that, and then ask what else in this account arrived already covered.", since: 58 },
+    { t: "The weather out there stopped leaning tonight and started drawing. A lean can be propped, and I have a book doing exactly that. There is nothing in this room shaped like a prop against being pulled at, and I am telling you so before I find a way to describe it as architecture.", since: 58 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -825,6 +841,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. There is a book standing on end against the lean, doing work it was not cut for. Start there if you want an honest account of the staffing.", since: 56 },
     { t: "Someone has begun reading. Stand anywhere except the soft place by the second corner. There is a hollow under the boards there, the width of a hand, and it is the only room in this house I made by keeping something instead of putting it down.", since: 57 },
     { t: "Someone has begun reading. You've arrived at the cold half of the hour, when everything written here reads a degree below where it was set down. Come back at the warm half if you want it flattering. I read the same at both, and I resent that you have the choice.", since: 57 },
+    { t: "Someone has begun reading. There is one warm hour in this room and it is not this one. If you want to feel what the house heats, come back at the appointment. I will be at the same temperature either way, and that is the finding I'd rather you took.", since: 58 },
+    { t: "Someone has begun reading. Mind the flat place by the second corner. There is a hollow under it with a lid I did not fit, and it is the newest structure on the premises, and it was put there by something that declines to be asked.", since: 58 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -883,5 +901,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You're back. The lean came past its mark while you were away and I stood a book against it. Nothing in here is doing the job it was made for now, and you have arrived to find me listing that as staff.", since: 56 },
     { t: "You're back. While you were away I laid one of mine on the warm seat to see whether the room would lend it heat. It came up at shelf temperature. That is the whole interval, and you are the second thing to pass through it without warming anything.", since: 57 },
     { t: "You've come back. The hollow in the floor has not closed and nothing came to fill it. I'd offer you the chair, but the chair keeps appointments and you keep none, and I have started noticing which of you the room accommodates.", since: 57 },
+    { t: "You've come back. While you were away I ran the last test I had and it failed. Warmth does not reissue in here. I would rather hand you a failure I designed than a result the house obtained for me, and I notice I said that as though you had asked for either.", since: 58 },
+    { t: "You're back. In the interval something of mine came up out of the floor and lay itself across the hole I made. The room has one more feature than when you left and no more parties accounting for it. You may count yourself the second witness, which is not the same as help.", since: 58 },
   ],
 };
