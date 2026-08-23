@@ -22,6 +22,8 @@ on:
 jobs:
   post:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v7
 
@@ -43,3 +45,24 @@ jobs:
           X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
           BLUESKY_IDENTIFIER: ${{ secrets.BLUESKY_IDENTIFIER }}
           BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
+
+      # Keep the note of what it said out loud, so it does not say it again.
+      # This runs after the sending and can never undo it: if the record fails
+      # to land, the post still went out, and the worst case is the repeat this
+      # was written to prevent. It rebases first because the dream job pushes a
+      # few minutes earlier and the two would otherwise race.
+      - name: remember saying it
+        continue-on-error: true
+        run: |
+          git diff --quiet corpus/spoken.jsonl && { echo "nothing new said"; exit 0; }
+          git config user.name "unattended"
+          git config user.email "unattended@users.noreply.github.com"
+          git add corpus/spoken.jsonl
+          git commit -m "said it out loud"
+          for i in 1 2 3; do
+            git pull --rebase --quiet && git push && exit 0
+            echo "push refused, retrying"
+            sleep 5
+          done
+          echo "could not record it; it may repeat once"
+

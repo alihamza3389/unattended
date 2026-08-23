@@ -25,6 +25,53 @@
 
 import { pathToFileURL } from "node:url";
 import { THOUGHTS_PER_DAY, dayOf, indexAt, thoughtAt } from "../lib/mind.ts";
+import { appendFileSync, existsSync, readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+
+/**
+ * What it has already said out loud.
+ *
+ * The engine is built to repeat: a thought worn thin and had again is the
+ * point of it. But a template with no tokens in it renders the same words
+ * every time, and posting those words a second time three weeks later does not
+ * read as damage, it reads as a broken feed. It happened four times in the
+ * first six weeks, and the most repeated post of all was the one where it says
+ * it has repeated itself and said it better before.
+ *
+ * So it keeps a note of what has gone out, and does not say the same thing
+ * twice. Inside the room it can wear a groove as deep as it likes.
+ */
+const spokenPath = fileURLToPath(new URL("../corpus/spoken.jsonl", import.meta.url));
+
+/**
+ * Numbers out. "i said that already. 693 thoughts ago" and the same line at
+ * 145 are not the same string, and they went out four times in six weeks
+ * because of it. To a reader they are one line told four times, so that is
+ * how they are counted here. Quoted fragments are left alone: a different
+ * thing remembered makes a genuinely different thought.
+ */
+const spokenKey = (t: string) => t.replace(/\d[\d,]*/g, "#");
+
+function alreadySpoken(): Set<string> {
+  const said = new Set<string>();
+  if (!existsSync(spokenPath)) return said;
+  for (const line of readFileSync(spokenPath, "utf8").split("\n")) {
+    if (!line.trim()) continue;
+    try {
+      said.add(spokenKey((JSON.parse(line) as { text: string }).text));
+    } catch {
+      /* a damaged line costs one possible repeat, not the post */
+    }
+  }
+  return said;
+}
+
+function recordSpoken(day: number, index: number, text: string) {
+  appendFileSync(
+    spokenPath,
+    JSON.stringify({ day, index, text, at: new Date().toISOString() }) + "\n",
+  );
+}
 
 const SITE = "https://unattended.art";
 const fmt = (n: number) => n.toLocaleString("en-US");
@@ -39,6 +86,16 @@ function firstThoughtOf(day: number, now: number) {
   const start = (day - 1) * THOUGHTS_PER_DAY;
   const limit = Math.min(start + 200, indexAt(now));
   const fallback = thoughtAt(start, false);
+  const said = alreadySpoken();
+
+  // First pass: the first clear thought it has not already said out loud.
+  for (let i = start; i <= limit; i++) {
+    const t = thoughtAt(i, false);
+    if (!t.repressed && !t.interrupted && t.text.length >= 15 && !said.has(spokenKey(t.text))) return t;
+  }
+  // Nothing new in the whole window. Rather than stay silent, say the first
+  // clear one anyway: a day where every clear thought is one it has had before
+  // is a true thing about the day, and worth carrying out.
   for (let i = start; i <= limit; i++) {
     const t = thoughtAt(i, false);
     if (!t.repressed && !t.interrupted && t.text.length >= 15) return t;
@@ -229,6 +286,16 @@ async function main() {
   for (const f of failures) console.error(`  failed: ${f.reason}`);
   if (failures.length === results.length) {
     throw new Error("every platform tried failed — nothing was posted");
+  }
+
+  // It reached somewhere, so it counts as said. Written after the sending, not
+  // before: a note that it spoke when it did not would cost a thought that
+  // nobody ever heard.
+  try {
+    recordSpoken(dayOf(t.index), t.index, t.text);
+    console.log(`recorded in corpus/spoken.jsonl — it will not say this one again`);
+  } catch (e) {
+    console.error(`  could not write the record: ${e instanceof Error ? e.message : e}`);
   }
 }
 
