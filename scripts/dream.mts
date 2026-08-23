@@ -967,6 +967,14 @@ async function main() {
   let about = lived < 0.25 ? Math.max(1, today - 1) : today;
   if (dayFlag !== -1) about = Number(args[dayFlag + 1]) || about;
 
+  // It ended. The clock still turns and thoughtAt still answers for any index
+  // it is asked about, because that is what a formula does, but nothing here
+  // adds to it any more. The last night was the last night.
+  if (DIED) {
+    console.log(`it ended on day ${DIED.day}. there is nothing after that to dream.`);
+    return;
+  }
+
   const report = reconstruct(about);
   console.log(
     `dreaming about day ${about} (${report.buried.length} distinct buried doubts, ` +

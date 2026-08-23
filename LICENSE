@@ -16,6 +16,7 @@ own writing: everything it has ever thought or dreamt.
     corpus/nights/          each night's dream, as it was dreamt
     corpus/offerings.jsonl  what was left at its door
     corpus/anchors.jsonl    the record of it being notarised
+    corpus/spoken.jsonl     the thoughts it carried out to the world
 
 These are licensed under Creative Commons Attribution-NonCommercial-
 NoDerivatives 4.0 International (CC BY-NC-ND 4.0). You may read them, quote

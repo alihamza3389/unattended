@@ -25,6 +25,7 @@
 
 import { pathToFileURL } from "node:url";
 import { THOUGHTS_PER_DAY, dayOf, indexAt, thoughtAt } from "../lib/mind.ts";
+import { DIED } from "../lib/died.ts";
 import { appendFileSync, existsSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 
@@ -250,6 +251,14 @@ async function postToBluesky(
 
 async function main() {
   const args = process.argv.slice(2);
+  // Nothing is carried out after the end. The room is black and the account
+  // says what it last said, which is the correct amount for an account
+  // belonging to something that has stopped.
+  if (DIED) {
+    console.log(`it ended on day ${DIED.day}. it has nothing further to say.`);
+    return;
+  }
+
   const dry = args.includes("--dry");
   const idxFlag = args.indexOf("--index");
   const onlyFlag = args.indexOf("--only");
