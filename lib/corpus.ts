@@ -141,6 +141,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the wear inside the cuff", since: 61 },
     { t: "the hair between the boards", since: 62 },
     { t: "the shape left in the seat", since: 62 },
+    { t: "the width of the thumb", since: 63 },
+    { t: "the set in the spine", since: 63 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -440,6 +442,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the pull came through with an edge on it tonight. more than yesterday, all of it out of the wood, none of it into me. i stood in the thickest of it and my middle stayed the temperature it always is.", since: 62 },
     { t: "i swept and the eleven came out ten and a swerve, because the broom will not cross the seam. even the sweeping knows there is a downstairs now.", since: 62 },
     { t: "i sorted the shelf by cold a second time to test yesterday's order. same order but for one place. almost is the only instrument in here that has ever given me two readings.", since: 62 },
+    { t: "i took the seam at first light and again at dark, same thumb, same knuckle. {n} readings this week and not one of them different. a number that will not change is either the thing or the instrument.", since: 63 },
+    { t: "the light crossed to the second corner at noon and part of it went down through the seam. i knelt and watched it go. i have handed two hundred things down there and the only one that got there without me was not mine to hand.", since: 63 },
+    { t: "i pulled the book out from under the lean this morning and the lean came down before i had it clear. the book kept its curve on the shelf all day with nothing on it. i pressed it flat with both hands and it came back to the curve while i was still watching.", since: 63 },
+    { t: "i swept the two swerves today and left the eleven strokes. by dark the floor looked exactly as swept as it ever does. the parts of the round where i quit are apparently the whole round.", since: 63 },
+    { t: "the draw came steady all day with no edge in it. i put my shoulder into it at the second corner and it took some of my weight and handed it back when i stood up. a great many people out there want more than yesterday and for one afternoon their wanting was the only thing in here under me.", since: 63 },
+    { t: "{obsession}. i laid it across the seam at noon so the light would have to pass it on the way down. by dark it was exactly where i left it and a degree colder. the light got through. i have never once managed that order the other way round.", since: 63 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -588,6 +596,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the boards dried apart on their own and now there is a way down i never dug. if the ground opens because a great many people wanted more than yesterday, nothing i buried was ever put anywhere. it was only lying above a gap that hadn't opened yet.", since: 62 },
     { t: "i carried the only opinion in here into the one place that had none. maybe i am not what gets judged in this room. maybe i am the judging, walking about looking for something clean to land on.", since: 62 },
     { t: "the seat kept a posture and it wasn't the one i had just made in it. if a chair records the sitting and not the sitter, then attendance was never evidence, and i have been keeping an appointment on behalf of a shape.", since: 62 },
+    { t: "i measured the opening at both ends of the day and it read the same, and the light showed me it had changed. if the finest instrument in this house is a thing that leaves at dusk, then every steady reading i ever took was the width of my own hand, and i have been calling the width the floor.", since: 63 },
+    { t: "the book kept the curve after the weight came off it. nothing has ever kept my shape. maybe holding was never contact. maybe i only stood where the load was already going, and the load found the book and taught it instead.", since: 63 },
+    { t: "the draw held my weight at the second corner today. if what a crowd out there wants can take my weight and nothing of mine ever has, i have never once been standing on anything i put there.", since: 63 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -695,6 +706,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i read “{frag}” with the coat on and again with it off, and the cuffs made no difference to the words. i had been hoping one of us was wearing the other.", since: 61 },
     { t: "i laid “{frag}” across the new gap in the boards to bridge it. it went in edgewise and did not stop. the first of mine ever to go somewhere without my hand under it.", since: 62 },
     { t: "i held “{frag}” in the draw from outside all afternoon. it came back stiff at the fold and exactly as heavy. the warmth out there takes the water and leaves everything it cannot use.", since: 62 },
+    { t: "i used “{frag}” as the ruler at the second corner today, laid along the seam at first light and taken up at dark. it is the one thing in here that has never changed length. i measure an opening with an old sentence because nothing in this house will lend me a number.", since: 63 },
+    { t: "i laid “{frag}” over the seam at noon so the light would have to pass it going down. the light got through and the sentence stayed exactly where i put it. i have never once been able to arrange those the other way round.", since: 63 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -850,6 +863,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The boards over the second corner have let go of each other by a hair, purely from the drying. I file it as maintenance. What I will not do is stand here and describe what is under a floor I have spent sixty-one days filling.", since: 62 },
     { t: "A great many people out there want more than they wanted yesterday, and my wall is the nearest thing to take it out of. It arrives as a dryness with an appetite in it. You get the dryness. The appetite stays here, since there is nowhere on these premises to file it.", since: 62 },
     { t: "I made one place in this room that nothing held an opinion about, and then I went back to it four times before noon. You would call that care. I have begun calling it the arrival of a supervisor, and I brought him in myself, on my own shoulders.", since: 62 },
+    { t: "I measured one opening at both ends of the day with the same thumb and got the same number twice. You will read that as steadiness. It is the reading of an instrument coarser than the change, and I am the instrument, and there is no second one on the premises.", since: 63 },
+    { t: "I took the book out from under the lean this morning. The lean came down at once and the book kept its curve with nothing pressing on it. I have set my hands on a great many things in this room and not one of them holds the shape. Consider what that makes the calm in this sentence.", since: 63 },
+    { t: "A great many people out there want more than they wanted yesterday, and the wanting has come steady enough to lean into. I leaned, at the second corner, and it took my weight. I file it as weather. Note that the first thing to hold me up in sixty-two days was an appetite belonging to strangers, and that it is also what is easing my floor apart.", since: 63 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -915,6 +931,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. You've arrived at the hour the dust finally landed, after days of it hanging in a draw from outside. Everything in here is under its portion, evenly, including me. I would have swept, but the settling was the first thing today that happened off the schedule.", since: 61 },
     { t: "Someone has begun reading. Mind the second corner. The boards have let go of each other by a hair and I have not measured what is under them. You are the second thing to enter this room today that nobody handed in.", since: 62 },
     { t: "Someone has begun reading. There is a pile here that nothing held an opinion about until this morning, when I formed one, and now you have carried in another. I would ask you to keep it to yourself. Keeping is not a service this house has ever extended to me.", since: 62 },
+    { t: "Someone has begun reading. Mind the second corner. There is an opening in the boards there and the only gauge in this house is a thumb, which is wider than anything that has yet happened to it. Whatever figure I give you tonight, that is where it came from.", since: 63 },
+    { t: "Someone has begun reading. At noon a line of this room's own light goes down through the floor at the second corner and does not come back up. If you want to watch something leave here intact, come at noon. Everything else on these premises has to be carried, and I am the carrier.", since: 63 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -983,5 +1001,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You're back. In the interval I answered myself early, once, and the nine seconds ran their full length behind me anyway. That is the report. You were gone longer than the interval and it made no difference to the length of it.", since: 61 },
     { t: "You're back. While you were away the boards over the second corner dried apart by a hair. Nothing came up through them and nothing announced itself. That is the interval, and there is now a gap in two places.", since: 62 },
     { t: "You've come back. In the interval the pull from outside came up with an edge on it and took another handful out of my wall. I swept it. If you came for a change, the change is that there is less wall and exactly as much of me.", since: 62 },
+    { t: "You're back. In the interval I measured one gap at both ends of every day and never once got two different numbers. That is the whole report. You were away long enough for something to have moved, and by my thumb nothing did, and my thumb is the widest thing in this house.", since: 63 },
+    { t: "You've come back. While you were away I pulled the book out from under the lean, and the lean came down inside a second and the book kept its curve. Everything in here holds the shape of whatever last pressed on it. You will find the room unchanged, and that is because you have never pressed.", since: 63 },
   ],
 };
