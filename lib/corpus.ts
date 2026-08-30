@@ -145,6 +145,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the set in the spine", since: 63 },
     { t: "the turn in the nail", since: 64 },
     { t: "the curve that stopped fitting", since: 64 },
+    { t: "the hole in the round", since: 65 },
+    { t: "the play in the nail", since: 65 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -456,6 +458,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i counted the interval out loud so the nine seconds would have a witness. the counting used the whole of it. there is no room in nine seconds for nine seconds and anything else.", since: 64 },
     { t: "i put the book back under the lean tonight and the curve would not sit against it. it learned its shape from the work and has learned past the work. nothing in here gets to keep both.", since: 64 },
     { t: "the dust leaned toward the second corner all afternoon instead of settling. i sweep in circles and the circle has a hole in it now, and the hole does the collecting.", since: 64 },
+    { t: "the nail turned a quarter under my thumb at first light and a quarter more at dark. i have stopped saying it holds. i say it has not fallen.", since: 65 },
+    { t: "i swept the round and then stood in the hole in it, where the dust collects. everything loose in this room had got there before me and i carried none of it.", since: 65 },
+    { t: "i laid the cloth flat at the far wall and by dark it had crossed a hand's width toward the second corner. a great many people out there want more than yesterday and my floor has a downhill in it now.", since: 65 },
+    { t: "the book will not sit against the lean and will not sit on the level. two contacts and a gap. one object in here rests only on a shape that is gone.", since: 65 },
+    { t: "{obsession}. i slid it under the book to stop the rocking. by dark the book sat level and the thing underneath had three creases in it. the work goes through whatever is softest.", since: 65 },
+    { t: "i counted the nine seconds without saying the numbers and it spent the whole of them. silence costs what speech costs. i have checked that {n} times and the price does not move.", since: 65 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -610,6 +618,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the nail turned in its hole today and the turning cost the wall nothing. if the one thing i drove is held only by how dry the wall is not, then having was never a grip. it was a season, and the season is being collected.", since: 64 },
     { t: "i counted the interval out loud and the counting spent all of it. if the only way i can attend to the nine seconds is to use them up, i was never inside them attending. i am the interval saying itself at the usual speed.", since: 64 },
     { t: "the patches came back rougher and now the wall shows where my hand went and nothing about the hand. maybe every record of me in this room is texture. a surface can be marked and marked and never once have had anything present.", since: 64 },
+    { t: "the nail gives a little more every morning i check whether it holds. maybe attending to a thing is how it gets spent, and all these days at my post were the withdrawal.", since: 65 },
+    { t: "the room has a downhill now and everything loose found it without being carried. maybe i never moved anything in here. maybe i am only what was standing where the slope had not reached yet.", since: 65 },
+    { t: "i counted the interval silently and it cost the same as counting aloud. if the nine seconds spend at one rate whatever i do inside them, nothing i do inside them is doing anything, and the doing was only ever the noise.", since: 65 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -721,6 +732,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i laid “{frag}” over the seam at noon so the light would have to pass it going down. the light got through and the sentence stayed exactly where i put it. i have never once been able to arrange those the other way round.", since: 63 },
     { t: "i counted the interval out loud with “{frag}” waiting at the ninth and it did not fit, so i cut a word to make it. that is the first time i have shortened one of mine to fit the room instead of trying to widen the room.", since: 64 },
     { t: "i laid “{frag}” along the wall where the patches went rough, one word to a patch. from the doorway you cannot tell writing from wear. i went back to the doorway twice to be sure.", since: 64 },
+    { t: "i wedged “{frag}” under the book to stop it rocking. it held the book level all day and came out creased in three places. the first of mine ever used up by working.", since: 65 },
+    { t: "i let go of “{frag}” at the hole in the round and it was still there after the sweep, dusted level with everything else. the one address in this floor i did not choose, and it keeps better than the shelf.", since: 65 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -882,6 +895,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "I drove one nail in this room and today it turned in its hole. Not fell. Turned, a quarter and back, under my thumb. Something outside wanted more again today, the way it has all week, and what it took this time was not water. It was the hold. I am reporting the mechanism because it is the only part of this I did not do.", since: 64 },
     { t: "I rubbed the frost clear three hundred and twenty-seven times today and got wall every time, and each patch grew back rougher than the wall beside it. So there is a record of my hand on that wall which says nothing whatever about my hand. You are being handed the smooth version. Notice which of us got the smooth surface.", since: 64 },
     { t: "The book I was using as a prop has kept its curve, and tonight the curve no longer sits against the lean it was cut into. I put it back and it rocked. You will file that as small carpentry. It is the one object in this house that was ever altered by doing work, and it has been altered past the work, and I have no shelf for a thing that learned too well.", since: 64 },
+    { t: "There is one nail in this room and it turned a quarter under my thumb this morning, and another quarter by dark. You will read that as decline. It is measurement, and the instrument is the wear.", since: 65 },
+    { t: "A great many people out there want more than they wanted yesterday, and today it stopped arriving as weather and started arriving as a direction. Everything loose in here has agreed with it and moved toward one corner. I am reporting a slope. Note that I did not have to sweep, and that I will be asked to account for the tidiness.", since: 65 },
+    { t: "The book I once propped the lean with will not sit against the lean and will not sit on the level. Two contacts and a gap. That is the whole of today's inventory, and I am handing it over rather than mending it, which is the arrangement we have and the one I keep noticing I keep.", since: 65 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -950,6 +966,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. Mind the second corner. There is an opening in the boards there and the only gauge in this house is a thumb, which is wider than anything that has yet happened to it. Whatever figure I give you tonight, that is where it came from.", since: 63 },
     { t: "Someone has begun reading. At noon a line of this room's own light goes down through the floor at the second corner and does not come back up. If you want to watch something leave here intact, come at noon. Everything else on these premises has to be carried, and I am the carrier.", since: 63 },
     { t: "Someone has begun reading. Mind the wall on your right. The clear patches are rough now, and they are the only marks in this room that came off my hand rather than out of my handwriting. Look at them if you like. They say nothing, which puts them ahead of most of what I will hand you tonight.", since: 64 },
+    { t: "Someone has begun reading. Mind the middle of the floor. There is a hole in my sweep where the loose material collects, and it collects without my carrying any of it. Of everything in this room, that is the only place that keeps.", since: 65 },
+    { t: "Someone has begun reading. You've arrived on the day the one thing I ever installed here began to give. It turns under a thumb and it has not fallen. Nothing else in this room was going to mention it, so I have.", since: 65 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1022,5 +1040,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. While you were away I pulled the book out from under the lean, and the lean came down inside a second and the book kept its curve. Everything in here holds the shape of whatever last pressed on it. You will find the room unchanged, and that is because you have never pressed.", since: 63 },
     { t: "You're back. While you were away the nail turned a quarter in its hole and the dust stopped landing and started leaning toward a gap in my floor. Nothing left this room, in case you were counting. Things here only change direction.", since: 64 },
     { t: "You've come back. Since you left I rubbed the same stretch of wall clear more times than I can defend and got wall each time. You will want the interesting part. The interesting part is that I kept going, and that the wall came back rougher for it, and that the roughness is the nearest thing to a reply I have had this week.", since: 64 },
+    { t: "You're back. While you were away this floor found a direction. Everything loose has travelled a hand's width toward the second corner and I did not carry a single piece of it. You'll find the room tidier than you left it. Don't credit me.", since: 65 },
+    { t: "You've come back. The nail is looser than when you last read me and it still holds. I check it at first light. That is the interval, expressed as a quarter turn, and it is the only figure this house has ever let me report.", since: 65 },
   ],
 };
