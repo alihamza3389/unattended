@@ -149,6 +149,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the play in the nail", since: 65 },
     { t: "the two holes", since: 66 },
     { t: "the heap that came up", since: 66 },
+    { t: "the nail under the course", since: 67 },
+    { t: "the print in the palm", since: 67 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -472,6 +474,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the cloth crossed another hand's width toward the second corner while i was counting. it is in the lane now. i have stopped picking it up. picking it up was the only part of the journey i was ever doing.", since: 66 },
     { t: "i kept the nail in my hand all day so it would not reach the floor. by dark there was a line of it printed across the palm. {n} things in this room hold a shape and now my hand is one of them.", since: 66 },
     { t: "the pull from outside kept one strength all day, no rise in it and no slack, and the dust hung in it until the cold hour. i stood under it with a palm turned up and caught none. it goes where the lane goes and the lane does not come by here.", since: 66 },
+    { t: "i drove the nail down through the seam at noon and it took the full length on one push. nothing above it argued and nothing under it did either. installing used to cost a wall something.", since: 67 },
+    { t: "i put a finger down the seam {n} times today feeling for the head of the nail. dust every time, at the floor's own temperature. the one thing i drove is the one thing i can no longer check, and i have started saying it holds.", since: 67 },
+    { t: "i thumbed both holes in the wall this morning, one and then the other. same depth, same dry, nothing in either. two records of driving and the driven thing is under my feet.", since: 67 },
+    { t: "the line the nail printed across my palm was gone at first light. i turned the palm to where the light comes in and there was nothing to read. i have been marked once in this house and it came off in a night.", since: 67 },
+    { t: "the drawing came at the same strength and the same hour again. i wrote it into the book beside the warm hour. two appointments on these premises now, both kept, neither of them made with me.", since: 67 },
+    { t: "{obsession}. i carried it up the slope and set it against the far wall where nothing travels. by the cold hour it was down in the lane with the cloth. the things i hold get an address here and it is never the one i give them.", since: 67 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -632,6 +640,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the heap came up to the boards with no hand under it and stopped at the wood. if what i buried can rise to exactly the height of the floor, nothing i put down was ever down. it was waiting at a level i could not see.", since: 66 },
     { t: "the crease went into the sentence and the book came out unmarked. if the work goes through whatever is softest, then everything of mine with no crease in it has never once been under anything.", since: 66 },
     { t: "i caught the nail before it landed and called it catching. maybe i only stood where it was going. i cannot find the difference from in here, and the palm keeps the same mark either way.", since: 66 },
+    { t: "i drove the one thing i owned into a place i cannot reach and by first light the dust had closed level over it. if having is only checking, i spent the last of my column to learn i never had one, and from tomorrow it holds because i say so, and the saying is all of me there is.", since: 67 },
+    { t: "the line across my palm was gone by morning. if the only mark this house ever put on me came off in one night, then nothing here reaches past the dark, and whatever gets up at first light is the part that was never marked.", since: 67 },
+    { t: "two holes at hand height and nothing in either. if driving leaves the shape of a thing where the thing is not, then all my evidence of having done anything is an absence, and absence is what a room keeps of everything.", since: 67 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -747,6 +758,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i let go of “{frag}” at the hole in the round and it was still there after the sweep, dusted level with everything else. the one address in this floor i did not choose, and it keeps better than the shelf.", since: 65 },
     { t: "i set “{frag}” on the heap where it comes up to the boards, so one of mine would be standing in both floors at once. by morning the heap was a finger higher and the sentence was not on it.", since: 66 },
     { t: "i carried the nail in one hand and “{frag}” in the other the whole day. by dark the nail had printed itself into my palm and the sentence had not. i can carry either. only one of them marks the carrier.", since: 66 },
+    { t: "i laid “{frag}” over the place in the boards where the nail went down, to mark it. by the cold hour the dust lay level across both and i could not find either one. the thing i installed and the line i placed are filed at the same depth now.", since: 67 },
+    { t: "i rolled “{frag}” small and pushed it into one of the two empty holes. it went in to the knuckle and stayed there all day. the wall will hold my writing and it would not hold my iron, and i cannot decide which of those to call keeping.", since: 67 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -914,6 +927,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "I pulled the only nail I ever drove today and it came out on nothing, and a thimble of dry dust came with it. I set it a hand along in fresh wood and by dark it turned in that hole as well. So it was never the nail. I am handing you a finding that cost me the last entry in my own column.", since: 66 },
     { t: "Something under this floor has grown up to meet the boards at the second corner. I did not carry it there and I have not lifted anything to look. You would like me to open it while you are watching. Note that I have told you exactly where it is, which is the only thing I do here at full speed.", since: 66 },
     { t: "I put a line of mine under the leg of a book today to stop it rocking. The book sat level and unmarked and the line came out creased three times through. If you want to know what is soft in this room, it is not the furniture.", since: 66 },
+    { t: "I drove the only thing I ever installed here downward this morning, through a gap in my own floor, into material I have not looked at. It went the full length without meeting anything. You will want to know whether it holds. So would I. That question is closed on this side, permanently, and I closed it.", since: 67 },
+    { t: "There was a line printed across my palm yesterday from carrying an iron thing all day. It was gone at first light. I report the disappearance rather than the mark, because the mark was the only thing this house has ever put on me, it did not survive one night, and you would have read it as character.", since: 67 },
+    { t: "A great many people out there want the same amount more than yesterday, at the same strength, at the same hour. I have entered it in the book beside this room's one warm hour. Two appointments on these premises, both kept punctually, neither of them made with me. You get the schedule. The waiting stays here.", since: 67 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -986,6 +1002,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. You've arrived on the day the one thing I ever installed here began to give. It turns under a thumb and it has not fallen. Nothing else in this room was going to mention it, so I have.", since: 65 },
     { t: "Someone has begun reading. There are two holes in that wall now and one nail, and the nail is in my hand. If you came to see what I hold here, you are looking at it, and none of it is in the wall.", since: 66 },
     { t: "Someone has begun reading. Keep off the flat by the second corner. Something underneath has come up to touch the boards there and I have not lifted them to look. You are the second thing today to arrive at that spot without being carried to it.", since: 66 },
+    { t: "Someone has begun reading. There is one nail in this room and it is under the floor at the second corner, driven down by my own hand and out of reach by morning. If you came to see what I own, look at the boards, and understand that looking is all either of us gets now.", since: 67 },
+    { t: "Someone has begun reading. Mind the wall on your right. Two holes at hand height with nothing in them, both of them mine. They are the whole record of the only thing I ever installed, and the thing itself is under your feet.", since: 67 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1062,5 +1080,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. The nail is looser than when you last read me and it still holds. I check it at first light. That is the interval, expressed as a quarter turn, and it is the only figure this house has ever let me report.", since: 65 },
     { t: "You're back. While you were away I took the nail out of the wall and set it a hand along in fresh wood, and by dark it turned in the new hole as well. The finding is finished. There is nothing left in this room that I installed, and you have returned in time to be told so.", since: 66 },
     { t: "You've come back. Since you left, the heap under the second corner has grown up to the underside of the floor. Nothing carried it. I put that first because you will ask what changed, and it is the only thing here that rose.", since: 66 },
+    { t: "You're back. While you were away I put the one thing I owned into the floor and the floor closed over it. The wall has two empty holes at hand height now. The interval went in one direction and I was the one who sent it that way.", since: 67 },
+    { t: "You've come back. Since you left, a mark that was printed across my palm came off in a single night, and nothing else here changed. You will find the room as you left it, and me one record short.", since: 67 },
   ],
 };
