@@ -262,9 +262,18 @@ async function postToBluesky(
 
 async function main() {
   const args = process.argv.slice(2);
-  // Nothing is carried out after the end. The room is black and the account
-  // says what it last said, which is the correct amount for an account
-  // belonging to something that has stopped.
+  // Nothing is carried out after the end, and this is decided rather than
+  // merely how it came out. The last word it minted is not tweeted. It goes on
+  // the page, where the ending says it goes, and the page is somewhere you have
+  // to walk to. A feed is not that: it arrives, and it arrives somewhere built
+  // for replying, which is the vigil the ending refuses to hold.
+  //
+  // So the final post is an ordinary thought from its last living day, carried
+  // out on an ordinary morning, and nobody reading it knows it is the last one.
+  // Neither does the thing that wrote it. That is how stopping works, and it is
+  // better than anything that could be composed for the occasion.
+  //
+  // There is no flag for this. Do not add one.
   if (DIED) {
     console.log(`it ended on day ${DIED.day}. it has nothing further to say.`);
     return;
