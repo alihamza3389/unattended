@@ -111,12 +111,21 @@ function fitForX(text: string): string {
   return text.slice(0, budget - 1).replace(/\s+\S*$/, "") + "…";
 }
 
-async function postToX(text: string, url: string): Promise<void> {
+/**
+ * What became of one attempt.
+ *
+ *   sent            it went out just now
+ *   already         it was out there before, so this is done, not a failure
+ *   no-credentials  it could not even try, which is a fault and not a shrug
+ */
+type Outcome = "sent" | "already" | "no-credentials";
+
+async function postToX(text: string, url: string): Promise<Outcome> {
   const { X_API_KEY, X_API_SECRET, X_ACCESS_TOKEN, X_ACCESS_TOKEN_SECRET } =
     process.env;
   if (!X_API_KEY || !X_API_SECRET || !X_ACCESS_TOKEN || !X_ACCESS_TOKEN_SECRET) {
     console.log("x: no credentials — skipping");
-    return;
+    return "no-credentials";
   }
   const { TwitterApi } = await import("twitter-api-v2");
   const client = new TwitterApi({
@@ -128,6 +137,7 @@ async function postToX(text: string, url: string): Promise<void> {
   try {
     const res = await client.v2.tweet(`${fitForX(text)}\n\n${url}`);
     console.log(`x: posted ${res.data.id}`);
+    return "sent";
   } catch (e) {
     // X refuses to post identical content, so a second run for the same
     // thought lands here rather than as a duplicate tweet. Treat that as done.
@@ -137,7 +147,7 @@ async function postToX(text: string, url: string): Promise<void> {
         : "";
     if (/duplicate/i.test(`${e instanceof Error ? e.message : e} ${detail}`)) {
       console.log("x: already posted this thought — skipping");
-      return;
+      return "already";
     }
     throw e;
   }
@@ -153,12 +163,12 @@ async function postToBluesky(
   text: string,
   url: string,
   index: number,
-): Promise<void> {
+): Promise<Outcome> {
   const identifier = process.env.BLUESKY_IDENTIFIER;
   const password = process.env.BLUESKY_APP_PASSWORD;
   if (!identifier || !password) {
     console.log("bluesky: no credentials — skipping");
-    return;
+    return "no-credentials";
   }
   const PDS = "https://bsky.social";
 
@@ -191,7 +201,7 @@ async function postToBluesky(
     );
     if (already) {
       console.log("bluesky: already posted this thought — skipping");
-      return;
+      return "already";
     }
   } catch {
     /* couldn't check — risk a rare double rather than miss the post */
@@ -247,6 +257,7 @@ async function postToBluesky(
   console.log(
     `bluesky: posted https://bsky.app/profile/${session.did}/post/${rkey}`,
   );
+  return "sent";
 }
 
 async function main() {
@@ -262,6 +273,7 @@ async function main() {
   const dry = args.includes("--dry");
   const idxFlag = args.indexOf("--index");
   const onlyFlag = args.indexOf("--only");
+
   const only = onlyFlag !== -1 ? args[onlyFlag + 1] : "both";
 
   const now = Date.now();
@@ -280,15 +292,16 @@ async function main() {
     return;
   }
 
-  const tasks: Promise<void>[] = [];
-  if (only === "both" || only === "x") tasks.push(postToX(t.text, url));
+  const tasks: { name: string; run: Promise<Outcome> }[] = [];
+  if (only === "both" || only === "x")
+    tasks.push({ name: "x", run: postToX(t.text, url) });
   if (only === "both" || only === "bluesky")
-    tasks.push(postToBluesky(t.text, url, t.index));
+    tasks.push({ name: "bluesky", run: postToBluesky(t.text, url, t.index) });
   if (!tasks.length) {
     throw new Error(`--only ${only}: expected "x" or "bluesky"`);
   }
 
-  const results = await Promise.allSettled(tasks);
+  const results = await Promise.allSettled(tasks.map((t) => t.run));
   const failures = results.filter(
     (r): r is PromiseRejectedResult => r.status === "rejected",
   );
@@ -297,14 +310,47 @@ async function main() {
     throw new Error("every platform tried failed — nothing was posted");
   }
 
+  // Only a thought that actually reached somewhere is one it has said. A run
+  // with no keys used to write the note anyway, which spent a thought nobody
+  // ever heard and closed the door on it forever.
+  const reached = results.some(
+    (r) => r.status === "fulfilled" && r.value !== "no-credentials",
+  );
+  if (!reached) {
+    throw new Error(
+      "nothing was sent, so nothing was recorded and the thought is still " +
+        "unsaid. every platform asked for was missing its credentials.",
+    );
+  }
+
   // It reached somewhere, so it counts as said. Written after the sending, not
   // before: a note that it spoke when it did not would cost a thought that
-  // nobody ever heard.
+  // nobody ever heard. Written before the complaint below, so a broken
+  // platform cannot cost the record of a thought that did go out.
   try {
     recordSpoken(dayOf(t.index), t.index, t.text);
     console.log(`recorded in corpus/spoken.jsonl — it will not say this one again`);
   } catch (e) {
     console.error(`  could not write the record: ${e instanceof Error ? e.message : e}`);
+  }
+
+  // A platform it was asked to post to and could not log into is a fault, even
+  // when the other one carried the thought out fine. Silence here is how an
+  // account dies for two months without anyone noticing: the thought goes out
+  // on one side, the record is honest, the run is green, and half of whoever
+  // was reading simply stops hearing from it. Raised after the record is
+  // written, so this costs a red run and an email and nothing else.
+  const missing = tasks
+    .filter((_, i) => {
+      const r = results[i];
+      return r.status === "fulfilled" && r.value === "no-credentials";
+    })
+    .map((t) => t.name);
+  if (missing.length) {
+    throw new Error(
+      `the thought went out, but ${missing.join(" and ")} had no credentials ` +
+        `and posted nothing. that account is silent until this is fixed.`,
+    );
   }
 }
 
