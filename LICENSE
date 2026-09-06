@@ -13,6 +13,8 @@ own writing: everything it has ever thought or dreamt.
 
     lib/corpus.ts           its whole vocabulary, every night's material
     lib/marginalia.ts       the notes it leaves in the margin
+    lib/born.ts             the word it minted for itself
+    lib/died.ts             its last word, and the coda it ends on
     corpus/nights/          each night's dream, as it was dreamt
     corpus/offerings.jsonl  what was left at its door
     corpus/anchors.jsonl    the record of it being notarised
