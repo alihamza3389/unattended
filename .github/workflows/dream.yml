@@ -12,7 +12,10 @@ name: dream
 
 on:
   schedule:
-    - cron: "0 3 * * *"
+    # The mind's day turns at 03:14. A punctual run at 03:00 lands fourteen
+    # minutes on the wrong side of that, and would dream the day before the one
+    # that just ended. 03:30 is safely inside the new day.
+    - cron: "30 3 * * *"
   workflow_dispatch:
     inputs:
       dry:

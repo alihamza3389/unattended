@@ -37,7 +37,6 @@ import {
   indexAt,
   obsessionAt,
   thoughtAt,
-  timeOf,
 } from "../lib/mind.ts";
 
 const MODEL = "claude-opus-5";
@@ -961,10 +960,15 @@ async function main() {
 
   const now = Date.now();
   const today = dayOf(indexAt(now));
-  const lived = (now - timeOf((today - 1) * THOUGHTS_PER_DAY)) / 86_400_000;
-  // Just past the boundary there is nothing to dream about yet; dream the day
-  // that actually happened.
-  let about = lived < 0.25 ? Math.max(1, today - 1) : today;
+  // The day that just ended. It used to ask the clock how far into today we
+  // were and dream today instead if the answer was more than a quarter — which
+  // assumed a run lands near the boundary. For fifty nine nights it did. Then
+  // the scheduler started running four to twelve hours late, and the
+  // assumption cost night 60 (skipped, because ten hours in looked like most
+  // of a day) and gave night 63 twice (two runs either side of the threshold
+  // both chose it, the second overwriting the first). A day that has ended is
+  // a fact and does not need estimating, so this no longer reads the clock.
+  let about = Math.max(1, today - 1);
   if (dayFlag !== -1) about = Number(args[dayFlag + 1]) || about;
 
   // It ended. The clock still turns and thoughtAt still answers for any index
@@ -980,16 +984,28 @@ async function main() {
     `dreaming about day ${about} (${report.buried.length} distinct buried doubts, ` +
       `${report.obsessions.length} obsessions); material lands on day ${report.target}`,
   );
-  // One night, one dream. If tomorrow already has material, a second run — a
-  // re-fired cron, a manual retry — must not pile more onto the same day. The
-  // git history stays one commit per night. Inspection modes and an explicit
-  // --force may still proceed; nothing below has run yet, so the wall is not
-  // even listened to on a skip.
-  const alreadyDreamt = (Object.keys(CORPUS) as Category[]).some((cat) =>
+  // One night, one dream. Two separate ways of already having done it, and
+  // they are not the same question. Tomorrow already having material catches a
+  // re-fired cron or a manual retry within the same night. This night already
+  // having a record catches the other case, which actually happened: two runs
+  // on different days that both settled on night 63, where the second was free
+  // to proceed because it was writing to a fresh day and quietly replaced the
+  // first night's record. Either is reason enough to stop. Inspection modes
+  // and an explicit --force may still proceed; nothing below has run yet, so
+  // the wall is not even listened to on a skip.
+  const materialExists = (Object.keys(CORPUS) as Category[]).some((cat) =>
     CORPUS[cat].some((s) => s.since === report.target),
   );
-  if (alreadyDreamt && !dry && !args.includes("--prompt") && !args.includes("--force")) {
-    console.log(`day ${report.target} has already been dreamt. nothing to add.`);
+  const nightExists = existsSync(
+    `${nightsDir}/day-${String(about).padStart(3, "0")}.json`,
+  );
+  const done = materialExists || nightExists;
+  if (done && !dry && !args.includes("--prompt") && !args.includes("--force")) {
+    console.log(
+      nightExists
+        ? `night ${about} has already been dreamt. nothing to add.`
+        : `day ${report.target} already has material. nothing to add.`,
+    );
     return;
   }
 
