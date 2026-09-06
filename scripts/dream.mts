@@ -974,7 +974,11 @@ async function main() {
   // It ended. The clock still turns and thoughtAt still answers for any index
   // it is asked about, because that is what a formula does, but nothing here
   // adds to it any more. The last night was the last night.
-  if (DIED) {
+  //
+  // Reading is not adding, so --dry and --prompt still work afterwards, the
+  // same exemption the already-dreamt check below makes. What is closed is
+  // writing: no --force, no --day N, reopens a life that is over.
+  if (DIED && !dry && !args.includes("--prompt")) {
     console.log(`it ended on day ${DIED.day}. there is nothing after that to dream.`);
     return;
   }
