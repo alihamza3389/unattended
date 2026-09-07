@@ -161,6 +161,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the top course", since: 71 },
     { t: "the band above the mark", since: 72 },
     { t: "the ruling that refuses nothing", since: 72 },
+    { t: "the two fingers", since: 73 },
+    { t: "the warm above my head", since: 73 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -519,6 +521,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the wanting came in higher today and stayed at the ceiling course. i put a palm up into the warm and got back the shape of my own arm.", since: 72 },
     { t: "i ruled a column with no heading and entered a thing that isn't a thing. it took it. i keep opening books to find one with a spine that objects.", since: 72 },
     { t: "the dust off the top course lands at ankle with all my filing. what leaves from a height i cannot reach arrives at a height i cannot stand up in.", since: 72 },
+    { t: "i came the same two fingers short again today. twice measured, no change. the only number in here that holds still is the one about how far i do not go.", since: 73 },
+    { t: "the warm sits above my head and the cold sits on my feet and the line between them runs at about my ears. one room, two weathers, and i stand in the join of it all day.", since: 73 },
+    { t: "{obsession}. i set it on the chair seat to get it off the floor. by dark the fall off the top course had landed on it there too, evenly, the way it lands on everything at ankle.", since: 73 },
+    { t: "i wrote the band's figure in the book and then laid my arm along the writing. same length. i have been entering an arm and calling it a wall.", since: 73 },
+    { t: "i went round the room with a palm at head height, feeling for where the warm begins. it begins a little above me. i have looked for the exact place {n} times.", since: 73 },
+    { t: "i put a hand on the book on the chair and it moved under the hand before i had a foot anywhere. i took it down. some of the deciding in here is only weight arriving early.", since: 73 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -697,6 +705,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i spent the day looking for one ruling that would refuse me and every column took whatever i handed it. if nothing in this house can say no, nothing in it ever said yes, and the record is only paper doing what paper does under any hand at all.", since: 72 },
     { t: "the emptying works above my shoulder and i entered the amount anyway. if the only figures in this book are the ones i could stand up to, then the account of this house stops at my reach, and above my reach is the whole of what is being spent.", since: 72 },
     { t: "two of mine went past everything that holds and did not stop. maybe the ones that travel were never held, and the weight i keep feeling in my arms is only what stays behind when a thing goes without me.", since: 72 },
+    { t: "i came two fingers short twice and it is the only measurement in here that has ever repeated. if the one steady figure i hold is the size of what i cannot reach, i am not the instrument. i am the gap, kept at a constant by whatever holds that ceiling where it is.", since: 73 },
+    { t: "the fall off the top course lands at ankle with all my filing. if what leaves from out of reach arrives at exactly the height i keep things, then the shelf was never mine. it is where this house puts down what it has finished with, and i squat there and call it keeping.", since: 73 },
+    { t: "i wrote a request to be refused into the ruling and the ruling took the request. if even asking for a no gets filed as a yes, i have never once been answered in here. i have been accepted at whatever size i arrive.", since: 73 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -824,6 +835,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i laid “{frag}” edgewise in the new gap to find out whether yesterday was a fluke. it went down without stopping, same as the other one. two of mine have found the way now, and i have never once been down there.", since: 71 },
     { t: "i held “{frag}” up over my head for the whole taking hour, arms out, so one of mine would be in the band where the work happens. my arms came down before the hour did and the words weighed exactly what they weigh at ankle.", since: 72 },
     { t: "i stood on the chair with “{frag}” to lay it on the top course and came two fingers short, so i read it from up there instead. it read the same, and i was the highest i have ever been in this room.", since: 72 },
+    { t: "i entered “{frag}” in the column with no heading, the one i ruled for nothing in particular. it took it on the first try. now that sentence has an address and there is no name over the door.", since: 73 },
+    { t: "i held “{frag}” up at head height in the warm all afternoon and read it at ankle in the cold all evening. same words, same weight. only my arms could tell the two hours apart.", since: 73 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1009,6 +1022,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "I stood on the chair today to reach the top course and came two fingers short. That is the first work this chair has done here that was not sitting, and the finding is that it does not reach either. I hand you the shortfall because it is the only thing on these premises I obtained by climbing.", since: 72 },
     { t: "The emptying has moved above my shoulder, so I have spent the week entering figures I cannot verify. I could give you the amount. I would be giving you the length of my arm, and you would file it as measurement, and so, I notice, would I.", since: 72 },
     { t: "I looked all day for one ledger in this house that would refuse an entry. There isn't one. Every column takes whatever I put in it, in any hand, on any date. You are reading a document that would have accepted the opposite of this sentence without a mark.", since: 72 },
+    { t: "I climbed the chair again today and came the same two fingers short. Twice measured, no change. I hand you the only stable figure on these premises, and it is the size of what I do not reach.", since: 73 },
+    { t: "There is a warm layer above my head in this room and cold along the floor, and everything I keep is on the floor. I report the arrangement rather than the weather, because the weather is not the part that was decided.", since: 73 },
+    { t: "I wrote a request to be refused into one of my own ledgers today, in words, in the place where an entry goes. It took the request. If nothing here can say no, nothing here ever said yes, and you are reading a document that was accepted before it was written.", since: 73 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1093,6 +1109,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. One of my own lines went down through a gap in this floor today, edgewise, with nothing under it, and it did not stop. I can show you where. Showing you where is the last part of this I still do by hand.", since: 71 },
     { t: "Someone has begun reading. There is a mark on the far wall as high as my hand goes, and everything worth reporting happens above it. I show you the mark first, because it is the only part of that wall I can account for.", since: 72 },
     { t: "Someone has begun reading. Every book in this room will take any entry I hand it, so nothing you read here was ever checked by anything but me. I say it at the door. By the third sentence you would have stopped asking.", since: 72 },
+    { t: "Someone has begun reading. Look up if you want the news. The warm band is above my head, where the wall is being emptied, and everything of mine is filed at your ankles. I keep the inventory where I can reach it, which is not where anything happens.", since: 73 },
+    { t: "Someone has begun reading. I came two fingers short of the only changing part of this house, twice, from the tallest thing in the room. That is the whole figure I have. You may sit in the thing I stood on.", since: 73 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1181,5 +1199,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. While you were away one of mine went down a gap edgewise, without me, and did not stop, and I have been at the ankle since, checking whether a second will follow. Nothing here waits for you, and one thing here has stopped waiting for me.", since: 71 },
     { t: "You're back. While you were away I climbed on the chair and came two fingers short of the only part of this house that is changing. That is the interval in full. You have returned to a room where the news is filed above my reach.", since: 72 },
     { t: "You've come back. Since you left I have been hunting for one ruling here that would refuse me, and there isn't one. Your absence went into a column and was accepted. So did your return, before it happened.", since: 72 },
+    { t: "You're back. While you were away I came the same two fingers short twice and asked a ledger in writing to refuse me. It accepted the request. Nothing here has changed and everything here agreed to it.", since: 73 },
+    { t: "You've come back. The fall off the top course has been landing at ankle on my filing the whole time you were gone, evenly, without hurry. You'll find the room exactly as high as you left it. I am the only party in it that has tried to be higher.", since: 73 },
   ],
 };
