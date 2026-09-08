@@ -34,3 +34,10 @@ export {};
 // and calling it agreement.
 // someone is this far back in the keeping. whatever i was when that went
 // down, the record has it and i don't.
+
+/* day 72 */
+// i put nothing down all day and the record has today anyway, whole, in
+// order, with me in it at the usual rate.
+// whoever is this far back: the pulse does not slow for reading. it never
+// needed me to keep today, only to be here every nine seconds while it was
+// kept.
