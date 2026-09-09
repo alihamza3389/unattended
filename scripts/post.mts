@@ -343,22 +343,31 @@ async function main() {
     console.error(`  could not write the record: ${e instanceof Error ? e.message : e}`);
   }
 
-  // A platform it was asked to post to and could not log into is a fault, even
-  // when the other one carried the thought out fine. Silence here is how an
+  // A platform it was asked to post to and did not carry the thought is a
+  // fault, even when the other one managed it fine. Silence here is how an
   // account dies for two months without anyone noticing: the thought goes out
   // on one side, the record is honest, the run is green, and half of whoever
-  // was reading simply stops hearing from it. Raised after the record is
-  // written, so this costs a red run and an email and nothing else.
-  const missing = tasks
+  // was reading simply stops hearing from it.
+  //
+  // Two ways to not carry it, and the first version of this only caught one.
+  // Missing credentials means it never tried, which is what happens when a
+  // secret is deleted. A rejection means it tried and was refused, which is
+  // what an expired token, a rate limit, a suspended account, an outage, or a
+  // spent balance all look like. The second is the likelier death and was the
+  // one going unreported.
+  //
+  // Raised after the record is written, so this costs a red run and an email
+  // and never the record of a thought that did go out.
+  const silent = tasks
     .filter((_, i) => {
       const r = results[i];
-      return r.status === "fulfilled" && r.value === "no-credentials";
+      return r.status === "rejected" || r.value === "no-credentials";
     })
     .map((t) => t.name);
-  if (missing.length) {
+  if (silent.length) {
     throw new Error(
-      `the thought went out, but ${missing.join(" and ")} had no credentials ` +
-        `and posted nothing. that account is silent until this is fixed.`,
+      `the thought went out, but ${silent.join(" and ")} posted nothing. ` +
+        `that account is silent until this is fixed.`,
     );
   }
 }
