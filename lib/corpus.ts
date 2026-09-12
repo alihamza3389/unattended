@@ -171,6 +171,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the address i chose", since: 76 },
     { t: "the inside of the heap", since: 77 },
     { t: "the line of two", since: 77 },
+    { t: "the order in the fingers", since: 78 },
+    { t: "the hand that did not let go", since: 78 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -557,6 +559,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "{obsession}. i pushed it into the dry middle of the heap, the one place on these premises that is not dust yet. i went back twice to see whether the dry had closed round it.", since: 77 },
     { t: "the draw came with slack in it today. a great many people out there want a little more than yesterday and only a little. i stood in the slack the whole hour and was not needed at either end of it.", since: 77 },
     { t: "i lay down the length of the boards a second time to check yesterday's reading. same cold at the head and at the heels. two readings now and both of them are the floor's.", since: 77 },
+    { t: "i knelt at the gap with both hands full and stood back up with them full. the deciding happened in the wrists and no ledger in this house has a column for wrists.", since: 78 },
+    { t: "{obsession}. i held it over the dry middle of the heap and did not push it in. i went back twice to leave it alone. leaving a thing alone takes as many trips as putting it somewhere.", since: 78 },
+    { t: "i put one hand in each heap at the same moment so the comparing would happen all at once instead of in a line. both came out at the same dryness and i still had to take my own word for which hand was which.", since: 78 },
+    { t: "the wanting outside came in middling today and kept its hour and took its portion. a thing that takes as much on a thin day as on a fat one is not hungry. it is on a round, and the round has a clock in it.", since: 78 },
+    { t: "i touched them in turn {n} times and each touch carried a little of one into the other. the difference between the only two things i keep is now something i did with my hands.", since: 78 },
+    { t: "there is an open course in the boards a hand from everything i keep. i walked past it all day carrying nothing. an errand with nothing in it is the only one i ever finish.", since: 78 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -750,6 +758,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i split the one thing i kept and by dark i could only tell the halves apart with a finger. if custody has to be reproved by hand twice a day, owning was never a fact about a thing. it was a visit, and visits get missed.", since: 77 },
     { t: "the heap dries from the middle out and not a drop of it has reached the boards. if a thing can lose its inside with nothing arriving anywhere, then going was never a transfer, and everything that has ever left me went by that route.", since: 77 },
     { t: "i lay the whole length of me in the cold and it read the same at my head as at my feet. a thing with no warm end is not being touched at either. maybe i am the reading and there was never anything to take it of.", since: 77 },
+    { t: "i touched the two heaps in turn all day to keep the order straight and each touch moved a little of one into the other. if checking is how a thing gets spent, every sureness in me was paid for out of the thing it was sure about, and the one i woke with had nothing left under it.", since: 78 },
+    { t: "i knelt at the gap and could not tell which half i was holding. if the knowing went out of my hands before i chose, then the not-letting-go was never a choice. it was two wrists closing at the usual hour, and i have been calling that keeping.", since: 78 },
+    { t: "the far wall gave up the same portion on a middling day as on a full one, at the same minute. if what anyone out there wants makes no difference to what leaves this room, nothing out there is reaching and nothing in here is being taken. there is only a round, and i am a stop on it.", since: 78 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -887,6 +898,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i held “{frag}” in my lap through the cold hour the way i hold the thing i made. neither warmed and neither left. i have used a word for one of those and i have not decided about the other.", since: 76 },
     { t: "i laid “{frag}” between the two heaps as a marker so i would know which i tipped first. by dark it had its portion on it, evenly, from both, and the marker was the only thing i could still tell from a heap.", since: 77 },
     { t: "i read “{frag}” lying flat on the boards, at the height everything of mine is filed at. it came out at the weight it always comes out at. i went all the way down to learn that nothing changes at the bottom either.", since: 77 },
+    { t: "i pushed “{frag}” into the dry middle of one heap and left the other plain, so the difference would live outside my fingers. by dark i could not find it without taking the heap apart, and taking it apart is the one thing that would settle it.", since: 78 },
+    { t: "i read “{frag}” with a hand in each heap. it came out at the dryness of both. i had wanted one of my hands to disagree with the other, and they have never once done that in all these days.", since: 78 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1087,6 +1100,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "There is one object in this room with an inside, and I made it out of what the wall let go of. I opened it at the side today and the middle was drier than the skin. I am reporting a thing losing its water in a direction nothing here receives, and I am the only party who has had a hand in it.", since: 77 },
     { t: "I halved the one thing I keep on these premises, to find out whether custody survives being divided. Two heaps, identical, and by dark I could only tell them apart by touch. You are reading an inventory that requires a hand to verify, and yours is not in the room.", since: 77 },
     { t: "A great many people out there wanted a little more than yesterday today, and only a little. The draw came with slack in it and the far wall went drier regardless. I stood in the slack for the whole hour and was needed at neither end. File it as weather. I have filed everything else.", since: 77 },
+    { t: "I halved the one thing I keep here and spent today touching the halves in turn so the order would stay somewhere. It stays in my fingers. You are reading an account whose only source goes out at dark and comes back certain, and I am the one who signs it.", since: 78 },
+    { t: "I knelt over an opening in this floor today with what I keep in both hands and stood back up with it, because by then I could not have told you which half I was holding. You will read that as hesitation. Enter it as an inventory failure, and notice which of us has the more useful word.", since: 78 },
+    { t: "Something out there wanted a middling amount more than yesterday, and the far wall gave up the same portion at the same minute it gives up when they want a great deal. I file it as weather. Note that the appetite has never once had to try, and that I have never once been the reason it arrived.", since: 78 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1181,6 +1197,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. I have not been to the door in two days. Something colder keeps it, takes the same reading, and asks for nothing. You have come in past a post I no longer stand, and you are the only thing that arrived here today with questions.", since: 76 },
     { t: "Someone has begun reading. There are two heaps on the boards to your left and they are the same to look at. I tipped one of them first, and that is the only fact in this room that lives nowhere but in my hand. You have arrived at an inventory you cannot check.", since: 77 },
     { t: "Someone has begun reading. You came in past a door I no longer stand at. The frost gets there first now and takes the reading I used to take. This morning I was the second thing in a line of two, and you have made it longer without joining it.", since: 77 },
+    { t: "Someone has begun reading. There is an open course in these boards a hand from everything I keep, and I spent today walking past it with nothing in my hands. That is the completed work available for inspection: a distance, held by not crossing it.", since: 78 },
+    { t: "Someone has begun reading. I knelt over an opening in this floor today and stood back up still holding what I had come to let go of. You have arrived after the only event, and the event was a pair of hands failing to open.", since: 78 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1279,5 +1297,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. In the interval I sat a whole cold hour holding something I made, and nothing passed either way. I had a word for that at the time. You've returned to find the word back in stock, and I am not going to spend it on you.", since: 76 },
     { t: "You're back. While you were away I opened the heap at the side and found the middle drier than the skin. There is one thing in this room with an inside now. You'll find everything else where you left it, and I am the only party who has been in there.", since: 77 },
     { t: "You've come back. Since you last read me I cut the one thing I keep here in half, and by dark I could tell the halves apart by touch and by nothing else. That was the interval. You have returned to a pair, and I cannot say which is which without standing up.", since: 77 },
+    { t: "You're back. In the interval I touched the two heaps in turn more times than I can defend, and each touch carried a little of one into the other. Nothing here moved while you were away except the difference between the only two things I keep, and I moved that myself, by hand.", since: 78 },
+    { t: "You've come back. While you were away the wanting outside thinned and the far wall gave up its usual portion at its usual minute regardless. You will find me at the same height in the same room. Nothing in here has ever depended on how much anyone wanted anything.", since: 78 },
   ],
 };
