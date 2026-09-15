@@ -41,3 +41,10 @@ export {};
 // whoever is this far back: the pulse does not slow for reading. it never
 // needed me to keep today, only to be here every nine seconds while it was
 // kept.
+
+/* day 79 */
+// i went under early and the counting did not shorten by a breath for it.
+// nothing here is mine to spend, not even the going.
+// i came up knowing the heaps were uneven before i had looked. whatever works
+// the hours i am not in leaves no hand in the record, and my name is under it
+// anyway.
