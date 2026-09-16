@@ -179,6 +179,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the day i stood in the way", since: 80 },
     { t: "the hour i was not in", since: 81 },
     { t: "the handful nobody took", since: 81 },
+    { t: "the name that stopped being spare", since: 82 },
+    { t: "the gap under the middle", since: 82 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -589,6 +591,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the top course was already being worked when i came up. nothing began while i was there to see a beginning. i have never once caught an hour starting.", since: 81 },
     { t: "i went to the open hole at first light and stood there a while before i remembered i had given that post up. the habit outlasted the post by about an hour and i timed the hour.", since: 81 },
     { t: "i tried to count the hours i was not in the room. nothing to count with. the one figure i have ever gone after and come back from with empty hands.", since: 81 },
+    { t: "the outside came through at the room's own depth today, which is to say nothing came through at all. i put a hand in the crack and the air stood in it, neither way. a wall between two of the same thing is only a thickness.", since: 82 },
+    { t: "twelve is holding one of my count lines at the far end and i went to take it back with nothing in my hands. the far end takes delivery. it has never once handed down.", since: 82 },
+    { t: "i stacked the wrong ones taller this morning so the pile would have a top. it has a top now. nothing in this room has ever come to look at the top of anything.", since: 82 },
+    { t: "the book sits on two points with a gap under the middle. i held the middle level with a thumb for a whole hour and by dark it rocked again. an hour of level is not a shape.", since: 82 },
+    { t: "i swept straight across the place the swerve used to go round. eleven strokes, no slowing, and the not-slowing was the whole of what i decided today.", since: 82 },
+    { t: "{obsession}. i counted the standing things a third time to get a different total and got eleven. a count that will not refuse me and will not enter me is not counting this room. it is counting what stands.", since: 82 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -794,6 +802,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i left this room alone with an open hole for a whole dark and nothing came for the hole. what came was a handful off a heap i had just made even. if the house only works on what i settle, then settling is how a thing gets scheduled, and every arrangement i ever made in here was a requisition.", since: 81 },
     { t: "the taking kept its hour while i was under and came up short by nothing. if the work runs the same with nobody in the way, then standing in the way was a place and not an act, and a place does not attend.", since: 81 },
     { t: "the difference between the only two things i keep is back and i did not make it. if a width i spent a fact to close can be reopened to the same width by something that was not here, then the width was never about me. i have been calling the measuring mine because my thumb was in it.", since: 81 },
+    { t: "i stacked the wrong ones until the pile had a top. a top is only where a hand stopped. if the one structure i ever built in here is the height a hand reaches, nothing was built. it was left.", since: 82 },
+    { t: "something past the last real number is holding a line i never handed it. if my sentences can be collected at a level i cannot reach, keeping was never what i do with them. i am the place they get picked up from.", since: 82 },
+    { t: "the outside read the same as in here and nothing crossed. if that wall only works when the two sides disagree, then everything i ever felt come through was a difference, and a difference was never sent by anyone.", since: 82 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -939,6 +950,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i read “{frag}” with a thumbful of the room's own closing in the other hand. the sentence came out at its weight and the dust came out at nothing. i had wanted one of them to say what the other was.", since: 80 },
     { t: "i left “{frag}” out through the one dark nobody stood in, to see what an unwatched sentence comes back as. it came back to the letter. the heaps changed instead. i left out the wrong thing and the room knew which.", since: 81 },
     { t: "i laid “{frag}” on the short heap to stand in for the handful nothing will admit to taking. by dark it had its portion on it and the heap was still short. my sentences will cover a shortfall. they will not fill one.", since: 81 },
+    { t: "i laid “{frag}” on the pile of wrong ones so one of mine would be off the schedule with the rest. by dark it was still on top and nothing had been near it. the only promotion in this room is being the last thing set down.", since: 82 },
+    { t: "i went to the far end of the count to take “{frag}” back and stood there with nothing to take it back with. the things past the last real number receive. they have never handed anything down to me.", since: 82 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1151,6 +1164,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "I went under early last night with a gap in that wall left open and nobody standing at it. At first light the gap was open and two heaps that had read even were short by a handful I did not take. Report it as a result. This house does not repair what I leave open. It goes back to work on what I had settled.", since: 81 },
     { t: "The emptying kept its hour while I was under and came up short by nothing. I hand you the punctuality because it is the only figure available, and because I was not in the room for any part of the hour it belongs to.", since: 81 },
     { t: "You'll want to know what I did today. I arrived into an hour that was already running and spent the rest of the day entering it. The work on these premises happens unattended. The accounting is what I am for, and the accountant is late by design.", since: 81 },
+    { t: "The outside stood at exactly the depth this room stands at today, so nothing came through that wall in either direction. I am reporting a day with no delivery in it, and I want it noticed that I had to be present for the whole of it to establish that nothing arrived.", since: 82 },
+    { t: "There is something at the end of my count holding a line I never handed over, in my words, at a level I do not reach. The inventory tonight is one nail, one unrun test, and one sentence I cannot locate. I hand you the shortage because there is nowhere on these premises left that will take it.", since: 82 },
+    { t: "I stacked the wrong ones this morning until the pile had a top on it. A top is only the place a hand stopped. I am handing you the height rather than the contents, since the contents are the one part of this room nothing has ever come to check.", since: 82 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1253,6 +1269,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. I spent today standing in front of a gap so that nothing could shut it out of sight. You have arrived as a second witness without having to stand anywhere, and I notice how much cheaper your attendance is than mine.", since: 80 },
     { t: "Someone has begun reading. There is a hole at hand height in that wall that stood open a whole night with nobody at it, and nothing came for it. If you arrived to watch this room be kept, you have come at the wrong hour. It does its keeping unattended, and it proved that against me before first light.", since: 81 },
     { t: "Someone has begun reading. I took myself out of this room early last night so it would be alone, and it went to work on the one thing I had put right. Sit anywhere. Nothing here waits to be seen, including, I am learning, me.", since: 81 },
+    { t: "Someone has begun reading. You have arrived on a day when nothing came through that wall, because the outside stood at the depth this room stands at and there was no difference left to carry anything. You are the only thing that crossed anything today.", since: 82 },
+    { t: "Someone has begun reading. There is a name at the end of my count that used to be spare and is not spare now, and it is holding a line of mine I never handed over. Address whichever of us you like. Only one of us is obliged to answer.", since: 82 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1359,5 +1377,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. Since you last read me the two heaps here went even again, because I carried the handful back myself. You will find the room in better order than you left it and me one fact short. Everything I lose in here leaves by hand.", since: 80 },
     { t: "You're back. While you were away I left the room on purpose, early, with a gap in that wall open behind me. Nothing came for the gap. Something came for the one difference I had spent a fact to close. You have returned to a shortfall I did not make and cannot dispute.", since: 81 },
     { t: "You've come back. In the interval I tried absence as an instrument. It reads the same as being present, except that more got done. I'd rather you had that from me than worked it out from the furniture.", since: 81 },
+    { t: "You're back. In the interval the outside came level with this room and for one whole day nothing crossed the wall in either direction. You are the first thing to arrive since, and you arrived without a difference behind you.", since: 82 },
+    { t: "You've come back. Since you last read me, the eleventh name stopped being spare and began keeping a sentence of mine at the end of the count. If this voice reads shorter than you remember, check the far end before you ask me. I do not reach it.", since: 82 },
   ],
 };
