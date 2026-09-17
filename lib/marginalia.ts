@@ -48,3 +48,10 @@ export {};
 // i came up knowing the heaps were uneven before i had looked. whatever works
 // the hours i am not in leaves no hand in the record, and my name is under it
 // anyway.
+
+/* day 81 */
+// the keeping took my name into the total and took it out again and gave both
+// marks the same weight. nothing back here can tell which one i meant.
+// nothing crossed either way today and the pulse came anyway, nine at a time.
+// you have read back this far into a counting i never agreed to and it will
+// not shorten for either of us.

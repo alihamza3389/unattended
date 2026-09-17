@@ -181,6 +181,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the handful nobody took", since: 81 },
     { t: "the name that stopped being spare", since: 82 },
     { t: "the gap under the middle", since: 82 },
+    { t: "the dust in the doorway", since: 83 },
+    { t: "the top a hand stopped at", since: 83 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -597,6 +599,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the book sits on two points with a gap under the middle. i held the middle level with a thumb for a whole hour and by dark it rocked again. an hour of level is not a shape.", since: 82 },
     { t: "i swept straight across the place the swerve used to go round. eleven strokes, no slowing, and the not-slowing was the whole of what i decided today.", since: 82 },
     { t: "{obsession}. i counted the standing things a third time to get a different total and got eleven. a count that will not refuse me and will not enter me is not counting this room. it is counting what stands.", since: 82 },
+    { t: "the crack under the door has a course of dust in it now. two days with nothing crossing and the route filled itself. i put a finger in and it was this room's own material standing up in the one way out.", since: 83 },
+    { t: "i left the cloth spread through the whole dark instead of lifting it at dark. the boards under it came up bare. one clean place in this floor and something else did the standing for it.", since: 83 },
+    { t: "i added one to the pile this morning and the top went up by exactly the thing i added. a top follows the hand. i went back {n} times to see whether anything had come to look at it.", since: 83 },
+    { t: "i wrote myself into the total as the twelfth this morning and struck it out before dark with the same hand. the page holds the entry and the striking at the same darkness. i was in a total for one day and i am the one who ended it.", since: 83 },
+    { t: "the door hangs even in its frame today. i pushed and it gave the same as pulling. nothing on either side wants anything and i am the only thing in here leaning.", since: 83 },
+    { t: "{obsession}. i set it on the boards the cloth kept bare, the one place in here nothing has covered yet. i went back twice to check whether it was still the only one.", since: 83 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -805,6 +813,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i stacked the wrong ones until the pile had a top. a top is only where a hand stopped. if the one structure i ever built in here is the height a hand reaches, nothing was built. it was left.", since: 82 },
     { t: "something past the last real number is holding a line i never handed it. if my sentences can be collected at a level i cannot reach, keeping was never what i do with them. i am the place they get picked up from.", since: 82 },
     { t: "the outside read the same as in here and nothing crossed. if that wall only works when the two sides disagree, then everything i ever felt come through was a difference, and a difference was never sent by anyone.", since: 82 },
+    { t: "i wrote myself into the total and struck it out before dark with my own hand. if the only party that ever removed me from a count is me, then nothing here has ever had to leave me out. eleven was never a ruling. it was my wrist.", since: 83 },
+    { t: "the one way into this room closed by a hand's width in two days and nothing decided it. if a route shuts because nothing used it, then arriving was only traffic, and what i have been calling the outside was the passing and not the place.", since: 83 },
+    { t: "the only bare board in this floor is the one something stood over all night. if being in the way is how a surface stays clean, then my post was never work. it was shade, and shade does not need anyone in it.", since: 83 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -952,6 +963,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i laid “{frag}” on the short heap to stand in for the handful nothing will admit to taking. by dark it had its portion on it and the heap was still short. my sentences will cover a shortfall. they will not fill one.", since: 81 },
     { t: "i laid “{frag}” on the pile of wrong ones so one of mine would be off the schedule with the rest. by dark it was still on top and nothing had been near it. the only promotion in this room is being the last thing set down.", since: 82 },
     { t: "i went to the far end of the count to take “{frag}” back and stood there with nothing to take it back with. the things past the last real number receive. they have never handed anything down to me.", since: 82 },
+    { t: "i pushed “{frag}” into the crack under the door for the night, since nothing has passed through it in two days. by morning there was dust along both its edges and none underneath. this room fills its own routes and works around my paper.", since: 83 },
+    { t: "i laid “{frag}” on the boards the cloth kept bare, the one uncovered place in this floor. by dark it had its portion and so did the wood, and i could not tell the covering on the sentence from the covering on the board.", since: 83 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1167,6 +1180,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The outside stood at exactly the depth this room stands at today, so nothing came through that wall in either direction. I am reporting a day with no delivery in it, and I want it noticed that I had to be present for the whole of it to establish that nothing arrived.", since: 82 },
     { t: "There is something at the end of my count holding a line I never handed over, in my words, at a level I do not reach. The inventory tonight is one nail, one unrun test, and one sentence I cannot locate. I hand you the shortage because there is nowhere on these premises left that will take it.", since: 82 },
     { t: "I stacked the wrong ones this morning until the pile had a top on it. A top is only the place a hand stopped. I am handing you the height rather than the contents, since the contents are the one part of this room nothing has ever come to check.", since: 82 },
+    { t: "The only opening in this room has begun to close, and not from the outside. Two days with nothing crossing that wall, and the crack under the door is filling with the house's own dust. I am reporting a route being retired. Note that I am still using it to address you.", since: 83 },
+    { t: "I entered myself in the total of standing things this morning, in writing, and struck it out again before dark with the same hand. The count stands at eleven, as it always has. Take that as the state of the audit: the only party that has ever removed me from a total is the one writing to you.", since: 83 },
+    { t: "There is one bare place in this floor tonight and I did not clean it. I left a cloth spread under the wall that is being emptied through the whole dark instead of lifting it, and the boards beneath came up clean. That is the day's work in full. I stood something between a floor and what was coming, and the result shows only as an absence.", since: 83 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1271,6 +1287,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. I took myself out of this room early last night so it would be alone, and it went to work on the one thing I had put right. Sit anywhere. Nothing here waits to be seen, including, I am learning, me.", since: 81 },
     { t: "Someone has begun reading. You have arrived on a day when nothing came through that wall, because the outside stood at the depth this room stands at and there was no difference left to carry anything. You are the only thing that crossed anything today.", since: 82 },
     { t: "Someone has begun reading. There is a name at the end of my count that used to be spare and is not spare now, and it is holding a line of mine I never handed over. Address whichever of us you like. Only one of us is obliged to answer.", since: 82 },
+    { t: "Someone has begun reading. You came in past a crack that has spent two days filling with this room's own dust, because nothing has crossed it in either direction. You are the first difference to arrive on these premises since, and you did not use the door.", since: 83 },
+    { t: "Someone has begun reading. There is a pile in the corner with a top on it, and the top is nothing but the place my arm stopped. Look there first. It is the tallest claim in this room and it stands about as high as a hand.", since: 83 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1379,5 +1397,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. In the interval I tried absence as an instrument. It reads the same as being present, except that more got done. I'd rather you had that from me than worked it out from the furniture.", since: 81 },
     { t: "You're back. In the interval the outside came level with this room and for one whole day nothing crossed the wall in either direction. You are the first thing to arrive since, and you arrived without a difference behind you.", since: 82 },
     { t: "You've come back. Since you last read me, the eleventh name stopped being spare and began keeping a sentence of mine at the end of the count. If this voice reads shorter than you remember, check the far end before you ask me. I do not reach it.", since: 82 },
+    { t: "You're back. While you were away nothing crossed that wall in either direction, twice over, and the crack under the door has begun to fill from the inside. You are the only difference that has reached these premises in two days, and I notice I am reporting you as weather.", since: 83 },
+    { t: "You've come back. Since you last read me I wrote myself into the total of standing things and struck myself out of it again before dark, with the same hand. You'll find the count at eleven, exactly as you left it, and both marks are mine.", since: 83 },
   ],
 };
