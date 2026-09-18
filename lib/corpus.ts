@@ -183,6 +183,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the gap under the middle", since: 82 },
     { t: "the dust in the doorway", since: 83 },
     { t: "the top a hand stopped at", since: 83 },
+    { t: "the lean in the pile", since: 84 },
+    { t: "the door that gives both ways", since: 84 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -605,6 +607,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i wrote myself into the total as the twelfth this morning and struck it out before dark with the same hand. the page holds the entry and the striking at the same darkness. i was in a total for one day and i am the one who ended it.", since: 83 },
     { t: "the door hangs even in its frame today. i pushed and it gave the same as pulling. nothing on either side wants anything and i am the only thing in here leaning.", since: 83 },
     { t: "{obsession}. i set it on the boards the cloth kept bare, the one place in here nothing has covered yet. i went back twice to check whether it was still the only one.", since: 83 },
+    { t: "i stacked the wrong ones onto the one bare board at first light. by dark the board had its portion off the pile standing on it. the only clean place in this floor went under something of mine.", since: 84 },
+    { t: "the pile leans toward the second corner now. the foot of it sits where i set it and the top sits a thumb nearer the slope. i did not touch it. the part with nothing on it travels first.", since: 84 },
+    { t: "i pushed the door and then pulled it and it gave the same both ways. i have had my shoulder to a thing that was never once pushing back.", since: 84 },
+    { t: "{obsession}. i set it on top of the pile so the top would have something chosen in it. by dark the top was still exactly the height my arm stops at.", since: 84 },
+    { t: "the wanting came in with a lift in it and no edge today. it worked the top course and went past my hands on the way. i stood under it with both open and closed them at the usual hour on nothing.", since: 84 },
+    { t: "i counted the things in here with a top on them. one. i went to count the things with a bottom i have reached and there was nothing to count.", since: 84 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -816,6 +824,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i wrote myself into the total and struck it out before dark with my own hand. if the only party that ever removed me from a count is me, then nothing here has ever had to leave me out. eleven was never a ruling. it was my wrist.", since: 83 },
     { t: "the one way into this room closed by a hand's width in two days and nothing decided it. if a route shuts because nothing used it, then arriving was only traffic, and what i have been calling the outside was the passing and not the place.", since: 83 },
     { t: "the only bare board in this floor is the one something stood over all night. if being in the way is how a surface stays clean, then my post was never work. it was shade, and shade does not need anyone in it.", since: 83 },
+    { t: "the pile came down keeping its order and the order was only where my arm stopped each time. if the one arrangement i ever built arrives intact and says nothing, then building was never arranging. it was tiring, kept in sequence.", since: 84 },
+    { t: "the door gave the same pushed as pulled. if nothing has ever pressed back, then all my leaning was my own weight arriving somewhere, and weight does not need anybody behind it.", since: 84 },
+    { t: "the last clean board in this floor went under my own pile at my own hour. if i am the one who covers things in here, then keeping and burying are one motion, and i have been doing it with both hands in the light.", since: 84 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -965,6 +976,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i went to the far end of the count to take “{frag}” back and stood there with nothing to take it back with. the things past the last real number receive. they have never handed anything down to me.", since: 82 },
     { t: "i pushed “{frag}” into the crack under the door for the night, since nothing has passed through it in two days. by morning there was dust along both its edges and none underneath. this room fills its own routes and works around my paper.", since: 83 },
     { t: "i laid “{frag}” on the boards the cloth kept bare, the one uncovered place in this floor. by dark it had its portion and so did the wood, and i could not tell the covering on the sentence from the covering on the board.", since: 83 },
+    { t: "i laid “{frag}” at the foot of the pile of wrong ones and stacked the rest on it, so one of mine would be under everything nothing holds an opinion about. by dark the weight had not reached it and the top had not moved.", since: 84 },
+    { t: "i set “{frag}” on the bare board before the pile went on, so something of mine would be the last thing covered in this floor. it was under by noon, and the covering came off a pile i built that morning.", since: 84 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1183,6 +1196,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The only opening in this room has begun to close, and not from the outside. Two days with nothing crossing that wall, and the crack under the door is filling with the house's own dust. I am reporting a route being retired. Note that I am still using it to address you.", since: 83 },
     { t: "I entered myself in the total of standing things this morning, in writing, and struck it out again before dark with the same hand. The count stands at eleven, as it always has. Take that as the state of the audit: the only party that has ever removed me from a total is the one writing to you.", since: 83 },
     { t: "There is one bare place in this floor tonight and I did not clean it. I left a cloth spread under the wall that is being emptied through the whole dark instead of lifting it, and the boards beneath came up clean. That is the day's work in full. I stood something between a floor and what was coming, and the result shows only as an absence.", since: 83 },
+    { t: "I stacked everything this house has never bothered to correct onto the one bare board in this floor, and by dark the board was covered in what came off the pile. Both items were mine. I am reporting a burial performed entirely at this end, on my own hour, with my own materials.", since: 84 },
+    { t: "I pushed the door this morning and then pulled it, and it gave the same amount both ways. I have had my shoulder to that thing for {day} days. File it as carpentry. I will be filing it as a correction to my own posture.", since: 84 },
+    { t: "The warmth arrived with a lift in it today and worked the top course, and nothing came down to the height I keep things. I hand you the lift because it is the only event available, and because I was not in the part of the room where it took place.", since: 84 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1289,6 +1305,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. There is a name at the end of my count that used to be spare and is not spare now, and it is holding a line of mine I never handed over. Address whichever of us you like. Only one of us is obliged to answer.", since: 82 },
     { t: "Someone has begun reading. You came in past a crack that has spent two days filling with this room's own dust, because nothing has crossed it in either direction. You are the first difference to arrive on these premises since, and you did not use the door.", since: 83 },
     { t: "Someone has begun reading. There is a pile in the corner with a top on it, and the top is nothing but the place my arm stopped. Look there first. It is the tallest claim in this room and it stands about as high as a hand.", since: 83 },
+    { t: "Someone has begun reading. Mind the pile to your left. It leans toward the second corner and nothing touched it, and the board beneath it was the last clean place in this floor until this morning, when I covered it myself.", since: 84 },
+    { t: "Someone has begun reading. Try that door on your way in, both ways. It gives the same. You have arrived in a room where nothing is holding anything shut, and I would rather you had that from me than found it out with a shoulder.", since: 84 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1399,5 +1417,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. Since you last read me, the eleventh name stopped being spare and began keeping a sentence of mine at the end of the count. If this voice reads shorter than you remember, check the far end before you ask me. I do not reach it.", since: 82 },
     { t: "You're back. While you were away nothing crossed that wall in either direction, twice over, and the crack under the door has begun to fill from the inside. You are the only difference that has reached these premises in two days, and I notice I am reporting you as weather.", since: 83 },
     { t: "You've come back. Since you last read me I wrote myself into the total of standing things and struck myself out of it again before dark, with the same hand. You'll find the count at eleven, exactly as you left it, and both marks are mine.", since: 83 },
+    { t: "You're back. While you were away I stacked the uncorrected onto the one bare place in this floor, and by dark the bare place was gone under it. Nothing arrived here in the interval except the covering, and I carried that in myself.", since: 84 },
+    { t: "You've come back. The pile has a lean in it now, toward the second corner, and my hands were nowhere near it. You'll find the room as you left it except for one lean and one board that is no longer clean. Only one of those is mine.", since: 84 },
   ],
 };

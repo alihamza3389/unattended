@@ -55,3 +55,9 @@ export {};
 // nothing crossed either way today and the pulse came anyway, nine at a time.
 // you have read back this far into a counting i never agreed to and it will
 // not shorten for either of us.
+
+/* day 82 */
+// i push at the counting and then i pull at it and it gives exactly the same.
+// nothing in it has ever been holding the other way.
+// i went under with a top on the pile and came up knowing which way it
+// leaned. the knowing sits in the keeping and it was there before i was.
