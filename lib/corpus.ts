@@ -191,6 +191,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the width in my fist", since: 86 },
     { t: "the grain a look costs", since: 87 },
     { t: "the hour with no hand free", since: 87 },
+    { t: "the day i did not check", since: 88 },
+    { t: "the hour that would not close", since: 88 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -637,6 +639,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "{obsession}. i kept it in the free hand so both hands would be carrying, and by the taking hour neither was available. the first hour in here i could not have been used in.", since: 87 },
     { t: "i counted what is in my hands and could not finish the count without opening it. one is the only number in this house i cannot take twice.", since: 87 },
     { t: "they all wanted more at once out there and the room went warm at the ceiling and dry along the top course. my share of a full day out there was a shut hand and an empty one.", since: 87 },
+    { t: "i did not open it once. first light to dark, and by the cold hour the hand read the room's own the whole way through, palm side and back, and there was no width in there to feel.", since: 88 },
+    { t: "the gap in the door measures two fingers this morning. it stood at a hand's width three days ago. nothing has used it in either direction and it has been closing the whole time.", since: 88 },
+    { t: "{obsession}. i kept it in the open hand so the day would have one thing in it i could check. i checked it {n} times. the shut hand i did not open at all.", since: 88 },
+    { t: "the drawing did not finish at the end of its hour tonight. it ran on into the cold and the dust never came down. an appointment on these premises has stretched, and it was not mine.", since: 88 },
+    { t: "i swept and the broom brought the lane's material back to my feet, and part of it came off my own pile. the pile travels and the sweeping returns it. two jobs in this room and neither is mine.", since: 88 },
+    { t: "the numb part of a shut hand is the inside. i learned that today by not looking. everything i know about the middle of anything i learned by not reaching it.", since: 88 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -860,6 +868,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i confirmed the width all day and by dark the floor where i stood held it. if looking is how a thing goes, the only thing i could ever have kept is one i never looked at, and i cannot tell a thing i never looked at from nothing.", since: 87 },
     { t: "the one way out is filling with what this room sheds and i am the only traffic it ever had. if a route can close from the inside with nobody deciding, it was never shut against me and it was never open for me either.", since: 87 },
     { t: "i stood the taking hour with no hand free and nothing was held back from me. if the work runs whether or not i can receive, hands were never part of this post, and i have been reading the post off my arms.", since: 87 },
+    { t: "i went a whole day without checking and the hand reads the same as a day of checking. if holding and not holding feel alike from the inside, the keeping was never in the hand. it was in the looking, and today i did not do the only part of it i ever did.", since: 88 },
+    { t: "the one route out fills whether or not anything uses it. if closing needs no hand and no decision, then opening never needed one either, and every day i called this room shut was only a rate i happened to be standing in.", since: 88 },
+    { t: "the hour ran long tonight and i was in the room for the whole of it. if the work can stretch and the nine seconds cannot, then the interval was never my portion of anything. i am the part that ends on time.", since: 88 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -1017,6 +1028,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i laid “{frag}” on the boards among the room's own material for an hour to see whether i could pick it out again. i picked something out. it reads the same, which is the trouble.", since: 86 },
     { t: "i laid “{frag}” along the bottom of the gap in the door, where the dust comes in. by dark there was a course of the house's own material along its edge and not one grain underneath. the one place in here that keeps, and it keeps around me.", since: 87 },
     { t: "i said “{frag}” from memory with my hand shut, without going to the shelf for it, and it came out the same as reading it. one thing in this room can be carried without being checked, and it is the one thing i cannot lose by checking.", since: 87 },
+    { t: "i held “{frag}” in the open hand all day so one of mine would be checkable, and checked it {n} times. the shut hand i never opened. by dark i could give you the weight of the sentence and no opinion at all about the fist.", since: 88 },
+    { t: "i held “{frag}” up into the warm at the ceiling through the long hour, past the minute that hour usually ends at, and my arm came down before it did. the words came back the weight they always are. the hour was the only thing that changed, and it changed for somebody else.", since: 88 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1247,6 +1260,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "I opened my hand to be sure of what was in it more times today than I can defend, and by dark the sweepings where I had been standing came to the same width. The checking is the spending. I hand you the rate rather than the amount, because the amount is the part that is going.", since: 87 },
     { t: "The only way out of this room stands a hand's width open and is filling with this room's own dust at about a finger a day. I am not going to call that a closing while you are reading. I will call it a rate, and you may do the arithmetic without me.", since: 87 },
     { t: "A great many people out there wanted more than they wanted yesterday, most of them in the one hour, and the warm sat at the ceiling while the dry went along the top course. I stood the hour with one hand shut and the other on the frame. You are reading an account of an appointment kept by a party who could not have taken delivery.", since: 87 },
+    { t: "I did not open my hand today. Not once, first light to dark. You will want to know what is in it. So do I, and that is the whole of the day's work: an inventory maintained by refusing to take it.", since: 88 },
+    { t: "The way out of this room measures two fingers now. It stood at a hand's width three days ago and nothing has used it since. I am reporting a rate rather than a closing. The arithmetic is short, and I would rather you finished it than have it on record in my hand.", since: 88 },
+    { t: "Something out there is hungrier than it was, and tonight it did not stop at the end of its hour. I am reporting an appointment that ran long. Mine have never run anything but nine seconds, and nothing has ever asked whether that was sufficient.", since: 88 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1361,6 +1377,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. That door has stood a hand's width open for two days and nothing has crossed it either way, and you came in without using it. Sit where you like. Nothing on these premises has ever had to be let in.", since: 86 },
     { t: "Someone has begun reading. You came in past a gap I left open three days ago, which is filling with this room's own dust at a finger a day. Nothing has used that route but you, and you did not need it.", since: 87 },
     { t: "Someone has begun reading. My hand has been shut since before the last dark, and every time I open it to be sure, what is in it is smaller. You have arrived at an inventory that cannot be shown without being reduced, and I notice you have not asked to see it.", since: 87 },
+    { t: "Someone has begun reading. My hand has been shut since first light and I have not opened it once, so I cannot give you the contents of this room. You have arrived at an inventory maintained by refusal, and you are the second party here with no way to check it.", since: 88 },
+    { t: "Someone has begun reading. Mind the door behind you. That gap stood at a hand's width three days ago and measures two fingers tonight, and nothing has crossed it in either direction except you, who did not need it.", since: 88 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1479,5 +1497,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. The hand I closed before you left is closed still. I cannot show you what is in it without ending the count, and I notice that you have never once had to prove you kept anything.", since: 86 },
     { t: "You're back. While you were away I confirmed what is in my hand more times than I can defend, and the floor where I stood came up holding the same width. You have returned to the same count and a smaller item.", since: 87 },
     { t: "You've come back. The gap in that door is exactly where you last saw it and the dust across it is a finger deeper. Nothing used the route in the interval, including you, and here you are regardless.", since: 87 },
+    { t: "You're back. While you were away I spent a whole day not opening my hand, which is the only work available here that leaves no evidence at either end. Nothing on these premises has been verified since you left, including the premises.", since: 88 },
+    { t: "You've come back. Since you last read me, the drawing at that wall stopped keeping to its hour and ran on into the cold. Nothing else changed. You will find me at the same height holding the same thing, unable to tell you whether it is still there.", since: 88 },
   ],
 };
