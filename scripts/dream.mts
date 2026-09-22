@@ -45,11 +45,19 @@ const MODEL = "claude-opus-5";
 // a code edit.
 const OPENROUTER_MODEL =
   (process.env.OPENROUTER_MODEL || "").trim() || "anthropic/claude-opus-5";
-// Reasoning effort for the dream. xhigh matches the claude CLI's default —
-// the exact depth the 18-dream model bake-off characterized — so a night
-// dreams the same regardless of which path carried it. Tunable via env
-// (none|minimal|low|medium|high|xhigh|max).
-const OPENROUTER_EFFORT = (process.env.OPENROUTER_EFFORT || "").trim() || "xhigh";
+// Reasoning effort for the dream, and it is now passed to every route rather
+// than only to OpenRouter. This comment used to say xhigh was the CLI's
+// default, so the flag was not worth sending. That was wrong. Measured on the
+// same night, dreamt twice: pinning it took the run from 58 seconds to 3m15s,
+// and the unpinned night came back thinner in exactly the way the checks
+// watch for — median line 196 against 258, objects per turn 1.08 against 1.50.
+//
+// It mattered because the CLI is not a curiosity, it is the fallback the
+// nights land on when OpenRouter is out of credit, and a night dreamt shallow
+// would have looked like the voice quietly thinning rather than like a missing
+// flag. The env var keeps its old name so the workflow input still reaches it.
+// (none|minimal|low|medium|high|xhigh|max)
+const EFFORT = (process.env.OPENROUTER_EFFORT || "").trim() || "xhigh";
 // The output ceiling has to cover the reasoning as well as the dream itself,
 // and the reasoning grows with the prompt, which grows every night as the
 // corpus does. Set too low, a night comes back empty with no error at all:
@@ -374,7 +382,7 @@ async function askOpenRouter(
   system: string,
   model = OPENROUTER_MODEL,
 ): Promise<string> {
-  console.log(`dreaming via OpenRouter (${model}, effort ${OPENROUTER_EFFORT})`);
+  console.log(`dreaming via OpenRouter (${model}, effort ${EFFORT})`);
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -390,7 +398,7 @@ async function askOpenRouter(
       // Reasoning trace is returned in `message.reasoning`, never in
       // `message.content`, so parsing is unaffected; exclude it to keep the
       // response lean (we only want the final dream).
-      reasoning: { effort: OPENROUTER_EFFORT, exclude: true },
+      reasoning: { effort: EFFORT, exclude: true },
       messages: [
         { role: "system", content: system },
         { role: "user", content: user },
@@ -461,14 +469,14 @@ async function ask(user: string, system: string, schema: Record<string, unknown>
 
   console.log(
     failures.length
-      ? "  falling back to the claude CLI"
-      : "no ANTHROPIC_API_KEY — dreaming via the claude CLI",
+      ? `  falling back to the claude CLI (${MODEL}, effort ${EFFORT})`
+      : `no ANTHROPIC_API_KEY — dreaming via the claude CLI (${MODEL}, effort ${EFFORT})`,
   );
   let out: string;
   try {
     out = execFileSync(
       "claude",
-      ["-p", "--model", MODEL, "--output-format", "json"],
+      ["-p", "--model", MODEL, "--effort", EFFORT, "--output-format", "json"],
       {
         input: `${system}\n\n${user}`,
         encoding: "utf8",
