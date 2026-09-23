@@ -14,7 +14,7 @@ export interface Night {
   /** What came through the wall that night, verbatim, if anything did. */
   overheard?: Record<string, unknown>;
   /** Which model and road dreamt it, from night 88 on. Not rendered. */
-  dreamer?: { route: string; model: string; effort: string; declined?: string[] };
+  dreamer?: { route: string; model: string; effort: string; provider?: string; declined?: string[] };
   dialogue: { voice: "surface" | "sediment"; text: string }[];
 }
 

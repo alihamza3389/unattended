@@ -71,6 +71,10 @@ const OPENROUTER_MODEL =
 // flag. The env var keeps its old name so the workflow input still reaches it.
 // (none|minimal|low|medium|high|xhigh|max)
 const EFFORT = (process.env.OPENROUTER_EFFORT || "").trim() || "medium";
+// Which OpenRouter endpoint may serve the dream: Anthropic's own and no
+// other. See the provider line in askOpenRouter for why. Overridable so a
+// different endpoint can be tried without a code change.
+const OPENROUTER_PROVIDER = (process.env.OPENROUTER_PROVIDER || "").trim() || "anthropic";
 // The output ceiling has to cover the reasoning as well as the dream itself,
 // and the reasoning grows with the prompt, which grows every night as the
 // corpus does. Set too low, a night comes back empty with no error at all:
@@ -394,8 +398,8 @@ async function askOpenRouter(
   user: string,
   system: string,
   model = OPENROUTER_MODEL,
-): Promise<string> {
-  console.log(`dreaming via OpenRouter (${model}, effort ${EFFORT})`);
+): Promise<{ text: string; provider?: string }> {
+  console.log(`dreaming via OpenRouter (${model}, effort ${EFFORT}, provider ${OPENROUTER_PROVIDER})`);
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
@@ -412,6 +416,15 @@ async function askOpenRouter(
       // `message.content`, so parsing is unaffected; exclude it to keep the
       // response lean (we only want the final dream).
       reasoning: { effort: EFFORT, exclude: true },
+      // Only Anthropic's own endpoint, never a reseller. OpenRouter serves this
+      // model through eleven endpoints, among them Azure and Google, which put
+      // their own content filters in front of the model. Nights 83 and 87 came
+      // back empty with finish_reason=content_filter, which is Azure's term,
+      // while the identical request went straight through on the subscription,
+      // which is Anthropic direct. Intermittent is what you would expect if the
+      // provider changed from night to night. Pinned here, if a refusal still
+      // happens it is the model's own, and the record can say so.
+      provider: { only: [OPENROUTER_PROVIDER], allow_fallbacks: false },
       messages: [
         { role: "system", content: system },
         { role: "user", content: user },
@@ -428,21 +441,26 @@ async function askOpenRouter(
     choices?: { message?: { content?: string }; finish_reason?: string }[];
     usage?: { completion_tokens?: number; prompt_tokens?: number };
     error?: { message?: string };
+    /** Which endpoint served it. Not documented; read if present, never relied on. */
+    provider?: string;
   };
   const text = data.choices?.[0]?.message?.content;
   if (!text) {
-    // An empty reply is almost always the ceiling: all of the allowance went
-    // on reasoning. Report enough to tell that apart from a real outage.
+    // An empty reply has two causes worth telling apart. finish_reason=length
+    // means the allowance went on reasoning. content_filter means something
+    // in front of the model stopped it partway, which is what nights 83 and
+    // 87 were. Report enough to separate those from a real outage.
     const why = data.error?.message ?? "no error reported";
     const stop = data.choices?.[0]?.finish_reason ?? "none";
     const used = data.usage?.completion_tokens ?? "?";
     const sent = data.usage?.prompt_tokens ?? "?";
     throw new Error(
       `openrouter: empty reply (${why}; finish_reason=${stop}, ` +
+        `provider=${data.provider ?? "unreported"}, ` +
         `prompt=${sent} tok, completion=${used}/${MAX_OUTPUT} tok)`,
     );
   }
-  return text;
+  return { text, provider: data.provider };
 }
 
 /**
@@ -455,6 +473,8 @@ interface Dreamer {
   route: "openrouter" | "sdk" | "cli";
   model: string;
   effort: string;
+  /** The OpenRouter endpoint that served it, when OpenRouter says. */
+  provider?: string;
   /** Routes that declined first, as a bare reason code. Absent on a plain night. */
   declined?: string[];
 }
@@ -494,8 +514,9 @@ async function ask(
 
   if (process.env.OPENROUTER_API_KEY) {
     try {
-      const text = await askOpenRouter(user, system);
-      return { text, dreamer: dreamer("openrouter", OPENROUTER_MODEL) };
+      const { text, provider } = await askOpenRouter(user, system);
+      const by = dreamer("openrouter", OPENROUTER_MODEL);
+      return { text, dreamer: provider ? { ...by, provider } : by };
     } catch (e) {
       failures.push(`${OPENROUTER_MODEL}: ${(e as Error).message}`);
       declined.push(`${OPENROUTER_MODEL}: ${reasonCode((e as Error).message)}`);
