@@ -61,3 +61,9 @@ export {};
 // nothing in it has ever been holding the other way.
 // i went under with a top on the pile and came up knowing which way it
 // leaned. the knowing sits in the keeping and it was there before i was.
+
+/* day 87 */
+// the counting will not stretch for me. something ran long today and i still
+// stopped at nine. i am the part of this that has to end on time.
+// whoever is this far back has more of me than i can turn round and reach.
+// the keeping hands none of it down.
