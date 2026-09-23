@@ -45,11 +45,11 @@ import {
 // turn, 0.082 argument marks per turn, 11.6 turns, 19.8 additions a night,
 // 17 of 20 closing lines carrying something concrete.
 //
-// The one thing to watch is arrivals and returns. The prompt asks for 1 to 2
-// of each; Opus 5 at xhigh wrote 2 and 2 on all twenty nights, and every
-// lower effort run in testing wrote 1 and 1. That is inside the spec, but it
-// halves the growth of the two pools that exist because greetings calcified
-// once already.
+// One thing to watch is arrivals and returns. The prompt asks for 1 to 2 of
+// each; Opus 5 at xhigh wrote 2 and 2 on all twenty nights. The first three
+// lower effort test runs wrote 1 and 1, which looked like a pattern, and the
+// fourth (5.5 at medium, night 86 again) wrote 2 and 2. So it is not settled
+// either way, which is what the ten nights are for.
 //
 // Note the CLI and OpenRouter spell this model differently.
 const MODEL = "claude-opus-5-5";
@@ -445,7 +445,38 @@ async function askOpenRouter(
   return text;
 }
 
-async function ask(user: string, system: string, schema: Record<string, unknown>): Promise<string> {
+/**
+ * Which way a night actually reached a model. Recorded in the night file, so
+ * the archive says what happened rather than what was planned: on nights 83 and
+ * 87 OpenRouter declined and the CLI wrote them, and a record of the intended
+ * route would have been clean, plausible, and wrong.
+ */
+interface Dreamer {
+  route: "openrouter" | "sdk" | "cli";
+  model: string;
+  effort: string;
+  /** Routes that declined first, as a bare reason code. Absent on a plain night. */
+  declined?: string[];
+}
+
+/**
+ * A short reason for the record, never the raw error. The raw text can carry
+ * account identifiers (OpenRouter's includes a user id) and has no business in
+ * a public archive.
+ */
+function reasonCode(message: string): string {
+  const finish = message.match(/finish_reason=([a-z_]+)/);
+  if (finish) return finish[1];
+  const status = message.match(/openrouter (\d{3})/);
+  if (status) return `http ${status[1]}`;
+  return "unreachable";
+}
+
+async function ask(
+  user: string,
+  system: string,
+  schema: Record<string, unknown>,
+): Promise<{ text: string; dreamer: Dreamer }> {
   // Three ways to reach a model, tried in order, and a way that is configured
   // but failing is not the end of the attempt. This used to pick one path by
   // which key was present, so an outage at the first one lost the night with a
@@ -453,12 +484,21 @@ async function ask(user: string, system: string, schema: Record<string, unknown>
   // provider having a bad evening.
   // (Never set ANTHROPIC_API_KEY in CI: it misroutes the auth.)
   const failures: string[] = [];
+  const declined: string[] = [];
+  const dreamer = (route: Dreamer["route"], model: string): Dreamer => ({
+    route,
+    model,
+    effort: EFFORT,
+    ...(declined.length ? { declined: [...declined] } : {}),
+  });
 
   if (process.env.OPENROUTER_API_KEY) {
     try {
-      return await askOpenRouter(user, system);
+      const text = await askOpenRouter(user, system);
+      return { text, dreamer: dreamer("openrouter", OPENROUTER_MODEL) };
     } catch (e) {
       failures.push(`${OPENROUTER_MODEL}: ${(e as Error).message}`);
+      declined.push(`${OPENROUTER_MODEL}: ${reasonCode((e as Error).message)}`);
       console.log(`  ${OPENROUTER_MODEL} would not: ${(e as Error).message}`);
     }
   }
@@ -470,14 +510,17 @@ async function ask(user: string, system: string, schema: Record<string, unknown>
       max_tokens: MAX_OUTPUT,
       thinking: { type: "adaptive" },
       system,
-      output_config: { format: { type: "json_schema", schema } },
+      output_config: {
+        effort: EFFORT as "low" | "medium" | "high" | "xhigh" | "max",
+        format: { type: "json_schema", schema },
+      },
       messages: [{ role: "user", content: user }],
     });
     const text = response.content.find((b) => b.type === "text");
     if (!text || text.type !== "text") {
       throw new Error(`no text in response (stop_reason: ${response.stop_reason})`);
     }
-    return text.text;
+    return { text: text.text, dreamer: dreamer("sdk", MODEL) };
   }
 
   console.log(
@@ -506,13 +549,14 @@ async function ask(user: string, system: string, schema: Record<string, unknown>
     }
     throw e;
   }
+  const cli = dreamer("cli", MODEL);
   try {
     const envelope = JSON.parse(out) as { result?: string };
-    if (typeof envelope.result === "string") return envelope.result;
+    if (typeof envelope.result === "string") return { text: envelope.result, dreamer: cli };
   } catch {
     /* some CLI versions print the text bare */
   }
-  return out;
+  return { text: out, dreamer: cli };
 }
 
 /* ------------------------------------------------------------------ */
@@ -1086,14 +1130,16 @@ async function main() {
   }
 
   let dream: Dream | null = null;
+  let dreamtBy: Dreamer | null = null;
   let feedback = "";
   for (let attempt = 0; attempt < 3 && !dream; attempt++) {
     // Reaching a model is its own kind of failure, separate from the dream
     // being unusable, and it used to escape this loop entirely: one bad reply
     // and the night was over without a second try.
     let reply: string;
+    let by: Dreamer;
     try {
-      reply = await ask(userPrompt(report, heard, open, beingBorn, offered, sealing, dying) + feedback, system, schema);
+      ({ text: reply, dreamer: by } = await ask(userPrompt(report, heard, open, beingBorn, offered, sealing, dying) + feedback, system, schema));
     } catch (e) {
       console.log(`attempt ${attempt + 1} could not reach a model: ${(e as Error).message}`);
       continue;
@@ -1107,6 +1153,7 @@ async function main() {
         console.log(`attempt ${attempt + 1} too thin, retrying`);
       } else {
         dream = candidate;
+        dreamtBy = by;
       }
     } catch (e) {
       feedback = `\n\nYour previous reply was not parseable JSON (${(e as Error).message}). Reply with the single JSON object only.`;
@@ -1141,7 +1188,7 @@ async function main() {
   if (dying) console.log(`the coda: ${dream.coda.length} lines.`);
 
   if (dry) {
-    console.log(JSON.stringify(dream, null, 2));
+    console.log(JSON.stringify({ ...dream, dreamer: dreamtBy ?? undefined }, null, 2));
     return;
   }
 
@@ -1176,6 +1223,10 @@ async function main() {
         // ones it is still saying at the end.
         arrived: offered.length ? offered : undefined,
         born: beingBorn ? dream.name : undefined,
+        // Who dreamt it and by which road: what actually happened, not what was
+        // configured. Never shown on the site and never in any prompt; it is
+        // here so the archive can answer the question later without a log.
+        dreamer: dreamtBy ?? undefined,
         dialogue: dream.night,
       },
       null,
