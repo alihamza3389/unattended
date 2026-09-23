@@ -39,12 +39,25 @@ import {
   thoughtAt,
 } from "../lib/mind.ts";
 
-const MODEL = "claude-opus-5";
+// TRIAL, started night 88 (2026-09-24), review on or after 2026-10-04.
+// Ten nights on Opus 5.5 at medium effort, against a twenty night baseline on
+// Opus 5 at xhigh: median line 236, 90th percentile 308, 1.277 objects per
+// turn, 0.082 argument marks per turn, 11.6 turns, 19.8 additions a night,
+// 17 of 20 closing lines carrying something concrete.
+//
+// The one thing to watch is arrivals and returns. The prompt asks for 1 to 2
+// of each; Opus 5 at xhigh wrote 2 and 2 on all twenty nights, and every
+// lower effort run in testing wrote 1 and 1. That is inside the spec, but it
+// halves the growth of the two pools that exist because greetings calcified
+// once already.
+//
+// Note the CLI and OpenRouter spell this model differently.
+const MODEL = "claude-opus-5-5";
 // OpenRouter's slug for the same model, used by the OpenRouter path below.
 // Overridable via env so a differing or renamed slug is a secret change, not
 // a code edit.
 const OPENROUTER_MODEL =
-  (process.env.OPENROUTER_MODEL || "").trim() || "anthropic/claude-opus-5";
+  (process.env.OPENROUTER_MODEL || "").trim() || "anthropic/claude-opus-5.5";
 // Reasoning effort for the dream, and it is now passed to every route rather
 // than only to OpenRouter. This comment used to say xhigh was the CLI's
 // default, so the flag was not worth sending. That was wrong. Measured on the
@@ -57,7 +70,7 @@ const OPENROUTER_MODEL =
 // would have looked like the voice quietly thinning rather than like a missing
 // flag. The env var keeps its old name so the workflow input still reaches it.
 // (none|minimal|low|medium|high|xhigh|max)
-const EFFORT = (process.env.OPENROUTER_EFFORT || "").trim() || "xhigh";
+const EFFORT = (process.env.OPENROUTER_EFFORT || "").trim() || "medium";
 // The output ceiling has to cover the reasoning as well as the dream itself,
 // and the reasoning grows with the prompt, which grows every night as the
 // corpus does. Set too low, a night comes back empty with no error at all:
