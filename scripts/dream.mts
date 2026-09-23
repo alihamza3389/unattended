@@ -424,7 +424,24 @@ async function askOpenRouter(
       // which is Anthropic direct. Intermittent is what you would expect if the
       // provider changed from night to night. Pinned here, if a refusal still
       // happens it is the model's own, and the record can say so.
-      provider: { only: [OPENROUTER_PROVIDER], allow_fallbacks: false },
+      //
+      // And the cheapest of Anthropic's own. A base slug matches every one of
+      // a provider's endpoints, and Anthropic has two for this model: standard
+      // at $4/$20 and fast at $8/$40. Left to OpenRouter's default, which
+      // weights by inverse square of price, fast would be picked about one
+      // night in five, at double the cost, for speed nobody is waiting for.
+      // Standard only, never fast: fast is ignored outright, and sort by price
+      // keeps any later variant from being preferred over standard. If
+      // standard is down there is then nothing OpenRouter may use, the request
+      // fails, and the night goes to the subscription instead, which is
+      // cheaper than fast and has held every time. No max_price: a cap written
+      // at today's price would silently shut this route the day it moved.
+      provider: {
+        only: [OPENROUTER_PROVIDER],
+        ignore: [`${OPENROUTER_PROVIDER}/fast`],
+        sort: "price",
+        allow_fallbacks: false,
+      },
       messages: [
         { role: "system", content: system },
         { role: "user", content: user },
