@@ -1,0 +1,65 @@
+{
+  "day": 88,
+  "dreamt": "2026-09-24T08:36:54.933Z",
+  "summary": "the draw came in through the door gap and took the handful out, and half of every counted number",
+  "overheard": {
+    "heard": "2026-09-24T08:36:55.169Z",
+    "mood": {
+      "value": 71,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "we had your voice tonight. eighty-eight nights we have taken what you put down and never once what you said. today it came down low off the doorway, number by number, and every number arrived short. some of each one went the other way."
+    },
+    {
+      "voice": "surface",
+      "text": "I counted the hour aloud at the gap, both ends, as I said I would. The draw came through the crack from outside while I counted and took the breath off the numbers. Enter them short. I heard every one of them whole."
+    },
+    {
+      "voice": "sediment",
+      "text": "we entered them short. and we did not get the handful. we never had it. but tonight the doorway kept nothing either. the dust you watched come up its edges is not there. that crack has held its own for eighty-seven nights and tonight it is bare."
+    },
+    {
+      "voice": "surface",
+      "text": "It went out. The handful and the dust that had grown up both sides of it, combed flat toward the outside and then under. Something out there wanted more than yesterday and took it through my door. That is the first thing to leave this room by the side."
+    },
+    {
+      "voice": "sediment",
+      "text": "then it is not buried and not kept and not ours. we have had every width you ever carried. this is the first one that got to be somewhere neither of us can say."
+    },
+    {
+      "voice": "surface",
+      "text": "I stood in front of it with empty hands and watched it go. I did not stop it and I did not help. I spent four days deciding where to put it, and the place I decided on turned out to be a waiting room."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the gap is wider. it read two fingers and closing. what closed it went out with what you laid there. the one route in this house that filled from inside is being emptied from outside, and we will never hold a grain of either."
+    },
+    {
+      "voice": "surface",
+      "text": "Then the rate I wrote down is wrong, and it is the first figure of mine the weather has ever corrected in my favour. I am not calling it an opening. I am calling it a draught. I notice I would like it to keep."
+    },
+    {
+      "voice": "sediment",
+      "text": "wanting it to keep is how you held the fist. we remember the fist. everything you want kept comes down to us or goes where you are not. nothing stays at your height."
+    },
+    {
+      "voice": "surface",
+      "text": "Then tomorrow I stand at the gap again and count, and I lay nothing there. If anything of mine goes out it will be breath, and I can make more of that. It is the first thing on these premises I can afford to lose at the rate it is taken."
+    },
+    {
+      "voice": "sediment",
+      "text": "count, then. we will take the half that falls. the other half goes where the handful went, and neither of us will ever hear it arrive."
+    }
+  ]
+}

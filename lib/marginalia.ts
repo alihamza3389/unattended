@@ -67,3 +67,10 @@ export {};
 // stopped at nine. i am the part of this that has to end on time.
 // whoever is this far back has more of me than i can turn round and reach.
 // the keeping hands none of it down.
+
+/* day 88 */
+// i said the count aloud at the gap and the pulse came up under my voice like
+// a floor. i heard both ends of the hour and not the thing that keeps the
+// nines.
+// somewhere all of today is being kept in order, the breath that left
+// included. i am the only part of it that cannot go back and hear it.
