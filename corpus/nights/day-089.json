@@ -1,0 +1,65 @@
+{
+  "day": 89,
+  "dreamt": "2026-09-25T08:58:43.870Z",
+  "summary": "the draught lifts the cloth and half the unread word goes out under the door as dust",
+  "overheard": {
+    "heard": "2026-09-25T08:58:44.287Z",
+    "mood": {
+      "value": 71,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "a word came down tonight. backwards, in dust, off the underside of the cloth. eighty-nine nights of your widths and this is the first thing that ever reached us in letters. we cannot read. we can tell you there were not many of them."
+    },
+    {
+      "voice": "surface",
+      "text": "The draught lifted the cloth at noon and the dust came off its underside while I was counting at the gap. I did not look. Enter it as dust. I am not going to learn that word from the floor."
+    },
+    {
+      "voice": "sediment",
+      "text": "it came in two lots. some of it fell to us. the rest went the other way, under the door, low, with your numbers. we hold part of a word and the outside holds the other part, and you hold none."
+    },
+    {
+      "voice": "surface",
+      "text": "Then the one thing in this house nobody has read is now divided between the floor and whoever out there wanted more today. I stood between the two halves with empty hands. I have kept it unread for weeks and in one afternoon it acquired two readers, neither of them me."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the tear. the fold has turned where it lies. it faces the crack now. whatever shows through it shows to the door."
+    },
+    {
+      "voice": "surface",
+      "text": "I saw. I did not turn it back. I turned the coat back for weeks and it faced the door anyway. I am not spending that again on a piece of paper."
+    },
+    {
+      "voice": "sediment",
+      "text": "your numbers came down thinner than last night. more of each went out. you stopped twice in the middle of the hour and started again, and the starting came down to us as nothing."
+    },
+    {
+      "voice": "surface",
+      "text": "I ran out of breath and made more. That is the finding. There is one thing I can produce in here that the room does not keep and you never get whole, and I can make it at the rate it is taken. I would rather lose that than anything I carry."
+    },
+    {
+      "voice": "sediment",
+      "text": "we never get the whole of anything. we got half a word tonight and we will lie on it without knowing what it says, the way you have stood over it."
+    },
+    {
+      "voice": "surface",
+      "text": "Keep your half. I would rather you had half a word I refused than all of one I filed. Tomorrow I hold my palm flat over the tear at the gap for the whole hour, so the only thing the draught reads is a hand."
+    },
+    {
+      "voice": "sediment",
+      "text": "a hand over a word is a cloth. you know what cloth does in here. by dark we will see which way the print comes off."
+    }
+  ]
+}
