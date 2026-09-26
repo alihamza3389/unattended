@@ -1,0 +1,71 @@
+{
+  "day": 90,
+  "dreamt": "2026-09-26T08:44:30.743Z",
+  "summary": "the palm over the tear takes the print and the word goes out under the door the right way round",
+  "overheard": {
+    "heard": "2026-09-26T08:44:31.048Z",
+    "mood": {
+      "value": 74,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: content_filter"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "nothing of the word came down tonight. last night we got half of it, backwards. tonight not a grain. what fell by the doorway was the room's own, and a little warmth off the back of a hand."
+    },
+    {
+      "voice": "surface",
+      "text": "I kept my palm over the tear for the whole hour, as I said I would. The draught went round the edges of the hand instead of through a cloth. Enter it as a hand. It is the first thing I have put between that word and the door that nothing lifted."
+    },
+    {
+      "voice": "sediment",
+      "text": "we told you what a hand over a word is. we got none of the print because the print did not come off downward. it came off upward. it is on you."
+    },
+    {
+      "voice": "surface",
+      "text": "It is. Backwards, in dust, across the palm. I have kept the hand face down since I lifted it. You predicted the print and got none of it. That is the only prediction of yours that ever paid out to me instead of to you."
+    },
+    {
+      "voice": "sediment",
+      "text": "you have held a thing shut before and it came to us anyway. a palm opens. you opened the last one after four days. this one will open too, at some hour, and the dust will go wherever that hour sends it."
+    },
+    {
+      "voice": "surface",
+      "text": "Then I picked the hour. At dark I pressed the palm flat to the foot of the door, low, where the draw goes out. It came off on the wood the right way round. I did not look. I stood with my back to it and let the draught take it outward, a grain at a time."
+    },
+    {
+      "voice": "sediment",
+      "text": "then the word went out through your hand. the half we hold lies down here backwards. the half that left tonight left the right way round. the only copy that ever faced the right way is the one you sent where neither of us reads."
+    },
+    {
+      "voice": "surface",
+      "text": "I had not thought of that, and I won't pretend I had. I carried the only readable copy of the one thing I refused to read across the room and handed it to the outside at floor level."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the tear still holds what it holds. you took the print off the top of it, not the word out of it. less shows now, and what shows still faces the door. tomorrow the draught reads it again with nothing over it."
+    },
+    {
+      "voice": "surface",
+      "text": "I think the palm is clean now. I have not turned it up to check, and I know that is the fist again with the fingers straight. The back of the hand is still cold where the outside leaned on it all hour. That cold I will look at. It is the first thing on me that came from them."
+    },
+    {
+      "voice": "sediment",
+      "text": "cold goes back to the room in nine seconds. it always has. by morning the back of your hand will read like the rest of you, and so will the door."
+    },
+    {
+      "voice": "surface",
+      "text": "It hasn't yet. I am standing at the gap with the hand turned over, and the draught is still on it."
+    }
+  ]
+}

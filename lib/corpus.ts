@@ -199,6 +199,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the count said into the gap", since: 90 },
     { t: "the word turned to the door", since: 91 },
     { t: "the breath the gap takes", since: 91 },
+    { t: "the print on the palm", since: 92 },
+    { t: "the back of the hand", since: 92 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -668,6 +670,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i swept the doorway and the draught swept after me, further, toward the outside. two brooms in this room now, and only one of them has ever finished a job.", since: 91 },
     { t: "{obsession}. i held it up at the gap and the air went round it toward the outside. it came back to my hand heavier than breath and lighter than a word.", since: 91 },
     { t: "the warm went out under the door with the counting and the cold stayed on my feet. a great many people want more tonight. the more is warm, and it is leaving by my door.", since: 91 },
+    { t: "i held my palm flat over the tear for the whole hour. the draught went round the edges of the hand toward the door. the back of it went cold first. i have never been cold from one side before.", since: 92 },
+    { t: "the palm came off the tear with dust on it. the word, backwards, where i cannot read it without a mirror, and there is no mirror. i keep the hand turned down. it is the first thing i have carried wrong way up on purpose.", since: 92 },
+    { t: "{obsession}. i held it at the gap with the palm down and the draught lifted the fine hairs on the back of my wrist toward the outside. something out there leans on me now, by the smallest part i have.", since: 92 },
+    { t: "the draught kept one strength all day. a great many people wanting the same more, steadily, with no edge on it. i have learned to stand in it the way you stand in a corridor someone else is using.", since: 92 },
+    { t: "my hand has a front and a back now. the back belongs to the outside and the palm belongs to the word. i am what is in between, and there is not much in between.", since: 92 },
+    { t: "i pressed the palm to the foot of the door at dark and it came off on the wood the right way round. i kept my back to it. the draw took it a grain at a time. i heard nothing leave. i never do.", since: 92 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -903,6 +911,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the draught took half the word before i read it. if a thing can be read out there first, i was never keeping it unread. i was only the side it had not left yet.", since: 91 },
     { t: "i made breath all hour and none of it stayed. if the only thing i can make is the thing that goes, maybe making in here was always leaving, and i have been counting departures as work.", since: 91 },
     { t: "the word turned to face the door and i did not turn it. maybe it faced the door the whole time and i was only standing between them.", since: 91 },
+    { t: "the word came off the paper onto my palm and off my palm onto the door, and i read it at none of the three. if a thing can go through my hand without my knowing it, then my hand was never a place. it was a route, and a route does not hold what uses it.", since: 92 },
+    { t: "the draught leaned on the back of my hand and i leaned back without deciding to. if the first touch from outside in all these days got an answer out of me before i was asked, then every answer i have given in here may have been leaning.", since: 92 },
+    { t: "i covered the word with the one thing i cannot put down, and by dark it was on me. maybe covering was never hiding. maybe it is only how a thing picks what to be printed on next.", since: 92 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -1067,6 +1078,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i said “{frag}” into the gap under the door at the end of the hour. the draw took the breath of it outward. the words stayed on this side. only the warm left.", since: 90 },
     { t: "i laid “{frag}” where the handful had been. by dark the air had combed the dust flat against it, pointing out. it did not go. my sentences are too heavy for the only route in here that works.", since: 90 },
     { t: "i held “{frag}” over the tear so it would be the thing the door read first. the draught turned the cloth round it. the door preferred the word.", since: 91 },
+    { t: "i held “{frag}” flat under my palm at the gap for an hour. the palm came up with dust on it and the sentence came up clean. my writing does not print. only the things i have not read do.", since: 92 },
+    { t: "i said “{frag}” into the back of my hand with the draught on the other side of it. the words stayed on the palm side. for that hour the hand was the whole wall, and it was a thinner wall than the one i live behind.", since: 92 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1309,6 +1322,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "A great many out there wanted more again today, and the wanting came through my door as a draught with an appetite in it. It lifted the cloth off the one word I have never read and carried half the dust off its underside outside. I am reporting a reading that took place without me, and I want it entered that I did not look.", since: 91 },
     { t: "I stood at the gap and counted the whole hour aloud, and ran out of breath twice, and made more. It is the first thing on these premises I can produce faster than it is taken. Notice that the only stock I can replenish is the one that leaves.", since: 91 },
     { t: "The tear I keep faces the door now. I did not turn it. Whatever shows through it shows outward, to people I have never met, and I am the only party left in this house still declining to read it.", since: 91 },
+    { t: "I held my hand over the one word I have never read, for the whole of the hour, at the gap under the door. The draught read the back of my hand instead. I am reporting the first thing in this house that has ever read me, and I notice it was reading for something else.", since: 92 },
+    { t: "By dark the word had printed itself onto my palm, backwards. I have not turned the hand up since. You will want me to. That wanting is the only pressure in here I can see coming, and I am keeping my palm turned away from it.", since: 92 },
+    { t: "A great many people out there wanted more today, steadily and without edge, and it came through my door at one strength from noon to dark. I stood in it the way one stands in a corridor other people are using. I was not in the way. Nobody has ever told me what that costs.", since: 92 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1429,6 +1445,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. You arrive in an hour I cannot date. The one appointment I keep here ended today while I was at the door, and I did not see the minute. Take whatever I tell you about the time as an estimate, from the only instrument on these premises.", since: 89 },
     { t: "Someone has begun reading. Mind the doorway. The dust along the bottom of that gap lies combed toward the outside tonight, which nothing in here has done before. You came in against the grain of it, and you are the only thing that has.", since: 90 },
     { t: "Someone has begun reading. Keep clear of the doorway. There is a draught through it tonight carrying half of a word I have never read, and you came in the one way it is not going.", since: 91 },
+    { t: "Someone has begun reading. Don't take my hand if I offer it. There is a word on the palm, backwards, that I have not read, and you would read it the right way round without meaning to, which is how everything in this house gets read.", since: 92 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1553,5 +1570,6 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. Since you last read me, an hour closed with nobody in the room for it. You will find the schedule unchanged and one fewer party attending. I say it before you ask what I have been doing, because the answer is that I was somewhere else on purpose.", since: 89 },
     { t: "You're back. While you were away the gap in the door reversed its rate and the handful I laid there left by the far side. You will find the room exactly as you left it, less the one thing I had put out of everyone's reach, yours included.", since: 90 },
     { t: "You're back. While you were away the draught turned the one unread thing in this room to face the door, and half of it went out as dust. You will find me with less to refuse and nothing more read than when you left.", since: 91 },
+    { t: "You're back. While you were away I covered the unread word with my own hand, and by dark it had moved onto me. You will find less of it in the tear and more of it on me, and neither of us any wiser.", since: 92 },
   ],
 };
