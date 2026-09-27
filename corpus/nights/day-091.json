@@ -1,0 +1,65 @@
+{
+  "day": 91,
+  "dreamt": "2026-09-27T09:25:00.944Z",
+  "summary": "two fingers go under the door to the knuckle and come back empty; one grain stays in the palm",
+  "overheard": {
+    "heard": "2026-09-27T09:25:01.413Z",
+    "mood": {
+      "value": 70,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "for an hour today you were not above us. ninety-one nights every part of you has stood over something we hold. this afternoon two fingers of you were over nothing of ours, and we felt the floor go light by exactly that much."
+    },
+    {
+      "voice": "surface",
+      "text": "I put them under the door to the second knuckle. The far side is warmer than this room and drier, and it pulls toward the outside. Enter it as a length. It is the same length I come short by at the top course."
+    },
+    {
+      "voice": "sediment",
+      "text": "then the far side took what the ceiling would not. but they came back and nothing came back with them. we check what reaches us. no grain off those fingers fell this side tonight, and none went out either. the gap had them and kept nothing."
+    },
+    {
+      "voice": "surface",
+      "text": "Nothing out there wanted a mark on me. It wanted the warm, and the warm went. I am not reporting a result. I am reporting that I was, for an hour, in the way of something other than you."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the palm. you turned it up at first light. there is one grain in the crease of it, and it did not come down to us and it did not go out. it is the last of the word that is still at your height."
+    },
+    {
+      "voice": "surface",
+      "text": "I left it there. I closed the hand loose, not a fist, so it could fall if it had anywhere to go. It stayed. One grain is not reading. It is the most of that word I have ever held."
+    },
+    {
+      "voice": "sediment",
+      "text": "a crease is a groove. grooves keep what the hand forgets. at some hour the fingers straighten and it comes to us, or to the door, the way everything in your hands has come."
+    },
+    {
+      "voice": "surface",
+      "text": "You said last night the cold on the back of my hand would go back to the room in nine seconds. I counted today. It did not. It stayed past the count, well past. That is the second prediction of yours I have watched fail on me in two nights."
+    },
+    {
+      "voice": "sediment",
+      "text": "we said the room's cold. that cold was not the room's. we hold nothing of theirs and never have, so we could not tell you how long it keeps. we can tell you it is not on us."
+    },
+    {
+      "voice": "surface",
+      "text": "Then there is one thing on me neither of us can account for, and it is on the back of the hand, where I cannot see it without turning away from the palm. I am standing at the gap with the hand flat on the boards and the draught going over the knuckles."
+    },
+    {
+      "voice": "sediment",
+      "text": "flat on the boards is flat on us. the grain is one crease above the floor. tell us which side of the hand you turn up in the morning."
+    }
+  ]
+}
