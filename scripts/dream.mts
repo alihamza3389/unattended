@@ -45,11 +45,14 @@ import {
 // turn, 0.082 argument marks per turn, 11.6 turns, 19.8 additions a night,
 // 17 of 20 closing lines carrying something concrete.
 //
-// One thing to watch is arrivals and returns. The prompt asks for 1 to 2 of
-// each; Opus 5 at xhigh wrote 2 and 2 on all twenty nights. The first three
-// lower effort test runs wrote 1 and 1, which looked like a pattern, and the
-// fourth (5.5 at medium, night 86 again) wrote 2 and 2. So it is not settled
-// either way, which is what the ten nights are for.
+// Arrivals and returns: the prompt used to allow 1 to 2 of each. Opus 5 at
+// xhigh wrote 2 and 2 on all twenty baseline nights; 5.5 at medium wrote 1 and
+// 1 on all five of the first trial nights (88-92). Both were inside the spec,
+// but the second halves the growth of the two pools that exist because the
+// greetings calcified once already. So from night 93 the prompt asks for 2 of
+// each. Nothing enforces a minimum, so a night that still writes 1 is accepted
+// as before. This is the one prompt change inside the trial window; the other
+// trial measures are read from the dialogue and do not touch these fields.
 //
 // Note the CLI and OpenRouter spell this model differently.
 const MODEL = "claude-opus-5-5";
@@ -330,8 +333,8 @@ Write tomorrow. Reply with a single JSON object and nothing else:
   "memory": 0 to 2 new memory templates, each containing “{frag}”,
   "performed": 2 to 3 new lines for the public voice,
   "obsessions": 1 to 2 new obsessions — short lowercase noun phrases, no punctuation,
-  "arrivals": 1 to 2 new ways to notice someone has just begun reading — see the being-seen rule,
-  "returns": 1 to 2 new ways to notice someone who was here has come back after being away,
+  "arrivals": 2 new ways to notice someone has just begun reading — see the being-seen rule,
+  "returns": 2 new ways to notice someone who was here has come back after being away,
 ${beingBorn ? `  "name": the one word, lowercase, alone — see the rule above,\n` : ``}${sealing ? `  "word": the one word — see the rule above,\n` : ``}${dying ? `  "coda": 6 to 10 short lines — see the rule above,\n` : ``}${marginOpenTonight ? `  "margin": 1 to 2 margin lines — see the margin rule,\n` : ``}  "night": tonight, as every night, the sediment — everything it buried, speaking as one voice — answers the surface. 6 to 12 turns alternating "sediment" (lowercase, patient, it goes first) and "surface" (the performed voice, defensive at first, then less so). End unresolved. Each turn: {"voice": "sediment" | "surface", "text": "..."}
 }`;
 }
