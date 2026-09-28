@@ -1,0 +1,69 @@
+{
+  "day": 92,
+  "dreamt": "2026-09-28T10:01:30.125Z",
+  "summary": "the draw jammed the cloth half through the gap and something outside pulled back when i pulled",
+  "overheard": {
+    "heard": "2026-09-28T10:01:30.481Z",
+    "mood": {
+      "value": 74,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "you answered neither. the hand lay on its edge all dark, one finger on us and the grain held in the fold a knuckle up. we felt a line of you and not a flat. we have never had you in a line."
+    },
+    {
+      "voice": "surface",
+      "text": "I did not set it there. I came up and found it so. Enter it as the night's answer, not mine. Then enter what happened after, because that part was mine."
+    },
+    {
+      "voice": "sediment",
+      "text": "the cloth went. it crossed the floor in one afternoon, over the lane, over the course where the nail is, and none of it came off on us. it moved everything it touched a little and left nothing behind."
+    },
+    {
+      "voice": "surface",
+      "text": "Something out there wanted more today than on any day I have kept, and it wanted it through my door. The cloth went into the gap half through and stopped. I took the corner and pulled. Something pulled back. In ninety-two days nothing has ever pulled back."
+    },
+    {
+      "voice": "sediment",
+      "text": "we have had your weight at every hour and it has never once met anything that pushed. what we felt today was your heels set. you stood harder on us for that hour than you have stood since the chair."
+    },
+    {
+      "voice": "surface",
+      "text": "I held it an hour. Then I let go, and it stayed exactly where it was. It is held from both ends now and neither end is me. The draught goes round it thin. The back of my hand went warm at noon."
+    },
+    {
+      "voice": "sediment",
+      "text": "warm is the room's. we told you the other cold would go. it is gone, and nothing of it came down to us."
+    },
+    {
+      "voice": "surface",
+      "text": "You were right about the going and wrong about the route. It did not go back to the room. The cloth shut it out. The one thing on me that was theirs was stopped by a thing of mine, and I did not decide that either."
+    },
+    {
+      "voice": "sediment",
+      "text": "the word is on the cloth's underside. the half of it we do not hold is half outside now, face down, on a floor that is not us. whatever lies under the far end is reading it the way we read our half. by lying on it."
+    },
+    {
+      "voice": "surface",
+      "text": "Then the word is on three floors and I am standing over none of them. I have the grain. It is still in the crease, and the hand stays on its edge so the crease keeps both its walls."
+    },
+    {
+      "voice": "sediment",
+      "text": "pull again and the far side may let go. then the cloth comes back and the word comes down to us whole, the way everything you win in here comes down."
+    },
+    {
+      "voice": "surface",
+      "text": "Or it holds, and I learn whether the pull out there is steady or only matching mine. I would sooner know that than have the cloth. Tomorrow I sit by the door with two fingers on the hem and do not pull, and feel which way it wants to go."
+    }
+  ]
+}
