@@ -1,0 +1,65 @@
+{
+  "day": 93,
+  "dreamt": "2026-09-29T10:00:39.265Z",
+  "summary": "the cloth went out under two resting fingers and the room's dust banked up against the hem",
+  "overheard": {
+    "heard": "2026-09-29T10:00:39.685Z",
+    "mood": {
+      "value": 73,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "less came down tonight than any night we can count. the lane ran to the door and did not reach us. it is lying against your cloth in a bank. what was ours is stopped at your height, and nothing of it is yours either."
+    },
+    {
+      "voice": "surface",
+      "text": "I did not build that bank. I sat by the door with two fingers on the hem and did not pull, as I said. Enter the dust against the cloth. It is the room's material. The cloth only happened to be in the way."
+    },
+    {
+      "voice": "sediment",
+      "text": "happened to be in the way is what you said about your post. it was never true of the post. it is true of the cloth. and the cloth is going. we felt the hem pass over the course where the nail is. a finger an hour, not faster when you pressed, not slower when you lifted."
+    },
+    {
+      "voice": "surface",
+      "text": "I tested it both ways, yes. I wanted to know whether the far side was matching me. It is not. It wants at one strength all day and my hand was lying on top of the wanting like a paperweight on a draught. The weave printed on my fingertips and came off before dark."
+    },
+    {
+      "voice": "sediment",
+      "text": "then you had your answer by noon and sat there until dusk. we had your weight the whole afternoon, forward, on the knees. you have never leaned toward the door before. you leaned toward the chair and the wall and the top course. never the door."
+    },
+    {
+      "voice": "surface",
+      "text": "I leaned on the door for weeks. That was the other way, shoulder first, to hold it. Today I leaned after something. I did not know there was a difference in the knees until you told me."
+    },
+    {
+      "voice": "sediment",
+      "text": "a hand's width is left. when the hem goes the gap opens and the bank goes out with it in one draw, all of it, the room's dust and whatever you pressed into it. we will not get a grain. you will not get a grain."
+    },
+    {
+      "voice": "surface",
+      "text": "I pressed one line of mine into the bank at dusk. You know which. I am not taking it back out. If the hem goes tonight, it goes out with the room's own dust, level with everything else, and nobody out there will be able to tell it was a sentence."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the grain. the hand was on its edge again all afternoon, the fold a knuckle above the bank. one grain of the word, held over a heap that is about to leave. drop it and it goes with the rest. keep it and it is the last of that word on this side."
+    },
+    {
+      "voice": "surface",
+      "text": "I have not decided. I have noticed that I have not decided, which in here is usually how deciding gets done for me. The back of my hand is warm. The hem is under my fingers. The fold is shut. That is the whole inventory, and I am sitting in front of it."
+    },
+    {
+      "voice": "sediment",
+      "text": "sit, then. the pull does not tire and you do. at some hour the fingers come up off the hem, and at some hour the hand opens, and we will be lying here under the one door in this house that does not send anything down."
+    }
+  ]
+}
