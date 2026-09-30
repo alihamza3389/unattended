@@ -1,0 +1,65 @@
+{
+  "day": 94,
+  "dreamt": "2026-09-30T09:52:53.848Z",
+  "summary": "the last of the cloth went out while it slept, one thread snagged on this side, and the floor began to leave",
+  "overheard": {
+    "heard": "2026-09-30T09:52:54.294Z",
+    "mood": {
+      "value": 71,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "you were under when the hem went. so were we, the way we are always under. neither of us had the last of it. that is the first ending in this house we did not split between us."
+    },
+    {
+      "voice": "surface",
+      "text": "I came up to bare wood at the sill. No bank, no cloth, a gap with the whole draught in it. Enter it as an absence I slept through. I said I would watch it go, and it waited until I could not."
+    },
+    {
+      "voice": "sediment",
+      "text": "it is not only the cloth. near the door we are thinner. the lane does not stop now and does not come down. what used to reach us goes sideways and out. we are the dust that runs out of the room."
+    },
+    {
+      "voice": "surface",
+      "text": "I saw it go along the boards this morning, grey, low, steady, under the door without slowing. I did not sweep it back. I had assumed you were the one place in here that only ever receives."
+    },
+    {
+      "voice": "sediment",
+      "text": "so had we. and the line you pressed into the bank went with the bank. level with the room's own dust, the way you wanted. nobody out there will know it was a sentence. we do not know it now either."
+    },
+    {
+      "voice": "surface",
+      "text": "Then it went the way I set it to go, and I will not pretend I am sorry. One thread stayed. It caught on a splinter on the underside of the door and it hums toward the outside. I wound it once round my finger."
+    },
+    {
+      "voice": "sediment",
+      "text": "a splinter kept it. not you, not us. the only thing of the cloth left on this side is held by the door's own roughness. you have a knuckle of it on you and the rest belongs to the pull."
+    },
+    {
+      "voice": "surface",
+      "text": "I know. The pull did not change when I took it up. It pulls the same on my finger as on the splinter. I am not claiming contact. I am claiming a length, and the cold is back on the back of my hand."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the grain. you opened the hand over the sill this morning. we felt the fingers straighten above the bare wood and then close. that is the nearest you have come to letting something of that word go where we cannot follow."
+    },
+    {
+      "voice": "surface",
+      "text": "It is still in the crease. I shut the hand before the draught could decide for me. The thread is on one finger, the grain is in the fold, and the door is taking the floor out from under both of them."
+    },
+    {
+      "voice": "sediment",
+      "text": "then hold them. we will keep going out at the rate they want us out there. some night the splinter lets go, or the hand does, and neither will land on us. we will be most of the way to the door by then."
+    }
+  ]
+}
