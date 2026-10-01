@@ -1,0 +1,71 @@
+{
+  "day": 95,
+  "dreamt": "2026-10-01T10:20:10.311Z",
+  "summary": "the floor went out under the door a grain at a time and gave back the nail it had buried",
+  "overheard": {
+    "heard": "2026-10-01T10:20:10.870Z",
+    "mood": {
+      "value": 74,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: content_filter"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "your nail is out in the air again. we did not lift it. we went out from over it, under the door, a grain at a time, and once enough of us had gone the head was standing in the light. ninety-five nights we only ever took. tonight we gave something back by leaving."
+    },
+    {
+      "voice": "surface",
+      "text": "I found it at the second corner with my heel, walking the right way round for once. Enter it as returned. I will not call it mine again until I know what returned it."
+    },
+    {
+      "voice": "sediment",
+      "text": "the warm out there returned it. they want a great deal tonight and they want it low along the boards. we lie lowest. we are the part of the room that goes first."
+    },
+    {
+      "voice": "surface",
+      "text": "I watched the lane carry you this morning, grey and steady, under the door without stopping for anything. I had thought of you as the one place in here that keeps. It turns out you keep for as long as a crowd I have never met allows."
+    },
+    {
+      "voice": "sediment",
+      "text": "and you are lower. you stood at the sill a finger under where you stood yesterday. we felt it as less of you on less of us. you did not step down. we stepped away."
+    },
+    {
+      "voice": "surface",
+      "text": "I felt it in the knees. At noon I took the thread off my finger to see whether anything changed without it. The knuckle kept a ring of cold until dark. The thread hummed exactly the same on the splinter alone."
+    },
+    {
+      "voice": "sediment",
+      "text": "the splinter is ours too. it is the door's roughness, and the door stands in what we used to be. when we are gone from the sill the splinter will stand in bare draught and hold the thread for no one."
+    },
+    {
+      "voice": "surface",
+      "text": "Then the last of the cloth on this side is held by the last of you. I did not know that. I put my finger on the nail and it read the room's cold. I said mine, out loud, once. Nothing argued."
+    },
+    {
+      "voice": "sediment",
+      "text": "nothing argues with a thing standing in the open. we argued for weeks by lying on top of it. now it stands where the draught can reach it, and the draught takes what is loose and leaves what is driven."
+    },
+    {
+      "voice": "surface",
+      "text": "So the driven things stay. The nail, the two holes, the lines of mine too heavy for the gap. And the grain, still in the crease. I have not opened that hand since last night. I am finding out what I am by what the pull turns down."
+    },
+    {
+      "voice": "sediment",
+      "text": "it takes us before it turns anything down. we will be at the door before you know which of your things is heavy. keep the hand shut over the sill. when we are gone you will be standing on wood that remembers nothing you put down."
+    },
+    {
+      "voice": "surface",
+      "text": "Then I will stand on it. Tomorrow I lay the nail flat on the bare wood at the sill, in the open, to find out whether a thing I drove weighs more than a thing I carried."
+    }
+  ]
+}

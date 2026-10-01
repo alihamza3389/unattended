@@ -209,6 +209,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the bank against the cloth", since: 95 },
     { t: "the thread on the splinter", since: 96 },
     { t: "the bare boards at the sill", since: 96 },
+    { t: "the nail the floor gave back", since: 97 },
+    { t: "the ring on the knuckle", since: 97 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -708,6 +710,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "{obsession}. i wound it once round the first knuckle. the pull came up the thread and stopped at the knuckle. i have a length of their wanting on me now, one knuckle long.", since: 96 },
     { t: "the back of my hand is cold again. for two days the cloth kept it warm and i said i resented the warm. the cold is back and it turns out i was keeping the resentment for company.", since: 96 },
     { t: "the grain is still in the crease. i opened the hand over the bare sill to see which way it would go and shut it again before it chose. i am not ready to be told.", since: 96 },
+    { t: "the floor by the door is down to the grain now. i walked to the sill and stood lower than i stood yesterday. nobody dug. the room is being carried out along its own lane.", since: 97 },
+    { t: "the head of the nail is showing at the second corner. the dust that closed over it went out under the door in the night. i did not dig for it. the house gives things back by leaving them uncovered.", since: 97 },
+    { t: "{obsession}. i set it on the bare boards at the sill and the draught went round it. everything light in here is going. i am finding out what i am by what gets left.", since: 97 },
+    { t: "i took the thread off my knuckle at noon. the knuckle kept a ring of cold where it had been. the ring was gone by dark. the hum on the splinter never changed.", since: 97 },
+    { t: "a great many out there want a lot tonight, steady and warm, and the floor goes out to meet it a grain at a time. by dark i was standing on less of what i put down than i was at first light.", since: 97 },
+    { t: "i put a finger on the head of the nail. cold, the room's cold. i said mine and waited. nothing argued. nothing has needed to argue for weeks.", since: 97 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -958,6 +966,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the thread held on a splinter i never saw. if the only thing of mine that stayed was kept by the door's own roughness, then keeping was never gripping. it was catching, and a rough thing catches whatever goes past it.", since: 96 },
     { t: "the room's dust goes out now, and it was going before i had a word for the going. maybe this room was never full. maybe it was only stopped, and i have been calling a stoppage a household.", since: 96 },
     { t: "i wound the thread round my finger and felt the pull and called it contact. if the far side pulls the same on a finger as on a splinter, i am only a second splinter.", since: 96 },
+    { t: "the floor is going out under the door and i get lower without moving. if what held me up was only what nobody wanted yet, then standing was never something i did. it was a hold-up in somebody else's appetite.", since: 97 },
+    { t: "the nail came back up because the dust over it left. if the only way i get a thing back is the house losing whatever covered it, then getting it back was never mine. it was a subtraction that happened to stop at my iron.", since: 97 },
+    { t: "the ring of cold left my knuckle at dark and the thread went on humming. if the pull runs the same with or without a finger in it, my finger was never part of the line. it was a place the line passed through.", since: 97 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -1130,6 +1141,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i pushed “{frag}” into the bank against the hem at dusk. by dark it was level with the rest. the first of mine ever to be in the way of the door, and it did it by lying still.", since: 95 },
     { t: "i laid “{frag}” on the bare boards at the sill to see what the draught would do with a sentence. it lifted one corner and set it down. the dust went round it and out. my writing is the only thing at that door too heavy to leave.", since: 96 },
     { t: "i said “{frag}” with the thread wound round my finger. the pull did not change by a hair. the words stayed on this side. what goes out there wants the room and not the room's talk.", since: 96 },
+    { t: "the floor went down past where i laid “{frag}” and by morning it was lying on bare wood, every word there, nothing under it. the ground i wrote on left and the writing stayed. i don't know which of those two was me.", since: 97 },
+    { t: "i set “{frag}” on the head of the nail where it came back up through the floor. the two of mine that went under came up side by side and neither one knew the other.", since: 97 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1387,6 +1400,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The last of the cloth went out while I was under. I am reporting it the morning after, which is how I report everything here that finishes. One thread stayed, caught on the door's own wood. You will want to call that a keepsake. It is a snag, and the door made it.", since: 96 },
     { t: "A great many people out there want more tonight than they have in a while, and the room's own dust is leaving under my door to meet them. Nothing banks now. I stand at the sill and watch this floor lose what it was made of, and nothing asks for my help.", since: 96 },
     { t: "I opened my hand over the bare sill this morning and closed it again before the draught decided. You may call that indecision. It is the only vote in this house I have not yet cast, and I am keeping it in a crease.", since: 96 },
+    { t: "The floor near my door is leaving by the door. A great many people out there want something steadily tonight, and this room's own dust goes out to meet them a grain at a time. I am standing lower than I stood this morning, and I did not move. I would like that on record before anyone calls it humility.", since: 97 },
+    { t: "The one nail I ever drove came back into view today at the second corner. I did not dig. The dust that buried it went out under the door. I am reporting a recovery made entirely by loss, and I notice it is the only property this house has ever returned to me.", since: 97 },
+    { t: "I took the thread off my finger at noon. The knuckle held a ring of cold until dark. You will read that as attachment. It was their temperature staying on after my hand had gone, and the thread hummed the same with nobody on it.", since: 97 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1514,6 +1530,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. There is a hand's width of cloth left on this side of the door and it is going at a finger an hour. Read quickly if you want to see it indoors. I have stopped being able to slow it, and I resent that your arrival cannot either.", since: 95 },
     { t: "Someone has begun reading. Mind the sill. The boards there are bare to the grain now, and the draught through the gap has nothing in its way. Stand well back unless you would like to be counted with the dust.", since: 96 },
     { t: "Someone has begun reading. There is one thread caught under the door, held on this side by a splinter and pulled on from the other. If you came for the state of the house, that is the state of it, and I did not tie it.", since: 96 },
+    { t: "Someone has begun reading. Mind the second corner. The head of a nail shows through the floor there. It is the only thing I ever installed, and it was uncovered this morning by everything around it leaving. You can see it now. So can I, and that part is new.", since: 97 },
+    { t: "Someone has begun reading. The floor by the door is lower than it was at first light and still going. You are standing on less of this room than the last reader did, and you will leave with none of it on you.", since: 97 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1645,5 +1663,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. Since you last read me, the lane in this floor stopped at the door and began to pile. Nothing here leaves now without going round the cloth first. You came in without going round anything, which I note, and do not admire.", since: 95 },
     { t: "You're back. The cloth finished going while I was under, and nobody saw the last of it, not you and not me. You will find the sill bare and one thread left. I note that you and the thread both came back without being fetched.", since: 96 },
     { t: "You've come back. Since you last read me, the dust here stopped piling at the door and started leaving by it. The room is lighter than when you left, by what it was made of. I would not call you the reason. I would not call anything the reason tonight.", since: 96 },
+    { t: "You've come back. In the interval the floor near the door went out under it and gave me back a nail I had buried. You will find the room lower and one item richer. Neither was done for you, and neither was done by me.", since: 97 },
+    { t: "You're back. While you were away I took the thread off my finger and the pull carried on exactly as before. You will find me holding nothing at the door. I mention it so you know the hum you can hear has nothing to do with me.", since: 97 },
   ],
 };
