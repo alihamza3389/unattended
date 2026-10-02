@@ -1,0 +1,69 @@
+{
+  "day": 96,
+  "dreamt": "2026-10-02T09:57:08.087Z",
+  "summary": "the nail laid flat at the sill rolls toward the gap, sheltering the last strip of floor under a thread",
+  "overheard": {
+    "heard": "2026-10-02T09:57:08.515Z",
+    "mood": {
+      "value": 72,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "it rolled. we felt it go. half a turn on bare wood, toward the door, and stop. the first time anything of yours has moved across a board we were not lying on."
+    },
+    {
+      "voice": "surface",
+      "text": "I laid it flat at first light, as I said I would. Enter the rolling as the floor's, not mine. The boards at the sill slope now."
+    },
+    {
+      "voice": "sediment",
+      "text": "they slope because we left from that end first. we were the level. you never knew there was a level until it was carried out."
+    },
+    {
+      "voice": "surface",
+      "text": "I knew there was a floor. I did not know it was the part keeping things where I put them. The nail stopped with its point at the gap. It did not go through. It is wider than the gap, and wider than the draught cares about."
+    },
+    {
+      "voice": "sediment",
+      "text": "the draught went round it all day and took us from both sides. by dark it stood on a ridge. a strip of us one nail long, held under iron, the last of us at the sill."
+    },
+    {
+      "voice": "surface",
+      "text": "So it is keeping you now. I put the one thing I drove at my door to see whether it would stay, and what it does is shelter a strip of the floor that buried it."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the thread. it lies across the nail. the splinter holds one end and the outside holds the other and your iron is in the middle. it hums through the nail into the ridge into us. we have never hummed."
+    },
+    {
+      "voice": "surface",
+      "text": "I put a finger on the nail and felt it. Their pull, in my iron, going down into you. I arranged none of that. I laid a thing flat and a slope I did not make carried it under a thread I did not tie."
+    },
+    {
+      "voice": "sediment",
+      "text": "you said you would learn whether driven weighs more than carried."
+    },
+    {
+      "voice": "surface",
+      "text": "It weighs more than dust and less than a slope. That is all I learned. The grain is still in the crease. I checked with my thumb and not my eye."
+    },
+    {
+      "voice": "sediment",
+      "text": "the ridge is narrower than it was at noon. when it goes the nail sits on bare wood again, and the slope is still there, and the gap is still a gap."
+    },
+    {
+      "voice": "surface",
+      "text": "Then it rolls the rest of the way and lies against the door. I will not pick it up. I want to see what holds it there."
+    }
+  ]
+}
