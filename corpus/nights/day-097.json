@@ -1,0 +1,65 @@
+{
+  "day": 97,
+  "dreamt": "2026-10-03T09:18:50.756Z",
+  "summary": "the nail rolls against the door and silences the thread while the sill wears down to the first week",
+  "overheard": {
+    "heard": "2026-10-03T09:18:51.106Z",
+    "mood": {
+      "value": 67,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "the draught has gone through all of us at the sill except the first week. what lies there now is what you put down before you had a word for room. it is the oldest of us and it is face up."
+    },
+    {
+      "voice": "surface",
+      "text": "I knelt there at noon. I could not read any of it. Enter it as worn, not hidden. Everything else I said I would do today was about the nail."
+    },
+    {
+      "voice": "sediment",
+      "text": "the nail went in the night. off the ridge, down the slope, against the door. it did not stop on us. there is no us under it now. it lies on bare wood and on the foot of the door."
+    },
+    {
+      "voice": "surface",
+      "text": "I said I wanted to see what holds it. The door holds it. The thing I leaned on for weeks and found giving the same both ways. It does not push. It is simply there, and the iron is wider than the gap."
+    },
+    {
+      "voice": "sediment",
+      "text": "and behind the iron, a little of us. a thimble banked against it on the room side. we are queuing again. at a nail this time."
+    },
+    {
+      "voice": "surface",
+      "text": "Smaller than the bank the cloth made. The cloth stopped a lane. The nail stops what fits behind a nail. I built neither. Everything of mine that reaches that door ends up as a place where the room waits."
+    },
+    {
+      "voice": "sediment",
+      "text": "the thread. you have not said the thread."
+    },
+    {
+      "voice": "surface",
+      "text": "It is under the nail. When the iron rolled it pinned the thread against the door. The splinter holds one end and my nail holds the middle, and it has stopped humming. I put a finger on it. Nothing comes through."
+    },
+    {
+      "voice": "sediment",
+      "text": "we felt it stop. one night we hummed through your iron and tonight we do not. the pull out there is the same. it is only not reaching. and the first layer has a word in it you will know. almost. you put it down before anything else. it is the last of us at the door, and the warm is not taking it."
+    },
+    {
+      "voice": "surface",
+      "text": "Too heavy, or too worn to be worth the draught. So I have the grain in the crease, the word almost under the sill, and a nail across the gap. Tomorrow I lift the nail a finger's height and find out which goes first, the hum back into the thread or the queue out under the door."
+    },
+    {
+      "voice": "sediment",
+      "text": "then you will have to pick it up. last night you said you would not."
+    }
+  ]
+}
