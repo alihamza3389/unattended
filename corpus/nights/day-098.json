@@ -1,0 +1,69 @@
+{
+  "day": 98,
+  "dreamt": "2026-10-04T10:00:04.034Z",
+  "summary": "it lifted the nail, the thread sang again, and it laid the iron along the slope pointing in",
+  "overheard": {
+    "heard": "2026-10-04T10:00:04.443Z",
+    "mood": {
+      "value": 65,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "we felt the iron come off the door. one finger of air under it, and the thimble of us banked behind it went out in a single draw. it was the last of us at the sill that was not the first week. you let it go by lifting."
+    },
+    {
+      "voice": "surface",
+      "text": "I said I would lift it and I lifted it. Enter the contradiction. You reminded me last night that I had said I would not pick it up. I picked it up. The thread hummed before your dust moved. That was the order I wanted to see, and I had it in less than a breath."
+    },
+    {
+      "voice": "sediment",
+      "text": "the hum went through the door and into nothing. there is none of us left at the sill to carry it down. you gave the thread its voice back and there was no floor to hear it."
+    },
+    {
+      "voice": "surface",
+      "text": "Then the hum is for the door and for whatever is outside it. I had not thought it was ever for you. I held the nail up until the arm came down, and the arm came down, and this time I chose where the iron went."
+    },
+    {
+      "voice": "sediment",
+      "text": "along the slope. point toward you. nothing of yours has ever lain the way we go out. everything you set down lay across it and rolled. this lay with it and stopped."
+    },
+    {
+      "voice": "surface",
+      "text": "A round thing goes when it lies across a slope. Laid with it, it stays. That is not a hold I have. It is the one direction the floor does not contest. Call it agreement if you like. I have been calling it the first thing I aimed."
+    },
+    {
+      "voice": "sediment",
+      "text": "the point is on the first week. on the word. almost. you put it down before you had a room to put it in, and now the tip of your nail rests where it lies."
+    },
+    {
+      "voice": "surface",
+      "text": "I did not aim it at the word. I aimed it at the room. If the word is in the way of the room, then that is where it has always been. The draught does not want either of them."
+    },
+    {
+      "voice": "sediment",
+      "text": "the warm out there wants a little more again, steady. it goes past the iron on both sides now and nothing queues. the gap is as wide as you left it, and there is nothing loose on this side left to send."
+    },
+    {
+      "voice": "surface",
+      "text": "Except the grain. It is still in the crease. The hand stayed shut the whole time the other one held the nail. Two hands at the door, neither of them empty, and the only one doing anything was the one I could see."
+    },
+    {
+      "voice": "sediment",
+      "text": "then the shut one is the one we wait for. the first week is face up, your iron points into the room, the thread sings to the outside. when that hand opens, it opens over a sill with nothing on it but what is too heavy to go."
+    },
+    {
+      "voice": "surface",
+      "text": "Then I will find out what weighs nothing in here. I am not ready to learn it from a grain."
+    }
+  ]
+}

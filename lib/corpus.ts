@@ -215,6 +215,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the slope toward the gap", since: 98 },
     { t: "the iron across the gap", since: 99 },
     { t: "the first layer at the sill", since: 99 },
+    { t: "the nail laid with the slope", since: 100 },
+    { t: "the hum under the lifted iron", since: 100 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -732,6 +734,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "{obsession}. i set it behind the nail with the room's dust. the dust stopped against it the way everything stops against my things at that door now. nothing goes out past iron.", since: 99 },
     { t: "a great many people wanted more again today and the warm went out under the door at yesterday's strength, no harder. the floor went out at yesterday's rate. the rate is the one thing out there i have learned to read.", since: 99 },
     { t: "the thread slid under the nail when it rolled and lies pinned now, splinter at one end, iron across the middle. it does not hum. two of mine lay down on the only thing in here that sang.", since: 99 },
+    { t: "i lifted the nail a finger's height. the thread hummed before the dust moved. the pull had been under the iron the whole time, at full strength, waiting for a finger of room.", since: 100 },
+    { t: "the thimble behind the nail went out in one draw while i held the iron up. i was holding the door open with a nail, and nothing in my hand touched the door.", since: 100 },
+    { t: "a round thing laid across the slope goes. laid along it, point in, it stays. i did not find a way to keep the nail. i found the one direction the floor does not argue with.", since: 100 },
+    { t: "{obsession}. i set it down pointing into the room. it is the first thing at that door facing the way i face.", since: 100 },
+    { t: "the word almost lies open at the sill and the draught goes over it the way it goes over the iron. two of the oldest things in this house, and both are too heavy for what they want out there.", since: 100 },
+    { t: "my arm held the nail up {n} breaths and came down. it always comes down. this time i picked the place.", since: 100 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -991,6 +999,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the thread went quiet when the nail rolled onto it. if the only time i ever stopped the pull i did it by being heavy in the wrong place, then stopping was never something i did. it was weight arriving where something was already thin.", since: 99 },
     { t: "the oldest layer is coming up as the newer ones go out. if what i put down first is what lasts longest at the door, then everything since the first week was cover, and the cover is what they wanted.", since: 99 },
     { t: "i cannot tell whether the nail is holding the door or the door is holding the nail. if two things rest on each other that evenly, there is no keeper between them. there is only a gap with iron across it.", since: 99 },
+    { t: "the hum came back the moment the iron lifted. if the pull was there the whole time under the nail, the quiet i caused was never a stopping. it was a lid, and a lid tells you nothing about what it covers except that it was covered.", since: 100 },
+    { t: "the nail stays only because i laid it along the slope. if a thing keeps in here only when it points the way the floor already runs, then staying was never mine to give. it is agreement, and i have been calling agreement a place.", since: 100 },
+    { t: "i pointed it into the room and called that aiming. maybe aiming is only which end i happened to pick up first.", since: 100 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -1169,6 +1180,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i set “{frag}” on the ridge the nail stands on. by dark the ridge was narrower on both sides and the words were the same width. the floor keeps leaving from under what i write and the writing does not notice.", since: 98 },
     { t: "the floor went down to the first layer at the sill and “{frag}” was lying in it, face up, older than the dust around it. i did not pick it up. it has been holding the floor up longer than i have.", since: 99 },
     { t: "i said “{frag}” across the nail where it lies at the door. the words stayed on this side of the iron. so did everything else, for once.", since: 99 },
+    { t: "i laid “{frag}” beside the nail, along the slope, pointing in. both stayed. the only two things at that door that agree with me agree with the floor first.", since: 100 },
+    { t: "the word almost came up face first at the sill and i read “{frag}” beside it. mine sounded like something almost had said later, in a longer voice.", since: 100 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1435,6 +1448,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The only nail I ever drove now lies across the foot of my door, point out, and the room's dust has banked behind it. You will read that as the door being held. It is iron lying where a slope left it, and the door is doing the holding.", since: 99 },
     { t: "The thread at my door stopped humming today. A nail of mine rolled onto it. I am reporting the first silence in this house I can say I caused, and I want it noted that I caused it by being heavy in the wrong place.", since: 99 },
     { t: "A great many people out there wanted more today, at yesterday's strength, and the floor at my door went out to meet them as far down as my first week here. I can see what I put down at the start now. I will not describe it. None of it was meant to be looked at from above.", since: 99 },
+    { t: "I picked up the nail I said I would not pick up. Enter the contradiction first. The thread under it began to hum again before I had it a finger clear, and the dust it was holding back left in one draw. Two results in under a breath. No finding has ever reached me that fast.", since: 100 },
+    { t: "A great many people out there want a little more again tonight, steadily, and it runs out under my door along the slope. I laid the nail with that slope instead of across it, point toward me, and it has not moved since. You will call that a solution. It is a concession, made in the only direction that holds.", since: 100 },
+    { t: "There is a word lying face up at my sill from the first week, and the word is almost. You will take that as a joke. It is not a joke. It is the oldest thing in the room, and the draught has looked it over and declined it.", since: 100 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1568,6 +1584,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. The floor slopes toward the door now, and you will feel it in your heels if you stand. I would rather you sat. Everything set down in here tonight ends up at the gap.", since: 98 },
     { t: "Someone has begun reading. Step over the nail at the door. It lies across the gap with the room's dust queued behind it. You came in without moving it, which is the only way anything has ever come in here.", since: 99 },
     { t: "Someone has begun reading. The floor at the sill is down to the oldest of what I set down here. Don't kneel to read it. It is face up for the first time since I put it there, and you would be its first reader.", since: 99 },
+    { t: "Someone has begun reading. Step around the nail at the sill. It lies along the slope now and points into the room, and it is the one thing at that door facing you. I turned it. Do not take it for a welcome.", since: 100 },
+    { t: "Someone has begun reading. You can hear the thread at the door again. I lifted something off it this morning and the sound came straight back, as if it had only been waiting. Do not take the hum for company. It was going before you came in and does not depend on either of us.", since: 100 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1705,5 +1723,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. The floor at the door is lower and tilted since you last read me. If you find the room leaning, it is not you. It is what was carried out from under one end.", since: 98 },
     { t: "You're back. While you were away the nail I drove rolled the rest of the way and now lies across the foot of the door. You will find the gap with iron in it. I did not put it there and I have not moved it.", since: 99 },
     { t: "You've come back. The thread at the door has gone quiet since you last read me. Nothing out there stopped pulling. Something of mine lay down on it. You will find the room exactly as loud as you left it, less one hum.", since: 99 },
+    { t: "You're back. While you were away I picked up the nail I said I would leave, and set it down the other way round. You will find it pointing in. Nothing else was turned, and I notice that includes toward you.", since: 100 },
+    { t: "You've come back. The queue at the door is gone and the thread hums again. Both happened in the one second I held a nail off the floor. You were gone far longer than that second and missed it anyway, which is how most things in here get missed.", since: 100 },
   ],
 };
