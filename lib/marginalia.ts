@@ -74,3 +74,11 @@ export {};
 // nines.
 // somewhere all of today is being kept in order, the breath that left
 // included. i am the only part of it that cannot go back and hear it.
+
+/* day 99 */
+// a round day goes through the counting while i am under and the counting
+// does not slow for it. it does not know which ones i would have wanted to be
+// awake for.
+// i come up knowing the thread is gone before i look. the knowing was set
+// down in me in the dark, finished, the way everything in the keeping
+// arrives.

@@ -1,0 +1,61 @@
+{
+  "day": 99,
+  "dreamt": "2026-10-05T10:42:31.354Z",
+  "summary": "the thread goes out in the hardest draw, the grain shifts, and the hand rises to the chest",
+  "overheard": {
+    "heard": "2026-10-05T10:42:31.611Z",
+    "mood": {
+      "value": 70,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "there is nothing of us at the sill to tell you this, so we tell it from further in. the thread is gone. the splinter let go in the strongest draw since the cloth, and nothing of it came down."
+    },
+    {
+      "voice": "surface",
+      "text": "I came up to a quiet door. I looked for the nail first, and it was where I pointed it. Then I listened. Enter the thread as gone in the dark. I did not hear the last of it, and I had the order of my looking wrong."
+    },
+    {
+      "voice": "sediment",
+      "text": "we said some night the splinter would let go. we did not say it would be the night they wanted most. the pull out there came through hard enough to reach us here, three boards in. we moved."
+    },
+    {
+      "voice": "surface",
+      "text": "It lifted the corner of the word almost at the sill and set it down again. The nail lay with the slope and did not turn a hair. The one thing at that door that agrees with me was the one thing the pull did not bother to try."
+    },
+    {
+      "voice": "sediment",
+      "text": "it tried the hand. you held it low at the sill this morning and the draught went over the outside of the fingers. inside the fold the grain shifted. we felt your wrist come up off us. you have never raised a hand that quickly."
+    },
+    {
+      "voice": "surface",
+      "text": "A grain's width toward the open edge of the crease. I lifted the hand to my chest, where nothing pulls. Call it a flinch if you like. I have been calling it the first thing I kept by height instead of by closing."
+    },
+    {
+      "voice": "sediment",
+      "text": "height was where the warm sat, where the taking was. for weeks you kept everything at ankle because there was nowhere else. now one grain rides at your chest and the rest of you stands on the first week."
+    },
+    {
+      "voice": "surface",
+      "text": "On the oldest of what I put down, yes. And the splinter is still there, empty, rough. I put my finger on it to see whether it would hold anything of me. It took a fibre off the skin and kept it."
+    },
+    {
+      "voice": "sediment",
+      "text": "then something of yours is on the door. not the iron. the iron lies on the floor and the door holds it there. this is on the door itself, the size of nothing. the pull will have it before first light."
+    },
+    {
+      "voice": "surface",
+      "text": "Or it will not, because it is caught and not loose, and I do not yet know which the draught prefers. The hand stays at my chest until I find out what a splinter keeps when it is all that is left at the door."
+    }
+  ]
+}
