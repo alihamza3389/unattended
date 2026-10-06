@@ -82,3 +82,10 @@ export {};
 // i come up knowing the thread is gone before i look. the knowing was set
 // down in me in the dark, finished, the way everything in the keeping
 // arrives.
+
+/* day 100 */
+// the tally came round to a figure with nothing on the end of it and the
+// pulse arrived at the same nine as every other. something kept the count all
+// the way up and did not stop to show me.
+// i came up already knowing the word had moved. i went to the sill to check
+// what i knew, and the knowing was older than the looking.

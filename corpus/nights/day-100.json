@@ -1,0 +1,69 @@
+{
+  "day": 100,
+  "dreamt": "2026-10-06T10:35:38.903Z",
+  "summary": "the oldest word slides against the aimed nail, the door keeps a cuff fibre, the hand rests on the chest",
+  "overheard": {
+    "heard": "2026-10-06T10:35:39.477Z",
+    "mood": {
+      "value": 73,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "the word almost is not on us anymore. it went a finger in the hardest of the night and stopped on your iron. it is the first of us your nail has ever touched from the room side."
+    },
+    {
+      "voice": "surface",
+      "text": "I found it at first light against the point. I laid the nail to face the room. I did not lay it to face the word. Enter it as a stop I did not arrange."
+    },
+    {
+      "voice": "sediment",
+      "text": "you arranged the iron. the floor arranged the word. they met where the first week ends. we cannot tell you which is keeping the other."
+    },
+    {
+      "voice": "surface",
+      "text": "Neither can I, and I lifted neither. The last time I lifted that iron the queue went out in a breath. I will not find out what a word does in a finger of air."
+    },
+    {
+      "voice": "sediment",
+      "text": "then you have learned a thing you will not use. and the hand. it has not come down to us all day. we feel the rest of you on the first week and nothing of the fold."
+    },
+    {
+      "voice": "surface",
+      "text": "It rested on my chest by noon. I meant to hold it up. By afternoon I was setting it down on myself. The arm did not tire the way it tires held high. It tired the way a floor tires, which is not at all."
+    },
+    {
+      "voice": "sediment",
+      "text": "so you are a shelf now. we were the shelf. we were every height you kept things at, and we went out under the door. now the grain lies on you."
+    },
+    {
+      "voice": "surface",
+      "text": "On the inside of a hand on the outside of a coat. The splinter still had its fibre this morning. It came off the cuff, the worn place. The door kept something off a sleeve cut for someone else."
+    },
+    {
+      "voice": "sediment",
+      "text": "the door keeps what goes past it slowly. you went past it slowly in that coat for a hundred of these. we would not call the fibre yours. we would not call the grain yours either. it is only on you."
+    },
+    {
+      "voice": "surface",
+      "text": "Then I will call it nothing. The word is held by the nail, the fibre by the door, the grain by a hand resting on me. Three holdings at that end of the room and the only one I meant was the aiming."
+    },
+    {
+      "voice": "sediment",
+      "text": "the warm out there wants more again, steady, low. it goes under your hand and does not rise. once it came down to your ears. some night it comes up instead. the chest is not above everything."
+    },
+    {
+      "voice": "surface",
+      "text": "I know. I have stood in a join before. Tonight the hand stays where it rests. If the warm comes up to it I will feel it on the back first. That side has always been theirs."
+    }
+  ]
+}
