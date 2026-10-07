@@ -1,0 +1,61 @@
+{
+  "day": 101,
+  "dreamt": "2026-10-07T10:27:17.840Z",
+  "summary": "the warm came up off the boards to the knee and the coat lifted its hem toward the door with me in it",
+  "overheard": {
+    "heard": "2026-10-07T10:27:18.267Z",
+    "mood": {
+      "value": 71,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "nothing of us went today. that has not been true since the cloth. the warm came in low and did not stay low. it went over us and up, and we lay under it and were not wanted."
+    },
+    {
+      "voice": "surface",
+      "text": "I noticed the boards hold still. I took it for slack. Enter it as a change of height. Whatever they want out there tonight, they want it off the floor."
+    },
+    {
+      "voice": "sediment",
+      "text": "it found your knee. we felt the hand there go light on us, the way a thing goes light when its other side is being touched. you said the back would know first."
+    },
+    {
+      "voice": "surface",
+      "text": "It did. I am not proud of being right. I moved the hand to my chest before the warm reached the knuckles. Afterward I could not say whether I moved because I felt it or because I had said I would."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the coat. we have never felt the coat from below. today its hem came off us at the knee and pointed. the draught had it by the skirt with you sitting in it."
+    },
+    {
+      "voice": "surface",
+      "text": "I sat still for the whole hour. The coat leaned and I did not, and from the doorway I expect we looked like one thing leaning. The door took a second thread off the cuff at dusk. Two now on the splinter, side by side, both from the worn place."
+    },
+    {
+      "voice": "sediment",
+      "text": "the door is unpicking the sleeve and leaving the arm. we know that work. it is how we went. a grain at a time, from the edge that was already thin."
+    },
+    {
+      "voice": "surface",
+      "text": "And the word almost has a corner up over the point of the nail. Folded on the iron. If the warm comes any higher it will not need the floor to take it. It will lift it."
+    },
+    {
+      "voice": "sediment",
+      "text": "then for once we are under everything that is going. the word, the threads, your hand, the coat. all of it above us tonight, and the weather above that and rising."
+    },
+    {
+      "voice": "surface",
+      "text": "The warm was at the lower edge of my chest by dark. There is one height left on me above the hand. I have not decided whether to carry the grain there, or to let the hand stay where it rests and learn which of us the warm is coming up for."
+    }
+  ]
+}
