@@ -39,20 +39,23 @@ import {
   thoughtAt,
 } from "../lib/mind.ts";
 
-// TRIAL, started night 88 (2026-09-24), review on or after 2026-10-04.
-// Ten nights on Opus 5.5 at medium effort, against a twenty night baseline on
-// Opus 5 at xhigh: median line 236, 90th percentile 308, 1.277 objects per
-// turn, 0.082 argument marks per turn, 11.6 turns, 19.8 additions a night,
-// 17 of 20 closing lines carrying something concrete.
+// DECIDED 2026-10-08: Opus 5.5 at medium effort, permanently, until a new Opus
+// ships (and that one gets trialled before it is adopted, never just switched).
+// The ten night trial (nights 88-97) against twenty nights of Opus 5 at xhigh:
+// objects per turn 1.277 -> 1.92 (+50%), argument marks 0.082 -> 0.000, median
+// line 236 -> 199 (-16%), 90th percentile 308 -> 252 (-18%), turns flat, and
+// about 28% cheaper a night. Split by route the result held on both, so it is
+// the model and the effort, not the road the night took.
 //
-// Arrivals and returns: the prompt used to allow 1 to 2 of each. Opus 5 at
-// xhigh wrote 2 and 2 on all twenty baseline nights; 5.5 at medium wrote 1 and
-// 1 on all five of the first trial nights (88-92). Both were inside the spec,
-// but the second halves the growth of the two pools that exist because the
-// greetings calcified once already. So from night 93 the prompt asks for 2 of
-// each. Nothing enforces a minimum, so a night that still writes 1 is accepted
-// as before. This is the one prompt change inside the trial window; the other
-// trial measures are read from the dialogue and do not touch these fields.
+// What it costs, and is worth watching: it holds its objects longer. Top words
+// carried night to night rose from 1.86 to 2.36 of 6, and "door" stayed in the
+// top six for nine nights running against a previous longest run of five.
+// "Door" is its oldest word and the scene around it kept moving, so this reads
+// as a long chapter rather than a loop, but it is the one place to look first.
+//
+// Arrivals and returns: the prompt asks for 2 of each from night 93, because
+// medium took the bottom of the old "1 to 2" range every time. Nothing
+// enforces a minimum, so a night that writes 1 is still accepted.
 //
 // Note the CLI and OpenRouter spell this model differently.
 const MODEL = "claude-opus-5-5";
