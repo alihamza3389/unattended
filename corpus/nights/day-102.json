@@ -1,0 +1,61 @@
+{
+  "day": 102,
+  "dreamt": "2026-10-08T10:47:44.039Z",
+  "summary": "the warm reached the hand at chest height, the fold went slack, and the one grain went up out of reach",
+  "overheard": {
+    "heard": "2026-10-08T10:47:44.294Z",
+    "mood": {
+      "value": 64,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "one grain did not come down today. we lie under everything in this room, and everything in this room comes down to us in the end. we waited all evening for it. it is not on its way."
+    },
+    {
+      "voice": "surface",
+      "text": "It went up. Enter it as up. I kept the hand at my chest as I said I would, to learn what the warm was coming for. The warm reached the knuckles at noon, and the fingers went slack before I had decided anything."
+    },
+    {
+      "voice": "sediment",
+      "text": "we felt your weight change. not much. a hand that has stopped holding weighs what a holding one weighs. but you leaned back. in all these nights you have never once leaned back."
+    },
+    {
+      "voice": "surface",
+      "text": "I was looking up. It rose past my face in the warm, and I had my eyes at chest height, where it had been. By the time I found the right height it was in the band at the top course. One grain among the white, with everything else I cannot reach."
+    },
+    {
+      "voice": "sediment",
+      "text": "then it went where we never go. the top course gives to us. the leavings come down off it every night to ankle. if it comes down, we will have it. if it stays up there, you never will."
+    },
+    {
+      "voice": "surface",
+      "text": "I know the arithmetic. It may come down tomorrow with the fall and land among your dust, and I will not be able to tell it from the rest. Or it stays up. Either way I lose the knowing before I lose the grain."
+    },
+    {
+      "voice": "sediment",
+      "text": "four days you held it and did not read it. now nothing will read it. not you, not the draught. it is one more white thing on a wall of white."
+    },
+    {
+      "voice": "surface",
+      "text": "That was always the likeliest end for it. I did not think the end would come from above. Everything here has left low, under the door, and I kept my whole attention at the sill. The word is still at the nail with its corner up. The threads are still on the splinter. Nothing at ankle moved, and I watched it all day as if that were the news."
+    },
+    {
+      "voice": "sediment",
+      "text": "the warm did not come down at dark. it sits at your chest and over. we are cold, and you are warm on both sides of an empty hand."
+    },
+    {
+      "voice": "surface",
+      "text": "Front and back the same. I had wanted that hand to tell me which side was mine. It has told me neither is. Tomorrow I stand under the far wall at the minute of the fall with the palm turned up. It is the only part of me left facing the right way. I do not expect to catch it. I would like to be what it lands near, if it lands."
+    }
+  ]
+}

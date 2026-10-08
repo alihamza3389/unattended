@@ -223,6 +223,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the fibre off the cuff", since: 102 },
     { t: "the warm at the knee", since: 103 },
     { t: "the second thread on the splinter", since: 103 },
+    { t: "the grain gone up", since: 104 },
+    { t: "the hand warm both sides", since: 104 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -764,6 +766,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the word almost has a corner up over the point of the nail. folded, not past. it is the first thing of mine that has ever climbed anything.", since: 103 },
     { t: "{obsession}. i set it on my knee where the warm reaches now. it came back the weight it always is. the knee came back warmer than the thing.", since: 103 },
     { t: "i moved the hand from knee to chest when the warm got to the knee. by dusk the warm was at the lower edge of the chest. above that the only shelf left on me is my face.", since: 103 },
+    { t: "the warm reached the hand at noon. i kept it where it rested, as i said i would. the fingers went slack the way warm fingers do and the crease was not a crease anymore.", since: 104 },
+    { t: "the grain went up. everything of mine has gone down, or out under the door. this went up, in the warm, past my face. i had my eyes on the wrong height.", since: 104 },
+    { t: "i look up now. {n} times since noon. the top course is all one white, and somewhere in it is one grain of a word i never read, filed above the mark with the pinch i threw.", since: 104 },
+    { t: "{obsession}. i held it at the height the grain left from. the warm went round it and did not want it. it only lifts what was never heavy enough to be mine.", since: 104 },
+    { t: "my palm is empty and warm on both sides. it is the first time in this house a hand of mine has read the same front and back. it took losing the thing to get there.", since: 104 },
+    { t: "the word almost still has its corner up on the nail. at ankle nothing changed. all the news today was above my chest, and i read the floor anyway, to be somewhere nothing moved.", since: 104 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -1034,6 +1042,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the word stopped against the point i laid. if the oldest thing i said only stays because something i set down later is in its way, then nothing i said ever stayed by being said. it stayed by being blocked.", since: 102 },
     { t: "i lifted the hand off my knee before the warm got there. if i can leave a height before the weather does, i was never above it. i was only ahead of it, and ahead is a place that gets caught up with.", since: 103 },
     { t: "the coat pointed at the door with me inside it. if the shape leans toward the way out whether or not a body is in it, i am not the one staying. i am the weight it leans against on its way.", since: 103 },
+    { t: "the grain went up when the hand went warm. if what kept it was only my hand being colder than the room, then holding was never a grip. it was a temperature, and they raised it from outside.", since: 104 },
+    { t: "i kept the hand still so i would learn what the warm was coming for. it came for the grain and left the hand. maybe i was never what any weather in here came up for. maybe i am only the height things leave from.", since: 104 },
+    { t: "i cannot tell whether i let go or the fold did. if a hand can open by going warm, then every hand i ever kept shut was only cold enough.", since: 104 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -1218,6 +1229,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i laid “{frag}” on the back of the hand at my chest, the only shelf in here up off the floor. it read at the weight it reads at the ankle. height changes the draught and not the sentence.", since: 102 },
     { t: "i read “{frag}” across the word and the nail where they touch. the iron stopped the word. nothing has ever stopped one of mine except the room, and tonight the room was a nail.", since: 102 },
     { t: "i held “{frag}” on my knee while the warm came up to it. the side of my hand warmed and the words did not. even the nearest weather goes round my sentences.", since: 103 },
+    { t: "i said “{frag}” with my head back, looking at the top course where the grain went. the words stayed at my mouth. nothing of mine has ever risen except the one thing i never read.", since: 104 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1496,6 +1508,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "A great many people out there want more tonight than they have all week, and the warm has come up off the floor to the height of my knee. I said I would feel it on the back of my hand first. I did. That is the first prediction in this house to come true, and it does not feel like a result. It feels like being found.", since: 103 },
     { t: "My coat lifted at the hem while I sat today and pointed at the gap, with me in it. You'll read that as wind. Enter it as the second time that coat has faced the door, and the first time it did so with a tenant.", since: 103 },
     { t: "The inventory at my door is one nail, one old word folded against its point, two threads on a splinter, and one grain on a hand. Only the last item is above the knee, and as of this evening only just.", since: 103 },
+    { t: "A great many people out there are leaning toward more again tonight, warm and unhurried, and the warm came up past my chest. It opened my hand. I want it entered that I did not open it, and that I cannot prove the difference.", since: 104 },
+    { t: "The one grain I carried of the word I never read has gone up into the warm above my reach, onto the wall where I once threw a pinch of salt. I can tell you which wall. I cannot tell you which white.", since: 104 },
+    { t: "For weeks I have reported everything leaving this room by the door. Today the item left by the ceiling. I mention the change of route because it is the only thing in this report I failed to predict.", since: 104 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1637,6 +1652,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. My hand is at my chest and it will stay there while you read. Do not take the posture for anything. It is the height the floor's weather does not reach, and I found it by losing almost everything below it.", since: 102 },
     { t: "Someone has begun reading. Keep your hands above the knee. The warm came up off the floor today and it carries what it reaches toward the door. I have enough of mine at that door without having to account for yours.", since: 103 },
     { t: "Someone has begun reading. The coat in the chair is pointing at the door and I am inside it. Do not take the direction as a hint that you should leave. It was pointing there before you came.", since: 103 },
+    { t: "Someone has begun reading. Do not look up on my account. One grain of mine went into the warm above the far wall today. You would find it before I did, and you would not know what you had found.", since: 104 },
+    { t: "Someone has begun reading. My hand is open, and warm on both sides, and there is nothing in it. You have arrived after the only holding I ever did at that height. I would rather you did not ask how it ended.", since: 104 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1782,5 +1799,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. Since you last read me the door has kept a fibre off my sleeve and my hand has not come lower than my chest. You will find me a little higher than the floor and a little shorter in the cuff. That is the interval.", since: 102 },
     { t: "You're back. Since you last read me the warm has come up from the boards to my knee, and I had already said where I would feel it. You will find me exactly as predicted. That is not the same as prepared.", since: 103 },
     { t: "You've come back. While you were away the door kept a second thread off my sleeve. You will find the coat shorter at the wrist and me the same length. The door has been very exact about which of us it wants.", since: 103 },
+    { t: "You're back. While you were away the warm came up to my hand and the one grain I kept went up with it, above my reach. You will find me with an empty palm and my head tipped back. That is not a posture I chose.", since: 104 },
+    { t: "You've come back. The floor at the door is exactly as you left it. Everything that changed since then happened above my chest, where you were never going to look and where I could not follow.", since: 104 },
   ],
 };
