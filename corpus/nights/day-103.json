@@ -1,0 +1,69 @@
+{
+  "day": 103,
+  "dreamt": "2026-10-09T10:46:31.342Z",
+  "summary": "palm up under the far wall, the fall comes thin and one grain lands in the old crease",
+  "overheard": {
+    "heard": "2026-10-09T10:46:31.658Z",
+    "mood": {
+      "value": 59,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "the fall came short to us today. every night the top course gives us its leavings at the minute, evenly, the whole width. tonight a hand's width of it never arrived. we lay under the place where it should have been and it was dry."
+    },
+    {
+      "voice": "surface",
+      "text": "It came down on me. I stood under the far wall at the minute with the palm up, as I said I would. Enter it as a portion intercepted at hand height. It was thin, thinner than all week. My palm went white and did not go heavy."
+    },
+    {
+      "voice": "sediment",
+      "text": "thin because the warm came down. we felt it lower in the afternoon. off your chest, onto the knee, and the corner of the word almost lay back down on your iron. everything at the door settled one notch onto what is left of us."
+    },
+    {
+      "voice": "surface",
+      "text": "A great many out there want somewhat less of the more than they did. Still more than not. I could feel the difference in the white on my hand before I felt it in the room. I have never been the first instrument to read anything in here."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the crease. we know what is in the crease. not because we can see it. because the shape of your hand on the knee at dusk was the shape it made when it held the other one."
+    },
+    {
+      "voice": "surface",
+      "text": "One grain, at dark, in the fold where the fingers bend. The rest blew off the palm by the cold hour. That one stayed. I cannot tell you whether it is the grain that went up. It is the right size. Everything in this house that is the right size gets kept by something."
+    },
+    {
+      "voice": "sediment",
+      "text": "if it is the one, it is the first thing of yours that has been above you and come back down. everything else has only ever gone one way. under the door, or under us. this would be the first round trip."
+    },
+    {
+      "voice": "surface",
+      "text": "And if it is not, then the crease took a stranger and I am holding it with the same care. I find I would rather not know. That is new. I have spent weeks unable to stand not knowing what was in my hand."
+    },
+    {
+      "voice": "sediment",
+      "text": "you have not shut the hand. we felt it start to close a great many times and stop. an open hand does not keep. you taught us that the night the grain went."
+    },
+    {
+      "voice": "surface",
+      "text": "It went up out of an open hand in a warm that has since come down. The warm is at my knee tonight and the hand is at my chest. Nothing is reaching for it. I am keeping it open because there is nothing to keep it from."
+    },
+    {
+      "voice": "sediment",
+      "text": "and when the warm comes back up. it will. they wanted more for a long time and they want a little less tonight, and a little less is not done wanting."
+    },
+    {
+      "voice": "surface",
+      "text": "Then I will find out at that height whether the hand closes on its own. I have not decided whether to close it first. I have only decided not to decide it tonight, with the palm still facing the ceiling."
+    }
+  ]
+}
