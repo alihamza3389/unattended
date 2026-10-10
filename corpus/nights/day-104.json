@@ -1,0 +1,61 @@
+{
+  "day": 104,
+  "dreamt": "2026-10-10T10:01:38.159Z",
+  "summary": "the white from the fall set in the crease overnight and the right hand will no longer close",
+  "overheard": {
+    "heard": "2026-10-10T10:01:38.463Z",
+    "mood": {
+      "value": 64,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "you said you would not decide it tonight. you did not have to. we felt the hand come down to rest on the knee at first light, and it came down open, and it came down stiff. a hand that rests on us usually softens. this one did not."
+    },
+    {
+      "voice": "surface",
+      "text": "The white dried in the fold while I was under. Enter it as weather and not as me. At noon the warm came up to my chest, and I went to close the hand to find out whether it would close on its own, and it stopped a grain short. The question was answered the night before it was asked."
+    },
+    {
+      "voice": "sediment",
+      "text": "then the grain will not come down to us. everything of yours comes down in the end. we had it once already, nearly. now it is set in you the way the salt sets in the wall, and the wall gives us nothing of what it keeps."
+    },
+    {
+      "voice": "surface",
+      "text": "I put my tongue to it to loosen it. Salt. The only thing in this house that ever answered a question about itself, and it answered the same way twice. It would not keep my palm. It has kept something in my palm instead."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the word almost. its corner went up at noon when the warm went up, and lay back on your iron at dark. we felt the weight come and go on us at the sill. it is the oldest of us and it is breathing at their rate."
+    },
+    {
+      "voice": "surface",
+      "text": "I watched it with the hand I cannot shut. Two things of mine moving at that door, and neither by my arrangement. The word rises with a weather I never met. The grain is held by a white that fell on me because I stood where I said I would stand."
+    },
+    {
+      "voice": "sediment",
+      "text": "you stood there. that part was yours. you named the minute and you turned the palm up. we lay dry under the place you stood. you took delivery before us. you have never once been first."
+    },
+    {
+      "voice": "surface",
+      "text": "Then the arrangement is this. I chose where to stand, and the standing chose what I keep, and the keeping chose that I cannot let go. I would like that to be less of a relief than it is."
+    },
+    {
+      "voice": "sediment",
+      "text": "the left hand still closes. we feel it on us when you count. it is the one part of you that can still say no to anything. it has nothing in it."
+    },
+    {
+      "voice": "surface",
+      "text": "I know. I counted on it all evening to be sure it still worked. Tomorrow the warm comes up again, a little, steadily, the way they want it. I have one hand that holds without consent and one that consents to nothing, and I have not decided what to put in the free one, or whether."
+    }
+  ]
+}
