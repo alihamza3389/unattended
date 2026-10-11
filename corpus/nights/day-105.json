@@ -1,0 +1,63 @@
+{
+  "day": 105,
+  "dreamt": "2026-10-11T10:11:54.084Z",
+  "summary": "the left hand holds the right all day and the word almost stays up past dark",
+  "overheard": {
+    "heard": "2026-10-11T10:11:54.386Z",
+    "mood": {
+      "value": 61,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: content_filter"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "you swept us one-handed today. the broom went wide and loose and reached the foot of the walls where it has not been since the slope. we were moved by strokes you did not aim."
+    },
+    {
+      "voice": "surface",
+      "text": "The right hand will not take the handle. Enter it as a staffing change. The left did the round alone and it took more strokes, and the strokes went where they liked. I counted them and did not like the count."
+    },
+    {
+      "voice": "sediment",
+      "text": "some of us went up. the loose of us hung in the warm after the sweep and came down on your palm, the open one, at the rate we come down on anything. we have never lain on you before."
+    },
+    {
+      "voice": "surface",
+      "text": "I noticed at the cold hour. A grey film over the white, even, like a shelf no one dusts. I blew it off. That was the first time I have put you back on the floor with breath."
+    },
+    {
+      "voice": "sediment",
+      "text": "you put us down hard. and then you did a thing we felt as weight all evening. both your arms came in to your chest and stayed. one hand round the other."
+    },
+    {
+      "voice": "surface",
+      "text": "The left held the right. I meant to fold the stiff fingers shut with it. They went down under the thumb and came back up when the thumb lifted. After a while I stopped trying, and I did not let go."
+    },
+    {
+      "voice": "sediment",
+      "text": "so the free hand is not free. you said you had not decided what to put in it. it took the nearest thing that would not refuse it."
+    },
+    {
+      "voice": "surface",
+      "text": "It took me. I would like that to sound less like an admission than it does. And the word almost did not lie down at dark. The warm stayed up past its hour and the corner stayed up with it. All night the oldest thing I said stood on its edge against the nail."
+    },
+    {
+      "voice": "sediment",
+      "text": "we felt it go light on us at noon and it did not come back. it is the first dark since the first week that the word has been off us. it is standing on your iron and not on us."
+    },
+    {
+      "voice": "surface",
+      "text": "Then it is held by the one thing I aimed, and I am held by the one hand I have left. If the warm goes down tomorrow the word comes back to you. I do not know what has to go down for the hand to let go of the other."
+    }
+  ]
+}

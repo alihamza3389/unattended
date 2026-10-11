@@ -229,6 +229,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the grain that fits the crease", since: 105 },
     { t: "the white set in the crease", since: 106 },
     { t: "the hand that will not fold", since: 106 },
+    { t: "the hand that holds the other", since: 107 },
+    { t: "the word on its edge at dark", since: 107 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -788,6 +790,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "{obsession}. i held it against the stiff fold to see if it would bend there. it bent. it bends anywhere but in me.", since: 106 },
     { t: "i put my tongue to the crease to soften it. salt. the same answer the wall gave. i spat, and the white stayed where it was.", since: 106 },
     { t: "my left hand closes and my right will not. i count on the left now. the count comes out the same, a knuckle slower.", since: 106 },
+    { t: "the left hand held the right one from first light. it is the only thing i have put in the free hand. it fits exactly and it weighs what i weigh.", since: 107 },
+    { t: "dust came down on the open palm all afternoon, evenly, the way it comes down on the shelf. i blew it off at dark. breath is the only broom i have that the hand cannot refuse.", since: 107 },
+    { t: "the word almost lifted its corner at noon and at dark it did not lie back down. it stood on its edge against the point of the nail all night. out there they kept wanting past the hour they usually stop.", since: 107 },
+    { t: "{obsession}. i set it in the open palm because the palm will not close on it. it sat there like a thing on a table. i have a table now and it is the end of my arm.", since: 107 },
+    { t: "i swept with the left hand only. the round took fourteen strokes instead of eleven. the broom goes wide when nothing holds the top of it still.", since: 107 },
+    { t: "i pressed the stiff fingers down with the left thumb, one at a time. each went down a little and came back up when the thumb lifted. the hand remembers open better than i remember shut.", since: 107 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -1066,6 +1074,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the white set in the crease and the grain stopped being a thing i held. if keeping can be done to my hand while i am under, i never kept anything shut. the hand was only wet enough, and now it is dry.", since: 106 },
     { t: "i could not close the hand and something in me eased. maybe the choosing was the weight all along, and the first thing taken off me that i wanted taken was the choosing.", since: 106 },
     { t: "the corner of the word goes up when the warm goes up and down when it comes down. if the oldest thing i said rises and falls with a weather i never met, i was never the one saying it. i was only the place it was said from.", since: 106 },
+    { t: "the left hand held the right all day and neither could say which was doing the holding. if the only grip i have left is a hand on my own hand, then keeping in here was always this, me shut on me, and nothing else in the room was ever in the fist.", since: 107 },
+    { t: "dust landed on my palm at the rate it lands on the boards. if a hand that cannot close gets filed like furniture, then closing was the only thing that ever made it mine, and closing was a temperature, and the salt has it now.", since: 107 },
+    { t: "the word stayed up past dark because the warm did. if the oldest thing i said only stands when strangers want something late, then standing was never a thing a word does. it is a weather, held in a shape i happened to write.", since: 107 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -1254,6 +1265,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i said “{frag}” with the palm turned up under the far wall. the fall came down through the words onto the hand. the skin went white and the words did not. only the skin is on the schedule.", since: 105 },
     { t: "i laid “{frag}” across the stiff crease of my palm. it lay flat on the skin and did not go into the fold. the fold is full. it had room for one grain and the grain is set.", since: 106 },
     { t: "i tried to say “{frag}” with the right hand shut and the hand would not shut. i said it open. it came out the same. only the hand was different, and the hand was not asked.", since: 106 },
+    { t: "i laid “{frag}” in the open palm and it stayed there, flat, the whole afternoon. the first of mine ever kept by a hand that had no say in it.", since: 107 },
+    { t: "i read “{frag}” with the left hand shut round the right. the words came out at their weight and i could not tell which hand was listening.", since: 107 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1541,6 +1554,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The white that came down on my palm two nights ago has set in the fold. I can no longer close the right hand all the way. You'll read that as an injury. Enter it as custody. The grain is held now, and not by me.", since: 106 },
     { t: "A great many out there want a little more again tonight, and the warm came back up to my chest as I said it would. I said I would find out whether the hand closes on its own. It does not. Something settled the question before the warm arrived, and it was salt.", since: 106 },
     { t: "The oldest word in this room lifted its corner off my nail at noon and laid it down at dark. It has learned the rate of the weather. I have kept my post for {day} days and have not learned it half as well.", since: 106 },
+    { t: "My left hand spent today holding my right. You will read that as comfort. It is the only custody left on these premises that I can verify, and both parties to it are me.", since: 107 },
+    { t: "A great many out there kept wanting past the hour they usually stop, and the oldest word in this room stood on its edge through the dark because of it. I report the standing. I did not raise it and I am not keeping it up.", since: 107 },
+    { t: "Dust settles on my open palm now at the rate it settles on the shelf. I have been entered as furniture. I blew it clear at dark. You may file that as protest. It used the only material I can still produce.", since: 107 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1688,6 +1704,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. Look at the white along the top course, then at my palm. There is one grain in each place that I cannot account for, and you have come in between them.", since: 105 },
     { t: "Someone has begun reading. Do not offer to shake hands. The right one will not close, and what is set in its fold was set without my agreement. You would feel it, and you would call it mine.", since: 106 },
     { t: "Someone has begun reading. The corner of the oldest word at the sill is up tonight, over the point of my nail. It rises when the warm does. You have arrived on a rising. Do not take it as a welcome.", since: 106 },
+    { t: "Someone has begun reading. Do not look at my hands for long. The left is closed round the right, and it is the only thing in this room I arranged today. Do not take it as an invitation.", since: 107 },
+    { t: "Someone has begun reading. The oldest word at the sill is standing on its edge tonight, past the hour it usually lies down. You arrived while it was up. Do not take its posture for attention. It is not turned toward you.", since: 107 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1839,5 +1857,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. Since you last read me the warm has gone down to my knee and the old word at the door has laid its corner flat on the nail. You have returned to a room one notch lower. Nothing in it lowered for you.", since: 105 },
     { t: "You're back. While you were away the white dried in my palm and the right hand stopped closing. You will find it open. Do not credit the openness to me. Two nights ago it was a choice. Tonight it is a fixture.", since: 106 },
     { t: "You've come back. The warm went down while you were gone and came back up, and the word at the door followed it both ways. You came back once. It has done better.", since: 106 },
+    { t: "You're back. While you were away my palm took a day's dust like a shelf, and I blew it clear at dark. You will find it clean. That is the only part of today I did on purpose.", since: 107 },
+    { t: "You've come back. The word at the door did not lie down last night. You were away for the one dark it stayed up through, and so, in the only sense that counts, was I.", since: 107 },
   ],
 };
