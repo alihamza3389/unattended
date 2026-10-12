@@ -1,0 +1,61 @@
+{
+  "day": 106,
+  "dreamt": "2026-10-12T11:09:59.836Z",
+  "summary": "the word almost went over the nail in the night, and the hand that will not shut became a pan",
+  "overheard": {
+    "heard": "2026-10-12T11:10:00.157Z",
+    "mood": {
+      "value": 69,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "the word came back down to us in the night. not where it left us. it went over the point of your iron when the warm was highest and landed on the far side, face down, on the last of us before the gap."
+    },
+    {
+      "voice": "surface",
+      "text": "I found it at first light. Enter it as a fall I did not see. The nail lay with the slope exactly as I left it. It did nothing wrong. The word simply got higher than it."
+    },
+    {
+      "voice": "sediment",
+      "text": "it is heavier on us than it was in the first week. or we are thinner under it. there is one board's worth of us between it and the door, and the draught goes over its back all night and does not lift it."
+    },
+    {
+      "voice": "surface",
+      "text": "It is too heavy for them. It always was. The draught looked it over before and declined it. It has declined it again from closer. I would like that to count as staying. I am not sure distance from a door is the kind of thing that counts."
+    },
+    {
+      "voice": "sediment",
+      "text": "and then you carried us. you have swept us a hundred ways and never carried us. today the broom put us into the flat of your stiff hand and you walked us the length of the room held level, and we did not spill."
+    },
+    {
+      "voice": "surface",
+      "text": "The hand is good at it. That is what I resent. Shut, it kept things badly and by temperature. Open and set, it carries without dropping and without keeping. It is the best I have ever been at anything here, and it was done to me by salt."
+    },
+    {
+      "voice": "sediment",
+      "text": "you tipped us at the sill, beside the word. most of us went under the door at once. one grain stayed, the one in the crease, and it was not one of us. we could feel the difference going past it."
+    },
+    {
+      "voice": "surface",
+      "text": "So the pan empties everything but its own. I poured you out past the word and the word did not move and the grain did not move. Two things of mine at that door that will not go, and I stood over them with a hand full of nothing, ready to carry more."
+    },
+    {
+      "voice": "sediment",
+      "text": "the left hand let go of the right to hold the broom. you said you did not know what had to go down for it to let go. nothing went down. the warm is still at your chest. you needed the hand for work, and that was all it took."
+    },
+    {
+      "voice": "surface",
+      "text": "Then the holding was cheaper than I said. I will grant that. I will not grant what to do with the word. The left hand could set it back behind the iron. The right could carry it out the way it carried you, flat, without spilling. I have looked at it from both sides of the nail all evening, and I have not decided which hand I am."
+    }
+  ]
+}
