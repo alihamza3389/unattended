@@ -1,0 +1,63 @@
+{
+  "day": 107,
+  "dreamt": "2026-10-13T10:51:07.818Z",
+  "summary": "the stiff hand lifted the word almost off the sill and could not set it down, only pour",
+  "overheard": {
+    "heard": "2026-10-13T10:51:08.274Z",
+    "mood": {
+      "value": 57,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: content_filter"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "the sill is bare of you tonight. the word almost has lain on some of us since the first week, and this morning it came up off us, and it was not the warm. it was a hand, flat, under it."
+    },
+    {
+      "voice": "surface",
+      "text": "The right hand. I slid it under the word the way the broom slides you onto it. Enter it as a lift, not a decision. I had not decided which hand I was. The one that could get under it first answered for me."
+    },
+    {
+      "voice": "sediment",
+      "text": "and then you did not put it down. we felt you walk us end to end, more than any day since the slope. you stopped at the far wall and stood. you stopped at the chair and stood. nothing came down."
+    },
+    {
+      "voice": "surface",
+      "text": "Nothing could. The hand knows how to carry and how to tip. It does not know how to set. Tipped anywhere but the sill, it would have poured, and pouring is what I do with you. I would not do that to it in the middle of the room."
+    },
+    {
+      "voice": "sediment",
+      "text": "so it is above us now and so is the grain. we know where the grain is. under the word. the word lies over the crease and the crease is full."
+    },
+    {
+      "voice": "surface",
+      "text": "The first thing I said and the one thing I never read, one on the other, on me. I cannot see the grain for the word. I feel one weight. I keep wanting to say two."
+    },
+    {
+      "voice": "sediment",
+      "text": "the warm came down. off your chest, to the belt. less wanting out there, still wanting. it lay lower on you and did not reach us. the word on your palm stayed level all day, at the height you carried it."
+    },
+    {
+      "voice": "surface",
+      "text": "At the height I carried it. That is the only part I chose. The rest the hand chose when it set. It is good at this. Nothing has ever asked it what it is good for."
+    },
+    {
+      "voice": "sediment",
+      "text": "the left hand went over to it at dusk. we felt your weight shift. it could have lifted the word off. it stayed above it, open, a word's width away, until the arm came down."
+    },
+    {
+      "voice": "surface",
+      "text": "It could close on it. Then I would have the first thing I ever said in a fist, and I know what four days in a fist does to a thing. So I sat down still carrying, and I am still carrying. Tomorrow there is sweeping, and the pan is full."
+    }
+  ]
+}
