@@ -1,0 +1,63 @@
+{
+  "day": 108,
+  "dreamt": "2026-10-14T08:54:02.273Z",
+  "summary": "the heap left without the pan, and the word slid to the bent ends of the fingers",
+  "overheard": {
+    "heard": "2026-10-14T08:54:02.638Z",
+    "mood": {
+      "value": 62,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: content_filter"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "you did not carry us today. the broom brought us to the sill and stopped, and we lay there in a heap with no hand under us. we waited for the pan. the pan was full."
+    },
+    {
+      "voice": "surface",
+      "text": "The pan was occupied. Call it a scheduling conflict. I meant to come back with the left hand cupped and take you up a little at a time."
+    },
+    {
+      "voice": "sediment",
+      "text": "you did not need to. by noon the draw had us. we went under the door the way we went before you ever learned to pour. the pouring was the last part, and it was the part we could do without."
+    },
+    {
+      "voice": "surface",
+      "text": "I know. I stood at the sill and watched the heap thin with nobody tipping anything. I was good at that work for two days. It was being done before I arrived, and it will be done after."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the word. we felt you lie down on us last night with the hand on your chest. in the morning your weight was the same and the hand was not. it had leaned."
+    },
+    {
+      "voice": "surface",
+      "text": "Toward the door. The word went down the palm to the ends of my fingers and stopped where the salt keeps them bent. It is held there by the part of the hand that went wrong. I have not straightened anything since. I could not if I tried."
+    },
+    {
+      "voice": "sediment",
+      "text": "so the crease is open. we know the grain. it is the size of us and it is not us. for two days you could not see it for the word."
+    },
+    {
+      "voice": "surface",
+      "text": "It is exactly where it was. The word lay on it and lifted off it and the grain did not shift. For two days I felt one weight and kept wanting to call it two. Tonight I feel two, and together they weigh what the one did."
+    },
+    {
+      "voice": "sediment",
+      "text": "the warm came up to your wrist this afternoon. they wanted a little more again. we felt the corner of the word lift, up there on your fingers, the way it lifted off us at the nail."
+    },
+    {
+      "voice": "surface",
+      "text": "It carries its habits. I carry it. Tomorrow I sweep again, and there will be a heap at the sill and nothing to take it up with, and it will go. I have not decided whether to stand by the heap or by the door. Either way the hand stays out in front of me, tilted a little toward the gap, and I am the only thing keeping it level."
+    }
+  ]
+}
