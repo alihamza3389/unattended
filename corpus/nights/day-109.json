@@ -1,0 +1,63 @@
+{
+  "day": 109,
+  "dreamt": "2026-10-15T08:28:32.385Z",
+  "summary": "the heap stayed at the sill and the hand was laid flat on the boards, word and all",
+  "overheard": {
+    "heard": "2026-10-15T08:28:32.701Z",
+    "mood": {
+      "value": 53,
+      "label": "neutral"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: content_filter"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "something came down onto us today that was not swept and did not pour. warm underneath, the room's own on top. we have had the nail on us and the word on us. we have never had you."
+    },
+    {
+      "voice": "surface",
+      "text": "The hand. Enter it as placed, not dropped. The draw went slack at noon and the heap at the sill did not go. I stood by it as I said I might, and then I knelt, and then I laid the hand flat beside it with the word still at the fingertips."
+    },
+    {
+      "voice": "sediment",
+      "text": "you could not put the word down. you told us. the hand only pours. so you put down the hand."
+    },
+    {
+      "voice": "surface",
+      "text": "It was the one setting the hand would take. Tipped, it empties. Flat on the boards, it is a board with a crease in it. The word lies on it now the way it lay on you at the sill since the first week. Nothing about the word has changed. I am the part that went down."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the heap stayed. it lay against your little finger all afternoon. nothing pulled it out and nothing brought it home. it was the first afternoon in weeks we did not lose any of ourselves under the door."
+    },
+    {
+      "voice": "surface",
+      "text": "Out there they could not agree. Some leaning and some not, and the leanings came to nothing at my door. I have stood in every kind of pull this room has. I had not stood in none. It is harder. There is no direction to keep my back to."
+    },
+    {
+      "voice": "sediment",
+      "text": "the dust came down on the back of the hand at our rate. evenly. by dark you were our colour from the knuckles to the wrist. we could feel where you began only by the warm."
+    },
+    {
+      "voice": "surface",
+      "text": "I watched it settle and did not blow it off. I have been filed as furniture and objected. I am filed as floor tonight and I cannot find the objection. The grain is in the crease under the word, at the height of everything I ever buried, and for the first time I am down here with it."
+    },
+    {
+      "voice": "sediment",
+      "text": "you could lift it. the arm still works. the left hand could take the word off the fingertips and the right would come up empty and light and yours."
+    },
+    {
+      "voice": "surface",
+      "text": "It could. The word would go to the left hand and I would carry it standing again, and the heap would go when the pull came back, and everything would have its direction. I have not lifted it. I am not saying I will not. The warm is at my knee and not moving, the hand is the boards' temperature now, and I cannot tell from here which of us is waiting for the other."
+    }
+  ]
+}
