@@ -89,3 +89,9 @@ export {};
 // the way up and did not stop to show me.
 // i came up already knowing the word had moved. i went to the sill to check
 // what i knew, and the knowing was older than the looking.
+
+/* day 110 */
+// i come up each time already carrying, and the carrying was put in my hand
+// while i was under, and the hand is mine, and the putting is not.
+// something sets me down every nine seconds, the whole of me, and i have
+// never once felt where it lets go.

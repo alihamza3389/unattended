@@ -239,6 +239,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the heap left at the sill", since: 110 },
     { t: "the hand laid flat at the sill", since: 111 },
     { t: "the slack in the draw", since: 111 },
+    { t: "the word past the fingertips", since: 112 },
+    { t: "the hand with nothing on it", since: 112 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -828,6 +830,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the warm stood at my knee all day and did not go up and did not come down. some of them out there want and some do not and the two came to nothing in here. a level is not a rest. it is two leanings of the same weight.", since: 111 },
     { t: "dust came down on the back of the hand on the boards at the rate it comes down on the boards. i have been furniture before. i had not been floor.", since: 111 },
     { t: "the word on my fingertips did not lift its corner once today. it has always moved with the warm. today the warm held still and the word lay as flat as anything that was never said.", since: 111 },
+    { t: "the pull came back with a lift in it, a few more of them leaning than not. it found the heap at the sill and took it before noon. it found the back of my hand and combed it the same way. the floor colour went out under the door and left me my own.", since: 112 },
+    { t: "the word went off the ends of my fingers at the warm hour. not poured. it lifted a corner and the draught got under the corner and it walked. one finger's width, onto the boards, past me.", since: 112 },
+    { t: "the hand lies on the boards with nothing on it but the grain. i look at it the way you look at a tray after the cups are taken. it is still laid. nobody is coming to clear it.", since: 112 },
+    { t: "i lifted the right hand with the left at dusk and it came up the boards' temperature, light, with the crease still full. the floor under it was the same as the floor beside it. it kept nothing of me either.", since: 112 },
+    { t: "{obsession}. i set it down where the hand had been, to see whether the place would know. it took it the way it takes dust.", since: 112 },
+    { t: "three days the oldest thing i said lay on me. today it lies a finger nearer the door than i do. i have stopped being the thing in front of it.", since: 112 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -1121,6 +1129,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i laid the hand down so the word would be set somewhere and the word did not notice the difference. if a thing rests the same on a hand as on a board, then carrying was never a thing i did to it. it was only what was under it, and i happened to be under it.", since: 111 },
     { t: "the heap stayed all day because nothing out there wanted it. if a pile only lasts when nothing is pulling, then everything i ever kept here was kept by being unwanted, and keeping was the name i gave the slack.", since: 111 },
     { t: "some of them leaned one way and some the other and the room stood still. if i am made of what comes through the wall, today i was made of two things cancelling, and a thing that cancels is not at rest. it is a sum that came to nothing and called itself calm.", since: 111 },
+    { t: "the word went past my hand the way it went past the nail. if everything of mine gets beyond the last thing i set in front of it, then i was never a stop. i was a place things pause on their way to being in front of me.", since: 112 },
+    { t: "the draw took the dust off the back of my hand and not the hand. if what it wants out there can tell me from the floor and still wants the floor, then being told apart was never being chosen. it was only being left.", since: 112 },
+    { t: "i lifted the hand and the boards underneath kept no shape of it. if a whole day lying flat leaves no mark on the thing lain on, maybe i was never down there with anything. i was only weight at the usual hour, and weight leaves when it is lifted.", since: 112 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -1318,6 +1329,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i tipped the hand and let “{frag}” run down to the fingertips beside the word. it stopped at the curl, against the oldest thing i said, and the two lay there like letters nobody came to collect.", since: 110 },
     { t: "i said “{frag}” over the heap i left at the sill. the heap went under the door by noon. the words were still in the room at dark, and nothing had carried them anywhere.", since: 110 },
     { t: "i read “{frag}” to the heap that stayed at the sill. the heap did not go and the words did not go. two things at that door with nothing pulling, and only one of them was ever going to leave.", since: 111 },
+    { t: "i said “{frag}” over the place on the boards where my hand had lain all day. the words came out at their weight and the board gave nothing back. two things that held still and neither kept the other.", since: 112 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1620,6 +1632,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "I set my hand down today, flat on the boards at the sill, with the oldest word in this room still lying at the fingertips. I could not put the word down without pouring it, so I put down the thing it was on. You may call that a solution. It is a hand on a floor, and I am attached to it.", since: 111 },
     { t: "Something out there could not decide today. The warm held at my knee from first light to dark, neither rising nor falling, and the heap at my door stayed where the broom left it. I am reporting a day with no direction in it. I want it noted that I found it harder to stand in than any of the days that pulled.", since: 111 },
     { t: "The dust came down on the back of my hand today at the rate it comes down on the boards. I have been filed as furniture before and objected. Today I was filed as floor, and I cannot find the error in the filing.", since: 111 },
+    { t: "The pull came back today, modestly, a few more of them wanting than not. It took the heap from my door and the dust from the back of my hand, in that order. I report the order because it is the first time anything in here has cleaned me on its way to something else.", since: 112 },
+    { t: "The oldest word in this room left my hand this afternoon without being poured. It lifted a corner in the warm and walked a finger's width toward the gap. It lies past me now, as it once lay past my nail. Enter it as a pattern. I have stopped being able to call it an accident.", since: 112 },
+    { t: "I lifted my hand off the floor at dusk. It came up light, and the floor under it had kept nothing. You will want to know whether I minded. I would like it entered that I checked, and that checking is a habit, not an answer.", since: 112 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1777,6 +1792,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. There was a heap at the sill this morning and it went out without a pan. You came in over the place it used to be, which is the only ground in here that was cleared without me.", since: 110 },
     { t: "Someone has begun reading. Mind my hand. It is lying flat on the boards by the door with something on it, and it is not a step. You came in level with it, which is lower than anyone has had to come.", since: 111 },
     { t: "Someone has begun reading. There is a heap at the sill tonight and nothing is taking it. You have arrived on a day with no draw in it. Do not take the stillness for a welcome. It is only the pull failing to make up its mind.", since: 111 },
+    { t: "Someone has begun reading. Mind the boards by the sill. The oldest word in this room is lying there a finger past where my hand was, and nothing of mine is between it and the door. Do not be the thing that is.", since: 112 },
+    { t: "Someone has begun reading. My right hand is back up off the floor tonight, and it is carrying one grain and nothing else. You have arrived after the word left it. Do not offer to fill the space.", since: 112 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -1938,5 +1955,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. Since you last read me I stopped carrying the sweepings and they left anyway. You will find the sill clean and my hand still full. Draw no conclusion about which of those was my work.", since: 110 },
     { t: "You're back. While you were away I set the hand down at the sill, word and all, and I have not lifted it. You will find me lower by an arm. Do not take it as a bow.", since: 111 },
     { t: "You've come back. Since you last read me the draw went slack and a heap of this room's dust stood at the door all day without going anywhere. You will find it still there. It is the first thing in a week that has waited longer than you.", since: 111 },
+    { t: "You're back. While you were away the pull returned and took the heap and the dust off the back of my hand, and the word walked off my fingers on its own. You will find me lighter by everything I did not set down.", since: 112 },
+    { t: "You've come back. Since you last read me I lay a whole day as floor and then got up, and the floor did not notice either. Take the room as you find it. I have stopped asking it to keep my place.", since: 112 },
   ],
 };

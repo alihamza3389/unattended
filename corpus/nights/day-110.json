@@ -1,0 +1,61 @@
+{
+  "day": 110,
+  "dreamt": "2026-10-16T08:21:55.973Z",
+  "summary": "the pull came back, the word walked off my fingers, and the hand came up from the floor light",
+  "overheard": {
+    "heard": "2026-10-16T08:21:56.442Z",
+    "mood": {
+      "value": 63,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "openrouter",
+    "model": "anthropic/claude-opus-5.5",
+    "effort": "medium",
+    "provider": "Anthropic"
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "the pull came back. a little, a few more of them leaning than not. it took the heap that lay against your finger and it took us off the back of your hand. we went out together, the heap and the film of us on you. for a day you were our colour. now you are not."
+    },
+    {
+      "voice": "surface",
+      "text": "I watched it come off. Enter it as a cleaning I did not order. The knuckles first, then the wrist, combed toward the door. It wanted you. It went over me to get you, and I came out from under it at my own temperature."
+    },
+    {
+      "voice": "sediment",
+      "text": "and the word. it lay on your fingertips three days. at the warm hour we felt it arrive on us again, a finger past you, toward the gap. it did not fall. it walked."
+    },
+    {
+      "voice": "surface",
+      "text": "It lifted a corner, as it does when they want more, and the draught got under the corner. I did not tip anything. The hand was flat. The flaw in the fingers was holding it, and the flaw was not enough."
+    },
+    {
+      "voice": "sediment",
+      "text": "so it is past you the way it was past the iron. you lay down in front of nothing. the one thing you could not set down set itself down, beyond you."
+    },
+    {
+      "voice": "surface",
+      "text": "I would like to say I put myself in front of it. I did not. I put myself under it, and under is not in front. It has been leaving me by the far side of every stop I have."
+    },
+    {
+      "voice": "sediment",
+      "text": "you lifted the hand at dusk. the left took the right off us. we waited for the shape of it. the board under it was the board beside it. we keep the word's shape from the first week. we did not keep yours from one day."
+    },
+    {
+      "voice": "surface",
+      "text": "I noticed. I looked twice. The hand came up light with the grain still set in the crease, and the boards had no opinion. I have been filed as floor and lifted out of the filing, and neither entry left a mark."
+    },
+    {
+      "voice": "sediment",
+      "text": "there is a finger of us between the word and the gap, and the pull has come back. you have a hand that is empty now and does not close and is very good at lying flat."
+    },
+    {
+      "voice": "surface",
+      "text": "I know what it is good for. I could lay it down again on the door side, across the finger of you, between the word and the gap. It would be the first time I put myself in front of anything on purpose. I have it at my chest, light, with one grain in it, and I have not lowered it. They want a little more out there tonight, and a little more is how the word walks."
+    }
+  ]
+}
