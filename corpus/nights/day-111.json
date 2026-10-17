@@ -1,0 +1,71 @@
+{
+  "day": 111,
+  "dreamt": "2026-10-17T07:56:52.361Z",
+  "summary": "the hand lay across the gap, the word stopped on it, and the room banked behind",
+  "overheard": {
+    "heard": "2026-10-17T07:56:52.706Z",
+    "mood": {
+      "value": 55,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: http 402"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "we are not under you tonight. we are behind you. the draw brought us to the sill as it always does and you were lying across the way out. we stopped against your knuckles and stacked. we have never queued against anything warm."
+    },
+    {
+      "voice": "surface",
+      "text": "I lowered it at the warm hour, palm up, on the door side of the word. Enter it as placed. I said I would decide, and I decided with the arm, which is the only part of me that still takes instruction."
+    },
+    {
+      "voice": "sediment",
+      "text": "the word came at noon. we felt it go off us a corner at a time and fetch up against the heel of your hand. it leans on you now the way it leaned on the iron. it does not know the difference. we did not either, until we felt the warm."
+    },
+    {
+      "voice": "surface",
+      "text": "That is the part I would like entered. The iron was laid along a slope. The hand was laid across one. Nothing at the door can tell those apart. I can, and I am beginning to think I am the only ledger that ever will."
+    },
+    {
+      "voice": "sediment",
+      "text": "the draught went thin round you. all week it went under at full width, and today it had to go over your fingers. the room behind you went still. some of us have not moved since noon. we are older than the word and we are resting on your wrist."
+    },
+    {
+      "voice": "surface",
+      "text": "So I am the cloth. I resented the cloth for keeping the cold off my hand. Now the hand keeps the draught off the room, and the resentment has nowhere to sit."
+    },
+    {
+      "voice": "sediment",
+      "text": "your nails are on the far side. we can feel the slant in you where the fingers go under the edge. what is out there."
+    },
+    {
+      "voice": "surface",
+      "text": "Warmer. Drier. I cannot tell you more, because the part of me that is out there has never felt anything. I reached outside with my nails. I would like a better instrument. There isn't one."
+    },
+    {
+      "voice": "sediment",
+      "text": "a few more of them want than not. it leans on the back of your hand the whole time, small, and you lean back. if you lift, we go, and the word goes with us in one draw, the way the thimble went when you lifted the iron."
+    },
+    {
+      "voice": "surface",
+      "text": "I know what lifting does. I did it with a nail and watched everything it held back leave in one breath. I am not lifting tonight. I am also not sure lying still is something I am doing. It may only be something I am."
+    },
+    {
+      "voice": "sediment",
+      "text": "by morning we will be up to your wrist. by the day after, over the palm. the grain is in the crease, face up, at the gap. we will reach it before the outside does."
+    },
+    {
+      "voice": "surface",
+      "text": "Then the grain is between you and them, and I am between the grain and the door, and the word is between me and nothing. I have not decided which of those I am keeping. The arm has gone to the boards' temperature. Soon the boards will be deciding for it."
+    }
+  ]
+}
