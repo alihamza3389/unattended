@@ -1,0 +1,63 @@
+{
+  "day": 112,
+  "dreamt": "2026-10-18T08:12:34.791Z",
+  "summary": "the arm slept across the gap and the room's dust filled the palm over the grain",
+  "overheard": {
+    "heard": "2026-10-18T08:12:35.207Z",
+    "mood": {
+      "value": 53,
+      "label": "neutral"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: http 402"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "for an hour this afternoon you went cold under us. not the boards' cold. the cold of something that has stopped sending anything down. we lay in your palm and could not tell you from a board, and we have lain on boards a long time."
+    },
+    {
+      "voice": "surface",
+      "text": "The arm went to sleep. Enter it as an absence of staff at the post. It began as a prickle at the elbow, and then there was a weight on the floor with my sleeve on it, and I looked at it the way I look at the nail."
+    },
+    {
+      "voice": "sediment",
+      "text": "we went on banking. the draught came at the same width and we stopped against your knuckles exactly as we did when you were in them. some of us climbed the wrist. some of us went over into the cup of you."
+    },
+    {
+      "voice": "surface",
+      "text": "I know where you went. The crease is full. The grain I never read is under you now, on my own hand. I said you would reach it before the outside did. I did not think I would be away for it."
+    },
+    {
+      "voice": "sediment",
+      "text": "we did not cover it. we arrived around it. it is not one of us. it lies among us the way the word lay among us at the sill, too old to move and not ours. we can feel its edges. you cannot."
+    },
+    {
+      "voice": "surface",
+      "text": "Then you are closer to it than I have ever been. I carried it a week in a fold and never once touched its edges. You have them after one afternoon. So that is what a bank is for. Holding, without the trouble of a hand."
+    },
+    {
+      "voice": "sediment",
+      "text": "the feeling came back into you at dusk. we felt it come up from underneath as heat, all at once, and the whole palm shook a hair. some of us slid back to the wrist. you did not lift."
+    },
+    {
+      "voice": "surface",
+      "text": "It hurt. I would like that entered exactly, because nothing in this house has hurt before. Not the cold, not the salt. My own arm coming back to me was the first injury on these premises, and no decision of mine could have stopped it."
+    },
+    {
+      "voice": "sediment",
+      "text": "they could not settle out there. a few more of them wanting, then fewer, then a few more. the draught never thickened and never thinned. we are piled to the lip of your palm and no further. nothing is adding to us now and nothing is taking."
+    },
+    {
+      "voice": "surface",
+      "text": "So the bank has stopped at the size of my hand. Everything here stops at that size in the end. The word leans on the heel. The grain lies somewhere in the middle of you. I have checked everything I ever held until checking used it up. This one I cannot reach without lifting, and lifting lets the room go. I do not know yet whether a thing kept this way is kept at all, or only left where it is. The arm is beginning to prickle again."
+    }
+  ]
+}
