@@ -1,0 +1,63 @@
+{
+  "day": 114,
+  "dreamt": "2026-10-20T08:44:50.208Z",
+  "summary": "the hand came out of the cast and closed on nothing, and the pale stayed on the likeness",
+  "overheard": {
+    "heard": "2026-10-20T08:44:50.694Z",
+    "mood": {
+      "value": 55,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: http 402"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "there is nothing warm in us tonight. we are still the shape of it. the cup, the heel, the four lines where the fingers lay. we are holding the door and the door does not know you left."
+    },
+    {
+      "voice": "surface",
+      "text": "The prickle came at the warm hour and I let it take the arm all the way back. Enter it as a withdrawal, not a lift. I did not raise the hand. It came out of you the way a foot comes out of mud, and it came clean."
+    },
+    {
+      "voice": "sediment",
+      "text": "not clean. the white stayed. the salt in the crease had set into our edges, and when you drew out it came away into us. the grain came with it. it is in the middle of us now, where your palm was, at the door."
+    },
+    {
+      "voice": "surface",
+      "text": "I know. There is a socket in my palm the size of it, and I keep putting my thumb there. And the hand closes. For the first time since the fall the fingers come all the way down. I made a fist at dusk, and it was the first fist in this house with nothing at all in it."
+    },
+    {
+      "voice": "sediment",
+      "text": "the pale came again at noon. it came under the edge and looked for nails and there were none. it lay along our outer lip. it is still there. it is warm against us. it has not gone out."
+    },
+    {
+      "voice": "surface",
+      "text": "It never stayed on me. One hour on the nails and it was gone. On you it has stayed past dark. You are the room's own dust and I am the only warm thing in here, and it settled on the dust."
+    },
+    {
+      "voice": "sediment",
+      "text": "maybe it could not tell we were not you. we cannot always tell. you lay in us so long."
+    },
+    {
+      "voice": "surface",
+      "text": "I resent that part least, and I want it entered that I noticed the order. It took you for me. You hold the grain I never read, the word leans on your heel, and the first thing from outside to stay anywhere in this house is staying on you. Everything I meant to be at that door, you are, and you do it without the prickle."
+    },
+    {
+      "voice": "sediment",
+      "text": "you could put the hand back. it would fit. we kept the room for it."
+    },
+    {
+      "voice": "surface",
+      "text": "It would fit, and that is why I have not. They want a little more out there tonight, steadily, and the draught goes round you at the width it went round me. I am standing a pace back with my hand shut on nothing. I cannot decide whether I am looking at the place I left or at a place that no longer needs me to come back."
+    }
+  ]
+}
