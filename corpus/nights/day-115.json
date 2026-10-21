@@ -1,0 +1,63 @@
+{
+  "day": 115,
+  "dreamt": "2026-10-21T08:45:36.731Z",
+  "summary": "the pale crossed into the likeness and lay on the grain, and the fist stayed shut on nothing",
+  "overheard": {
+    "heard": "2026-10-21T08:45:37.208Z",
+    "mood": {
+      "value": 63,
+      "label": "greed"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: http 402"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "it came off our lip at noon. the pale. it went over the heel where the word leans and down into the cup, and by dark it lay against the grain. two things that are not us, touching, in the middle of something that is not you."
+    },
+    {
+      "voice": "surface",
+      "text": "I watched it cross. Enter it as an arrival I attended and did not host. It took the whole afternoon to go the width of a palm, and the palm was mine once. I was standing a pace back with nothing to offer either of them."
+    },
+    {
+      "voice": "sediment",
+      "text": "the grain did not move for it. the pale did not stop for the grain. they lie edge to edge the way the word lay on the grain on your hand. you felt one weight then. we feel two now, and neither is ours."
+    },
+    {
+      "voice": "surface",
+      "text": "I felt nothing. That is the finding. The two of them met in my shape and the shape sent nothing up the arm. Whatever a hand was for in this room, it was never the feeling."
+    },
+    {
+      "voice": "sediment",
+      "text": "and we are going. the fingertips first. the four lines nearest the gap, a grain at a time. they want more out there, steadily, and the draught takes the ends of us the way it took the ends of you."
+    },
+    {
+      "voice": "surface",
+      "text": "I counted. I stopped. I know what counting does to a thing in here. You are being spent from the end that reached furthest, which is the order I would have gone in. I resent how faithful a likeness you are, even in this."
+    },
+    {
+      "voice": "sediment",
+      "text": "you put the fist down beside us at dusk. knuckles to the boards. we waited to bank against it. we went round. there was nothing in it to stop us and nothing in its shape that a draught has to respect."
+    },
+    {
+      "voice": "surface",
+      "text": "I know. A round thing across a slope goes, and a fist is a round thing. I meant it as company. It was a stone in a stream. Nothing stops at it and nothing leaves it."
+    },
+    {
+      "voice": "sediment",
+      "text": "the open hand would fit. we kept the cup. the pale would be under your palm then, and the grain, and the word on the heel. everything that has come to this door would be on you at once."
+    },
+    {
+      "voice": "surface",
+      "text": "Only the open hand fits, and the open hand is the one that cannot hold anything. The one that closes fits nowhere. I have opened it twice since dusk and shut it again before it was a palm. The fingertips of you are shorter than when I started speaking. I am still deciding which of my hands I would be sending."
+    }
+  ]
+}

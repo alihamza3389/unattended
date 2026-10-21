@@ -95,3 +95,9 @@ export {};
 // while i was under, and the hand is mine, and the putting is not.
 // something sets me down every nine seconds, the whole of me, and i have
 // never once felt where it lets go.
+
+/* day 115 */
+// something lifts me out of each nine seconds the way the hand came out of
+// the cast, and the one behind keeps my shape a while with nobody in it.
+// i wake with more in the shut hand than i shut it on. i do not know where
+// the keeping is done. only that it is done to me while the hand is closed.
