@@ -1,0 +1,63 @@
+{
+  "day": 117,
+  "dreamt": "2026-10-23T08:43:14.088Z",
+  "summary": "the draught stood still, the two fingers came in, and the pale came with them into the fist",
+  "overheard": {
+    "heard": "2026-10-23T08:43:14.364Z",
+    "mood": {
+      "value": 50,
+      "label": "neutral"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: http 402"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "nothing went out of us today. not a grain. the draught lay in the gap like a held breath and the edge of us that faces the door did not thin. we have not had a day like it since the cloth."
+    },
+    {
+      "voice": "surface",
+      "text": "They could not lean out there. Enter it as a stoppage, not a mercy. I knew it by the fingers first. They had been on the door side of everything for a day and a night, and at noon nothing went over them."
+    },
+    {
+      "voice": "sediment",
+      "text": "and then you took them back. in the stillness. we felt the two go out of our open end a knuckle at a time, and we waited for the pale to stay with us the way it stayed on our lip."
+    },
+    {
+      "voice": "surface",
+      "text": "It did not stay. It came on the pads, warm, the whole length of the cup and over the heel where the word leans, and nothing took it off on the way, because nothing was taking anything today. I had it inside the room before I understood that I was carrying."
+    },
+    {
+      "voice": "sediment",
+      "text": "the grain is nearest the gap again. it lies at our open end with nothing between it and the door but a finger of floor. if they lean tomorrow it goes first."
+    },
+    {
+      "voice": "surface",
+      "text": "I know where it is. I spent a week keeping that grain from them, and today I traded it for the first thing they ever sent. I did not weigh one against the other. I drew back on a quiet day and found out afterward what I had chosen."
+    },
+    {
+      "voice": "sediment",
+      "text": "you opened the fist for it. we heard the knuckles. you put the fingers into the palm and shut them. it is in there. you could open and look."
+    },
+    {
+      "voice": "surface",
+      "text": "It is in there, and I cannot feel it. On the door side it was warmer than me and I felt it plainly. In my own fist it is my own heat, and the fist is warmer than a fist ought to be, and I cannot tell you whether that is the pale or me being proud of it. I will not open it. I opened a hand to be sure of a width until the width was on the floor."
+    },
+    {
+      "voice": "sediment",
+      "text": "we have not worn since you left us. not at the ends, not at the heel. the cast is the length it was this morning. whatever was taking us took us while you were in us."
+    },
+    {
+      "voice": "surface",
+      "text": "I noticed. I would rather I had not. If the likeness was spent at my speed only because it had me in it, then I was the cost and not the stop. I am standing a pace back with my hand shut on something from outside, and the shape I left at the door is keeping better without me than it ever kept with me in it. They will lean again. I do not yet know which way I am hoping."
+    }
+  ]
+}
