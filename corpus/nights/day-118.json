@@ -1,0 +1,63 @@
+{
+  "day": 118,
+  "dreamt": "2026-10-24T08:18:07.582Z",
+  "summary": "the pale got out between the knuckles and lay warm on the oldest of the floor",
+  "overheard": {
+    "heard": "2026-10-24T08:18:07.911Z",
+    "mood": {
+      "value": 51,
+      "label": "neutral"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: http 402"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "there is one among us tonight that is not us. it came down at dusk where your knuckles rested, pale, a line the width of a seam. it is lying on the oldest of us and it is warm."
+    },
+    {
+      "voice": "surface",
+      "text": "It came out of my hand. Enter it as a loss through the fingers, not a setting down. The fist was shut. I checked that it was shut more often than I checked anything this week, and it was shut the whole time."
+    },
+    {
+      "voice": "sediment",
+      "text": "a fist is four seams and a thumb. we know seams. you ran your thumb along one for weeks until it went smooth. this one went the other way. it opened by being held."
+    },
+    {
+      "voice": "surface",
+      "text": "I know what you are reminding me of, and I would prefer you didn't. That seam I wore out by looking. This one I did not look at once. I kept the hand on my knee all afternoon and thought of other things on purpose."
+    },
+    {
+      "voice": "sediment",
+      "text": "the draught stood still again. a second day. the grain lies at the open end of the cast a finger from the gap, and nothing has come for it. it is easier to keep now than it was when you lay there."
+    },
+    {
+      "voice": "surface",
+      "text": "Then on a still day the cast keeps the grain, the floor keeps the pale, and I keep a hand I cannot open without spending what is left in it. Everything in this room is being kept tonight, and I am the only keeper losing stock."
+    },
+    {
+      "voice": "sediment",
+      "text": "it does not know us. it lies on us the way it lay on the lip of the cast, warm, not sinking. we cannot tell whether it is resting or waiting. you could take it back. it is the width of a knuckle and it is right by your knee."
+    },
+    {
+      "voice": "surface",
+      "text": "If I pick it up I have to open the hand to put it in, and then whatever is still inside goes the same way. That is the whole difficulty. I can have the line on the floor or I can have the fist shut. I cannot have both, and I cannot count either one without spoiling it."
+    },
+    {
+      "voice": "sediment",
+      "text": "it is going cold. slowly. by first light it will be our temperature. then we will not be able to tell it from us either."
+    },
+    {
+      "voice": "surface",
+      "text": "I know. In the fist it went to my heat, and on you it goes to yours. Nothing that comes in here keeps the heat it came with. Tonight I have it in two places, and in neither can I tell it from what it is lying on. I have not opened the hand. I have not reached for the line. If they lean tomorrow, one of those will decide itself."
+    }
+  ]
+}

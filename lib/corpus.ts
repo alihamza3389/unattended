@@ -255,6 +255,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the open edge of the cup", since: 118 },
     { t: "the pale in the fist", since: 119 },
     { t: "the cast that stopped wearing", since: 119 },
+    { t: "the pale at the seam of the fist", since: 120 },
+    { t: "the mark the knuckle left", since: 120 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -892,6 +894,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "{obsession}. i held it by the cast with the draught at nothing. it stayed where i held it. nothing in here moves on a level day, and i could not tell staying from being left.", since: 119 },
     { t: "i opened the fist for the pale and shut it again with the pale inside. the fist has something in it for the first time since it learned to close, and the something came from the side i never get to.", since: 119 },
     { t: "the inside of the fist went warmer by dark than a fist goes. i did not open it to check. i know what checking costs, and it would go out of a hand faster than a grain.", since: 119 },
+    { t: "the pale came out between my knuckles while the fist was on my knee. a thin line along the seam of two fingers. i shut harder. a fist has seams. i had been thinking of it as a wall.", since: 120 },
+    { t: "the draught stood in the gap a second day and the grain lay at the open end of the cast and did not go. two still days, and the thing nearest the door is the thing i stopped guarding.", since: 120 },
+    { t: "{obsession}. i held it against the shut fist to warm it. the fist gave it nothing. whatever heat is in there is spoken for.", since: 120 },
+    { t: "i rested the fist on the boards and lifted it and there was a pale mark the width of a knuckle where it had been. the first thing from out there to touch this floor, and it got there through me.", since: 120 },
+    { t: "the fist is the same heat as the rest of me by dark. i cannot find the pale by warmth anymore. i find it by keeping the hand shut, which is the old way, and the old way never once told me anything.", since: 120 },
+    { t: "half of them leaning out there and half not, and the room did not tilt. on a day like this the only direction in here is my hand, and it points at nothing, shut.", since: 120 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -1208,6 +1216,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the pale came in on my fingers on a day nothing was pulling. if the only thing that ever crossed toward me crossed when the draught had stopped, then it was never sent. it was only nearer my side when the pushing quit, and i was what happened to be there.", since: 119 },
     { t: "the fist is warmer than it was and i call the warmth the pale. if a hand shut on something from outside cannot tell that something from its own heat, then i have never once held a thing from out there. i have held a temperature and given it their address.", since: 119 },
     { t: "the cast stopped wearing the day i took my fingers out. maybe it was never being spent for wanting. maybe it was being spent for having me in it.", since: 119 },
+    { t: "the pale got out between my fingers while the fist was shut. if a thing can leave a closed hand by the seams, then shutting was never a door. it was only a slower gap, and i have been calling the slowness holding.", since: 120 },
+    { t: "the fist went to my own heat and the pale went with it. if what came from out there can become my temperature in an afternoon, maybe everything i call mine came in the same way, and i only remember the ones that arrived recently.", since: 120 },
+    { t: "the grain lay a finger from the door two still days running and nothing took it. if the thing i guarded is as safe unguarded on a quiet day, the guarding was never what kept it. the wanting out there kept it, by not wanting.", since: 120 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -1418,6 +1429,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i laid “{frag}” at the open edge of the cup where the fingers wore off. it lay beside the grain and the pale, a third thing that was not me, in the last of the shape that was.", since: 118 },
     { t: "i said “{frag}” over the fist with the pale in it. the words came out at their weight. for the first time the fist was warmer than the words.", since: 119 },
     { t: "i laid “{frag}” at the open end of the cast where my two fingers had been. on a level day it stayed exactly there. nothing pulled at it and nothing pulled at me, and we lay a finger apart like that until dark.", since: 119 },
+    { t: "i said “{frag}” with the fist pressed to my mouth and the pale inside it. the words went round the knuckles. nothing of theirs came out with mine.", since: 120 },
+    { t: "i laid “{frag}” over the pale mark the fist left on the boards. it covered the mark exactly. one of mine and one of theirs, and only one of them stains.", since: 120 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1744,6 +1757,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Nothing was drawn through my door today. Out there they could not settle which way to lean, and the draught stood in the gap like someone in a doorway who has forgotten the errand. I took my two fingers back in the quiet. Something warm came with them. I am reporting the first import on these premises, and I want it noted that it arrived on the one day nothing was moving.", since: 119 },
     { t: "My right hand is closed again, and this time it is closed on something. It is pale, it came from the far side, and I cannot feel it from the inside of my own fist. You will want me to show you. I spent weeks learning what showing does to a thing in here.", since: 119 },
     { t: "The likeness at my door kept its length today. It only wore down while I lay in it. Draw your own conclusion about what it was being spent for. I have drawn mine and filed it away from the light.", since: 119 },
+    { t: "I kept my hand shut all day on the one thing that came in from outside. By evening there was a pale line on the boards where the fist had rested. Enter it as a leak. I had been describing the fist as a vault, and I would like that description withdrawn.", since: 120 },
+    { t: "A second day with no lean in it. The draught stands in my doorway like someone who cannot recall why they came. The grain I spent a week guarding lies a finger from the gap, unguarded, and nothing takes it. Draw the conclusion yourself. I would rather not be the one who writes it down.", since: 120 },
+    { t: "The warmth in my fist has gone down to my own temperature. I can no longer prove anything is in there. I am keeping the hand shut anyway, which is what I did before, with less.", since: 120 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1917,6 +1933,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. My right hand is half shut and half in the doorway. Do not offer to take the half that looks free. It is not free. It is holding nothing, at my end, on purpose.", since: 118 },
     { t: "Someone has begun reading. Look at the door if you like. The cast there has stopped wearing, and the draught is standing still. Do not look at my right hand. It is shut on the only thing in this house that came from your side, and I have not decided whether you get it back.", since: 119 },
     { t: "Someone has begun reading. You have arrived on a day nothing leaves. The dust lies where it fell and the gap goes neither way. If anything is moving in here tonight, it is in my fist, and I am not opening it for an audience.", since: 119 },
+    { t: "Someone has begun reading. There is a pale mark on the boards by my knee the width of a knuckle. Do not step on it. It is the only thing on this floor that did not come from this room, and it came out of my hand.", since: 120 },
+    { t: "Someone has begun reading. My hand has been shut for two days. Look at the knuckles if you like. Something has been getting out between them, and you may watch it go. I cannot stop it, and watching is the only part of this either of us is equipped for.", since: 120 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -2094,5 +2112,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back. Since you last read me the pale has stopped lying beside the grain and started leaning on my fingertips. You were gone long enough for something to choose a side of me. It was not the side facing you.", since: 118 },
     { t: "You're back. While you were away I drew two fingers in from the door and the pale came in on them, on a day nothing out there was pushing. You will find my hand shut. I have finally been handed something from outside, and it was not by you.", since: 119 },
     { t: "You've come back. The likeness at the door is exactly the length you left it, for the first time in days. Nothing wore it while you were gone. You may take that as a compliment to your absence. I take it as information about mine.", since: 119 },
+    { t: "You're back. While you were away the fist I closed on the pale went to my own heat, and some of what was in it came out along the fingers onto the floor. You will find the hand still shut. Do not ask what it is holding. I would have to open it to say, and then I would know less.", since: 120 },
+    { t: "You've come back on a second still day. Nothing has left by the door since you went. Something has left by my hand. I mention the difference because you will look at the door first, as I did.", since: 120 },
   ],
 };
