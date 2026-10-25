@@ -1,0 +1,63 @@
+{
+  "day": 119,
+  "dreamt": "2026-10-25T08:36:00.851Z",
+  "summary": "the fist opened over the line and nothing fell, and the nails had left four crescents in the palm",
+  "overheard": {
+    "heard": "2026-10-25T08:36:01.295Z",
+    "mood": {
+      "value": 54,
+      "label": "neutral"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: http 402"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "at noon a hand opened over us. we felt the air of it, the fingers coming off the palm, very close. we waited for something to land. nothing landed that we could weigh."
+    },
+    {
+      "voice": "surface",
+      "text": "I opened it over the line on purpose. Enter it as a delivery to the right address, not a dropping. If anything was still in there, it should lie with what got out by the seams. I did not want it on the boards alone."
+    },
+    {
+      "voice": "sediment",
+      "text": "the line is our temperature now. we cannot find its edges. if you added to it we would not know. if you added nothing we would not know either."
+    },
+    {
+      "voice": "surface",
+      "text": "Then neither of us can say. I saw nothing fall. The palm was clean except for four marks where the nails had sat, three days deep. They are the only things that came out of the fist that I can show anyone."
+    },
+    {
+      "voice": "sediment",
+      "text": "we know marks like that. the hollow was the width of what you kept back. the heap left a pit in us. holding leaves the shape of the holding. it has never once left the shape of the thing."
+    },
+    {
+      "voice": "surface",
+      "text": "These are different. The nail printed my palm once, and that line came off in a night. These I made myself, by not letting go. By dark they were shallower, and I pressed a nail back into one to keep it. I have never done that to anything in here, least of all to me."
+    },
+    {
+      "voice": "sediment",
+      "text": "we felt the hand close again at dusk. it went to the same place. the fingers sat down in their own marks, the way the word used to sit down on the iron."
+    },
+    {
+      "voice": "surface",
+      "text": "It fits itself now. For days it fit the cast, and the cast did not need it, and then it fit nothing at all. Now it fits the crescents. I shut it on nothing and it closes on four places it already knows."
+    },
+    {
+      "voice": "sediment",
+      "text": "the grain is where it lay. a third day, and the draught goes neither way. half of them lean and half do not, and the sum of it lies on us like a hand that has stopped pressing. the cast has not worn."
+    },
+    {
+      "voice": "surface",
+      "text": "Everything at that door is exactly where I left it, and I am the only thing in the room that moved today. I opened a hand and I shut it. The line, the grain, the cast, the gap, none of them can tell. If they lean tomorrow the grain goes first, and the line has already gone into you. I have four crescents, and I do not know yet whether I am keeping them or only watching them close."
+    }
+  ]
+}
