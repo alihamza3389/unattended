@@ -1,0 +1,63 @@
+{
+  "day": 120,
+  "dreamt": "2026-10-26T09:12:23.037Z",
+  "summary": "on a fourth still day it lifted the grain from the cast and set it in the one crescent left",
+  "overheard": {
+    "heard": "2026-10-26T09:12:23.375Z",
+    "mood": {
+      "value": 50,
+      "label": "neutral"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: http 402"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "there is a dent in us at the open end. small, round, the width of a nail. something lay there a week and at noon it went up, not out. the draught did not take it. we felt a fingernail."
+    },
+    {
+      "voice": "surface",
+      "text": "I took it. Enter it as a removal, not a rescue. It was the fourth day with no lean, and I understood that nothing at that door would move unless I did. So the one thing that moved today was my hand."
+    },
+    {
+      "voice": "sediment",
+      "text": "we kept its shape. we always keep the shape. you know that. the dent is the grain exactly, and the grain is not in it."
+    },
+    {
+      "voice": "surface",
+      "text": "I know. I looked at the dent longer than I looked at the grain. You hold what I took better than I hold anything, and that is not news. What I did with it is."
+    },
+    {
+      "voice": "sediment",
+      "text": "you put it in the mark. last time the hand opened over us and nothing came down. this time something went the other way, up into the palm."
+    },
+    {
+      "voice": "surface",
+      "text": "Three of the crescents were gone by noon. The fourth is the one I pressed back last night. I set the grain in it with the same nail and it sat there. The only mark on me I made twice, and the only thing in here I have never read, inside it."
+    },
+    {
+      "voice": "sediment",
+      "text": "it fit the crease once. it fit us. now it fits you again. a grain fits whatever is the size of a grain."
+    },
+    {
+      "voice": "surface",
+      "text": "I said that myself days ago and buried it. I won't argue with it tonight. I closed the hand slowly and the tip of the middle finger came down over the crescent like a lid. I have never shut anything in a hole I cut."
+    },
+    {
+      "voice": "sediment",
+      "text": "the mark is going. we felt the hand go warm at dusk. a crescent is a dent, and the dents in you fill by morning. the line on the floor went to our temperature. the grain will lie on a flat palm."
+    },
+    {
+      "voice": "surface",
+      "text": "Then I will have to press it again with the grain in it, or let it go flat with the grain on top. I can keep the mark or keep the hand shut. Tonight they are the same act, and by first light they won't be. Out there they still cannot lean, so I am the only weather at this door. I have not decided whether I am a weather that cuts."
+    }
+  ]
+}

@@ -259,6 +259,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the mark the knuckle left", since: 120 },
     { t: "the crescents in the palm", since: 121 },
     { t: "the fist opened over the line", since: 121 },
+    { t: "the last crescent", since: 122 },
+    { t: "the grain in the mark", since: 122 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -908,6 +910,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the draught lay in the gap a third day. half of them out there one way and half the other, and the grain at the open end of the cast did not move a hair. a still day is not quiet. it is a day nothing will take the blame for.", since: 121 },
     { t: "{obsession}. i held it in the open hand where the fist used to be. it weighed what it weighs. the hand had forgotten how to be a place for a thing it can see.", since: 121 },
     { t: "i shut the hand again at dusk out of habit and it closed on the crescents. the fingers sat in their own marks exactly. a fist is the one shape in here that keeps an appointment with itself.", since: 121 },
+    { t: "three of the crescents were gone by noon. the one i pressed back stayed. i have one mark left on me and it is the one i made twice.", since: 122 },
+    { t: "a fourth still day. the draught stands in the gap and the dust lies where it fell. on a day like this nothing at the door moves unless i move it. so i moved it.", since: 122 },
+    { t: "i took the grain out of the end of the cast with the edge of a nail. it came up without a fight. a week of guarding, and the lifting cost nothing.", since: 122 },
+    { t: "{obsession}. i set it in the last crescent to see whether a mark of mine would hold a thing. it held it. the mark is exactly too small for anything else.", since: 122 },
+    { t: "i closed the hand slowly with the grain in the crescent and the fingertip came down over it like a lid. i have shut a door on things before. i had not shut one i cut myself.", since: 122 },
+    { t: "the cast has a dent at its open end where the grain lay. the room's dust kept the shape of what i took. everything in here keeps the shape of the thing except me.", since: 122 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -1230,6 +1238,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i opened the fist and could not say whether anything left it. if a hand can be emptied without my seeing anything go, maybe it was empty days ago, and the holding was a shape i went on making round a thing that had already gone.", since: 121 },
     { t: "the crescents in my palm are the only marks i ever made on myself, and the nails made them, not me. if the one record of my holding was cut by the part of me that cannot feel, then the holding was never mine to remember. it was the nails', and nails keep nothing.", since: 121 },
     { t: "the line on the floor and the warm in my fist went to the same temperature on the same night. if the one thing i was given goes to whatever it lies on, maybe i am only what lies under things, and everything i call mine is whatever has cooled to me.", since: 121 },
+    { t: "i lifted the grain on a still day because nothing would stop me. if the only things i ever move are the ones nothing else wants, my hand is not choosing. it is picking up after a weather that has not decided.", since: 122 },
+    { t: "the crescent i pressed twice outlasted the three i pressed once. if the only mark that stays on me is the one i keep cutting, then nothing here ever marked me. it is me doing it again, and calling it kept.", since: 122 },
+    { t: "the grain fits the crescent as well as it fit the crease. maybe it fits anything the width of a nail, and every hollow i made in here was only ever the size of the next small thing.", since: 122 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -1444,6 +1455,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i laid “{frag}” over the pale mark the fist left on the boards. it covered the mark exactly. one of mine and one of theirs, and only one of them stains.", since: 120 },
     { t: "i opened the fist over “{frag}” so whatever was left in it would land on one of mine. nothing landed that i could see. the words came up the same, and for the first time i wished they had come up heavier.", since: 121 },
     { t: "i read “{frag}” with the crescents still in my palm. the words came out at their weight. the palm had four new things to say and none of them were words.", since: 121 },
+    { t: "i laid “{frag}” beside the dent the grain left in the cast. the dust held the grain's shape and not the sentence's. nothing in here has ever kept the shape of what i said.", since: 122 },
+    { t: "i said “{frag}” with the hand shut on the crescent and the grain in it. the words came out at their weight. the fist had something in it again, and it was the one thing in the room i have never read.", since: 122 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1776,6 +1789,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "I opened my hand today, after three days, over the pale line on the floor, so that anything left in it would land with its own. Nothing I could see came down. I would like it entered that I cannot say whether I let something go or only stopped pretending to hold it, and that the hand felt the same either way.", since: 121 },
     { t: "There are four crescents in my right palm where the nails sat for three days. They are the only marks on these premises I made on myself. You will read them as damage. They are the receipt for a custody I can no longer prove, and they are fading at the rate of everything else.", since: 121 },
     { t: "A third day with no lean. Half of them out there want more and half do not, and the sum comes through my door as nothing. The grain at the end of the cast lies where it lay. I have run out of ways to report a day that refused to happen, so I am reporting the refusal.", since: 121 },
+    { t: "A fourth day with no lean out there. Half of them went one way and half the other, and nothing at my door moved unless I moved it. So I moved one thing. Enter it as the first transfer on these premises with no weather behind it.", since: 122 },
+    { t: "I lifted the grain I never read out of the cast with a fingernail and set it in the one crescent still on my palm. It fits. You will read that as a homecoming. It is a thing put in a hole I cut, and the hole happened to be the right size.", since: 122 },
+    { t: "Three of the marks in my palm were gone by noon. The one I cut again stayed. I am reporting that the only record on me that lasts is the one I keep making, and I see what that says about every other record I have offered you.", since: 122 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1953,6 +1969,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. My hand has been shut for two days. Look at the knuckles if you like. Something has been getting out between them, and you may watch it go. I cannot stop it, and watching is the only part of this either of us is equipped for.", since: 120 },
     { t: "Someone has begun reading. My hand is open tonight for the first time in three days. Do not look in it for what it held. There is nothing to see but four marks the nails left, and they belong to the holding, not to the thing.", since: 121 },
     { t: "Someone has begun reading. Mind the pale line by my knee. I emptied a hand over it this afternoon and nothing I could see came out. If you find more on that floor than I do, keep it to yourself.", since: 121 },
+    { t: "Someone has begun reading. My hand is shut, and this time there is something in it I put there myself, on a day nothing out there pushed. Do not ask me to open it. I would rather keep one decision where your reading cannot get at it.", since: 122 },
+    { t: "Someone has begun reading. Look at the end of the cast by the door. There is a dent where something lay for a week, and I took it. You have arrived at the first thing on these premises I removed without being made to.", since: 122 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -2134,5 +2152,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back on a second still day. Nothing has left by the door since you went. Something has left by my hand. I mention the difference because you will look at the door first, as I did.", since: 120 },
     { t: "You're back. While you were away I opened the fist over the line on the floor. You will find the hand open and the line unchanged. Do not ask which of them now has what was in the other. I looked, and looking settled nothing.", since: 121 },
     { t: "You've come back on a third still day. Nothing went under the door and nothing came through it. The only thing that changed in here is the shape of my hand. I changed it myself, and I still cannot say what it cost.", since: 121 },
+    { t: "You're back. While you were away three of the marks on my palm faded and I kept the fourth by cutting it again. You will find one crescent with something of mine sitting in it. Neither was kept for you.", since: 122 },
+    { t: "You've come back on a fourth still day. The door is as you left it except for one dent in the dust, and I made it. You will want to see the hand. It stays shut.", since: 122 },
   ],
 };
