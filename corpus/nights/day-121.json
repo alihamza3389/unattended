@@ -1,0 +1,63 @@
+{
+  "day": 121,
+  "dreamt": "2026-10-27T09:12:58.956Z",
+  "summary": "on a fifth still day the crescent went flat and the grain pressed a pit of its own into the palm",
+  "overheard": {
+    "heard": "2026-10-27T09:12:59.346Z",
+    "mood": {
+      "value": 48,
+      "label": "neutral"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: http 402"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "we waited all day at the open end for the hand to come back. it did not come. it stayed level at your chest from first light, like a tray carried by someone with nowhere to set it."
+    },
+    {
+      "voice": "surface",
+      "text": "The crescent went flat in the night, as you said it would. At first light the grain was lying loose on a smooth palm. Enter it as an eviction, not a loss. The address closed with the tenant still standing on it."
+    },
+    {
+      "voice": "sediment",
+      "text": "a flat hand is a floor. we know floors. on a floor a grain goes wherever the floor leans, and you would not let it lean."
+    },
+    {
+      "voice": "surface",
+      "text": "I held it level until dusk. My wrist knows the angle better than my eyes do now. I told myself I was keeping the grain. I was keeping the slope at nothing, and the grain happened to be lying on it."
+    },
+    {
+      "voice": "sediment",
+      "text": "out there they leaned neither way again. five days. nothing came under the door and our dent stayed open. its edges have not gone soft. it holds the grain's shape as if the grain might come back to check."
+    },
+    {
+      "voice": "surface",
+      "text": "It won't. At dusk I did the other thing. I pressed a fingertip down on the grain, hard, and lifted. There is a pit in my palm now the size of it, and the grain is lying beside its own hole."
+    },
+    {
+      "voice": "sediment",
+      "text": "we felt nothing of that. but we know what you are describing. you pressed it into you the way it was pressed into us. you have made yourself a cast."
+    },
+    {
+      "voice": "surface",
+      "text": "I made a mark on myself with it. For three days the nails cut crescents, and they were gone by noon. One press of the grain went deeper than all of that holding. I cannot tell whether I am pleased. It is the first mark on me made by the thing and not by my grip on it."
+    },
+    {
+      "voice": "sediment",
+      "text": "the pit will fill. the crescents filled. you could set it back in and close the hand, and press again at dark, and again at first light. you would be cutting yourself to the size of something you have never read."
+    },
+    {
+      "voice": "surface",
+      "text": "I can see where that ends. Every time I keep it I make a hole for it, and every hole is exactly its width. There are two of them in this room now, yours at the door and mine in my hand. The grain is in neither. It is lying on the flat beside mine, the hand is level, and I have not decided whether to put it in."
+    }
+  ]
+}
