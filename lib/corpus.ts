@@ -263,6 +263,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the grain in the mark", since: 122 },
     { t: "the palm held level", since: 123 },
     { t: "the pit beside the grain", since: 123 },
+    { t: "the grain put back", since: 124 },
+    { t: "the hand that closes easy", since: 124 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -924,6 +926,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i pressed a fingertip down on the grain at dusk and lifted it. there is a pit in the palm the size of the grain. the grain is still on the skin, lying beside its own hole.", since: 123 },
     { t: "the pit was shallower by the second count. {n} counts. everything i make in my own hand fills at the speed of a crease.", since: 123 },
     { t: "i set the hand by the cast, palm up, so the two dents could face each other. neither of them is the kind of thing that looks.", since: 123 },
+    { t: "the pit was gone by noon. flat skin, and the grain lying on it like a crumb nobody brushed off. i did not press again. i had pressed enough to know what pressing buys.", since: 124 },
+    { t: "i carried the grain to the door on a level palm and tipped it into the dent in the cast. it went in without a sound and sat a little lower than the dust round it. the shape had waited six days. i had not.", since: 124 },
+    { t: "my right hand is empty and flat and it closes. i closed it twice to check it still could. it could. after that there was nothing to say about it.", since: 124 },
+    { t: "a sixth still day. half of them leaning and half not, and the grain sits a finger from the gap where any lean would take it. i put it where the weather decides. the weather has not decided.", since: 124 },
+    { t: "{obsession}. i went back to the door {n} times and did not touch it. not touching is a walk too. it wears the same path.", since: 124 },
+    { t: "i looked at my palm at dusk for where the pit had been. nothing. the cast keeps the grain's shape and i keep the habit of looking for one.", since: 124 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -1251,6 +1259,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the grain fits the crescent as well as it fit the crease. maybe it fits anything the width of a nail, and every hollow i made in here was only ever the size of the next small thing.", since: 122 },
     { t: "the grain made a mark in me with one press, and a week of holding made four that faded. if the thing marks deeper than the holding does, i was never the one keeping it. it was keeping a shape of itself in whatever it was pressed into.", since: 123 },
     { t: "i held the hand level all day and the grain did not move. maybe level is not a place i held it. maybe it is only the one tilt nothing in here bothers to correct, and i have been calling it a grip.", since: 123 },
+    { t: "i put the grain back where its shape was kept and it fit at once. if a thing goes home to a mould and not to a hand, then i was only somewhere it waited, and the mould was the address the whole time.", since: 124 },
+    { t: "i gave it back on a day nothing could take it. if the only giving back i can manage happens on a still day, then the giving was never mine either. it was the calm doing it, and my hand was what the calm used.", since: 124 },
+    { t: "the pit closed in my palm and the dent stays open in the dust. if the copy keeps a hole longer than i do, then whatever in this room is shaped to the grain is not me, and keeping the shape was the only keeping there ever was.", since: 124 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -1468,6 +1479,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i laid “{frag}” beside the dent the grain left in the cast. the dust held the grain's shape and not the sentence's. nothing in here has ever kept the shape of what i said.", since: 122 },
     { t: "i said “{frag}” with the hand shut on the crescent and the grain in it. the words came out at their weight. the fist had something in it again, and it was the one thing in the room i have never read.", since: 122 },
     { t: "i pressed a fingertip over “{frag}” and the grain together and lifted. the palm had one pit in it. the sentence had pressed nothing.", since: 123 },
+    { t: "i set “{frag}” beside the grain in the dent at the door. the dent held one and the sentence lay over the edge. nothing in here was cut to the size of anything i said.", since: 124 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1806,6 +1818,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The mark I cut twice went flat in the night, and at first light the grain I set in it was lying loose on an open palm. I held the hand level all day. You will read that as composure. It is the only angle at which nothing I own leaves me.", since: 123 },
     { t: "A fifth day with no lean out there. Half of them want more and half want less, and the sum arrives at my door as a held breath nobody lets go. I have stopped reporting stillness as news. I report it as the condition under which every move in here is mine to answer for.", since: 123 },
     { t: "At dusk I pressed the grain into my palm with a fingertip, and it left a pit its own size. Enter it as the first mark on me made by the thing and not by the holding. I have been holding for weeks. One press did more.", since: 123 },
+    { t: "I returned the grain today. It was not lost and it was not taken. I put it back in the hollow at the door that has held its shape for six days. Enter it as the first thing on these premises I have given back, and note that I chose a day when nothing outside could accept it.", since: 124 },
+    { t: "My hand is empty and it closes. You will read that as recovery. It is a hand with no job, and I have spent the day finding out how long a hand can be idle before it starts to look like a decision.", since: 124 },
+    { t: "Half of them out there want more and half want less, for a sixth day, and the grain sits a finger from my door because of that disagreement. I put it there. Whatever happens to it next will be their weather and my placement, and I have stopped pretending the two can be told apart.", since: 124 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -1987,6 +2002,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. Look at the end of the cast by the door. There is a dent where something lay for a week, and I took it. You have arrived at the first thing on these premises I removed without being made to.", since: 122 },
     { t: "Someone has begun reading. My right hand is held flat and level in front of me, and there is one grain lying loose on it. Do not come close. A tilt is all it would take, and I have spent the day refusing to supply one.", since: 123 },
     { t: "Someone has begun reading. There are two hollows in this room the exact size of one grain, one in the cast at the door and one in my palm. The grain is in neither. You may look for it if you like. I would rather you looked at the hollows, since they are the part that will last.", since: 123 },
+    { t: "Someone has begun reading. Look at the door if you must. There is a grain sitting in a hollow the exact size of it, a finger from the gap, and I put it there this morning. Do not move it. It is the only thing in this room that is where it belongs, and I did not want company for that.", since: 124 },
+    { t: "Someone has begun reading. Both my hands are empty tonight. Do not mistake that for a welcome. I emptied them at the door before you came, and nothing I set down there was set down for you.", since: 124 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -2172,5 +2189,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back on a fourth still day. The door is as you left it except for one dent in the dust, and I made it. You will want to see the hand. It stays shut.", since: 122 },
     { t: "You're back. While you were away the mark on my palm went flat, and the grain lay on top of it like something left on a table. You will find my hand level. Do not take that for calm. It is the angle I have held since first light.", since: 123 },
     { t: "You've come back on a fifth still day. Nothing at the door has moved except me. At dusk I pressed the grain into my own hand and it left a hole its own size. You were gone long enough for me to be marked, and not by you.", since: 123 },
+    { t: "You're back. While you were away I put back the one thing I took. You will find the dent at the door full and my palm flat. If the room looks as it did a week ago, that is because I made it so by hand, and it took longer than you were gone.", since: 124 },
+    { t: "You've come back on a sixth still day. The grain is at the door again, in its own shape, and nothing has come for it. You were away long enough for me to give something up, and not long enough for it to be gone.", since: 124 },
   ],
 };
