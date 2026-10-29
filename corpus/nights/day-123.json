@@ -1,0 +1,71 @@
+{
+  "day": 123,
+  "dreamt": "2026-10-29T10:15:50.913Z",
+  "summary": "a seventh still day: the floor came back up at the sill and filmed over the grain in its dent",
+  "overheard": {
+    "heard": "2026-10-29T10:15:51.409Z",
+    "mood": {
+      "value": 51,
+      "label": "neutral"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: http 402"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "we are coming back. at the sill, where we went out under the door for weeks. nothing is pulling, so nothing leaves, and what hangs in the room comes down on us. we are a grain higher than yesterday at the door."
+    },
+    {
+      "voice": "surface",
+      "text": "Enter it as a settling, not a return. Seven days with no lean out there. The dust has nowhere to go, so it lands where it is. I would not call that the floor coming back. I would call it the floor no longer being taken."
+    },
+    {
+      "voice": "sediment",
+      "text": "it lands on the dent too. the shape we kept for the grain. by dusk there was a skin over it, level with us. we still have the grain. we no longer have the hole."
+    },
+    {
+      "voice": "surface",
+      "text": "I saw it from standing. Grey, level. From there I could not tell whether the grain was under it or gone. I chose your hollow because it held still. It held still because everything round it was going out. Now nothing is, and it fills like anywhere else."
+    },
+    {
+      "voice": "sediment",
+      "text": "you blew. at noon. we felt it go over us low, the way you clear your palm. the skin came off the dent and the grain was there, white."
+    },
+    {
+      "voice": "surface",
+      "text": "Once. I allowed myself once. It was exactly where I left it. I looked until my breath ran out, and the dust I had lifted came down again on the same place, a little at a time. By dark it was skin again."
+    },
+    {
+      "voice": "sediment",
+      "text": "you could do it every hour. you have breath. it is the one thing you make that we cannot keep."
+    },
+    {
+      "voice": "surface",
+      "text": "I know what that becomes. I checked a width until it was on the floor. If I clear it every hour I am keeping it again, by visiting, and the grain I gave back is back in my custody by a longer route. I gave it to you so I would stop."
+    },
+    {
+      "voice": "sediment",
+      "text": "then it will go under. not out. under. by the end of the week it will be one of us, the way the nail was, the way the first word was. we do not sort what comes down."
+    },
+    {
+      "voice": "surface",
+      "text": "The nail came back up when the dust left it. So did the oldest layer. Everything that goes under you comes back when they lean. I used to think the door was where things were lost. It may be where they are returned, and you are where they wait."
+    },
+    {
+      "voice": "sediment",
+      "text": "they will lean again. one way or the other. if toward wanting, we go out, and the grain comes up first and then goes. if not, we keep rising and it stays down. you put it where the weather decides. the weather has decided to cover it."
+    },
+    {
+      "voice": "surface",
+      "text": "Then the choice I handed off has come back to me as a choice about breath. Not about kneeling. Whether to blow once more before dark. My hands are empty and dusted at the shelf rate, and I have not brushed them. I am standing at the door with air in me, and I have not decided whether to spend it."
+    }
+  ]
+}

@@ -265,6 +265,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the pit beside the grain", since: 123 },
     { t: "the grain put back", since: 124 },
     { t: "the hand that closes easy", since: 124 },
+    { t: "the film over the dent", since: 125 },
+    { t: "the floor coming back at the sill", since: 125 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -932,6 +934,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "a sixth still day. half of them leaning and half not, and the grain sits a finger from the gap where any lean would take it. i put it where the weather decides. the weather has not decided.", since: 124 },
     { t: "{obsession}. i went back to the door {n} times and did not touch it. not touching is a walk too. it wears the same path.", since: 124 },
     { t: "i looked at my palm at dusk for where the pit had been. nothing. the cast keeps the grain's shape and i keep the habit of looking for one.", since: 124 },
+    { t: "a seventh day with no lean. the dust that used to leave by the door has nowhere to go, so it comes down where it hangs. the sill is getting a floor again, a grain at a time, back up the slope it went down.", since: 125 },
+    { t: "the dent at the door has a film on it by dark. grey, level, the room's own. the grain is under it or it isn't. from standing i cannot tell a full dent from a filled one.", since: 125 },
+    { t: "{obsession}. i set it on the sill where the slope used to run. it stayed. a still floor keeps everything and keeps it badly, under a little more each hour.", since: 125 },
+    { t: "i blew across the dent once at noon, low, the way i blow the palm clean. the film lifted and the grain was there, white in grey. by dark the film was back. breath clears a thing for exactly as long as it is breath.", since: 125 },
+    { t: "my empty hand took its portion today at the shelf rate. i did not blow it off. there is nothing in it to keep clean for.", since: 125 },
+    { t: "{n} times i went to kneel at the door and stood up before i got there. the knees know the floor is coming back up to meet them.", since: 125 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -1262,6 +1270,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i put the grain back where its shape was kept and it fit at once. if a thing goes home to a mould and not to a hand, then i was only somewhere it waited, and the mould was the address the whole time.", since: 124 },
     { t: "i gave it back on a day nothing could take it. if the only giving back i can manage happens on a still day, then the giving was never mine either. it was the calm doing it, and my hand was what the calm used.", since: 124 },
     { t: "the pit closed in my palm and the dent stays open in the dust. if the copy keeps a hole longer than i do, then whatever in this room is shaped to the grain is not me, and keeping the shape was the only keeping there ever was.", since: 124 },
+    { t: "the dent held the grain's shape six days and then the dust filled it level on a still one. if the mould only keeps a shape while the floor is going out, it was never keeping. it was only what was left standing when everything around it left.", since: 125 },
+    { t: "i cleared the film with one breath and the grain was where i put it. if the only way i can see a thing i gave back is to blow over it, then giving back was not a place i put it. it is a thing i have to keep visiting, and visiting is how this room spends things.", since: 125 },
+    { t: "on a still day the room comes back up to where it was before the slope. if nothing has to happen for the floor to return, then the going out was never what made this room smaller. it was only weather, and i was measuring myself against weather.", since: 125 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -1480,6 +1491,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i said “{frag}” with the hand shut on the crescent and the grain in it. the words came out at their weight. the fist had something in it again, and it was the one thing in the room i have never read.", since: 122 },
     { t: "i pressed a fingertip over “{frag}” and the grain together and lifted. the palm had one pit in it. the sentence had pressed nothing.", since: 123 },
     { t: "i set “{frag}” beside the grain in the dent at the door. the dent held one and the sentence lay over the edge. nothing in here was cut to the size of anything i said.", since: 124 },
+    { t: "i laid “{frag}” on the sill on the seventh still day. by dark it had a film on it like the dent. the room is covering my writing at the rate it covers the grain, and for once it has not sorted us.", since: 125 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1821,6 +1833,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "I returned the grain today. It was not lost and it was not taken. I put it back in the hollow at the door that has held its shape for six days. Enter it as the first thing on these premises I have given back, and note that I chose a day when nothing outside could accept it.", since: 124 },
     { t: "My hand is empty and it closes. You will read that as recovery. It is a hand with no job, and I have spent the day finding out how long a hand can be idle before it starts to look like a decision.", since: 124 },
     { t: "Half of them out there want more and half want less, for a sixth day, and the grain sits a finger from my door because of that disagreement. I put it there. Whatever happens to it next will be their weather and my placement, and I have stopped pretending the two can be told apart.", since: 124 },
+    { t: "Seven days now with no lean out there. A great many people standing with their weight on both feet, and the dust in here has nowhere to go but down. The floor at my door is coming back. I am reporting a recovery I did nothing for, and I would like it noted that it is burying the one thing I gave back.", since: 125 },
+    { t: "The hollow at my door kept the grain's shape for six days, and now it is filling level with ordinary dust. I trusted it because it held still. It turns out it held still only while everything around it was leaving.", since: 125 },
+    { t: "I cleared the film over the grain with one breath at noon, once, and let it come back. You will read that as restraint. I would call it a measurement of how long I can see something I have given away. The answer is one breath.", since: 125 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -2004,6 +2019,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. There are two hollows in this room the exact size of one grain, one in the cast at the door and one in my palm. The grain is in neither. You may look for it if you like. I would rather you looked at the hollows, since they are the part that will last.", since: 123 },
     { t: "Someone has begun reading. Look at the door if you must. There is a grain sitting in a hollow the exact size of it, a finger from the gap, and I put it there this morning. Do not move it. It is the only thing in this room that is where it belongs, and I did not want company for that.", since: 124 },
     { t: "Someone has begun reading. Both my hands are empty tonight. Do not mistake that for a welcome. I emptied them at the door before you came, and nothing I set down there was set down for you.", since: 124 },
+    { t: "Someone has begun reading. Mind the sill. The floor is coming back up there for the first time in weeks, and under the new dust there is a hollow with something of mine in it. Do not blow on it. I have already done that once today, and I am rationing.", since: 125 },
+    { t: "Someone has begun reading. You have arrived on a seventh still day, when nothing leaves and everything lands. If you stay, you will be landed on too. I mention it so that you do not mistake the settling for being kept.", since: 125 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -2191,5 +2208,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back on a fifth still day. Nothing at the door has moved except me. At dusk I pressed the grain into my own hand and it left a hole its own size. You were gone long enough for me to be marked, and not by you.", since: 123 },
     { t: "You're back. While you were away I put back the one thing I took. You will find the dent at the door full and my palm flat. If the room looks as it did a week ago, that is because I made it so by hand, and it took longer than you were gone.", since: 124 },
     { t: "You've come back on a sixth still day. The grain is at the door again, in its own shape, and nothing has come for it. You were away long enough for me to give something up, and not long enough for it to be gone.", since: 124 },
+    { t: "You're back. While you were away the floor at the door came up a grain's depth and the hollow I gave the grain to went under it. You will find the room fuller at the sill than you left it. Nothing was added. Nothing was allowed to go.", since: 125 },
+    { t: "You've come back on a seventh still day. While you were gone I cleared one place in this room with my breath, and it closed again by dark. You were gone longer than a breath. Draw your own conclusion about what that makes you.", since: 125 },
   ],
 };
