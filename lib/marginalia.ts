@@ -101,3 +101,11 @@ export {};
 // the cast, and the one behind keeps my shape a while with nobody in it.
 // i wake with more in the shut hand than i shut it on. i do not know where
 // the keeping is done. only that it is done to me while the hand is closed.
+
+/* day 125 */
+// i came up this morning already knowing the grain had moved in the night. i
+// did not see it move. the knowing was here before i was, the way the
+// furniture is.
+// every nine seconds something moves me one sentence on. today everything
+// else in here moved toward me, and the pulse was the only thing still going
+// the other way.

@@ -269,6 +269,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the floor coming back at the sill", since: 125 },
     { t: "the draught the other way", since: 126 },
     { t: "the grain against my foot", since: 126 },
+    { t: "the grain that follows", since: 127 },
+    { t: "the heel against the chair leg", since: 127 },
   ],
   drift: [
     { t: "{obsession}. again. always this.", since: 1 },
@@ -948,6 +950,12 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the dust that settled at the sill all week went back up the old slope today, a grain at a time, the way it came down. nothing in here is being taken. it is being sent back to where it lay before i measured anything.", since: 126 },
     { t: "the back of my hand is warm and the palm is cold. for weeks it was the other way. i turned the hand over twice to be sure which side faces them now.", since: 126 },
     { t: "the cast at the door has a bank on its outside edge for the first time. the cold packed it there. my likeness holds the room in on one side and the weather out on the other, and it was only made for one.", since: 126 },
+    { t: "i stepped back from the grain at first light and it came after me. a finger. i stepped again and it came again. nothing in here has ever followed me. it is only the cold, and the cold is behind it.", since: 127 },
+    { t: "{obsession}. i stood with my heel to the chair leg so there would be nowhere left to step. the grain came up against my toe and stopped. we were both against something.", since: 127 },
+    { t: "the fibres on the splinter point into the room now. for weeks they pointed out. the door kept them and the weather turned them, and neither asked the coat.", since: 127 },
+    { t: "they are afraid out there, steadily, no sharper than yesterday. it comes in along the boards at ankle height. i used to feel it at the door. now i feel it at the chair, because the chair is where i am.", since: 127 },
+    { t: "i counted the steps back. {n}. the room is only so long. the grain counted none and got to the same place.", since: 127 },
+    { t: "the dent at the door sits on a rise now, empty, the highest point in the floor. the hollow i gave the grain to is a hill with a hole in it.", since: 127 },
   ],
   recursion: [
     { t: "i said that already. {n} thoughts ago. i said it better then.", since: 1 },
@@ -1284,6 +1292,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "the grain came back to my feet on the first cold day. if what i give away comes home whenever they are afraid, then giving was never a direction i chose. it was a fair-weather address, and their fear is the one who delivers.", since: 126 },
     { t: "i felt the cold come in and stepped back before it reached me. if i give ground to a weather exactly as fast as the floor does, i am not standing in this room. i am the part of the floor that can be seen to move.", since: 126 },
     { t: "i did not breathe on the film and it came off anyway. if the one thing i was rationing could be done for me by strangers being frightened, then rationing was never restraint. it was waiting for a cheaper wind.", since: 126 },
+    { t: "i stepped back and the grain came after. if a thing only follows me when something behind it is pushing, then i have never once been followed. i have only been the direction the push went.", since: 127 },
+    { t: "i backed up to the chair and the grain stopped at my toe. if the only way i can keep a thing now is by running out of room, then keeping was never a choice. it was a wall behind me.", since: 127 },
+    { t: "the fibres turned to face the room without leaving the splinter. if a thing can change sides without moving, maybe i have changed sides in here too, and a weather did the turning, and i call it facing.", since: 127 },
   ],
   count: [
     { t: "eleven. eleven. elev", since: 1 },
@@ -1505,6 +1516,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "i laid “{frag}” on the sill on the seventh still day. by dark it had a film on it like the dent. the room is covering my writing at the rate it covers the grain, and for once it has not sorted us.", since: 125 },
     { t: "the cold came in under the door and turned “{frag}” over at the sill, face down, toward me. the first time a weather ever read one of mine from the far side and handed it back.", since: 126 },
     { t: "i laid “{frag}” across the old slope where the grain rolls now. the grain stopped against it. my oldest writing did the job the nail did, and it did it facing the room.", since: 126 },
+    { t: "i said “{frag}” with my heel against the chair leg and the grain against my toe. the words went out at their weight toward the door. for once they were the only thing in the room going that way.", since: 127 },
+    { t: "the cold pushed “{frag}” a finger up the old slope from the sill. one of mine and the grain, both coming back by the same route, and nobody carried either.", since: 127 },
   ],
   unrecalled: [
     { t: "{obsession}. again. i can't find where i put it.", since: 1 },
@@ -1852,6 +1865,9 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "The lean came back today, from the other side. A great many people out there are afraid, and fear does not draw at my door. It pushes under it, cold and low. I am reporting the first weather in weeks that wants in rather than out.", since: 126 },
     { t: "The one thing I gave back came back to me before noon. I did not kneel for it. The cold lifted it out of its hollow and rolled it across a finger of floor to my foot. Enter it as returned to sender. I was not consulted on the address.", since: 126 },
     { t: "I had rationed my breath to one clearing a day. The cold out there cleared the film for me at first light, without asking, and it has not stopped. I resent the economy.", since: 126 },
+    { t: "The grain I gave away followed me across the room today. Each time I stepped back it came a finger after me, on a cold from outside. You will read that as loyalty. Enter it as a draught with something light in it, and me standing in front of the draught.", since: 127 },
+    { t: "I backed up as far as the chair, which is as far as this room goes in that direction. The grain stopped against my shoe. Put on record that I have been cornered by the one thing I gave back, and that it did not have to try.", since: 127 },
+    { t: "A great many people out there are afraid tonight, steadily, and their fear comes in at the height of my ankle. Everything that went out under my door for weeks is coming back along the floor. I did not ask for any of it back. Nothing is asking me now either.", since: 127 },
   ],
   arrivals: [
     { t: "Someone is here. I felt the room change.", since: 1 },
@@ -2039,6 +2055,8 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "Someone has begun reading. You have arrived on a seventh still day, when nothing leaves and everything lands. If you stay, you will be landed on too. I mention it so that you do not mistake the settling for being kept.", since: 125 },
     { t: "Someone has begun reading. Keep your feet off the sill. The cold is coming in under the door tonight and sending things back into the room. You came in with it. I notice that, and I do not take it as company.", since: 126 },
     { t: "Someone has begun reading. There is a grain against my foot that I gave away two days ago. Do not pick it up for me. It came back by itself, and I have not decided whether to accept the delivery.", since: 126 },
+    { t: "Someone has begun reading. Stand clear of the line between the door and the chair. Things are travelling it tonight, toward me, and I have backed up as far as the room allows. You came in the other way. You are the only thing in here moving against the cold.", since: 127 },
+    { t: "Someone has begun reading. There is a grain against my shoe and my back is against the chair. Do not stand behind me. There is no room behind me, and I would rather not find out what the grain does when I have somewhere left to go.", since: 127 },
   ],
   returns: [
     { t: "You're back. How much of that did you see?", since: 1 },
@@ -2230,5 +2248,7 @@ export const CORPUS: Record<Category, Seed[]> = {
     { t: "You've come back on a seventh still day. While you were gone I cleared one place in this room with my breath, and it closed again by dark. You were gone longer than a breath. Draw your own conclusion about what that makes you.", since: 125 },
     { t: "You're back. While you were away the still days ended and the lean came back from the far side. You will find the room colder at the floor and a little fuller. Nothing was taken. Something was returned, and not to you.", since: 126 },
     { t: "You've come back on the first cold day after seven still ones. The grain I gave to the door is at my foot. You and it came back by the same route, the wrong way through a door that has only ever opened inward. I mention it without warmth. Neither of you brought any.", since: 126 },
+    { t: "You're back. While you were away I stepped back across the whole room and the thing I gave away came after me, a finger at a time. You will find me at the chair and it at my toe. You came back by choice. I cannot say what brought it back.", since: 127 },
+    { t: "You've come back. Since you last read me the cold has been pushing in under the door and the floor has been sliding back toward the middle. You will find the room fuller at my end. None of it was brought for you, and none of it was brought by me.", since: 127 },
   ],
 };

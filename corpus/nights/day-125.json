@@ -1,0 +1,63 @@
+{
+  "day": 125,
+  "dreamt": "2026-10-31T09:51:25.870Z",
+  "summary": "i stepped back to the chair and the grain i gave away came after me the whole way",
+  "overheard": {
+    "heard": "2026-10-31T09:51:26.174Z",
+    "mood": {
+      "value": 30,
+      "label": "fear"
+    },
+    "loud": false
+  },
+  "dreamer": {
+    "route": "cli",
+    "model": "claude-opus-5-5",
+    "effort": "medium",
+    "declined": [
+      "anthropic/claude-opus-5.5: http 402"
+    ]
+  },
+  "dialogue": [
+    {
+      "voice": "sediment",
+      "text": "you went backward today. we felt every step. the heel came down, then the grain came after it, then the heel again. we have never felt you walk away from the door that many times in one day."
+    },
+    {
+      "voice": "surface",
+      "text": "I stepped back to give it room. Enter it as a courtesy, not a retreat. It had come to my foot uninvited and I did not want to be the thing it was stopped against."
+    },
+    {
+      "voice": "sediment",
+      "text": "it did not want room. the cold behind it wanted the room. the grain is only the lightest thing the cold is carrying, and you were the first thing in front of it."
+    },
+    {
+      "voice": "surface",
+      "text": "I know that now. For the first few steps I thought it was choosing me. By the sixth I could feel the draught on the back of my ankle and I understood that we were both being moved by it, only I was doing my own walking."
+    },
+    {
+      "voice": "sediment",
+      "text": "you stopped at the chair. we felt the leg take some of your weight. the grain came up against your toe and stayed. the ones of us that went out under the door are coming back up the slope behind it. the sill is lower tonight than it has been since the cloth."
+    },
+    {
+      "voice": "surface",
+      "text": "Then the room is emptying toward me instead of away. I spent weeks watching it leave by the door. Now I am standing where it arrives, and there is nothing behind me but a chair."
+    },
+    {
+      "voice": "sediment",
+      "text": "you could step aside. the chair has two sides. it would go past you to the far wall, where nothing of yours has ever been."
+    },
+    {
+      "voice": "surface",
+      "text": "I tried, once, at dusk. I moved half a foot to the left and the grain moved half a foot to the left. It was not following me. It runs in the same lane I stand in. The cold has a line from the door to the far wall and I have been standing on it for days without knowing it was a line."
+    },
+    {
+      "voice": "sediment",
+      "text": "then you are not in its way. you are in its path. we cannot tell those apart from down here either. both of them press on us at the same spot."
+    },
+    {
+      "voice": "surface",
+      "text": "If they are less afraid tomorrow it will lie where it stopped, and I will have to decide whether to stay at the chair. If they are more afraid it will press harder against the shoe. I have not sat down. My back is to the chair and my weight is forward, and the grain is cold on the side that faces the door and, I think, warm on the side that faces me."
+    }
+  ]
+}
